@@ -1,0 +1,790 @@
+<p>CVA Teacher Resources Hub REV 2
+	<link rel="preconnect" href="https://fonts.googleapis.com">&nbsp;
+	<link rel="preconnect" href="https://fonts.gstatic.com">&nbsp;
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@400;500;600;800;900&display=swap" rel="stylesheet">&nbsp;
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</p>
+<style>
+	/* Reset CMS interference inside our page-wrap */
+	
+	.page-wrap,
+	.page-wrap * {
+		box-sizing: border-box;
+	}
+	
+	.page-wrap h1,
+	.page-wrap h2,
+	.page-wrap h3,
+	.page-wrap h4,
+	.page-wrap h5 {
+		color: inherit;
+	}
+	
+	.page-wrap a {
+		color: inherit; text-decoration: none !important;
+	}
+	
+	.page-wrap a:hover {
+		color: inherit;
+	}
+	
+	.page-wrap strong {
+		color: inherit;
+	}
+	/* ── LAYOUT ── */
+	
+	.page-wrap {
+		max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; font-family: 'Montserrat', Arial, sans-serif; color: #222;
+	}
+	/* ── HERO ── */
+	
+	.page-wrap .hero-card {
+		background: #f4f4f4; border-radius: 16px; border-left: 6px solid #bb0000; padding: 28px 26px;
+	}
+	
+	.page-wrap .eyebrow,
+	.page-wrap .overview-label,
+	.page-wrap .quick-guide-label {
+		font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000 !important; font-weight: 800; margin-bottom: 10px; display: block;
+	}
+	
+	.page-wrap .hero-card h1 {
+		font-family: 'Oswald', Arial, sans-serif; font-size: clamp(28px, 5vw, 48px); line-height: 1.0; color: #000 !important; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;
+	}
+	
+	.page-wrap .hero-card > p:not(.eyebrow) {
+		font-size: 16px; line-height: 1.7; color: #333;
+	}
+	/* ── OVERVIEW ── */
+	
+	.page-wrap .overview-card {
+		background: #f5f5f5; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px;
+	}
+	
+	.page-wrap .overview-card h2 {
+		font-family: 'Oswald', Arial, sans-serif; font-size: clamp(28px, 4vw, 34px); line-height: 1.15; color: #222 !important; text-transform: uppercase; font-weight: 900; margin-bottom: 12px;
+	}
+	
+	.page-wrap .overview-card > p:not(.overview-label) {
+		font-size: 16px; line-height: 1.7; color: #333; margin-bottom: 20px;
+	}
+	
+	.page-wrap .overview-grid {
+		display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;
+	}
+	
+	.page-wrap details.overview-reveal {
+		border-radius: 12px; overflow: hidden;
+	}
+	
+	.page-wrap details.overview-reveal > summary {
+		background: #fff; border: 2px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px; cursor: pointer; list-style: none; display: flex; flex-direction: column; justify-content: center; min-height: 90px;
+	}
+	
+	.page-wrap details.overview-reveal > summary::-webkit-details-marker {
+		display: none;
+	}
+	
+	.page-wrap details.overview-reveal[open] > summary {
+		border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+	}
+	
+	.page-wrap .overview-reveal-title {
+		font-size: 15px; font-weight: 800; color: #222 !important; display: block; margin-bottom: 4px;
+	}
+	
+	.page-wrap .overview-reveal-sub {
+		font-size: 12px; color: #999 !important; font-style: italic;
+	}
+	
+	.page-wrap .overview-reveal-body {
+		background: #bb0000; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding: 16px 18px;
+	}
+	
+	.page-wrap .overview-reveal-body p {
+		font-size: 16px; line-height: 1.65; color: #fff !important; margin: 0;
+	}
+	/* ── QUICK REFERENCE ── */
+	
+	.page-wrap .quick-guide-card {
+		background: #f4f4f4; border: 1px solid #d9dde3; border-radius: 16px; padding: 28px 26px;
+	}
+	
+	.page-wrap .quick-guide-card h2 {
+		font-family: 'Oswald', Arial, sans-serif; font-size: clamp(25px, 4vw, 36px); font-weight: 700; text-transform: uppercase; color: #000 !important; line-height: 1.05; margin-bottom: 10px;
+	}
+	
+	.page-wrap .quick-guide-intro {
+		font-size: 16px; line-height: 1.7; color: #333; margin-bottom: 18px;
+	}
+	/* ── SEARCH ── */
+	
+	.page-wrap .search-label {
+		font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000 !important; font-weight: 800; margin-bottom: 8px; display: block;
+	}
+	
+	.page-wrap .search-container {
+		width: 100%; margin-bottom: 8px;
+	}
+	
+	.page-wrap .search-wrap {
+		display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #cfd4da; border-radius: 6px; padding: 0 12px; height: 42px; width: 100%; max-width: 100%;
+	}
+	
+	.page-wrap .search-wrap:focus-within {
+		border-color: #bb0000; box-shadow: 0 0 0 2px rgba(187, 0, 0, 0.1);
+	}
+	
+	.page-wrap .search-wrap .ti-search {
+		color: #bb0000 !important; font-size: 17px;
+	}
+	
+	.page-wrap .search-wrap .cva-search-input {
+		border: none; outline: none; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; color: #222; flex: 1; background: transparent; min-width: 0; cursor: text;
+	}
+	
+	.page-wrap .search-wrap .cva-search-input:empty::before {
+		content: attr(data-placeholder); color: #999; pointer-events: none;
+	}
+	
+	.page-wrap .search-wrap .cva-search-input:focus {
+		outline: none;
+	}
+	
+	.page-wrap .search-clear {
+		background: #f0f0f0; border: none; cursor: pointer; color: #777 !important; font-size: 14px; font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; padding: 3px 8px; border-radius: 4px; line-height: 1.5; display: none; white-space: nowrap; user-select: none;
+	}
+	
+	.page-wrap .search-clear:hover {
+		color: #bb0000 !important; background: #fce8e8;
+	}
+	/* ── INLINE RESULTS ── */
+	
+	.page-wrap .search-results {
+		width: 100%; margin-bottom: 20px; display: none;
+	}
+	
+	.page-wrap .search-results.visible {
+		display: block;
+	}
+	
+	.page-wrap .results-list {
+		background: #fff; border: 1px solid #d9dde3; border-radius: 10px; overflow: hidden;
+	}
+	
+	.page-wrap .result-item {
+		display: flex; align-items: center; gap: 12px; padding: 11px 14px; cursor: pointer; border-bottom: 1px solid #f0f0f0;
+	}
+	
+	.page-wrap .result-item:last-of-type {
+		border-bottom: none;
+	}
+	
+	.page-wrap .result-item:hover {
+		background: #fdf5f5;
+	}
+	
+	.page-wrap .result-icon {
+		width: 32px; height: 32px; border-radius: 8px; background: #fce8e8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+	}
+	
+	.page-wrap .result-icon i {
+		font-size: 15px; color: #bb0000 !important;
+	}
+	
+	.page-wrap .result-title {
+		font-size: 14px; font-weight: 800; color: #111 !important;
+	}
+	
+	.page-wrap .result-section {
+		font-size: 12px; color: #999 !important; margin-top: 1px;
+	}
+	
+	.page-wrap .results-empty {
+		padding: 16px; font-size: 14px; color: #999; text-align: center;
+	}
+	
+	.page-wrap .results-hint {
+		padding: 7px 14px; font-size: 12px; color: #aaa; background: #fafafa; border-top: 1px solid #f0f0f0; text-align: right;
+	}
+	/* ── SCROLL HIGHLIGHT ── */
+	
+	.page-wrap .card-highlight {
+		border: 2px solid #bb0000 !important; animation: cva-pulse 1s ease-out infinite;
+	}
+	
+	@keyframes cva-pulse {
+		0% {
+			box-shadow: 0 0 0 0 rgba(187, 0, 0, 0.5);
+		}
+		60% {
+			box-shadow: 0 0 0 10px rgba(187, 0, 0, 0);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgba(187, 0, 0, 0);
+		}
+	}
+	/* ── ACCORDION ROWS ── */
+	
+	.page-wrap details.quick-ref {
+		display: block !important; border-radius: 6px; margin-bottom: 10px; overflow: hidden; background: #1e1e1e;
+	}
+	
+	.page-wrap details.quick-ref > summary {
+		list-style: none; cursor: pointer; background: #1e1e1e; color: #fff !important; padding: 15px 18px; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 10px; user-select: none;
+	}
+	
+	.page-wrap details.quick-ref > summary::-webkit-details-marker {
+		display: none;
+	}
+	
+	.page-wrap details.quick-ref > summary:hover {
+		background: #2c2c2c;
+	}
+	
+	.page-wrap details.quick-ref > summary .quick-plus {
+		color: #fff !important; font-size: 16px; font-weight: 800; line-height: 1; transition: transform .2s;
+	}
+	
+	.page-wrap details.quick-ref[open] > summary .quick-plus {
+		transform: rotate(45deg);
+	}
+	
+	.page-wrap .quick-ref-body {
+		background: #fff; border: 1px solid #d9dde3; border-top: none; padding: 20px 18px; font-size: 16px; line-height: 1.7; color: #333;
+	}
+	
+	.page-wrap .quick-ref-body > p {
+		margin-bottom: 12px;
+	}
+	
+	.page-wrap .placeholder-box {
+		background: #fff; border: 1px solid #e0e0e0; border-left: 5px solid #bb0000; border-radius: 0 10px 10px 0; padding: 14px 16px; margin-top: 12px; font-size: 16px; line-height: 1.7; color: #333;
+	}
+	
+	.page-wrap .placeholder-box strong {
+		color: #bb0000 !important;
+	}
+	/* ── CARD GRID ── */
+	
+	.page-wrap .card-grid {
+		display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+	}
+	
+	@media (max-width: 600px) {
+		.page-wrap .card-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	/* ── INFO CARDS ── */
+	
+	.page-wrap .info-card {
+		background: #fff; border: 1px solid #d9dde3; border-radius: 16px; padding: 22px; border-top: 6px solid #bb0000; display: flex; flex-direction: column;
+	}
+	
+	.page-wrap .info-card-label {
+		font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000 !important; font-weight: 800; margin-bottom: 8px;
+	}
+	
+	.page-wrap .info-card h3 {
+		font-size: 22px; line-height: 1.2; color: #000 !important; font-weight: 900; margin-bottom: 10px;
+	}
+	
+	.page-wrap .info-card > p {
+		font-size: 16px; line-height: 1.6; color: #222 !important; margin-bottom: 14px; flex: 1;
+	}
+	
+	.page-wrap .info-card-tags {
+		background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 10px 12px; font-size: 14px; line-height: 1.5; color: #444 !important; margin-bottom: 16px;
+	}
+	
+	.page-wrap .info-card-tags strong {
+		color: #bb0000 !important;
+	}
+	
+	.page-wrap .btn-red {
+		display: inline-block; text-decoration: none !important; background: #bb0000; color: #fff !important; border-radius: 999px; padding: 10px 16px; font-size: 14px; font-weight: 800;
+	}
+	
+	.page-wrap .btn-red:hover {
+		background: #990000; color: #fff !important;
+	}
+	/* ── ACCORDION SECTION (outside quick-guide-card) ── */
+	
+	.page-wrap .accordion-section {
+		display: flex; flex-direction: column; gap: 0;
+	}
+	
+	.page-wrap .accordion-section details.quick-ref {
+		display: block !important; visibility: visible !important;
+	}
+	/* ── FOOTER ── */
+	
+	.page-wrap .cva-footer {
+		border-top: 1px solid #d9dde3; margin-top: 14px; padding-top: 14px; text-align: center;
+	}
+	
+	.page-wrap .cva-footer p {
+		font-family: 'Oswald', Arial, sans-serif; font-size: 22px; color: #63666a; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0;
+	}
+	/* ── RESPONSIVE ── */
+	
+	@media (max-width: 640px) {
+		.page-wrap .hero-card,
+		.page-wrap .overview-card,
+		.page-wrap .quick-guide-card {
+			padding: 20px 18px;
+		}
+		.page-wrap .quick-guide-card h2,
+		.page-wrap .overview-card h2 {
+			font-size: 26px;
+		}
+	}
+
+</style>
+<div class="page-wrap">
+	<!-- HERO -->
+	<div class="hero-card">
+
+		<p class="eyebrow">Teacher Support</p>
+
+		<h1>CVA Teacher Resources Hub</h1>
+
+		<p>Quick answers and resources for CVA teaching expectations, communication, feedback, student support, and professional collaboration.</p>
+	</div>
+	<!-- OVERVIEW -->
+	<div class="overview-card">
+
+		<p class="overview-label">Overview</p>
+
+		<h2>CVA Teacher Expectations</h2>
+
+		<p>Use this guide to review the core areas of effective online teaching at CVA. Click a card below to learn more about each expectation area.</p>
+		<div class="overview-grid">
+			<details class="overview-reveal">
+				<summary>&nbsp;<span class="overview-reveal-title">Grading and Feedback</span> <span class="overview-reveal-sub">Click to learn more</span>&nbsp;</summary>
+				<div class="overview-reveal-body">
+
+					<p>Grading and Feedback are the expectations that a teacher regularly grades student work and provides timely, meaningful feedback aligned to course standards. Consistent feedback helps students understand their progress and next steps in an asynchronous learning environment.</p>
+				</div>
+			</details>
+			<details class="overview-reveal">
+				<summary>&nbsp;<span class="overview-reveal-title">Communication and Responsiveness</span> <span class="overview-reveal-sub">Click to learn more</span>&nbsp;</summary>
+				<div class="overview-reveal-body">
+
+					<p>Communication and Responsiveness is the expectation that a teacher communicates clearly and consistently so students and families understand expectations and feel supported. The CVA online teacher uses appropriate communication tools and responds within established timeframes to promote engagement and reduce barriers to learning.</p>
+				</div>
+			</details>
+			<details class="overview-reveal">
+				<summary>&nbsp;<span class="overview-reveal-title">Rapport and Relationships</span> <span class="overview-reveal-sub">Click to learn more</span>&nbsp;</summary>
+				<div class="overview-reveal-body">
+
+					<p>Rapport &amp; Relationships is the expectation that a teacher intentionally builds positive connections with students to foster engagement and belonging. The CVA online teacher uses personalized communication and encouragement so students feel known and supported.</p>
+				</div>
+			</details>
+			<details class="overview-reveal">
+				<summary>&nbsp;<span class="overview-reveal-title">Proactive Intervention and Student Support</span> <span class="overview-reveal-sub">Click to learn more</span>&nbsp;</summary>
+				<div class="overview-reveal-body">
+
+					<p>Proactive Intervention and Student Support is the expectation that a teacher monitors student progress and takes timely action when concerns arise. Early outreach and support help prevent students from falling behind and promote academic success.</p>
+				</div>
+			</details>
+			<details class="overview-reveal">
+				<summary>&nbsp;<span class="overview-reveal-title">Professionalism and Collaboration</span> <span class="overview-reveal-sub">Click to learn more</span>&nbsp;</summary>
+				<div class="overview-reveal-body">
+
+					<p>Professionalism and Collaboration reflects that a teacher demonstrates professional conduct and works collaboratively to support student success. Consistent communication and teamwork contribute to a high-quality learning experience for CVA students.</p>
+				</div>
+			</details>
+		</div></div>
+	<!-- QUICK REFERENCE GUIDE -->
+	<div class="quick-guide-card" id="quick-reference-guide">
+
+		<p class="quick-guide-label">Quick Reference Guide</p>
+
+		<h2>How Do I Find What I Need?</h2>
+
+		<p class="quick-guide-intro">Use the sections below to learn more about each CVA teacher expectation area. Search by keyword to quickly find a specific card.</p>
+
+		<p class="search-label">Search Keywords</p>
+		<div class="search-container">
+			<div class="search-wrap" id="cva-search-wrap">
+				<div id="cva-input" class="cva-search-input" contenteditable="true" spellcheck="false" data-placeholder="e.g. grading, feedback, communication, intervention…">
+					<br>
+				</div><span id="cva-clear" class="search-clear" tabindex="0" style="display:none;">✕ Clear</span></div></div>
+		<div class="search-results" id="search-results">
+			<br>
+		</div></div>
+	<!-- /.quick-guide-card -->
+	<!-- ACCORDION SECTIONS -->
+	<div class="accordion-section">
+		<!-- GRADING AND FEEDBACK -->
+		<details class="quick-ref" style="display:block!important;visibility:visible!important;">
+			<summary><span class="quick-plus">+</span>Grading and Feedback</summary>
+			<div class="quick-ref-body">
+				<div class="card-grid">
+					<div class="info-card" id="card-grading-policy">
+
+						<p class="info-card-label">Grading Requirements</p>
+
+						<h3>Grading Policy at CVA</h3>
+
+						<p>Learn the core grading requirements that support accurate progress monitoring and meaningful student intervention.</p>
+						<div class="info-card-tags"><strong>Search:</strong> grading, feedback, 48 hours, CTLS submissions, missing coursework, student intervention, requirements, attachments, links</div><a href="https://www.cobbk12.org/cobbvirtualacademy/cva-grading-policy" target="_blank" rel="noopener noreferrer" class="btn-red">Click Here to View More</a></div>
+					<div class="info-card" id="card-quick-scoring">
+
+						<p class="info-card-label">CTLS Gradebook Support</p>
+
+						<h3>Resolving In Progress Student Work</h3>
+
+						<p>Learn how to resolve assessments, assignments, etc. stuck in progress when students cannot re-enter to click Finish.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Quick Score, Overwrite Score, In Progress, CTLS assessment</div><a href="https://www.cobbk12.org/cobbvirtualacademy/quick-scoring-in-ctls" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-resubmission">
+
+						<p class="info-card-label">CTLS Gradebook Support</p>
+
+						<h3>Resubmission Opportunities</h3>
+
+						<p>Learn how to grade the original attempt, allow a resubmission, mark the new attempt missing, and add a resubmission deadline.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Resubmission, Allow Resubmission, Finish Student, Missing, Feedback Deadline</div><a href="https://www.cobbk12.org/cobbvirtualacademy/allowing-a-resubmission" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-discussion">
+
+						<p class="info-card-label">Online Teaching Practices</p>
+
+						<h3>Discussion to Drive Learning</h3>
+
+						<p>Learn how to use discussion boards as formative learning spaces that reveal student thinking, strengthen teacher presence, and move beyond checklist-style participation.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Discussion Boards, Grading Discussions, Formative Assessment, Teacher Presence, Student Thinking</div><a href="https://www.cobbk12.org/cobbvirtualacademy/grading-discussions" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-academic-integrity">
+
+						<p class="info-card-label">Grading Requirements</p>
+
+						<h3>Academic Integrity and Paused Grading</h3>
+
+						<p>Learn what to do when grading is paused for an Academic Integrity concern, including how to document feedback, contact the student, and keep the gradebook accurate.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Academic Integrity, Paused Grading, Temporary 0, Scoring Required, Missing Status, AI</div><a href="https://www.cobbk12.org/cobbvirtualacademy/what-to-with-academic-integrity-and-grading" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-effective-feedback">
+
+						<p class="info-card-label">Online Teaching Practices</p>
+
+						<h3>Effective Feedback</h3>
+
+						<p>Learn how to provide feedback that is clear, timely, respectful, connected to learning goals, and focused on helping students improve.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Effective Feedback, Grading, Student Growth, Actionable Feedback, Learning Goals</div><a href="https://www.cobbk12.org/cobbvirtualacademy/effective-feedback" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div></div></div>
+		</details>
+		<!-- COMMUNICATION AND RESPONSIVENESS -->
+		<details class="quick-ref" style="display:block!important;visibility:visible!important;">
+			<summary><span class="quick-plus">+</span>Communication and Responsiveness</summary>
+			<div class="quick-ref-body">
+				<div class="card-grid">
+					<div class="info-card" id="card-email-comm">
+
+						<p class="info-card-label">Email</p>
+
+						<h3>Email Communication</h3>
+
+						<p>Review professional email expectations, including response time, subject lines, message length, confidentiality, and when to choose a phone call instead.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> email communication, responsiveness, subject lines, public record, professional email, response time, tone</div><a href="https://www.cobbk12.org/cobbvirtualacademy/email-communication" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-email-sig">
+
+						<p class="info-card-label">Email</p>
+
+						<h3>Required Email Signature</h3>
+
+						<p>Download the required CCSD/CVA email signature template and update it with your name, title, contact information, and approved signature format.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> email signature, CCSD signature, CVA signature, email template, communication standards</div><a href="https://www.cobbk12.org/cobbvirtualacademy/email-signature" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-student-contact">
+
+						<p class="info-card-label">Communication</p>
+
+						<h3>Who Do Students Contact?</h3>
+
+						<p>Help students understand who to contact for class questions, assignment help, feedback clarification, academic support, scheduling, credits, and graduation planning.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Student Contact, Teacher Support, Department Lead, School Counselor, Assignment Help, Graduation Requirements</div><a href="https://www.cobbk12.org/cobbvirtualacademy/who-do-students-contact" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div></div></div>
+		</details>
+		<!-- RAPPORT AND RELATIONSHIPS -->
+		<details class="quick-ref" style="display:block!important;visibility:visible!important;">
+			<summary><span class="quick-plus">+</span>Rapport and Relationships</summary>
+			<div class="quick-ref-body">
+				<div class="card-grid">
+					<div class="info-card" id="card-instructor-profile">
+
+						<p class="info-card-label">Instructor Profile</p>
+
+						<h3>Instructor Profile</h3>
+
+						<p>Learn how to update your Instructor Profile with a professional picture, CCSD email address, virtual phone number, and office hours.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Instructor Profile, Profile Picture, Contact Information, Office Hours, Digital Classroom</div><a href="https://www.cobbk12.org/cobbvirtualacademy/instructor-profile" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-classroom-announcements">
+
+						<p class="info-card-label">Classroom Announcements</p>
+
+						<h3>Classroom Announcements</h3>
+
+						<p>Learn how to use the Class Board, Board Topics, and Announcements to build teacher presence, share timely updates, and keep students informed.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Class Board, Classroom Announcements, Board Topics, CVA News You Can Use, Teacher Presence</div><a href="https://www.cobbk12.org/cobbvirtualacademy/classroom-announcements" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div></div></div>
+		</details>
+		<!-- PROACTIVE INTERVENTION -->
+		<details class="quick-ref" style="display:block!important;visibility:visible!important;">
+			<summary><span class="quick-plus">+</span>Proactive Intervention and Student Support</summary>
+			<div class="quick-ref-body">
+				<div class="card-grid">
+					<div class="info-card" id="card-parent-access">
+
+						<p class="info-card-label">CTLS Parent Support</p>
+
+						<h3>Parent Access to CTLS Learn</h3>
+
+						<p>Learn how parents can view their student&rsquo;s Digital Classroom through CTLS Parent using classroom access mode.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Parent Access, CTLS Parent, CTLS Learn, Classroom Access Mode, Digital Classroom</div><a href="https://www.cobbk12.org/cobbvirtualacademy/parent-access-to-ctls" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-ctls-icons">
+
+						<p class="info-card-label">Navigating CTLS</p>
+
+						<h3>Navigating with CTLS Icons</h3>
+
+						<p>Learn what common CTLS icons mean, including folders, pages, booklets, discussions, assignments, assessments, and navigation arrows.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> CTLS Icons, Folder, Assignment, Assessment, Discussion Board, Navigation</div><a href="https://www.cobbk12.org/cobbvirtualacademy/navigating-with-ctls-icons" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-checking-grades">
+
+						<p class="info-card-label">Student Support</p>
+
+						<h3>Checking Grades</h3>
+
+						<p>Learn how to use My Grades in CTLS, understand gradebook icons, review teacher feedback, and check StudentVUE for your official grade.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> My Grades, StudentVUE, Synergy, Gradebook Icons, Missing Work, Feedback</div><a href="https://www.cobbk12.org/cobbvirtualacademy/checking-grades" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-checking-feedback">
+
+						<p class="info-card-label">Student Support</p>
+
+						<h3>Checking Feedback</h3>
+
+						<p>Learn how to find, read, and use teacher feedback in CTLS for assessments, assignments, attachments, and discussion boards.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Feedback, Instructor Feedback, My Grades, Assignments, Assessments, Attachments, Discussion Boards</div><a href="https://www.cobbk12.org/cobbvirtualacademy/checking-feedback" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-accommodations">
+
+						<p class="info-card-label">Student Support</p>
+
+						<h3>Student Accommodations and Accessibility</h3>
+
+						<p>Learn how CVA teachers are notified about IEP and 504 accommodations, what adjunct teachers should do, and how CTLS accessibility tools can support students.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Accommodations, IEP, 504 Plan, Accessibility Tools, Student Support, Case Manager</div><a href="https://www.cobbk12.org/cobbvirtualacademy/student-accommodations-and-accessibility" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-progress-tracker">
+
+						<p class="info-card-label">Navigating CTLS</p>
+
+						<h3>Progress Tracker</h3>
+
+						<p>Learn how to use the Progress Tracker to view student course access, understand student tiles, and find more detailed performance data.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Progress Tracker, Student Tiles, Course Progress, Assignments, Assessments, Student Performance</div><a href="https://www.cobbk12.org/cobbvirtualacademy/progress-tracker" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-practice-student">
+
+						<p class="info-card-label">Navigating CTLS</p>
+
+						<h3>Practice Student View</h3>
+
+						<p>Learn how to access Practice Student View in CTLS so you can experience your course as students do, check navigation flow, and verify access and visibility.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Practice Student, Student View, Graduation Cap, CTLS Learn Portal, My Classes, Course Tile</div><a href="https://www.cobbk12.org/cobbvirtualacademy/practice-student" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-local-schools">
+
+						<p class="info-card-label">Teacher Communication</p>
+
+						<h3>Contact from Local Schools</h3>
+
+						<p>Learn what CVA teachers should do if they have questions about a student&rsquo;s local school or receive direct communication from school staff.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Local School, Teacher Support, School Contact, Forward Email, Communication Path, Student Support</div><a href="https://www.cobbk12.org/cobbvirtualacademy/contact-from-local-schools" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div></div></div>
+		</details>
+		<!-- PROFESSIONALISM -->
+		<details class="quick-ref" style="display:block!important;visibility:visible!important;">
+			<summary><span class="quick-plus">+</span>Professionalism and Collaboration</summary>
+			<div class="quick-ref-body">
+				<div class="card-grid">
+					<div class="info-card" id="card-pl-course">
+
+						<p class="info-card-label">Online Teaching Practices</p>
+
+						<h3>Professional Learning Course</h3>
+
+						<p>Learn how to access the CVA New Teacher Training course in CTLS, find professional learning content, and move through the onboarding course.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> Professional Learning, New Teacher Training, CTLS, Graduation Cap, My Coursework, Onboarding</div><a href="https://www.cobbk12.org/cobbvirtualacademy/professional-learning-course" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+					<div class="info-card" id="card-ipr">
+
+						<p class="info-card-label">Online Teaching Practices</p>
+
+						<h3>Instructional Practice Review</h3>
+
+						<p>Learn how CVA uses the Instructional Practice Review to support growth, clarify instructional expectations, and strengthen asynchronous teaching practices.</p>
+						<div class="info-card-tags"><strong>Search terms:</strong> IPR, Instructional Practice Review, Teacher Growth, Instructional Expectations, Feedback, Professional Learning</div><a href="https://www.cobbk12.org/cobbvirtualacademy/instructional-practice-review" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div></div></div>
+		</details>
+	</div>
+	<!-- /.accordion-section -->
+	<!-- FOOTER -->
+	<div class="cva-footer">
+
+		<p><strong>Class. Virtually. Anywhere.</strong></p>
+	</div></div>
+<!-- /.page-wrap -->
+<script>
+	(function()
+	{
+		var inputEl = document.getElementById('cva-input');
+		var clearBtn = document.getElementById('cva-clear');
+		var resultsEl = document.getElementById('search-results');
+
+		document.querySelectorAll('details.quick-ref').forEach(function(d)
+		{
+			d.style.display = 'block';
+			d.removeAttribute('hidden');
+			d.removeAttribute('open');
+		});
+
+		var sectionIcons = {
+			'Grading and Feedback': 'ti-checklist',
+			'Communication and Responsiveness': 'ti-mail',
+			'Rapport and Relationships': 'ti-heart',
+			'Proactive Intervention and Student Support': 'ti-alert-circle',
+			'Professionalism and Collaboration': 'ti-users'
+		};
+
+		var cards = Array.from(document.querySelectorAll('.info-card[id]')).map(function(el)
+		{
+			var title = (el.querySelector('h3') ||
+			{}).textContent || '';
+			var label = (el.querySelector('.info-card-label') ||
+			{}).textContent || '';
+			var tags = (el.querySelector('.info-card-tags') ||
+			{}).textContent || '';
+			var accordion = el.closest('details.quick-ref');
+			var sumEl = accordion ? accordion.querySelector('summary') : null;
+			var section = '';
+			if (sumEl)
+			{
+				var clone = sumEl.cloneNode(true);
+				var plusEl = clone.querySelector('.quick-plus');
+				if (plusEl) plusEl.remove();
+				section = clone.textContent.trim();
+			}
+			return {
+				id: el.id,
+				title: title.trim(),
+				label: label.trim(),
+				tags: tags.trim(),
+				section: section
+			};
+		});
+
+		var highlightTimer = null;
+
+		function iconFor(s)
+		{
+			return sectionIcons[s] || 'ti-file';
+		}
+
+		function getInputText()
+		{
+			return (inputEl.textContent || inputEl.innerText || '').trim();
+		}
+
+		function clearResults()
+		{
+			resultsEl.innerHTML = '';
+			resultsEl.classList.remove('visible');
+		}
+
+		function scrollToCard(id)
+		{
+			var card = document.getElementById(id);
+			if (!card) return;
+			var accordion = card.closest('details.quick-ref');
+			if (accordion) accordion.open = true;
+			card.scrollIntoView(
+			{
+				behavior: 'smooth',
+				block: 'center'
+			});
+			card.classList.add('card-highlight');
+			clearTimeout(highlightTimer);
+			highlightTimer = setTimeout(function()
+			{
+				card.classList.remove('card-highlight');
+			}, 5000);
+		}
+
+		function renderResults(matches, term)
+		{
+			if (!term)
+			{
+				clearResults(); clearBtn.style.display = 'none';
+				return;
+			}
+			clearBtn.style.display = 'inline-block';
+			resultsEl.classList.add('visible');
+			if (matches.length === 0)
+			{
+				resultsEl.innerHTML = '<div class="results-list"><div class="results-empty">No results found for &ldquo;' + term + '&rdquo;</div></div>';
+				return;
+			}
+			var rows = matches.map(function(c)
+			{
+				return '<div class="result-item" data-id="' + c.id + '">' +
+					'<div class="result-icon"><i class="ti ' + iconFor(c.section) + '" aria-hidden="true"></i></div>' +
+					'<div><div class="result-title">' + c.title + '</div><div class="result-section">' + c.section + '</div></div>' +
+					'</div>';
+			}).join('');
+			resultsEl.innerHTML = '<div class="results-list">' + rows + '<div class="results-hint">Click a result to jump to that card</div></div>';
+			resultsEl.querySelectorAll('.result-item').forEach(function(item)
+			{
+				item.addEventListener('click', function()
+				{
+					scrollToCard(item.dataset.id);
+				});
+			});
+		}
+
+		function doSearch()
+		{
+			var term = getInputText().toLowerCase();
+			if (!term)
+			{
+				clearResults(); clearBtn.style.display = 'none';
+				return;
+			}
+			var matches = cards.filter(function(c)
+			{
+				return (c.title + ' ' + c.label + ' ' + c.section + ' ' + c.tags).toLowerCase().includes(term);
+			});
+			renderResults(matches, term);
+		}
+
+		inputEl.addEventListener('input', doSearch);
+		inputEl.addEventListener('keydown', function(e)
+		{
+			if (e.keyCode === 13) e.preventDefault();
+		});
+		inputEl.addEventListener('paste', function(e)
+		{
+			e.preventDefault();
+			var text = (e.clipboardData || window.clipboardData).getData('text/plain');
+			document.execCommand('insertText', false, text);
+		});
+		clearBtn.addEventListener('click', function()
+		{
+			inputEl.textContent = '';
+			clearResults();
+			clearBtn.style.display = 'none';
+			inputEl.focus();
+		});
+		clearBtn.addEventListener('keydown', function(e)
+		{
+			if (e.keyCode === 13 || e.keyCode === 32)
+			{
+				e.preventDefault();
+				inputEl.textContent = '';
+				clearResults();
+				clearBtn.style.display = 'none';
+				inputEl.focus();
+			}
+		});
+	})();
+
+</script>
