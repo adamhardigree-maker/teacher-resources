@@ -1,0 +1,181 @@
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3, .cva-wrap h4 { font-family: 'Oswald', Arial, sans-serif; }
+</style>
+
+<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+
+  <!-- HERO -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Navigating CTLS</p>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Practice Student View</h1>
+    <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0;">A Practice Student View exists so teachers can see the course the way students actually experience it. It is a reality check that can help you and CVA catch confusion early, check navigation flow, and verify access and visibility.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Experience the Course Like a Student</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">Instead of only talking through curriculum, the Practice Student View allows teachers to experience the course the way students do. When teachers put on a student hat, they can see firsthand how the learning unfolds.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">This can reveal what feels engaging, where confusion might appear, and how student-led discussions actually play out. It also helps surface the questions students are likely to ask and helps teachers feel more confident facilitating meaningful, student-driven learning.</p>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Why It Matters</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What Practice Student View Helps You Check</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Navigation Flow</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Move through the course as a student to see whether the path feels clear and easy to follow.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Access and Visibility</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Confirm that students can see and access the content, activities, and resources they need.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Possible Confusion</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Identify places where students may misunderstand directions, expectations, or next steps.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Student Experience</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">See how the learning feels from the student side, including activities, discussions, and pacing.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACCESS STEPS -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Steps</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">How to Access Practice Student View</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use the Graduation Cap in CTLS to open the CTLS Learn Portal and access your associated classes from the student perspective.</p>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap;">
+        <div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">1</div>
+        <div style="flex: 1; min-width: 200px;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 1</p>
+          <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Click the Graduation Cap</h4>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">In CTLS, click the <strong>Graduation Cap</strong> near the top-right corner of the screen.</p>
+        </div>
+        <div style="background: #f7f8fa; border: 2px dashed #c8c7c7; border-radius: 12px; padding: 24px; font-size: 14px; color: #555555; text-align: center; width: 220px; flex-shrink: 0;">Placeholder Image</div>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap;">
+        <div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">2</div>
+        <div style="flex: 1; min-width: 200px;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 2</p>
+          <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Open the CTLS Learn Portal</h4>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">The <strong>CTLS Learn Portal</strong> will open in a new browser tab. This allows you to keep your Teacher View open while also looking at your Practice Student View.</p>
+        </div>
+        <div style="background: #f7f8fa; border: 2px dashed #c8c7c7; border-radius: 12px; padding: 24px; font-size: 14px; color: #555555; text-align: center; width: 220px; flex-shrink: 0;">Placeholder Image</div>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap;">
+        <div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">3</div>
+        <div style="flex: 1; min-width: 200px;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 3</p>
+          <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Click My Classes</h4>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Once you are in the portal, click <strong>My Classes</strong> to view all of your associated CTLS classes and Professional Learning Courses.</p>
+        </div>
+        <div style="background: #f7f8fa; border: 2px dashed #c8c7c7; border-radius: 12px; padding: 24px; font-size: 14px; color: #555555; text-align: center; width: 220px; flex-shrink: 0;">Placeholder Image</div>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box; display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap;">
+        <div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">4</div>
+        <div style="flex: 1; min-width: 200px;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 4</p>
+          <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Select the Classroom Tile</h4>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Click the <strong>Classroom Tile</strong> for the course you want to view as your Practice Student.</p>
+        </div>
+        <div style="background: #f7f8fa; border: 2px dashed #c8c7c7; border-radius: 12px; padding: 24px; font-size: 14px; color: #555555; text-align: center; width: 220px; flex-shrink: 0;">Placeholder Image</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TWO VIEW WORKFLOW -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Teacher View + Student View</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Keep Both Views Open</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Because the CTLS Learn Portal opens in a new browser tab, you can keep your Teacher View open while also checking the course from the Practice Student View.</p>
+    <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;"><strong>Tip:</strong> Use Teacher View to make or check course updates, then use Practice Student View to confirm what students will actually see.</p>
+    </div>
+  </div>
+
+  <!-- WHEN TO USE -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Best Uses</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">Use Practice Student View To...</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Check Course Flow</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">See whether students can move through the lesson or unit without confusion.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Verify Visibility</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Confirm that assignments, pages, links, resources, and discussions are visible to students.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Anticipate Questions</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Notice where students may need extra clarification, examples, or directions.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Support Student-Led Learning</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Experience how discussions, activities, and student-driven learning opportunities unfold.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- QUICK TAKEAWAYS -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Takeaways</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What to Remember</h2>
+    <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; box-sizing: border-box;">
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Practice Student View helps you see what students actually experience.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>The CTLS Learn Portal opens in a new tab, so you can keep Teacher View open.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Use My Classes to view your associated CTLS Classes and Professional Learning Courses.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Select the course tile to open the course as your Practice Student.</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IMPORTANT REMINDER -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Important Reminder</p>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Use Practice Student View as a Reality Check</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Practice Student View helps teachers catch confusion before students experience it. Use it to check the course flow, verify access, and better understand how students will move through the learning.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
+  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+
+</div>
