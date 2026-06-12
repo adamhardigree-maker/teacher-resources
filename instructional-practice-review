@@ -1,0 +1,196 @@
+<p>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+</p>
+<div style="font-family:Montserrat,Arial,sans-serif; color:#222222; max-width:960px; margin:0 auto; padding:0 20px 48px; box-sizing:border-box;">
+	<!-- HERO -->
+	<div style="background:#f5f5f5; border-left:8px solid #BB0000; border-radius:16px; padding:30px 28px; margin:32px 0 28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 10px 0;">Instructional Practice</p>
+
+		<h1 style="font-family:Oswald,Arial,sans-serif; font-size:48px; line-height:1.05; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 14px 0;">Instructional Practice Review</h1>
+
+		<p style="font-size:18px; line-height:1.6; margin:0;">The Instructional Practice Review, or IPR, is a structured process CVA uses to review instructional practices in an asynchronous learning environment. It reflects a straightforward core value: instructional growth is a collaborative process rather than a checklist.</p>
+	</div>
+	<!-- OVERVIEW -->
+	<div style="background:#f5f5f5; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Overview</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:34px; line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">A Growth-Oriented Review Process</h2>
+
+		<p style="font-size:16px; line-height:1.7; margin:0 0 16px 0;">The IPR focuses on observable evidence of teaching practice, including purposeful communication, intentional feedback, student engagement, and professional responsibilities.</p>
+
+		<p style="font-size:16px; line-height:1.7; margin:0;">It also reflects the realities of online instruction by reviewing course facilitation, responsiveness, and the overall student experience.</p>
+	</div>
+	<!-- PURPOSE -->
+	<div style="background:#f5f5f5; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Purpose</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:34px; line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Feedback from the IPR Is Used To...</h2>
+		<div style="display:flex; flex-direction:column; gap:14px;">
+			<div style="display:flex; align-items:flex-start; gap:18px; background:#ffffff; border:1px solid #d9dde3; border-radius:14px; padding:18px 20px; box-sizing:border-box;">
+				<div style="min-width:42px; height:42px; background:#BB0000; color:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:900;">1</div>
+				<div>
+
+					<h3 style="font-size:20px; color:#222222; margin:0 0 6px 0; font-weight:900;">Identify Strengths in Instructional Practice</h3>
+
+					<p style="font-size:15px; line-height:1.6; margin:0;">Recognize areas where teaching practices support a strong online learning experience for students.</p>
+				</div></div>
+			<div style="display:flex; align-items:flex-start; gap:18px; background:#ffffff; border:1px solid #d9dde3; border-radius:14px; padding:18px 20px; box-sizing:border-box;">
+				<div style="min-width:42px; height:42px; background:#BB0000; color:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:900;">2</div>
+				<div>
+
+					<h3 style="font-size:20px; color:#222222; margin:0 0 6px 0; font-weight:900;">Clarify and Reinforce Instructional Expectations</h3>
+
+					<p style="font-size:15px; line-height:1.6; margin:0;">Provide clear, consistent expectations for communication, feedback, student support, and professional responsibilities.</p>
+				</div></div>
+			<div style="display:flex; align-items:flex-start; gap:18px; background:#ffffff; border:1px solid #d9dde3; border-radius:14px; padding:18px 20px; box-sizing:border-box;">
+				<div style="min-width:42px; height:42px; background:#BB0000; color:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:900;">3</div>
+				<div>
+
+					<h3 style="font-size:20px; color:#222222; margin:0 0 6px 0; font-weight:900;">Guide Professional Growth and Instructional Coaching</h3>
+
+					<p style="font-size:15px; line-height:1.6; margin:0;">Support reflection, coaching conversations, and targeted next steps for continued instructional growth.</p>
+				</div></div>
+			<div style="display:flex; align-items:flex-start; gap:18px; background:#ffffff; border:1px solid #d9dde3; border-radius:14px; padding:18px 20px; box-sizing:border-box;">
+				<div style="min-width:42px; height:42px; background:#BB0000; color:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:900;">4</div>
+				<div>
+
+					<h3 style="font-size:20px; color:#222222; margin:0 0 6px 0; font-weight:900;">Inform Professional Learning and Teacher Support</h3>
+
+					<p style="font-size:15px; line-height:1.6; margin:0;">Help CVA identify common needs, plan professional learning opportunities, and strengthen teacher support.</p>
+				</div></div></div></div>
+	<!-- IMPORTANT NOTE -->
+	<div style="background:#fff7f7; border:1px solid #e3c7c7; border-left:8px solid #BB0000; border-radius:16px; padding:24px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 10px 0;">Important Note</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:28px; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">Supportive and Growth-Oriented</h2>
+
+		<p style="font-size:16px; line-height:1.7; margin:0;">While the IPR is designed to be supportive and growth-oriented, it serves as an important measure of professional practice, informing decisions related to professional development, class assignments, and instructional support.</p>
+	</div>
+	<!-- DOMAINS -->
+	<div style="background:#f5f5f5; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Review Domains</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:34px; line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What the IPR Reviews</h2>
+
+		<p style="font-size:16px; line-height:1.7; margin:0 0 20px 0;">The IPR is organized around key areas of online teaching practice that shape the student experience in CVA courses.</p>
+		<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #BB0000; border-radius:14px; padding:20px; box-sizing:border-box;">
+
+				<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 8px 0;">Domain 1</p>
+
+				<h3 style="font-size:22px; line-height:1.2; color:#222222; margin:0 0 10px 0; font-weight:900;">Professionalism &amp; Collaboration</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Reviews professional conduct, collaboration, CVA protocols, communication with team members, and responsibilities that support student success.</p>
+			</div>
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #BB0000; border-radius:14px; padding:20px; box-sizing:border-box;">
+
+				<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 8px 0;">Domain 2</p>
+
+				<h3 style="font-size:22px; line-height:1.2; color:#222222; margin:0 0 10px 0; font-weight:900;">Communication &amp; Responsiveness</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Looks at how clearly, consistently, and professionally teachers communicate with students and families in the online environment.</p>
+			</div>
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #BB0000; border-radius:14px; padding:20px; box-sizing:border-box;">
+
+				<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 8px 0;">Domain 3</p>
+
+				<h3 style="font-size:22px; line-height:1.2; color:#222222; margin:0 0 10px 0; font-weight:900;">Rapport &amp; Relationships</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Focuses on how teachers build positive connections, encourage belonging, and help students feel known and supported.</p>
+			</div>
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #BB0000; border-radius:14px; padding:20px; box-sizing:border-box;">
+
+				<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 8px 0;">Domain 4</p>
+
+				<h3 style="font-size:22px; line-height:1.2; color:#222222; margin:0 0 10px 0; font-weight:900;">Grading &amp; Feedback</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Reviews timely grading, meaningful feedback, gradebook updates, academic integrity expectations, and feedback that supports student growth.</p>
+			</div>
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #BB0000; border-radius:14px; padding:20px; box-sizing:border-box;">
+
+				<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 8px 0;">Domain 5</p>
+
+				<h3 style="font-size:22px; line-height:1.2; color:#222222; margin:0 0 10px 0; font-weight:900;">Proactive Intervention &amp; Student Support</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Focuses on monitoring student progress, identifying concerns early, reaching out when students fall behind, and using timely support to promote success.</p>
+			</div></div></div>
+	<!-- EVIDENCE OF PRACTICE -->
+	<div style="background:#f5f5f5; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Observable Evidence</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:34px; line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What Reviewers Look For</h2>
+		<div style="background:#ffffff; border:1px solid #d9dde3; border-radius:12px; padding:22px 24px; box-sizing:border-box;">
+			<div style="border-top:1px dashed #e5e4e2;">
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>Purposeful communication</strong> that helps students and families understand expectations.</div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>Intentional feedback</strong> that helps students understand their progress and next steps.</div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>Student engagement</strong> supported through outreach, encouragement, and meaningful learning interactions.</div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>Professional responsibilities</strong> such as following CVA procedures, protecting student privacy, and responding appropriately.</div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>Course facilitation and responsiveness</strong> that reflect the realities of asynchronous online instruction.</div></div></div></div></div>
+	<!-- RUBRIC STRUCTURE -->
+	<div style="background:#f5f5f5; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Rubric Structure</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:34px; line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">How Practice Is Described</h2>
+
+		<p style="font-size:16px; line-height:1.7; margin:0 0 20px 0;">The IPR rubric describes instructional practice across levels of growth. These levels help clarify expectations, support coaching conversations, and identify next steps.</p>
+		<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;">
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-radius:12px; padding:18px 20px; border-top:6px solid #BB0000;">
+
+				<h3 style="font-size:20px; color:#222222; margin:0 0 8px 0; font-weight:900;">Building Skills</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Identifies foundational expectations and practices needed for consistent CVA instruction.</p>
+			</div>
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-radius:12px; padding:18px 20px; border-top:6px solid #BB0000;">
+
+				<h3 style="font-size:20px; color:#222222; margin:0 0 8px 0; font-weight:900;">Supporting Learning</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Describes practices that support student clarity, connection, growth, and progress.</p>
+			</div>
+			<div style="background:#ffffff; border:1px solid #d9dde3; border-radius:12px; padding:18px 20px; border-top:6px solid #BB0000;">
+
+				<h3 style="font-size:20px; color:#222222; margin:0 0 8px 0; font-weight:900;">Effective Teaching</h3>
+
+				<p style="font-size:15px; line-height:1.6; margin:0;">Highlights consistent, intentional, and student-centered online teaching practices.</p>
+			</div></div></div>
+	<!-- QUICK TAKEAWAYS -->
+	<div style="background:#f5f5f5; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:28px; box-sizing:border-box;">
+
+		<p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Quick Takeaways</p>
+
+		<h2 style="font-family:Oswald,Arial,sans-serif; font-size:34px; line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What to Remember</h2>
+		<div style="background:#ffffff; border:1px solid #d9dde3; border-radius:12px; padding:22px 24px; box-sizing:border-box;">
+			<div style="border-top:1px dashed #e5e4e2;">
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>The IPR is a structured review process for asynchronous online teaching.</strong></div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>The focus is observable evidence of instructional practice.</strong></div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #e5e4e2;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>The process supports growth, coaching, professional learning, and teacher support.</strong></div></div>
+				<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0;">
+					<div style="font-size:20px; line-height:1; color:#BB0000; margin-top:2px;">✓</div>
+					<div style="font-size:16px; line-height:1.6; color:#222222;"><strong>The IPR helps CVA strengthen the overall student experience.</strong></div></div></div></div></div>
+	<!-- FOOTER -->
+	<hr style="border:none; border-top:1px solid #d9dde3; margin:28px 0 14px 0;">
+
+	<p style="font-family:Oswald, Arial, sans-serif; font-size:22px; color:#63666A; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin:0; text-align:center;"><strong>Class. Virtually. Anywhere.</strong></p>
+</div>
