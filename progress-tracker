@@ -1,0 +1,136 @@
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+</style>
+
+<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+
+  <!-- HERO -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Navigating CTLS</p>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Progress Tracker</h1>
+    <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0;">The Progress Tracker helps you view how students are moving through coursework in your class. It gives you a quick snapshot of what content a student has accessed, while also pointing you toward more detailed performance information when needed.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">What the Progress Tracker Shows</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">The Progress Tracker allows you to see your students&#39; progress in your class. The tile for each student indicates what content the student has accessed.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">Please note that this is <strong>not</strong> a reflection of student performance. The percentage bar across the top reflects how much of the coursework the student has opened, <strong>not</strong> their course average and <strong>not</strong> the percentage of submitted work.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Also, the <strong>Assignments/Assessments</strong> data point on the tile reflects that the assignment has been opened, not that it has been submitted.</p>
+  </div>
+
+  <!-- TILE VIEW -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">At a Glance</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Student Tile View</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Each student tile gives you a quick overview of course access and activity. Use it as a starting point when reviewing student engagement in the course.</p>
+    <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 14px; padding: 18px; box-sizing: border-box;">
+      <div style="background: #f7f8fa; border: 2px dashed #c8c7c7; border-radius: 12px; padding: 40px 24px; text-align: center;">
+        <p style="font-size: 18px; font-weight: 800; color: #555555; margin: 0 0 8px 0;">Placeholder Image</p>
+        <p style="font-size: 14px; line-height: 1.6; color: #666666; margin: 0;">Insert screenshot of the Progress Tracker student tiles here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT TO NOTICE -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">What to Notice</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">How to Read the Tile</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Progress Bar</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Shows how much coursework the student has <strong>opened</strong>.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Assignments/Assessments</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Shows that the assignment or assessment has been <strong>opened</strong>, not submitted.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Engagement Snapshot</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Useful for seeing course access, but not enough on its own to measure performance.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GO DEEPER -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Go Deeper</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">View More Meaningful Performance Data</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">To view more meaningful performance data, click the red icon in the top right corner of an individual student tile.</p>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Step 1</p>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Click the Red Icon</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Use the red icon in the upper-right corner of the student tile to open the student-specific progress screen.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Step 2</p>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Review Student Performance</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">On the individual student screen, you can see the student&rsquo;s coursework average, grades on individual assignments, and the time spent on each lesson and assignment.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INDIVIDUAL STUDENT VIEW -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Individual Student View</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Detailed Student Progress Screen</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">This screen gives you a more meaningful view of student performance than the overview tile alone.</p>
+    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 14px; padding: 18px; box-sizing: border-box;">
+      <div style="background: #ffffff; border: 2px dashed #c8c7c7; border-radius: 12px; padding: 40px 24px; text-align: center;">
+        <p style="font-size: 18px; font-weight: 800; color: #555555; margin: 0 0 8px 0;">Placeholder Image</p>
+        <p style="font-size: 14px; line-height: 1.6; color: #666666; margin: 0;">Insert screenshot of the individual student progress screen here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK TAKEAWAYS -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Takeaways</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What to Remember</h2>
+    <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; box-sizing: border-box;">
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Progress Tracker shows access, not mastery.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>The percentage bar is not a course grade.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Opened does not mean submitted.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Use the individual student view for more meaningful performance data.</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IMPORTANT REMINDER -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Important Reminder</p>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Use Progress Tracker as a Starting Point</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">The Progress Tracker is helpful for monitoring access and activity, but it should not be used by itself to judge student success. For performance details, always move into the individual student screen.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
+  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+
+</div>
