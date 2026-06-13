@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Communicating Deadlines to Students | CVA Teacher Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #BB0000; --black: #222222; --gray: #C8C7C7; --white: #FFFFFF; --bg: #F5F5F5; }
+    body { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; color: var(--black); background: var(--white); line-height: 1.75; }
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .category-tag { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); padding: 28px 0 12px; }
+    h1 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--black); line-height: 1.15; margin-bottom: 20px; }
+    .lead { font-size: 1rem; margin-bottom: 12px; max-width: 740px; }
+    .big-idea { border: 2px solid var(--black); padding: 14px 20px; margin: 20px 0 36px; font-size: 0.95rem; max-width: 740px; }
+    hr { border: none; border-top: 1px solid var(--gray); margin: 36px 0; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); margin-bottom: 6px; }
+    h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--black); margin-bottom: 18px; line-height: 1.2; }
+    p { font-size: 0.97rem; margin-bottom: 14px; max-width: 740px; }
+    .req-item { display: grid; grid-template-columns: 56px 1fr; border-top: 1px solid var(--gray); padding: 24px 0; }
+    .req-item:last-of-type { border-bottom: 1px solid var(--gray); margin-bottom: 28px; }
+    .req-num { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gray); line-height: 1; padding-top: 4px; }
+    .req-body h3 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+    .req-body p { font-size: 0.93rem; }
+    .req-body p:last-child { margin-bottom: 0; }
+    .principle { font-style: italic; font-size: 0.9rem; border-left: 3px solid var(--red); padding: 6px 14px; margin-top: 10px; max-width: 660px; }
+    .sample { background: var(--bg); border-left: 3px solid var(--gray); padding: 14px 18px; margin-top: 12px; max-width: 680px; font-size: 0.92rem; line-height: 1.7; }
+    .sample-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); margin-bottom: 6px; }
+    .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 8px 0 28px; }
+    .reason-card h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .reason-card p { font-size: 0.88rem; margin: 0; }
+    .table-wrap { overflow-x: auto; margin-bottom: 28px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead tr { background: var(--black); color: var(--white); }
+    thead th { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.04em; text-align: left; padding: 11px 16px; }
+    tbody tr:nth-child(odd) { background: var(--bg); }
+    tbody tr:nth-child(even) { background: var(--white); }
+    tbody td { padding: 10px 16px; border-bottom: 1px solid var(--gray); vertical-align: top; }
+    .takeaways { list-style: none; padding: 0; margin: 8px 0 28px; }
+    .takeaways li { display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--gray); font-size: 0.95rem; align-items: start; }
+    .takeaways li:first-child { border-top: 1px solid var(--gray); }
+    .takeaways li .ck { font-weight: 700; padding-top: 2px; }
+    .reminder { background: var(--bg); padding: 20px 24px; margin: 8px 0 40px; max-width: 740px; }
+    .reminder p { margin: 0; font-size: 0.95rem; }
+    footer { border-top: 1px solid var(--gray); padding: 24px 0 32px; font-weight: 700; font-size: 0.88rem; }
+    @media (max-width: 640px) { h1 { font-size: 1.9rem; } .reason-grid { grid-template-columns: 1fr; } .req-item { grid-template-columns: 44px 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <span class="category-tag">Teacher Communication</span>
+
+  <h1>Communicating Deadlines to Students</h1>
+
+  <p class="lead">Deadlines exist inside the Class Schedule &mdash; but students don&rsquo;t always check it, and they won&rsquo;t always know when they&rsquo;re falling behind. That communication is the teacher&rsquo;s job. It doesn&rsquo;t require a lot of time. It requires consistency.</p>
+
+  <div class="big-idea"><strong>Big Idea:</strong> Use the right channel for the right situation &mdash; announcements for broad reminders, direct outreach for individual concerns, and the feedback box for assignment-specific deadlines.</div>
+
+  <div class="section-label">Overview</div>
+  <h2>Three Channels, Three Purposes</h2>
+  <p>CVA teachers have three main channels for communicating deadline expectations to students. Each serves a different purpose and reaches students in a different context. Using all three &mdash; at the right moments &mdash; is what makes deadline communication feel consistent rather than sporadic.</p>
+
+  <hr/>
+
+  <div class="section-label">Communication Channels</div>
+  <h2>When and How to Communicate</h2>
+
+  <div class="req-item">
+    <div class="req-num">1</div>
+    <div class="req-body">
+      <h3>Class Announcements</h3>
+      <p>Use announcements for broad, proactive reminders to all students. Post at natural pacing checkpoints &mdash; the end of a unit, the midpoint of the term, or before a common submission window. Reference the Class Schedule by name so students know where to find the details.</p>
+      <p class="principle">Announcements reach everyone at once. They work best as early signals &mdash; before students are behind, not after.</p>
+      <div class="sample">
+        <div class="sample-label">Sample Announcement</div>
+        We&rsquo;re approaching the end of Unit 2. Check your Class Schedule to make sure your work is on track. If you have missing assignments, now is a great time to reach out &mdash; I&rsquo;m happy to help you get caught up.
+      </div>
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-num">2</div>
+    <div class="req-body">
+      <h3>Direct Student Outreach</h3>
+      <p>Use direct outreach for individual students who are visibly behind based on the Progress Tracker. Be specific: name the missing work, reference the Class Schedule, and include a deadline. Keep the tone supportive &mdash; the goal is to remove barriers, not add pressure.</p>
+      <p class="principle">Specific outreach gets responses. A student who receives a message naming their missing work is far more likely to act than one who receives a general nudge.</p>
+      <div class="sample">
+        <div class="sample-label">Sample Outreach Message</div>
+        Hi [Name], I noticed you haven&rsquo;t submitted [assignment] yet and wanted to check in. According to the Class Schedule, this work was due [date]. Please reach out if you have any questions &mdash; I&rsquo;m happy to help you get caught up.
+      </div>
+    </div>
+  </div>
+
+  <div class="req-item">
+    <div class="req-num">3</div>
+    <div class="req-body">
+      <h3>The Feedback Box</h3>
+      <p>Use the feedback box for deadline expectations tied to a specific assignment &mdash; especially resubmissions. This is the one place a student is guaranteed to see a message about their own work. Always name a specific date, not an open-ended window.</p>
+      <p class="principle">Open-ended urgency doesn&rsquo;t move students. A specific date does.</p>
+      <div class="sample">
+        <div class="sample-label">Sample Feedback Box Message</div>
+        Your resubmission is due by [date]. Please review the feedback above, revise your work, and resubmit before that date. Reach out if you have any questions.
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="section-label">Principles</div>
+  <h2>Four Principles for Effective Deadline Communication</h2>
+
+  <div class="reason-grid">
+    <div class="reason-card">
+      <h3>Be Specific</h3>
+      <p>&ldquo;You have three missing assignments&rdquo; is more useful than &ldquo;please catch up.&rdquo; Name what&rsquo;s missing when you can.</p>
+    </div>
+    <div class="reason-card">
+      <h3>Reference the Schedule</h3>
+      <p>Point students to the Class Schedule so they have something concrete to act on beyond your message.</p>
+    </div>
+    <div class="reason-card">
+      <h3>Name a Deadline</h3>
+      <p>Always give a specific date when you can. Open-ended urgency rarely produces action.</p>
+    </div>
+  </div>
+  <div class="reason-grid">
+    <div class="reason-card">
+      <h3>Stay Supportive</h3>
+      <p>Frame outreach as help, not a warning. Students respond better when the message signals you&rsquo;re on their side.</p>
+    </div>
+    <div class="reason-card">
+      <h3>Use the Right Channel</h3>
+      <p>Match your message to the situation: broad reminder &rarr; announcement; individual concern &rarr; outreach; assignment-specific &rarr; feedback box.</p>
+    </div>
+    <div class="reason-card">
+      <h3>Be Consistent</h3>
+      <p>One strong message at the start of the term is less effective than steady, well-timed communication throughout.</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="section-label">Quick Reference</div>
+  <h2>Choosing the Right Channel</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Situation</th>
+          <th>Best Channel</th>
+          <th>Key Elements to Include</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pacing checkpoint for all students</td>
+          <td>Class Announcement</td>
+          <td>Reference Class Schedule, general deadline reminder, invitation to reach out</td>
+        </tr>
+        <tr>
+          <td>Individual student visibly behind</td>
+          <td>Direct Outreach</td>
+          <td>Student&rsquo;s name, specific missing work, Class Schedule reference, specific date, supportive tone</td>
+        </tr>
+        <tr>
+          <td>Resubmission opened for a student</td>
+          <td>Feedback Box</td>
+          <td>Specific resubmission deadline, summary of feedback, invitation to ask questions</td>
+        </tr>
+        <tr>
+          <td>Student has not responded to prior outreach</td>
+          <td>Direct Outreach (follow-up)</td>
+          <td>Reference prior message, updated deadline, escalation note if needed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr/>
+
+  <div class="section-label">Quick Takeaways</div>
+  <h2>What to Remember</h2>
+
+  <ul class="takeaways">
+    <li><span class="ck">&#10003;</span><span><strong>Announcements are for broad, proactive reminders</strong> &mdash; post them at pacing checkpoints before students fall behind.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>Direct outreach should name specifics</strong> &mdash; the student&rsquo;s missing work, the Class Schedule, and a concrete date.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>The feedback box is the most reliable channel for assignment-specific deadlines</strong> &mdash; students see it when they check their grade.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>Always reference the Class Schedule</strong> so students have something they can find and act on themselves.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>Consistent, specific, and supportive</strong> communication is more effective than occasional general reminders.</span></li>
+  </ul>
+
+  <div class="section-label">Related Resource</div>
+  <h2>See Also</h2>
+  <div class="reminder">
+    <p>This page pairs with <strong>Class Schedule</strong>, which explains what the Class Schedule is, where students find it in CTLS, and how teachers should use it as a reference point when monitoring pacing and conducting outreach.</p>
+  </div>
+
+  <hr/>
+
+  <footer><strong>Class. Virtually. Anywhere.</strong></footer>
+
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>
