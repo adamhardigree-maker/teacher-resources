@@ -1,227 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weekly Facilitation Routine | CVA Teacher Resources</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --red: #BB0000; --black: #222222; --gray: #C8C7C7; --white: #FFFFFF; --bg: #F5F5F5; }
+  .cva-doc-wrap { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; color: var(--black); background: var(--white); line-height: 1.75; max-width: 1100px; margin: 0 auto; padding: 24px 18px; }
+  .category-tag { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; padding: 0 0 12px; }
+  .cva-doc-wrap h1 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--black); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
+  .lead { font-size: 1rem; margin-bottom: 12px; max-width: 740px; }
+  .big-idea { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 14px 20px; margin: 20px 0 36px; font-size: 0.95rem; max-width: 100%; }
+  hr { border: none; border-top: 1px solid var(--gray); margin: 36px 0; }
+  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px; }
+  .cva-doc-wrap h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--black); margin-bottom: 18px; line-height: 1.2; text-transform: uppercase; }
+  .cva-doc-wrap p { font-size: 0.97rem; margin-bottom: 14px; max-width: 740px; }
+  .req-item { display: grid; grid-template-columns: 56px 1fr; border-top: 1px solid var(--gray); padding: 24px 0; }
+  .req-item:last-of-type { border-bottom: 1px solid var(--gray); margin-bottom: 28px; }
+  .req-num { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gray); line-height: 1; padding-top: 4px; }
+  .req-body h3 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--black); margin-bottom: 8px; text-transform: uppercase; }
+  .req-body p { font-size: 0.93rem; }
+  .req-body p:last-child { margin-bottom: 0; }
+  .principle { font-style: italic; font-size: 0.9rem; border-left: 3px solid var(--red); padding: 6px 14px; margin-top: 10px; max-width: 660px; }
+  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 8px 0 28px; }
+  .reason-card { background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; }
+  .reason-card h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .reason-card p { font-size: 0.88rem; margin: 0; }
+  .table-wrap { overflow-x: auto; margin-bottom: 28px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  thead tr { background: #222222; color: #ffffff; }
+  thead th { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.04em; text-align: left; padding: 11px 16px; }
+  tbody tr:nth-child(odd) { background: var(--bg); }
+  tbody tr:nth-child(even) { background: var(--white); }
+  tbody td { padding: 10px 16px; border-bottom: 1px solid var(--gray); vertical-align: top; }
+  .takeaways { list-style: none; padding: 0; margin: 8px 0 28px; }
+  .takeaways li { display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--gray); font-size: 0.95rem; align-items: start; }
+  .takeaways li:first-child { border-top: 1px solid var(--gray); }
+  .takeaways li .ck { font-weight: 700; padding-top: 2px; color: #bb0000; }
+  .reminder { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px 24px; margin: 8px 0 28px; }
+  .reminder p { margin: 0; font-size: 0.95rem; }
+  .doc-footer { border-top: 1px solid var(--gray); padding: 20px 0 8px; font-family: 'Oswald', Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+  @media (max-width: 640px) { .cva-doc-wrap h1 { font-size: 1.9rem; } .req-item { grid-template-columns: 44px 1fr; } }
+</style>
 
-    :root {
-      --red:   #BB0000;
-      --black: #222222;
-      --gray:  #C8C7C7;
-      --white: #FFFFFF;
-      --bg:    #F5F5F5;
-    }
-
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 16px;
-      color: var(--black);
-      background: var(--white);
-      line-height: 1.75;
-    }
-
-    .page-wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Category tag */
-    .category-tag {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--black);
-      padding: 28px 0 12px;
-    }
-
-    /* Page title */
-    h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--black);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    /* Lead paragraph */
-    .lead {
-      font-size: 1rem;
-      margin-bottom: 12px;
-      max-width: 740px;
-    }
-
-    /* Big idea */
-    .big-idea {
-      border: 2px solid var(--black);
-      padding: 14px 20px;
-      margin: 20px 0 36px;
-      font-size: 0.95rem;
-      max-width: 740px;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--gray);
-      margin: 36px 0;
-    }
-
-    /* Section label */
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--black);
-      margin-bottom: 6px;
-    }
-
-    /* Section heading */
-    h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--black);
-      margin-bottom: 18px;
-      line-height: 1.2;
-    }
-
-    p {
-      font-size: 0.97rem;
-      margin-bottom: 14px;
-      max-width: 740px;
-    }
-
-    /* Numbered requirement blocks */
-    .req-item {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      border-top: 1px solid var(--gray);
-      padding: 24px 0;
-    }
-    .req-item:last-of-type {
-      border-bottom: 1px solid var(--gray);
-      margin-bottom: 28px;
-    }
-    .req-num {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gray);
-      line-height: 1;
-      padding-top: 4px;
-    }
-    .req-body h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--black);
-      margin-bottom: 8px;
-    }
-    .req-body p { font-size: 0.93rem; }
-    .req-body p:last-child { margin-bottom: 0; }
-
-    /* Async principle callout */
-    .principle {
-      font-style: italic;
-      font-size: 0.9rem;
-      border-left: 3px solid var(--red);
-      padding: 6px 14px;
-      margin-top: 10px;
-      max-width: 660px;
-    }
-
-    /* Three-column reason grid */
-    .reason-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin: 8px 0 28px;
-    }
-    .reason-card h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 6px;
-    }
-    .reason-card p { font-size: 0.88rem; margin: 0; }
-
-    /* Table */
-    .table-wrap { overflow-x: auto; margin-bottom: 28px; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    thead tr { background: var(--black); color: var(--white); }
-    thead th {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-align: left;
-      padding: 11px 16px;
-    }
-    tbody tr:nth-child(odd)  { background: var(--bg); }
-    tbody tr:nth-child(even) { background: var(--white); }
-    tbody td {
-      padding: 10px 16px;
-      border-bottom: 1px solid var(--gray);
-      vertical-align: top;
-    }
-
-    /* Checkmark takeaways */
-    .takeaways { list-style: none; padding: 0; margin: 8px 0 28px; }
-    .takeaways li {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 4px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--gray);
-      font-size: 0.95rem;
-      align-items: start;
-    }
-    .takeaways li:first-child { border-top: 1px solid var(--gray); }
-    .takeaways li .ck { font-weight: 700; padding-top: 2px; }
-
-    /* Closing reminder */
-    .reminder {
-      background: var(--bg);
-      padding: 20px 24px;
-      margin: 8px 0 40px;
-      max-width: 740px;
-    }
-    .reminder p { margin: 0; font-size: 0.95rem; }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--gray);
-      padding: 24px 0 32px;
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
-    @media (max-width: 640px) {
-      h1 { font-size: 1.9rem; }
-      .reason-grid { grid-template-columns: 1fr; gap: 16px; }
-      .req-item { grid-template-columns: 44px 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-<div class="page-wrap">
+<div class="cva-doc-wrap">
 
   <span class="category-tag">Online Teaching Practices</span>
-
   <h1>Weekly Facilitation Routine</h1>
-
   <p class="lead">In an asynchronous course, students experience their teacher primarily through grading, feedback, and communication — not through a shared classroom space. A consistent weekly routine is what makes that presence visible, predictable, and effective.</p>
-
   <div class="big-idea"><strong>Big Idea:</strong> Async teaching requires intentional structure. A predictable routine is what makes responsive, student-centered instruction sustainable.</div>
 
   <div class="section-label">Overview</div>
@@ -229,7 +51,7 @@
   <p>In a traditional classroom, the bell schedule creates natural rhythms. In an asynchronous environment, teachers create their own. Strong CVA teachers don't wait for students to fall behind before taking action — they build routines that surface concerns early, keep communication flowing, and make feedback feel like a consistent part of the course experience.</p>
   <p>The tasks and principles below represent what consistent, effective CVA facilitation looks like week to week. Whether you are new to CVA or returning for another term, this routine is a useful anchor for your instructional practice.</p>
 
-  <hr/>
+  <hr>
 
   <div class="section-label">Core Routine</div>
   <h2>A Framework for the CVA Teaching Week</h2>
@@ -280,11 +102,10 @@
     </div>
   </div>
 
-  <hr/>
+  <hr>
 
   <div class="section-label">Why It Matters</div>
   <h2>Why This Matters</h2>
-
   <div class="reason-grid">
     <div class="reason-card">
       <h3>Student Presence</h3>
@@ -300,96 +121,44 @@
     </div>
   </div>
 
-  <hr/>
+  <hr>
 
   <div class="section-label">Putting It Together</div>
   <h2>What a Strong Teaching Week Looks Like</h2>
-
   <div class="table-wrap">
     <table>
       <thead>
-        <tr>
-          <th>Task</th>
-          <th>Frequency</th>
-          <th>CVA Expectation Area</th>
-        </tr>
+        <tr><th>Task</th><th>Frequency</th><th>CVA Expectation Area</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Check Progress Tracker</td>
-          <td>2&ndash;3&times; per week</td>
-          <td>Proactive Intervention &amp; Student Support</td>
-        </tr>
-        <tr>
-          <td>Grade submitted work</td>
-          <td>Daily or every other day</td>
-          <td>Grading &amp; Feedback</td>
-        </tr>
-        <tr>
-          <td>Leave meaningful written feedback</td>
-          <td>Every graded item</td>
-          <td>Grading &amp; Feedback</td>
-        </tr>
-        <tr>
-          <td>Post a class announcement</td>
-          <td>Weekly</td>
-          <td>Rapport &amp; Relationships</td>
-        </tr>
-        <tr>
-          <td>Respond to student and family messages</td>
-          <td>Within 24&ndash;48 hours</td>
-          <td>Communication &amp; Responsiveness</td>
-        </tr>
-        <tr>
-          <td>Scan gradebook for accuracy</td>
-          <td>Weekly</td>
-          <td>Grading &amp; Feedback</td>
-        </tr>
-        <tr>
-          <td>Reach out to disengaged students</td>
-          <td>As needed, weekly minimum</td>
-          <td>Proactive Intervention &amp; Student Support</td>
-        </tr>
+        <tr><td>Check Progress Tracker</td><td>2&ndash;3&times; per week</td><td>Proactive Intervention &amp; Student Support</td></tr>
+        <tr><td>Grade submitted work</td><td>Daily or every other day</td><td>Grading &amp; Feedback</td></tr>
+        <tr><td>Leave meaningful written feedback</td><td>Every graded item</td><td>Grading &amp; Feedback</td></tr>
+        <tr><td>Post a class announcement</td><td>Weekly</td><td>Rapport &amp; Relationships</td></tr>
+        <tr><td>Respond to student and family messages</td><td>Within 24&ndash;48 hours</td><td>Communication &amp; Responsiveness</td></tr>
+        <tr><td>Scan gradebook for accuracy</td><td>Weekly</td><td>Grading &amp; Feedback</td></tr>
+        <tr><td>Reach out to disengaged students</td><td>As needed, weekly minimum</td><td>Proactive Intervention &amp; Student Support</td></tr>
       </tbody>
     </table>
   </div>
 
-  <hr/>
+  <hr>
 
   <div class="section-label">Quick Takeaways</div>
   <h2>What to Remember</h2>
-
   <ul class="takeaways">
-    <li>
-      <span class="ck">&#10003;</span>
-      <span><strong>Async teaching requires you to create your own rhythm</strong> &mdash; the schedule won&rsquo;t do it for you.</span>
-    </li>
-    <li>
-      <span class="ck">&#10003;</span>
-      <span><strong>Check the Progress Tracker regularly</strong> so you can reach out before students fall too far behind.</span>
-    </li>
-    <li>
-      <span class="ck">&#10003;</span>
-      <span><strong>Feedback, communication, and gradebook accuracy are weekly responsibilities</strong>, not monthly ones.</span>
-    </li>
-    <li>
-      <span class="ck">&#10003;</span>
-      <span><strong>A consistent routine is the foundation</strong> of CVA instructional expectations and a strong student experience.</span>
-    </li>
+    <li><span class="ck">&#10003;</span><span><strong>Async teaching requires you to create your own rhythm</strong> &mdash; the schedule won&rsquo;t do it for you.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>Check the Progress Tracker regularly</strong> so you can reach out before students fall too far behind.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>Feedback, communication, and gradebook accuracy are weekly responsibilities</strong>, not monthly ones.</span></li>
+    <li><span class="ck">&#10003;</span><span><strong>A consistent routine is the foundation</strong> of CVA instructional expectations and a strong student experience.</span></li>
   </ul>
 
   <div class="section-label">Important Reminder</div>
   <h2>Routine Is What Makes This Work</h2>
-
   <div class="reminder">
     <p>No single week will be perfect. What distinguishes effective CVA teachers is not perfection &mdash; it is consistency. Students in asynchronous courses succeed when they can count on their teacher to show up, respond, and follow through, week after week.</p>
   </div>
 
-  <hr/>
-
-  <footer><strong>Class. Virtually. Anywhere.</strong></footer>
+  <div class="doc-footer"><strong>Class. Virtually. Anywhere.</strong></div>
 
 </div>
-
-</body>
-</html>
