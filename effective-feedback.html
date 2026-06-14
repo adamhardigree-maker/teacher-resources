@@ -19,7 +19,9 @@
   <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
     <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Feedback Is a Teaching Move</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Feedback is the process of giving students constructive and meaningful information about their performance, understanding, and progress. It should help students see where they are, where they need to go, and how they can move forward.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Feedback is the process of giving students constructive and meaningful information about their performance, understanding, and progress. <strong>It should help students see where they are, where they need to go, and how they can move forward.</strong><strong></strong>
+
+    </p>
   </div>
 
   <!-- FIVE QUALITIES -->
@@ -65,47 +67,806 @@
   <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
     <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Actionable Feedback</p>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Students Need a Clear Next Step</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">Feedback should include specific steps or suggestions students can use to improve. The goal is to help students take charge of their learning, not simply tell them what was wrong.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">Feedback should include specific steps or suggestions students can use to improve. <strong>The goal is to help students take charge of their learning, not simply tell them what was wrong.</strong></p>
     <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box; margin-bottom: 20px;">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Teacher Move:</strong> Name one strength, identify one area for growth, and give one specific action the student can take next.</p>
     </div>
-    <div style="background: #f7f8fa; border: 2px dashed #c8c7c7; border-radius: 14px; padding: 40px 24px; text-align: center; box-sizing: border-box;">
-      <div style="font-size: 40px; margin-bottom: 12px;">✅</div>
-      <p style="font-size: 14px; font-weight: 700; color: #555555; margin: 0 0 6px 0;">Placeholder Image</p>
-      <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Replace with a sample feedback screenshot, rubric comment, or progress graphic.</p>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ── Accordion ── */
+  .cva-acc-item {
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background: #ffffff;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+  .cva-acc-item:last-child { margin-bottom: 0; }
+
+  .cva-acc-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+  .cva-acc-trigger:hover { background: #f7f8fa; }
+  .cva-acc-trigger[aria-expanded="true"] { background: #BB0000; }
+
+  .cva-acc-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000000;
+    line-height: 1.2;
+    transition: color .15s;
+  }
+  .cva-acc-trigger[aria-expanded="true"] .cva-acc-title { color: #ffffff; }
+
+  .cva-acc-meta {
+    font-size: 12px;
+    color: #888;
+    font-weight: 500;
+    margin-top: 2px;
+    transition: color .15s;
+  }
+  .cva-acc-trigger[aria-expanded="true"] .cva-acc-meta { color: rgba(255,255,255,0.7); }
+
+  .cva-acc-chevron {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s, transform .25s;
+  }
+  .cva-acc-trigger[aria-expanded="true"] .cva-acc-chevron {
+    background: rgba(255,255,255,0.25);
+    transform: rotate(180deg);
+  }
+  .cva-acc-chevron svg { display: block; }
+  .cva-acc-trigger[aria-expanded="true"] .cva-acc-chevron svg path { stroke: #fff; }
+
+  .cva-acc-body {
+    display: none;
+    padding: 20px 20px 22px;
+    border-top: 1px solid #d9dde3;
+    background: #f7f8fa;
+  }
+  .cva-acc-body.open { display: block; }
+
+  /* ── Examples ── */
+  .cva-fb-example {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .cva-fb-example:last-child { margin-bottom: 0; }
+
+  .cva-fb-ex-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cva-fb-ex-num {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+  }
+  .cva-fb-assign-type {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #888888;
+  }
+
+  .cva-fb-row {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 9px;
+    padding: 12px 14px;
+  }
+  .cva-fb-row-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #aaaaaa;
+    margin-bottom: 5px;
+  }
+  .cva-fb-row-text {
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 0;
+    color: #555555;
+    font-style: italic;
+  }
+  .cva-fb-student-row {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 5px solid #c8c7c7;
+    border-radius: 9px;
+    padding: 12px 14px;
+  }
+  .cva-fb-student-text {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+    color: #333333;
+  }
+
+  .cva-fb-card {
+    border-radius: 9px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .cva-fb-ineffective {
+    background: #fff5f5;
+    border: 1px solid #f5c6c6;
+    border-left: 5px solid #BB0000;
+  }
+  .cva-fb-effective {
+    background: #f2faf4;
+    border: 1px solid #b6dfc0;
+    border-left: 5px solid #2a8a4a;
+  }
+  .cva-fb-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding: 3px 11px;
+    border-radius: 20px;
+    margin-bottom: 1px;
+  }
+  .cva-fb-badge-bad  { background: #BB0000; color: #ffffff; }
+  .cva-fb-badge-good { background: #2a8a4a; color: #ffffff; }
+  .cva-fb-card-text {
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0;
+    color: #222222;
+  }
+  .cva-fb-card-why {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+    color: #555555;
+    background: rgba(255,255,255,0.8);
+    border-radius: 7px;
+    padding: 9px 12px;
+  }
+  .cva-fb-reveal-btn {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background: #BB0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 17px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity .15s, transform .12s;
+    align-self: flex-start;
+  }
+  .cva-fb-reveal-btn:hover { opacity: .85; transform: translateY(-1px); }
+  .cva-fb-reveal-btn.revealed { background: #2a8a4a; }
+  .cva-fb-btn-icon {
+    font-size: 10px;
+    display: inline-block;
+    transition: transform .2s;
+  }
+  .cva-fb-reveal-btn.revealed .cva-fb-btn-icon { transform: rotate(180deg); }
+</style>
+
+<!-- SEE IT IN ACTION — copy from here -->
+<div style="font-family: 'Montserrat', Arial, sans-serif; color: #222222;">
+  <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #BB0000; font-weight: 800; margin: 0 0 4px 0;">See It in Action</p>
+  <h3 style="font-family: 'Oswald', Arial, sans-serif; font-size: clamp(18px, 2.5vw, 22px); font-weight: 900; text-transform: uppercase; color: #000000; margin: 0 0 8px 0;">Feedback Examples by Content Area</h3>
+  <p style="font-size: 14px; line-height: 1.65; color: #666666; margin: 0 0 18px 0;">Select a content area to review two examples. Each shows an ineffective response first &mdash; then reveal what effective feedback looks like and why it works.</p>
+
+  <div id="cva-accordion">
+
+    <!-- ══ ELA ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="ela">
+        <div>
+          <div class="cva-acc-title">English Language Arts</div>
+          <div class="cva-acc-meta">Argumentative Essay &bull; Short Response</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-ela">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Argumentative Essay</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Write a multi-paragraph argumentative essay responding to the following: Should students be required to wear school uniforms? Use at least two pieces of evidence to support your claim.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">I think students should have to ware uniforms becuase it makes school more fair. Like if you dont have nice cloths you get made fun of. Also it saves time in the morning cause you dont have to pick an outfit. Some people say it takes away freedom but I think safety and fairness is more importent then what you ware. Schools that have uniforms probably have less bullying to.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good argument! Watch your spelling. You need more evidence.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student made a real attempt at counterargument but got no recognition of it. &ldquo;More evidence&rdquo; doesn&rsquo;t tell the student what kind of evidence is missing or where to put it. Listing spelling as feedback without naming the errors isn&rsquo;t actionable.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You did something strong here that a lot of writers forget &mdash; you acknowledged the other side and then pushed back on it. That&rsquo;s the structure of a real argument. To make that moment stronger, your rebuttal needs a reason, not just a preference. Try: &lsquo;While some argue uniforms limit self-expression, research shows schools with dress codes report fewer incidents of peer conflict, which protects more students&rsquo; freedom in the long run.&rsquo; On spelling: watch &lsquo;wear&rsquo; vs. &lsquo;ware&rsquo; and &lsquo;important&rsquo; &mdash; those two appear more than once and will affect how readers receive your argument.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Names a specific strength the student didn&rsquo;t know they had, explains the gap in the rebuttal, models what a stronger version looks like, and addresses only the spelling errors that matter most.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Short Response</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">After reading &ldquo;The Lottery&rdquo; by Shirley Jackson, explain in 3&ndash;5 sentences what you think the story&rsquo;s theme is and how one specific detail from the text supports it.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">I think the theme is about how people just do things becuase thats the way its always been done and nobody questions it. The black box is old and falling apart but they still use it. That shows the tradition is old too but they keep it anyway even when it dosnt make sence anymore. It was a really creepy story.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Close! The theme is about blind tradition. Make sure to use a quote from the text.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student&rsquo;s theme statement was actually strong and specific, but &ldquo;close&rdquo; implies it was wrong. Telling a student to &ldquo;use a quote&rdquo; ignores that they already cited a specific detail &mdash; they just didn&rsquo;t use quotation marks.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Your theme statement is actually very strong &mdash; &lsquo;people do things because that&rsquo;s the way it&rsquo;s always been done and nobody questions it&rsquo; is a precise, arguable claim. You also chose exactly the right detail: the black box. The one thing to tighten is how you connect the detail to the theme. Find the exact line in the text that describes the box, place it in quotation marks, then add one sentence explaining what that image tells us about the villagers&rsquo; relationship to tradition. That connection is what makes this literary analysis instead of summary.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Corrects the false impression left by &ldquo;close,&rdquo; affirms what the student actually got right, pinpoints the one missing move, and explains its purpose.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- ══ MATH ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="math">
+        <div>
+          <div class="cva-acc-title">Mathematics</div>
+          <div class="cva-acc-meta">Problem Set &bull; Written Explanation</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-math">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Problem Set</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Solve the following and show all work: A store is having a 30% off sale. A jacket originally costs $85. What is the sale price? Show each step.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">30% of 85 = 25.5<br>85 - 25.5 = 59.5<br>The jacket costs $59.50</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Correct answer! Good job.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The answer is right but the work skips converting the percent to a decimal before multiplying. The student may have used a calculator shortcut without understanding the underlying operation. This feedback rewards the answer without checking the reasoning.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Your answer of $59.50 is correct and your subtraction step is clearly shown. One step is missing: how did you get 25.5 from 30% and 85? The full work should show the conversion first &mdash; 30% becomes 0.30, then 0.30 &times; 85 = 25.50. On a test, that conversion step is where points are assigned, so practicing it now will protect your score later. Try rewriting the solution with that step included.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Confirms the correct answer, identifies the exact missing step, explains why it matters in a high-stakes context, and gives a specific revision task.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Written Explanation</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">In your own words, explain why you cannot divide by zero. Your response should include a mathematical example and be written so that a classmate who missed the lesson could understand it.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">You cant devide by zero becuase it doesnt make sence. Like if you have 10 cookies and zero people, how many cookies does each person get? You cant answer it cause there is no people. So the answer is undefined I think. My teacher said its a rule.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You got the right answer but the explanation needs work. Also spelling errors throughout.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student constructed a valid real-world model for division by zero &mdash; that reasoning deserves recognition. &ldquo;Needs work&rdquo; gives no direction, and flagging all spelling at once is discouraging without being useful.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Your cookies-and-people model is genuinely good mathematical thinking &mdash; that&rsquo;s exactly how mathematicians reason about undefined operations. And &lsquo;undefined&rsquo; is the correct term. Two things to add: your assignment asks for a mathematical example, not just a word picture &mdash; try writing it as 10 &divide; 0 = ? and explaining what happens when you try to solve it. Second, the last sentence (&lsquo;my teacher said it&rsquo;s a rule&rsquo;) weakens your explanation. Your own cookie example already proves why &mdash; trust your reasoning and drop that line.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Validates the conceptual model, names the correct vocabulary the student used, identifies the two specific gaps, and redirects the student back to their own strong thinking.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ SOCIAL STUDIES ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="ss">
+        <div>
+          <div class="cva-acc-title">Social Studies</div>
+          <div class="cva-acc-meta">Document Analysis &bull; Project Reflection</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-ss">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Document Analysis</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Analyze the excerpt from the Declaration of Independence. Identify the author&rsquo;s main argument, explain the purpose of the document, and evaluate whether the argument is logically supported.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">The main argument is that the colonists have the right to brake away from England because the king was being unfair and not giving them rights. The purpose was to tell England and the world that America is its own country now. I think the argument makes sense because they listed all the things the king did wrong so it seems pretty logical to me. It was well written.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good summary! You need to evaluate the argument more critically and use evidence from the document.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student attempted an evaluation but received no acknowledgment of it. &ldquo;More critically&rdquo; and &ldquo;use evidence&rdquo; are too vague to give direction.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You correctly identified both the main argument and the purpose, and you&rsquo;re on the right track with your evaluation &mdash; noticing that Jefferson lists specific grievances is a real analytical observation. To make that stronger, name one specific grievance from the text and explain how it supports the argument: &lsquo;Jefferson writes that the king has [quote]. This supports the argument because it demonstrates...&rsquo; Right now your evaluation is based on impression (&lsquo;seems pretty logical to me&rsquo;) &mdash; grounding it in the actual text moves it from opinion to analysis.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Acknowledges both correct elements, recognizes the evaluation attempt, models what analytical evidence looks like, and names the distinction between impression and analysis.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Project Reflection</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">After completing your Civil Rights Movement timeline project, write a reflection: What was the most significant event you researched, and why do you believe it had the greatest impact on the movement?</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">I think the most significant event was the March on Washington in 1963 because alot of people came and Martin Luther King gave his famous speech. It was significant because it got alot of attention and people started caring more about civil rights after that. I liked doing this project it was interesting to learn about.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Nice reflection! The March on Washington is a great choice. Try to be more specific.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student stated an impact but it&rsquo;s vague and unsupported. The feedback doesn&rsquo;t name what is missing or how to make the argument more historically grounded.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;The March on Washington is a defensible choice, and you identified two real reasons: scale and the power of King&rsquo;s speech. The gap is connecting that moment to a measurable historical outcome. The Civil Rights Act of 1964 was passed less than a year later &mdash; that&rsquo;s a concrete impact you can point to. Try adding: &lsquo;One measurable outcome of the march was [specific legislation], which shows the event did more than raise awareness &mdash; it produced change.&rsquo;&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Validates the choice and names the reasons already present, identifies the missing historical link, provides a specific piece of evidence to use, and gives a sentence frame to close the gap.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ SCIENCE ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="sci">
+        <div>
+          <div class="cva-acc-title">Science</div>
+          <div class="cva-acc-meta">Lab Report &bull; Science Notebook</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-sci">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Lab Report Conclusion</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Write the conclusion for your density lab. Your conclusion should state whether your hypothesis was supported, explain what your data shows, and identify one source of error.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">My hypothesis was supported. The data showed that the objects with higher density sinked and the ones with lower density floated. I think there was error when we measured the volume because it was hard to read the graduated cylinder exactly. Overall the lab went good and we learned about density.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good conclusion. Add more data to support your claim.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student identified a legitimate source of error but received no acknowledgment of it. &ldquo;Add more data&rdquo; doesn&rsquo;t tell the student which data, in what form, or how to connect it to the hypothesis.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You hit all three required parts, and your source of error &mdash; difficulty reading the graduated cylinder &mdash; is a real lab error called parallax error. Name it that way in your revision. The part that needs strengthening is connecting your data to your hypothesis. Instead of saying &lsquo;the data showed,&rsquo; cite a specific measurement: &lsquo;Object A had a density of 0.72 g/cm&sup3;, which is less than water (1.0 g/cm&sup3;), so it floated &mdash; supporting my hypothesis.&rsquo; One specific data point turns a general claim into a scientific conclusion.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Affirms all three parts were attempted, elevates the student&rsquo;s error observation with the correct scientific term, and models what citing specific data looks like.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Science Notebook</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">In your science notebook, explain the difference between a hypothesis and a theory in science. Give an example of each.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">A hypothesis is like a guess you make before an experiment. A theory is when scientists have proven something is true. Like the theory of gravity is proven so we know its real. A hypothesis would be like guessing which paper towel absorbs more water.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;The hypothesis part is right but the theory definition is incorrect. A theory is not proven. Fix it.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The feedback correctly identifies the error but offers no explanation of what a theory actually is. &ldquo;Fix it&rdquo; gives the student nowhere to go without knowing the right answer.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Your hypothesis definition and example are both accurate. The theory definition is where a common misconception sneaks in: in everyday language &lsquo;theory&rsquo; means a guess, but in science it means an explanation that has been tested repeatedly and supported by a large body of evidence &mdash; but never considered &lsquo;proven,&rsquo; because science always stays open to new evidence. The theory of gravity is a great example, but the reason we trust it isn&rsquo;t that it&rsquo;s proven &mdash; it&rsquo;s that thousands of experiments have supported it. Try rewriting your theory definition with that distinction in mind.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Confirms what was correct, explains the source of the misconception, provides the accurate definition with context, and connects it back to the student&rsquo;s own example.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ CTAE ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="ctae">
+        <div>
+          <div class="cva-acc-title">Career, Technical &amp; Agricultural Education</div>
+          <div class="cva-acc-meta">Career Research &bull; Mock Interview Reflection</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-ctae">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Career Research Report</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Research a career in your CTAE pathway and write a one-page report covering: required education/training, average salary, daily job responsibilities, and one challenge workers in this field commonly face.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">I researched being a graphic designer. Graphic designers make logos and ads and stuff for companys. You need a bachelers degree in art or graphic design usually. The average salary is around $50,000 a year but it depends. There job is to make things look good for clients. One challege is that clients sometimes don't like what you make and you have to redo it alot witch can be frustrating.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You covered the basics. Needs more detail and check spelling.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student covered all four required areas but received no acknowledgment of that. &ldquo;More detail&rdquo; doesn&rsquo;t identify which section needs expanding, and pointing to spelling broadly doesn&rsquo;t help the student prioritize.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You addressed all four required sections &mdash; that&rsquo;s the foundation. The section that would benefit most from more detail is daily responsibilities: &lsquo;make things look good for clients&rsquo; is a start, but what does a workday actually look like? Try adding 2&ndash;3 specific tasks, like meeting with clients to review briefs, using software like Adobe Illustrator, or preparing files for print. Your challenge section is actually the strongest part because you described a real professional dynamic and connected it to an emotional reality &mdash; that insight sets a strong report apart. Two spelling notes: &lsquo;companies&rsquo; and &lsquo;which.&rsquo;&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Acknowledges all four sections, identifies the one that needs the most work with concrete examples, highlights a genuine strength, and limits spelling notes to the two most impactful errors.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Mock Interview Reflection</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">After completing your mock job interview, write a self-reflection: What did you do well? What would you do differently? What is one specific thing you will practice before your next interview?</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">I think I did pretty good on the interview. I answered all the questions and I wore nice clothes. I would of talked more maybe. I got nervous when they asked about my weaknesses cause I didn't know what to say. Next time I will try to be more confident and practice more.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good reflection! Confidence comes with practice. Keep working on it.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student pinpointed a very specific challenge (the weakness question) but received only general encouragement. This misses an opportunity to teach an actual interview strategy the student could use.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You identified the exact moment that tripped you up, which is the weakness question &mdash; that self-awareness is a real professional skill. Here&rsquo;s something concrete to practice: the weakness question has a formula experienced interviewers expect. It goes: name a genuine weakness + describe what you&rsquo;re doing to improve it. For example: &lsquo;I sometimes take on too many tasks at once, so I&rsquo;ve started using a daily priority list.&rsquo; Try writing your own version and practice saying it out loud three times before your next interview.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Validates the self-awareness demonstrated, provides a concrete and learnable strategy for the exact challenge the student named, models what the answer should sound like, and gives a specific practice task.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ HEALTH & PE ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="hpe">
+        <div>
+          <div class="cva-acc-title">Health &amp; Physical Education</div>
+          <div class="cva-acc-meta">Fitness Log &bull; Health Essay</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-hpe">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Fitness Log Reflection</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">After completing your two-week personal fitness log, write a reflection: Did you meet your fitness goal? What worked, what didn&rsquo;t, and what would you change about your plan?</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">My goal was to run 3 times a week but I only did it twice most weeks. I did it on Monday and Wednesday but then on Friday I was always tired from the week. What worked was having a set schedule. What didn't work was Fridays. I would change it to Tuesday Thursday and Saturday so I have more rest inbetween.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good effort! Try to stick to your plan better next time.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student diagnosed a specific problem and proposed a data-informed solution. The feedback ignores all of that and reduces the reflection to a motivation issue.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;This is one of the stronger fitness reflections I&rsquo;ve read because you did what coaches do: you looked at your data, identified why the plan broke down (cumulative fatigue by Friday), and proposed a specific adjustment. That&rsquo;s the FITT principle in action &mdash; you adjusted frequency and rest intervals based on evidence. For your next log, add one more thing to track: your perceived effort on a scale of 1&ndash;10 per session. That data will tell you whether the new spacing actually reduces Friday fatigue, or whether the issue is something else like sleep or nutrition.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Specifically names the quality of thinking demonstrated, connects it to a curricular concept, and extends the learning with a concrete low-effort addition to the next log.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Health Essay</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Write a short essay explaining the relationship between sleep and physical performance. Include at least one specific effect of sleep deprivation on the body.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">Sleep is really importent for athletes because when you dont sleep enough you play worse. Your body needs sleep to recover from excercise. When I dont sleep enough I feel slow and I cant focus. Sleep deprivation can cause you to make more mistakes and your reaction time gets slower. Thats why athletes like LeBron James sleep like 12 hours a night.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good points! Don&rsquo;t use personal examples in an essay. Add more scientific evidence.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student included a specific, accurate effect of sleep deprivation and a relevant real-world example. The feedback penalizes the personal anecdote without acknowledging the scientific content that was already present.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You included a specific, accurate effect &mdash; slowed reaction time &mdash; and the LeBron example is a smart instinct; athletes sleeping more than average is documented and relevant. The revision to make is framing: in a health essay, personal experiences like &lsquo;when I don&rsquo;t sleep I feel slow&rsquo; are less convincing than physiological explanations. Replace that sentence with why reaction time slows: sleep deprivation reduces activity in the prefrontal cortex, which controls decision-making and response speed. That one swap takes your essay from personal observation to scientific explanation.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Affirms the correct scientific content, reframes the LeBron example as a strength, identifies the specific sentence to revise, and provides the physiological explanation needed to make the swap.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ WORLD LANGUAGES ══ -->
+    <div class="cva-acc-item">
+      <button class="cva-acc-trigger" aria-expanded="false" data-acc="wl">
+        <div>
+          <div class="cva-acc-title">World Languages</div>
+          <div class="cva-acc-meta">Written Composition &bull; Culture Project</div>
+        </div>
+        <span class="cva-acc-chevron">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="cva-acc-body" id="body-wl">
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 1 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Written Composition</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text"><em>En espa&ntilde;ol:</em> Write a paragraph describing what you did last weekend. Use the preterite tense for completed actions and include at least four different verbs.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">El fin de semana pasado yo fue al parque con mi familia. Nosotros caminamos mucho y comimos un picnic. Mi hermano jug&oacute; futbol con sus amigos. Yo ley&oacute; un libro tambien. Fue un d&iacute;a muy divertido.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Good attempt! Some verb conjugation errors. Review your preterite endings.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student used four different verbs and told a coherent story but got no acknowledgment of what was conjugated correctly. &ldquo;Review your preterite endings&rdquo; doesn&rsquo;t tell the student which verbs were wrong or what the correct forms are.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;You used four verbs, stayed in the preterite throughout, and your paragraph reads naturally &mdash; real progress. Two conjugations need correction. First: &lsquo;yo fue&rsquo; should be &lsquo;yo fui&rsquo; &mdash; <em>fui</em> is the yo form of <em>ir</em> in preterite. Second: &lsquo;yo ley&oacute;&rsquo; should be &lsquo;yo le&iacute;&rsquo; &mdash; <em>leer</em> has a spelling change in the preterite for yo. The forms <em>caminamos</em>, <em>comimos</em>, and <em>jug&oacute;</em> are all correct. Fix those two and your paragraph will be grammatically solid.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Lists which verbs are correct, identifies the two errors by name with corrected forms, and explains the grammatical reason for each correction.</p>
+          </div>
+        </div>
+
+        <div class="cva-fb-example">
+          <div class="cva-fb-ex-header">
+            <span class="cva-fb-ex-num">Example 2 of 2</span>
+            <span class="cva-fb-assign-type">&mdash; Culture Project</span>
+          </div>
+          <div class="cva-fb-row">
+            <span class="cva-fb-row-label">Assignment</span>
+            <p class="cva-fb-row-text">Create a one-page profile of a Spanish-speaking country of your choice. Include: location and geography, one cultural tradition, and one way the country&rsquo;s history has shaped its modern culture.</p>
+          </div>
+          <div class="cva-fb-student-row">
+            <span class="cva-fb-row-label">Student Work</span>
+            <p class="cva-fb-student-text">I chose Mexico. Mexico is in North America under the United States. A cultural tradition is Day of the Dead which is in November and families honor people who died. Mexico used to be controled by Spain for a long time and thats why they speak Spanish today. The history of being a colony effects Mexico's culture because alot of there food, religion, and language came from Spain mixed with native traditions.</p>
+          </div>
+          <div class="cva-fb-card cva-fb-ineffective">
+            <span class="cva-fb-badge cva-fb-badge-bad">&#10007; Ineffective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Nice work! Try to add more geographic detail. Also proofread for errors.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it falls short:</strong> The student made a sophisticated cultural-historical connection in the final sentence that goes beyond most students&rsquo; responses. That insight received no recognition, and both suggestions are too vague to act on.</p>
+          </div>
+          <button class="cva-fb-reveal-btn" onclick="cvaReveal(this)" aria-expanded="false">
+            <span class="cva-fb-btn-text">See Effective Feedback</span>
+            <span class="cva-fb-btn-icon">&#9660;</span>
+          </button>
+          <div class="cva-fb-card cva-fb-effective" hidden>
+            <span class="cva-fb-badge cva-fb-badge-good">&#10003; Effective Feedback</span>
+            <p class="cva-fb-card-text">&ldquo;Your final sentence is the strongest part of this profile &mdash; the idea that Mexican culture blends Spanish colonial influence with indigenous traditions is a nuanced observation that goes beyond what most students write. Build on that. For geography, add one specific physical feature: the Sierra Madre mountain ranges or Mexico&rsquo;s coastlines on both the Pacific and Gulf of Mexico. For D&iacute;a de los Muertos, try noting that it blends indigenous Aztec rituals with the Catholic holiday of All Saints&rsquo; Day &mdash; that connection supports your own cultural blending argument directly. Two words to correct: &lsquo;their&rsquo; (not &lsquo;there&rsquo;) and &lsquo;affects&rsquo; (not &lsquo;effects&rsquo;) when used as a verb.&rdquo;</p>
+            <p class="cva-fb-card-why"><strong>Why it works:</strong> Leads with recognition of the student&rsquo;s strongest idea, gives a specific geographic detail to add, shows how the cultural tradition connects back to the student&rsquo;s own argument, and limits corrections to the two most impactful.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /accordion -->
+</div>
+<!-- end copy -->
+
+<script>
+  var acc = document.getElementById('cva-accordion');
+
+  acc.querySelectorAll('.cva-acc-trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      var targetId   = 'body-' + this.dataset.acc;
+      var targetBody = document.getElementById(targetId);
+      var isOpen     = this.getAttribute('aria-expanded') === 'true';
+
+      acc.querySelectorAll('.cva-acc-trigger').forEach(function(t) {
+        t.setAttribute('aria-expanded', 'false');
+      });
+      acc.querySelectorAll('.cva-acc-body').forEach(function(b) {
+        b.classList.remove('open');
+      });
+
+      if (!isOpen) {
+        this.setAttribute('aria-expanded', 'true');
+        targetBody.classList.add('open');
+      }
+    });
+  });
+
+  function cvaReveal(btn) {
+    var card   = btn.nextElementSibling;
+    var hidden = card.hasAttribute('hidden');
+    if (hidden) {
+      card.removeAttribute('hidden');
+      btn.querySelector('.cva-fb-btn-text').textContent = 'Hide Effective Feedback';
+      btn.classList.add('revealed');
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      card.setAttribute('hidden', '');
+      btn.querySelector('.cva-fb-btn-text').textContent = 'See Effective Feedback';
+      btn.classList.remove('revealed');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  }
+</script>
   </div>
 
-  <!-- LEARNING ALIGNMENT -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Learning Alignment</p>
-    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Connect Feedback to the Learning Goal</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 18px 0;">Feedback should be related to specific learning objectives and goals. This helps students understand how their effort connects to the larger learning journey.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Before Giving Feedback</p>
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0; color: #000000; font-weight: 900; text-transform: uppercase;">What was the student supposed to learn?</h3>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">While Reading the Work</p>
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0; color: #000000; font-weight: 900; text-transform: uppercase;">What does the work show about the student&rsquo;s progress?</h3>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">After Giving Feedback</p>
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0; color: #000000; font-weight: 900; text-transform: uppercase;">What can the student do next to improve?</h3>
-      </div>
-
-    </div>
-  </div>
+  
 
   <!-- FEEDBACK REMINDER -->
   <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
     <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Feedback Reminder</p>
-    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Feedback should help students feel supported and know what to do next.</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Strong feedback is clear, timely, respectful, connected to the learning goal, and focused on improvement. It turns grading into a learning opportunity.</p>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Feedback should actionable.</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Strong feedback is clear, timely, respectful, connected to the learning goal, and focused on improvement. <strong>It turns grading into a learning opportunity.</strong></p>
   </div>
 
   <!-- FOOTER -->
@@ -113,3 +874,6 @@
   <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
+<script src="nav.js"></script>
+</body>
+</html>
