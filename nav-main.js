@@ -113,22 +113,6 @@
       flex: 1;
     }
 
-    #cva-main-home-link {
-      color: #fff;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      opacity: 0.85;
-      white-space: nowrap;
-      border: 1px solid rgba(255,255,255,0.5);
-      padding: 4px 10px;
-      border-radius: 3px;
-      transition: opacity 0.2s;
-    }
-    #cva-main-home-link:hover { opacity: 1; }
-
     #cva-main-overlay {
       display: none;
       position: fixed;
@@ -270,7 +254,21 @@
       opacity: 0.6;
     }
 
-    body { padding-top: 48px !important; }
+    #cva-main-banner {
+      position: fixed;
+      top: 48px;
+      left: 0; right: 0;
+      width: 100%;
+      z-index: 9998;
+      line-height: 0;
+    }
+    #cva-main-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    body { padding-top: 72px !important; }
   `;
   document.head.appendChild(style);
 
@@ -289,15 +287,26 @@
   title.textContent = "Teacher Resources";
   bar.appendChild(title);
 
-  const homeLink = document.createElement("a");
-  homeLink.id = "cva-main-home-link";
-  homeLink.href = "https://www.cobbvirtualacademy.org";
-  homeLink.target = "_blank";
-  homeLink.rel = "noopener";
-  homeLink.textContent = "← CVA Home";
-  bar.appendChild(homeLink);
+
 
   document.body.insertBefore(bar, document.body.firstChild);
+
+  /* ── Banner image ─────────────────────────────────────── */
+  const banner = document.createElement("div");
+  banner.id = "cva-main-banner";
+  const bannerImg = document.createElement("img");
+  bannerImg.src = "images/Website_Banner_Teacher_Resources_Hub.png";
+  bannerImg.alt = "Cobb Virtual Academy Teacher Resources";
+  banner.appendChild(bannerImg);
+  document.body.insertBefore(banner, document.body.children[1]);
+
+  /* Adjust body padding once image loads so content clears bar + banner */
+  function updatePadding() {
+    var totalOffset = 48 + bannerImg.offsetHeight;
+    document.body.style.paddingTop = totalOffset + "px";
+  }
+  bannerImg.addEventListener("load", updatePadding);
+  if (bannerImg.complete && bannerImg.naturalHeight !== 0) { updatePadding(); }
 
   /* ── Overlay ──────────────────────────────────────────── */
   const overlay = document.createElement("div");
@@ -416,4 +425,4 @@
     if (e.key === "Escape") closeMenu();
   });
 
-})();s
+})();
