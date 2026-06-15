@@ -256,7 +256,7 @@
 
     #cva-main-banner {
       position: fixed;
-      top: 48px;
+      top: 0;
       left: 0; right: 0;
       width: 100%;
       z-index: 9998;
@@ -289,24 +289,26 @@
 
 
 
-  document.body.insertBefore(bar, document.body.firstChild);
-
-  /* ── Banner image ─────────────────────────────────────── */
+  /* ── Banner image (above nav bar) ────────────────────── */
   const banner = document.createElement("div");
   banner.id = "cva-main-banner";
   const bannerImg = document.createElement("img");
   bannerImg.src = "images/Website Banner Teacher Resources Hub.png";
   bannerImg.alt = "Cobb Virtual Academy Teacher Resources";
   banner.appendChild(bannerImg);
-  document.body.insertBefore(banner, document.body.children[1]);
+  document.body.insertBefore(banner, document.body.firstChild);
 
-  /* Adjust body padding once image loads so content clears bar + banner */
-  function updatePadding() {
-    var totalOffset = 48 + bannerImg.offsetHeight;
-    document.body.style.paddingTop = totalOffset + "px";
+  /* Position nav bar below banner and adjust body padding */
+  function updateLayout() {
+    var bannerH = bannerImg.offsetHeight;
+    bar.style.top = bannerH + "px";
+    document.body.style.paddingTop = (bannerH + 48) + "px";
   }
-  bannerImg.addEventListener("load", updatePadding);
-  if (bannerImg.complete && bannerImg.naturalHeight !== 0) { updatePadding(); }
+  bannerImg.addEventListener("load", updateLayout);
+  if (bannerImg.complete && bannerImg.naturalHeight !== 0) { updateLayout(); }
+  window.addEventListener("resize", updateLayout);
+
+  document.body.insertBefore(bar, document.body.children[1]);
 
   /* ── Overlay ──────────────────────────────────────────── */
   const overlay = document.createElement("div");
