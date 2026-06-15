@@ -295,7 +295,7 @@
   const banner = document.createElement("div");
   banner.id = "cva-main-banner";
   const bannerImg = document.createElement("img");
-  bannerImg.src = "images/Website_Banner_Teacher_Resources_Hub.png";
+  bannerImg.src = "images/Website Banner Teacher Resources Hub.png";
   bannerImg.alt = "Cobb Virtual Academy Teacher Resources";
   banner.appendChild(bannerImg);
   document.body.insertBefore(banner, document.body.children[1]);
