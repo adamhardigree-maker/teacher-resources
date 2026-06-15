@@ -13,43 +13,50 @@
   ──────────────────────────────────────────────────────────── */
   const NAV = [
     {
-      label: "About",
+      label: "Grading and Feedback",
       pages: [
-        { title: "About Page 1", href: "#" },
-        { title: "About Page 2", href: "#" },
-        { title: "About Page 3", href: "#" },
+        { title: "Grading Policy at CVA",                    href: "cva-grading-policy.html" },
+        { title: "Resolving In Progress Student Work",        href: "resolving-in-progress-work.html" },
+        { title: "Resubmission Opportunities",               href: "allowing-resubmissions.html" },
+        { title: "Discussion to Drive Learning",             href: "discussions-as-learning.html" },
+        { title: "Academic Integrity and Paused Grading",    href: "paused-grading.html" },
+        { title: "Effective Feedback",                       href: "effective-feedback.html" },
       ],
     },
     {
-      label: "Resources",
+      label: "Communication and Responsiveness",
       pages: [
-        { title: "Resources Page 1", href: "#" },
-        { title: "Resources Page 2", href: "#" },
-        { title: "Resources Page 3", href: "#" },
+        { title: "Email Communication",      href: "email-communication.html" },
+        { title: "Required Email Signature", href: "cva-email-signature.html" },
+        { title: "Who Do Students Contact?", href: "who-do-students-contact.html" },
       ],
     },
     {
-      label: "Students",
+      label: "Rapport and Relationships",
       pages: [
-        { title: "Students Page 1", href: "#" },
-        { title: "Students Page 2", href: "#" },
-        { title: "Students Page 3", href: "#" },
+        { title: "Instructor Profile",      href: "https://www.cobbk12.org/cobbvirtualacademy/instructor-profile" },
+        { title: "Classroom Announcements", href: "classroom-announcements.html" },
       ],
     },
     {
-      label: "Parents",
+      label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Parents Page 1", href: "#" },
-        { title: "Parents Page 2", href: "#" },
-        { title: "Parents Page 3", href: "#" },
+        { title: "Parent Access to CTLS Learn",              href: "parent-access-to-ctls.html" },
+        { title: "Navigating with CTLS Icons",               href: "https://www.cobbk12.org/cobbvirtualacademy/navigating-ctls-icons" },
+        { title: "Checking Grades",                          href: "https://www.cobbk12.org/cobbvirtualacademy/checking-grades" },
+        { title: "Checking Feedback",                        href: "https://www.cobbk12.org/cobbvirtualacademy/checking-feedback" },
+        { title: "Student Accommodations and Accessibility", href: "accommodations-and-accessibility.html" },
+        { title: "Progress Tracker",                         href: "progress-tracker.html" },
+        { title: "Practice Student View",                    href: "practice-student.html" },
+        { title: "Contact from Local Schools",               href: "contacting-local-schools.html" },
       ],
     },
     {
-      label: "Register for Classes",
+      label: "Professionalism and Collaboration",
       pages: [
-        { title: "Registration Page 1", href: "#" },
-        { title: "Registration Page 2", href: "#" },
-        { title: "Registration Page 3", href: "#" },
+        { title: "Professional Learning Course",  href: "professional-learning-course.html" },
+        { title: "Instructional Practice Review", href: "instructional-practice-review.html" },
+        { title: "Weekly Facilitation Routine",   href: "weekly-facilitation-routine.html" },
       ],
     },
     /* ── External tool links (no sub-pages, open in new tab) ── */
