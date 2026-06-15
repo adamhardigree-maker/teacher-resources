@@ -57,7 +57,9 @@
         { title: "Professional Learning Course",  href: "professional-learning-course.html" },
         { title: "Instructional Practice Review", href: "instructional-practice-review.html" },
         { title: "Weekly Facilitation Routine",   href: "weekly-facilitation-routine.html" },
+      
       ],
+      
     },
     /* ── External tool links (no sub-pages, open in new tab) ── */
     {
@@ -291,7 +293,7 @@
 
   const title = document.createElement("span");
   title.id = "cva-main-nav-title";
-  title.textContent = "Teacher Resources";
+  title.textContent = "CVA Teacher Resources Hub";
   bar.appendChild(title);
 
 
@@ -338,7 +340,7 @@
 
   const drawerHome = document.createElement("a");
   drawerHome.id = "cva-main-drawer-home";
-  drawerHome.href = "https://www.cobbvirtualacademy.org";
+  drawerHome.href = "https://www.cobbk12.org/cobbvirtualacademy";
   drawerHome.target = "_blank";
   drawerHome.rel = "noopener";
   drawerHome.textContent = "← Back to CVA Home";
