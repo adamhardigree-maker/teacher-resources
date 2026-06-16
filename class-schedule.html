@@ -1,117 +1,215 @@
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --red: #BB0000; --black: #222222; --gray: #C8C7C7; --white: #FFFFFF; --bg: #F5F5F5; }
-  .cva-doc-wrap { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; color: var(--black); background: var(--white); line-height: 1.75; max-width: 1100px; margin: 0 auto; padding: 24px 18px; }
-  .category-tag { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; padding: 0 0 12px; }
-  .cva-doc-wrap h1 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--black); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
-  .lead { font-size: 1rem; margin-bottom: 12px; max-width: 740px; }
-  .big-idea { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 14px 20px; margin: 20px 0 36px; font-size: 0.95rem; }
-  hr { border: none; border-top: 1px solid var(--gray); margin: 36px 0; }
-  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px; }
-  .cva-doc-wrap h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--black); margin-bottom: 18px; line-height: 1.2; text-transform: uppercase; }
-  .cva-doc-wrap p { font-size: 0.97rem; margin-bottom: 14px; max-width: 740px; }
-  .req-item { display: grid; grid-template-columns: 56px 1fr; border-top: 1px solid var(--gray); padding: 24px 0; }
-  .req-item:last-of-type { border-bottom: 1px solid var(--gray); margin-bottom: 28px; }
-  .req-num { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gray); line-height: 1; padding-top: 4px; }
-  .req-body h3 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--black); margin-bottom: 8px; text-transform: uppercase; }
-  .req-body p { font-size: 0.93rem; }
-  .req-body p:last-child { margin-bottom: 0; }
-  .principle { font-style: italic; font-size: 0.9rem; border-left: 3px solid var(--red); padding: 6px 14px; margin-top: 10px; max-width: 660px; }
-  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 8px 0 28px; }
-  .reason-card { background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; }
-  .reason-card h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .reason-card p { font-size: 0.88rem; margin: 0; }
-  .takeaways { list-style: none; padding: 0; margin: 8px 0 28px; }
-  .takeaways li { display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--gray); font-size: 0.95rem; align-items: start; }
-  .takeaways li:first-child { border-top: 1px solid var(--gray); }
-  .takeaways li .ck { font-weight: 700; padding-top: 2px; color: #bb0000; }
-  .reminder { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px 24px; margin: 8px 0 28px; }
-  .reminder p { margin: 0; font-size: 0.95rem; }
-  .doc-footer { border-top: 1px solid var(--gray); padding: 20px 0 8px; font-family: 'Oswald', Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-  @media (max-width: 640px) { .cva-doc-wrap h1 { font-size: 1.9rem; } .req-item { grid-template-columns: 44px 1fr; } }
+  .cva-wrap h1, 
+  .cva-wrap h2, 
+  .cva-wrap h3 { 
+    font-family: 'Oswald', Arial, sans-serif; 
+  }
 </style>
 
-<div class="cva-doc-wrap">
+<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
 
-  <span class="category-tag">Navigating CTLS</span>
-  <h1>Class Schedule</h1>
-  <p class="lead">Every CVA course has a Class Schedule that students can access inside their CTLS classroom. It outlines the expected timeline for completing course content and is one of the most useful reference points a teacher has for monitoring pacing and making outreach specific.</p>
-  <div class="big-idea"><strong>Big Idea:</strong> Teachers don&rsquo;t set or modify the Class Schedule &mdash; but referencing it before outreach makes your communication more targeted and more useful to students.</div>
+  <!-- HERO -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Navigating CTLS</p>
 
-  <div class="section-label">Overview</div>
-  <h2>Your Pacing Reference Point</h2>
-  <p>When you open the Progress Tracker and see a student who hasn&rsquo;t submitted recently, the Class Schedule tells you how serious that gap actually is. Without it, you&rsquo;re estimating. With it, you can see exactly where the student should be relative to a published course timeline &mdash; and that makes every conversation more grounded.</p>
-  <p>Students have access to the Class Schedule inside their CTLS classroom. That means when you reference it in outreach or announcements, you&rsquo;re pointing them to something they can already see.</p>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">
+      Class Schedule
+    </h1>
 
-  <hr>
+    <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0;">
+      Every CVA course has a Class Schedule that students can access inside their CTLS classroom. It outlines the expected timeline for completing course content and is one of the most useful reference points a teacher has for monitoring pacing and making outreach specific.
+    </p>
+  </div>
 
-  <div class="section-label">Three Ways to Use It</div>
-  <h2>How Teachers Use the Class Schedule</h2>
+  <!-- OVERVIEW -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
 
-  <div class="req-item">
-    <div class="req-num">1</div>
-    <div class="req-body">
-      <h3>Before Student Outreach</h3>
-      <p>Check the Class Schedule before you send a message to a student who appears behind. It tells you which assignments or units the student should have completed by now, so your outreach can name specifics rather than speaking in generalities.</p>
-      <p class="principle">Specific outreach gets responses. &ldquo;You&rsquo;re missing Unit 3 work, which was due last week according to your Class Schedule&rdquo; is more actionable than &ldquo;please catch up.&rdquo;</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">
+      Your Pacing Reference Point
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">
+      When you open the Progress Tracker and see a student who has not submitted recently, the Class Schedule helps you determine how serious that gap actually is. Without it, you are estimating. With it, you can see exactly where the student should be relative to a published course timeline.
+    </p>
+
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">
+      Students have access to the Class Schedule inside their CTLS classroom. That means when you reference it in outreach or announcements, you are pointing them to something they can already see.
+    </p>
+
+    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">
+        <strong>Big Idea:</strong> Teachers do not set or modify the Class Schedule, but referencing it before outreach makes your communication more targeted and more useful to students.
+      </p>
     </div>
   </div>
 
-  <div class="req-item">
-    <div class="req-num">2</div>
-    <div class="req-body">
-      <h3>In Class Announcements</h3>
-      <p>When you post a pacing reminder to all students, reference the Class Schedule by name. Directing students to something they can actually find is more useful than a general reminder to stay on track.</p>
-      <p class="principle">Students are more likely to take action when they have a concrete next step. &ldquo;Check your Class Schedule&rdquo; gives them one.</p>
+  <!-- THREE WAYS TO USE IT -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Three Ways to Use It</p>
+
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">
+      How Teachers Use the Class Schedule
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">
+      Use the Class Schedule as a reference point before communicating with students, families, or local school contacts about pacing and progress.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <!-- USE 1 -->
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Use 1</p>
+
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">
+          Before Student Outreach
+        </h3>
+
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 12px 0; color: #333333;">
+          Check the Class Schedule before you send a message to a student who appears behind. It tells you which assignments or units the student should have completed by now, so your outreach can name specifics rather than speaking in generalities.
+        </p>
+
+        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
+          <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">
+            <strong>Teacher move:</strong> Instead of saying “please catch up,” say, “You are missing Unit 3 work, which was due last week according to your Class Schedule.”
+          </p>
+        </div>
+      </div>
+
+      <!-- USE 2 -->
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Use 2</p>
+
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">
+          In Class Announcements
+        </h3>
+
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 12px 0; color: #333333;">
+          When you post a pacing reminder to all students, reference the Class Schedule by name. Directing students to something they can actually find is more useful than a general reminder to stay on track.
+        </p>
+
+        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
+          <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">
+            <strong>Teacher move:</strong> Say, “Check your Class Schedule to make sure you are on track with this week’s assignments.”
+          </p>
+        </div>
+      </div>
+
+      <!-- USE 3 -->
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Use 3</p>
+
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">
+          In Conversations with Students and Parents
+        </h3>
+
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 12px 0; color: #333333;">
+          When a student or parent asks about a student’s progress, the Class Schedule gives you a shared reference point. You can speak to where the student should be in the course and where they actually are.
+        </p>
+
+        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
+          <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">
+            <strong>Teacher move:</strong> Use the schedule to describe pacing clearly instead of relying only on the current course average.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="req-item">
-    <div class="req-num">3</div>
-    <div class="req-body">
-      <h3>In Conversations with Local Schools</h3>
-      <p>When a local school contact asks about a student&rsquo;s progress, the Class Schedule gives you a shared reference point. You can speak to where the student should be in the course and where they actually are &mdash; a much more useful conversation than a raw grade.</p>
-      <p class="principle">A shared reference point makes collaboration more productive and the student&rsquo;s situation easier to explain.</p>
+  <!-- WHY IT MATTERS -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Why It Matters</p>
+
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">
+      Why This Matters
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Anchors Outreach</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">
+          Knowing where a student should be makes your intervention timely and specific rather than reactive and general.
+        </p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Student-Facing</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">
+          Students already have access to it, so referencing it reinforces a tool they should be using on their own.
+        </p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Supports Collaboration</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">
+          It gives teachers and local school staff a common language when discussing student progress and next steps.
+        </p>
+      </div>
+
     </div>
   </div>
 
-  <hr>
 
-  <div class="section-label">Why It Matters</div>
-  <h2>Why This Matters</h2>
-  <div class="reason-grid">
-    <div class="reason-card">
-      <h3>Anchors Outreach</h3>
-      <p>Knowing where a student should be makes your intervention timely and specific rather than reactive and general.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Student-Facing</h3>
-      <p>Students already have access to it, so referencing it in communication reinforces a tool they should be using on their own.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Supports Collaboration</h3>
-      <p>It gives teachers and local school staff a common language when discussing student progress and next steps.</p>
+
+  <!-- QUICK TAKEAWAYS -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Takeaways</p>
+
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">
+      What to Remember
+    </h2>
+
+    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; box-sizing: border-box;">
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>The Class Schedule is published inside every student’s CTLS classroom.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Teachers do not set or modify it, but it should inform pacing conversations.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Reference it by name in announcements and outreach so students know where to look.</strong></p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Use it before contacting local schools so you can speak specifically about student progress.</strong></p>
+      </div>
+
     </div>
   </div>
 
-  <hr>
+  <!-- RELATED RESOURCE -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Related Resource</p>
 
-  <div class="section-label">Quick Takeaways</div>
-  <h2>What to Remember</h2>
-  <ul class="takeaways">
-    <li><span class="ck">&#10003;</span><span><strong>The Class Schedule is published inside every student&rsquo;s CTLS classroom</strong> &mdash; students can access it directly.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>Teachers don&rsquo;t set or modify it</strong> &mdash; but it should inform how you read progress data and conduct outreach.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>Reference it by name in announcements and outreach</strong> so students know where to look.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>Use it before contacting local schools</strong> so you can speak specifically to where a student is relative to course expectations.</span></li>
-  </ul>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">
+      See Also
+    </h2>
 
-  <div class="section-label">Related Resource</div>
-  <h2>See Also</h2>
-  <div class="reminder">
-    <p>This page pairs with <strong>Communicating Deadlines to Students</strong>, which covers how to use the Class Schedule as a reference point in announcements, direct outreach, and the feedback box &mdash; with sample language you can adapt.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">
+      This page pairs with <strong>Communicating Deadlines to Students</strong>, which covers how to use the Class Schedule as a reference point in announcements, direct outreach, and the feedback box with sample language you can adapt.
+    </p>
   </div>
 
-  <div class="doc-footer"><strong>Class. Virtually. Anywhere.</strong></div>
+  <!-- FOOTER -->
+  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
+
+  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;">
+    <strong>Class. Virtually. Anywhere.</strong>
+  </p>
 
 </div>
+<script src="nav.js"></script>
+</body>
+</html>
