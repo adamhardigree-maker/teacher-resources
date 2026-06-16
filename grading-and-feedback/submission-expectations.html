@@ -1,89 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accepting Student Work | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-  .cva-wrap h1,
-  .cva-wrap h2,
-  .cva-wrap h3 {
-    font-family: 'Oswald', Arial, sans-serif;
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── Core Rules ── */
+  .cva-core {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Why It Matters ── */
+  .cva-why {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Teacher Action ── */
+  .cva-action {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-message-box {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Text Editor Note ── */
+  .cva-note {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-core,
+    .cva-why,
+    .cva-action,
+    .cva-note {
+      padding: 20px 18px;
+    }
+
+    .cva-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
   }
 </style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
 
 <script src="nav.js"></script>
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">CVA Submission Expectations</p>
-
+  <div class="cva-hero">
+    <span class="cva-eyebrow">CVA Submission Expectations</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Accepting Student Work</h1>
-
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0;">Linked work should not be accepted because it may cause access issues, permission problems, or uncertainty about what was submitted.</p>
   </div>
 
   <!-- CORE RULES -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Core Rules</p>
-
+  <div class="cva-core">
+    <span class="cva-eyebrow">Core Rules</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">All Work Must Be Submitted in CTLS</h2>
-
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 18px 0;">CVA student work must be submitted inside CTLS Coursework. Files should be uploaded directly to the assignment, not shared as links to OneDrive, Google Drive, Canva, or another outside platform.</p>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
-
-      <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+    <div class="cva-card-grid">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.3; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Do Not Accept</h3>
         <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #333333;">Links to OneDrive, Google Drive, Canva, shared folders, online documents, slide decks, videos, or outside websites.</p>
       </div>
-
-      
-
     </div>
   </div>
 
   <!-- WHY LINKS ARE A PROBLEM -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Why It Matters</p>
-
+  <div class="cva-why">
+    <span class="cva-eyebrow">Why It Matters</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Linked Work Cannot Be Verified</h2>
-
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">Linked work can create access issues, permission problems, and confusion about what was actually submitted. Students may also be able to edit linked files after the due date.</p>
-
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">If the teacher has to leave CTLS or request permission to view the work, the assignment has not been submitted correctly.</p>
   </div>
 
- 
-
   <!-- TEACHER ACTIONS -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Teacher Action</p>
-
+  <div class="cva-action">
+    <span class="cva-eyebrow">Teacher Action</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">What Teachers Should Do</h2>
-
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">If a student submits work incorrectly, message the student, explain what needs to be fixed, and reopen the assignment so they can resubmit correctly. <strong>Give the student a clear deadline to correctly submit the assignment and let them know the assignment will be marked Missing if it is not corrected by the deadline.</strong></p>
-  </p>
-
-    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-      <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Suggested Teacher Message</p>
-
-      <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">“Hi there, I noticed that your assignment was not submitted correctly. CVA assignments must be uploaded directly in CTLS Coursework, not shared as a OneDrive, Google Drive, Canva, or other external link. Please upload the actual file using My Attachments by this Friday once I reopen the assignment for you.”</p>
+    <div class="cva-message-box">
+      <span class="cva-eyebrow">Suggested Teacher Message</span>
+      <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">"Hi there, I noticed that your assignment was not submitted correctly. CVA assignments must be uploaded directly in CTLS Coursework, not shared as a OneDrive, Google Drive, Canva, or other external link. Please upload the actual file using My Attachments by this Friday once I reopen the assignment for you."</p>
     </div>
   </div>
 
   <!-- TEXT EDITOR NOTE -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Important Note</p>
+  <div class="cva-note">
+    <span class="cva-eyebrow">Important Note</span>
     <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Text Editor Uploads</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">When students upload a file directly in their text editor, rather than from the <strong>My Attachments</strong> button, their submission appears to be a link.</p>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">However, unlike a linked file, which can still be edited by the student after submission, this is an unchangeable file. Even so, students should be directed to resubmit correctly using the <strong>My Attachments</strong> button.</p>
   </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>

@@ -1,59 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Integrity and Paused Grading | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap,
+  .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── Overview ── */
+  .cva-overview {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Steps ── */
+  .cva-steps {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-step-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-step-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Feedback language ── */
+  .cva-feedback {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-feedback-quote {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Reminder ── */
+  .cva-reminder {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Goal callout ── */
+  .cva-goal {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule {
+    border: none;
+    border-top: 1px solid #d9dde3;
+    margin: 14px 0;
+  }
+
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    display: block;
+  }
+
+  .cva-step-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-overview,
+    .cva-steps,
+    .cva-feedback,
+    .cva-reminder {
+      padding: 20px 18px;
+    }
+
+    .cva-hero p,
+    .cva-overview p,
+    .cva-feedback p,
+    .cva-reminder p {
+      font-size: 15px;
+    }
+
+    .cva-step-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer {
+      font-size: 18px;
+    }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Grading requirements</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Grading requirements</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Academic Integrity and Paused Grading</h1>
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0 0 20px 0;">If a student has an Academic Integrity issue and grading has been paused, follow the steps below to document the concern, contact the student, and keep the gradebook accurate.</p>
-    <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box;">
+    <div class="cva-goal">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Goal:</strong> Do not leave submissions in <strong>Submitted/Scoring Required</strong> or <strong>Missing</strong> status while waiting to connect with the student.</p>
     </div>
   </div>
 
   <!-- OVERVIEW -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <div class="cva-overview">
+    <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Keep the Gradebook Accurate While You Work to Connect</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">When an Academic Integrity issue is being addressed, the gradebook should still reflect a clear and accurate status for the student, family, and local school. Leaving submissions in Scoring Required status can artificially inflate the student’s overall course grade. Leaving them flagged as Missing can also create confusion for students, families, and local schools.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">When an Academic Integrity issue is being addressed, the gradebook should still reflect a clear and accurate status for the student, family, and local school. Leaving submissions in Scoring Required status can artificially inflate the student's overall course grade. Leaving them flagged as Missing can also create confusion for students, families, and local schools.</p>
   </div>
 
   <!-- STEPS -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Required Steps</p>
+  <div class="cva-steps">
+    <span class="cva-eyebrow">Required Steps</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">What to Do When Grading Is Paused</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+    <div class="cva-step-grid">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Step 1</p>
+      <div class="cva-step-card">
+        <span class="cva-step-label">Step 1</span>
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Enter Feedback</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Enter feedback in the Grade Center explaining that you need to connect with the student about the submission.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Step 2</p>
+      <div class="cva-step-card">
+        <span class="cva-step-label">Step 2</span>
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Contact the Student</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Reach out to the student and ask for a conversation about the Academic Integrity concern.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Step 3</p>
+      <div class="cva-step-card">
+        <span class="cva-step-label">Step 3</span>
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Wait Up to 48 Hours</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">If you are unable to connect with the student within 48 hours, update the gradebook so the submission does not remain unresolved.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Step 4</p>
+      <div class="cva-step-card">
+        <span class="cva-step-label">Step 4</span>
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Enter Temporary 0s</h3>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;"><strong>Enter 0s for every assignment connected to the Academic Integrity issue </strong> until the conversation can happen.</p>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;"><strong>Enter 0s for every assignment connected to the Academic Integrity issue</strong> until the conversation can happen.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Step 5</p>
+      <div class="cva-step-card">
+        <span class="cva-step-label">Step 5</span>
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Update the Feedback</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Revise the feedback so the student understands <strong>the 0 is temporary</strong> and knows to respond to your message.</p>
       </div>
@@ -62,29 +228,28 @@
   </div>
 
   <!-- FEEDBACK LANGUAGE -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Use This Feedback Language</p>
+  <div class="cva-feedback">
+    <span class="cva-eyebrow">Use This Feedback Language</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">Temporary 0 Feedback Message</h2>
-    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+    <div class="cva-feedback-quote">
       <p style="font-size: 17px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;I have entered a temporary 0 until we are able to connect. Please respond to my message so we can set up a time to talk. Remember that my goal is to support your learning, so look at this as an opportunity, not a punishment.&rdquo;</p>
     </div>
   </div>
 
-  
-
-
   <!-- IMPORTANT REMINDER -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Important Reminder</p>
+  <div class="cva-reminder">
+    <span class="cva-eyebrow">Important Reminder</span>
     <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Do not leave paused Academic Integrity submissions unresolved in the gradebook.</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Use feedback, student communication, and temporary 0s to prevent confusion and keep the student&rsquo;s course grade from being artificially inflated.</p>
   </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>

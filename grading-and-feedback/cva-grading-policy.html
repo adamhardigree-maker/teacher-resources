@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grading Policy at CVA</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 	.page-wrap,
@@ -248,14 +254,48 @@
 
 	/* ── Responsive ── */
 	@media (max-width: 640px) {
+		.page-wrap {
+			padding: 12px 12px 36px;
+			gap: 12px;
+		}
+
 		.page-wrap .hero-card,
 		.page-wrap .overview-card,
 		.page-wrap .why-card,
 		.page-wrap .reminder-card {
 			padding: 20px 18px;
 		}
+
+		.page-wrap .hero-card p,
+		.page-wrap .overview-card p,
+		.page-wrap .reminder-card p {
+			font-size: 15px;
+		}
+
+		.page-wrap .card-grid-3 {
+			grid-template-columns: 1fr;
+		}
+
+		.page-wrap .why-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.page-wrap .req-card {
+			padding: 18px 16px;
+		}
+
+		.page-wrap .req-card p,
+		.page-wrap .why-item p {
+			font-size: 15px;
+		}
+
+		.page-wrap .page-footer {
+			font-size: 18px;
+		}
 	}
 </style>
+</head>
+<body>
 
 <div class="page-wrap">
 
@@ -327,6 +367,7 @@
 	<div class="page-footer"><strong>Class. Virtually. Anywhere.</strong></div>
 
 </div><!-- /.page-wrap -->
-<script src="nav.js"></script>
+<script src="../nav.js"></script>
+
 </body>
 </html>
