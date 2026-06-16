@@ -1,168 +1,164 @@
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --red: #BB0000; --black: #222222; --gray: #C8C7C7; --white: #FFFFFF; --bg: #F5F5F5; }
-  .cva-doc-wrap { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; color: var(--black); background: var(--white); line-height: 1.75; max-width: 1100px; margin: 0 auto; padding: 24px 18px; }
-  .category-tag { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; padding: 0 0 12px; }
-  .cva-doc-wrap h1 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--black); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
-  .lead { font-size: 1rem; margin-bottom: 12px; max-width: 740px; }
-  .big-idea { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 14px 20px; margin: 20px 0 36px; font-size: 0.95rem; }
-  hr { border: none; border-top: 1px solid var(--gray); margin: 36px 0; }
-  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px; }
-  .cva-doc-wrap h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--black); margin-bottom: 18px; line-height: 1.2; text-transform: uppercase; }
-  .cva-doc-wrap p { font-size: 0.97rem; margin-bottom: 14px; max-width: 740px; }
-  .req-item { display: grid; grid-template-columns: 56px 1fr; border-top: 1px solid var(--gray); padding: 24px 0; }
-  .req-item:last-of-type { border-bottom: 1px solid var(--gray); margin-bottom: 28px; }
-  .req-num { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gray); line-height: 1; padding-top: 4px; }
-  .req-body h3 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--black); margin-bottom: 8px; text-transform: uppercase; }
-  .req-body p { font-size: 0.93rem; }
-  .req-body p:last-child { margin-bottom: 0; }
-  .principle { font-style: italic; font-size: 0.9rem; border-left: 3px solid var(--red); padding: 6px 14px; margin-top: 10px; max-width: 660px; }
-  .sample { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 3px solid var(--gray); border-radius: 8px; padding: 14px 18px; margin-top: 12px; max-width: 680px; font-size: 0.92rem; line-height: 1.7; }
-  .sample-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px; }
-  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 8px 0 28px; }
-  .reason-card { background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; }
-  .reason-card h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .reason-card p { font-size: 0.88rem; margin: 0; }
-  .table-wrap { overflow-x: auto; margin-bottom: 28px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-  thead tr { background: #222222; color: #ffffff; }
-  thead th { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.04em; text-align: left; padding: 11px 16px; }
-  tbody tr:nth-child(odd) { background: var(--bg); }
-  tbody tr:nth-child(even) { background: var(--white); }
-  tbody td { padding: 10px 16px; border-bottom: 1px solid var(--gray); vertical-align: top; }
-  .takeaways { list-style: none; padding: 0; margin: 8px 0 28px; }
-  .takeaways li { display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--gray); font-size: 0.95rem; align-items: start; }
-  .takeaways li:first-child { border-top: 1px solid var(--gray); }
-  .takeaways li .ck { font-weight: 700; padding-top: 2px; color: #bb0000; }
-  .reminder { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px 24px; margin: 8px 0 28px; }
-  .reminder p { margin: 0; font-size: 0.95rem; }
-  .doc-footer { border-top: 1px solid var(--gray); padding: 20px 0 8px; font-family: 'Oswald', Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-  @media (max-width: 640px) { .cva-doc-wrap h1 { font-size: 1.9rem; } .req-item { grid-template-columns: 44px 1fr; } }
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
 </style>
 
-<div class="cva-doc-wrap">
+<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
 
-  <span class="category-tag">Teacher Communication</span>
-  <h1>Communicating Deadlines to Students</h1>
-  <p class="lead">Deadlines exist inside the Class Schedule &mdash; but students don&rsquo;t always check it, and they won&rsquo;t always know when they&rsquo;re falling behind. That communication is the teacher&rsquo;s job. It doesn&rsquo;t require a lot of time. It requires consistency.</p>
-  <div class="big-idea"><strong>Big Idea:</strong> Use the right channel for the right situation &mdash; announcements for broad reminders, direct outreach for individual concerns, and the feedback box for assignment-specific deadlines.</div>
+  <!-- HERO -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Teacher Communication</p>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Communicating Deadlines to Students</h1>
+    <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0;">Deadlines exist inside the Class Schedule, but students do not always check it or recognize when they are falling behind. Consistent teacher communication helps students know what to check, what to complete, and when to ask for help.</p>
+  </div>
 
-  <div class="section-label">Overview</div>
-  <h2>Three Channels, Three Purposes</h2>
-  <p>CVA teachers have three main channels for communicating deadline expectations to students. Each serves a different purpose and reaches students in a different context. Using all three &mdash; at the right moments &mdash; is what makes deadline communication feel consistent rather than sporadic.</p>
+  <!-- OVERVIEW -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Use the Right Channel for the Right Situation</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">CVA teachers have three main channels for communicating deadline expectations to students. Each serves a different purpose and reaches students in a different context. Using all three at the right moments helps deadline communication feel consistent rather than sporadic.</p>
+    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;"><strong>Big Idea:</strong> Use announcements for broad reminders, direct outreach for individual concerns, and the feedback box for assignment-specific deadlines.</p>
+    </div>
+  </div>
 
-  <hr>
+  <!-- COMMUNICATION CHANNELS -->
+  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Communication Channels</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">When and How to Communicate</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use these three channels together to create a clear, supportive communication routine for students.</p>
 
-  <div class="section-label">Communication Channels</div>
-  <h2>When and How to Communicate</h2>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
 
-  <div class="req-item">
-    <div class="req-num">1</div>
-    <div class="req-body">
-      <h3>Class Announcements</h3>
-      <p>Use announcements for broad, proactive reminders to all students. Post at natural pacing checkpoints &mdash; the end of a unit, the midpoint of the term, or before a common submission window. Reference the Class Schedule by name so students know where to find the details.</p>
-      <p class="principle">Announcements reach everyone at once. They work best as early signals &mdash; before students are behind, not after.</p>
-      <div class="sample">
-        <div class="sample-label">Sample Announcement</div>
-        We&rsquo;re approaching the end of Unit 2. Check your Class Schedule to make sure your work is on track. If you have missing assignments, now is a great time to reach out &mdash; I&rsquo;m happy to help you get caught up.
+      <!-- CHANNEL 1 -->
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Channel 1</p>
+        <h3 style="font-size: 22px; line-height: 1.15; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Class Announcements</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">Use Class Announcements for broad, proactive reminders to all students. Post at natural pacing checkpoints, such as the end of a unit, the midpoint of the term, or before a common submission window. Reference the <strong>Class Schedule</strong> by name so students know where to find the details.</p>
+        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box; margin-bottom: 12px;">
+          <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #333333;"><strong>Best use:</strong> Early reminders before students are behind.</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 4px solid #bb0000; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Sample Announcement</p>
+          <p style="font-size: 15px; line-height: 1.65; margin: 0; color: #333333;">We are approaching the end of Unit 2. Check your Class Schedule to make sure your work is on track. If you have missing assignments, now is a great time to reach out. I am happy to help you get caught up.</p>
+        </div>
+      </div>
+
+      <!-- CHANNEL 2 -->
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Channel 2</p>
+        <h3 style="font-size: 22px; line-height: 1.15; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Direct Student Outreach</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">Use direct outreach for individual students who are visibly behind based on the Progress Tracker. Be specific: name the missing work, reference the Class Schedule, and include a deadline. Keep the tone supportive so the message removes barriers rather than adding pressure.</p>
+        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box; margin-bottom: 12px;">
+          <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #333333;"><strong>Best use:</strong> Individual concerns, missing work, or lack of progress.</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 4px solid #bb0000; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Sample Outreach Message</p>
+          <p style="font-size: 15px; line-height: 1.65; margin: 0; color: #333333;">Hi [Name], I noticed you have not submitted [assignment] yet and wanted to check in. According to the Class Schedule, this work was due [date]. Please reach out if you have any questions. I am happy to help you get caught up.</p>
+        </div>
+      </div>
+
+      <!-- CHANNEL 3 -->
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px; box-sizing: border-box;">
+        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Channel 3</p>
+        <h3 style="font-size: 22px; line-height: 1.15; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Feedback Box</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">Use the feedback box for deadline expectations tied to a specific assignment, especially resubmissions. This is one of the most reliable places for a student to see a message about their own work. Always name a specific date instead of giving an open-ended window.</p>
+        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box; margin-bottom: 12px;">
+          <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #333333;"><strong>Best use:</strong> Assignment-specific reminders or resubmission deadlines.</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 4px solid #bb0000; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
+          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Sample Feedback Box Message</p>
+          <p style="font-size: 15px; line-height: 1.65; margin: 0; color: #333333;">Your resubmission is due by [date]. Please review the feedback above, revise your work, and resubmit before that date. Reach out if you have any questions.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Principles</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">Four Principles for Effective Deadline Communication</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Be Specific</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">“You have three missing assignments” is more useful than “please catch up.” Name what is missing when you can.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Reference the Schedule</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Point students to the Class Schedule so they have something concrete to find and act on beyond your message.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Name a Deadline</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Always give a specific date when you can. Open-ended urgency rarely produces action.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Stay Supportive</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Frame outreach as help, not a warning. Students respond better when the message signals you are on their side.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Use the Right Channel</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Match your message to the situation: broad reminder, individual concern, or assignment-specific deadline.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Be Consistent</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">One strong message at the start of the term is less effective than steady, well-timed communication throughout.</p>
       </div>
     </div>
   </div>
 
-  <div class="req-item">
-    <div class="req-num">2</div>
-    <div class="req-body">
-      <h3>Direct Student Outreach</h3>
-      <p>Use direct outreach for individual students who are visibly behind based on the Progress Tracker. Be specific: name the missing work, reference the Class Schedule, and include a deadline. Keep the tone supportive &mdash; the goal is to remove barriers, not add pressure.</p>
-      <p class="principle">Specific outreach gets responses. A student who receives a message naming their missing work is far more likely to act than one who receives a general nudge.</p>
-      <div class="sample">
-        <div class="sample-label">Sample Outreach Message</div>
-        Hi [Name], I noticed you haven&rsquo;t submitted [assignment] yet and wanted to check in. According to the Class Schedule, this work was due [date]. Please reach out if you have any questions &mdash; I&rsquo;m happy to help you get caught up.
+
+  <!-- QUICK TAKEAWAYS -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Takeaways</p>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What to Remember</h2>
+
+    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; box-sizing: border-box;">
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Announcements are for broad, proactive reminders</strong> at pacing checkpoints before students fall behind.</p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Direct outreach should name specifics</strong>, including the student’s missing work, the Class Schedule, and a concrete date.</p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>The feedback box is best for assignment-specific deadlines</strong> because students see it when they check their grade or resubmission.</p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Always reference the Class Schedule</strong> so students have something they can find and act on themselves.</p>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;">
+        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Consistent, specific, and supportive communication</strong> is more effective than occasional general reminders.</p>
       </div>
     </div>
   </div>
 
-  <div class="req-item">
-    <div class="req-num">3</div>
-    <div class="req-body">
-      <h3>The Feedback Box</h3>
-      <p>Use the feedback box for deadline expectations tied to a specific assignment &mdash; especially resubmissions. This is the one place a student is guaranteed to see a message about their own work. Always name a specific date, not an open-ended window.</p>
-      <p class="principle">Open-ended urgency doesn&rsquo;t move students. A specific date does.</p>
-      <div class="sample">
-        <div class="sample-label">Sample Feedback Box Message</div>
-        Your resubmission is due by [date]. Please review the feedback above, revise your work, and resubmit before that date. Reach out if you have any questions.
-      </div>
-    </div>
+  <!-- RELATED RESOURCE -->
+  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
+    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Related Resource</p>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Class Schedule</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">This page pairs with the <strong>Class Schedule</strong> resource, which explains what the Class Schedule is, where students find it in CTLS, and how teachers should use it as a reference point when monitoring pacing and conducting outreach.</p>
   </div>
 
-  <hr>
-
-  <div class="section-label">Principles</div>
-  <h2>Four Principles for Effective Deadline Communication</h2>
-  <div class="reason-grid">
-    <div class="reason-card">
-      <h3>Be Specific</h3>
-      <p>&ldquo;You have three missing assignments&rdquo; is more useful than &ldquo;please catch up.&rdquo; Name what&rsquo;s missing when you can.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Reference the Schedule</h3>
-      <p>Point students to the Class Schedule so they have something concrete to act on beyond your message.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Name a Deadline</h3>
-      <p>Always give a specific date when you can. Open-ended urgency rarely produces action.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Stay Supportive</h3>
-      <p>Frame outreach as help, not a warning. Students respond better when the message signals you&rsquo;re on their side.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Use the Right Channel</h3>
-      <p>Match your message to the situation: broad reminder &rarr; announcement; individual concern &rarr; outreach; assignment-specific &rarr; feedback box.</p>
-    </div>
-    <div class="reason-card">
-      <h3>Be Consistent</h3>
-      <p>One strong message at the start of the term is less effective than steady, well-timed communication throughout.</p>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="section-label">Quick Reference</div>
-  <h2>Choosing the Right Channel</h2>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Situation</th><th>Best Channel</th><th>Key Elements to Include</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Pacing checkpoint for all students</td><td>Class Announcement</td><td>Reference Class Schedule, general deadline reminder, invitation to reach out</td></tr>
-        <tr><td>Individual student visibly behind</td><td>Direct Outreach</td><td>Student&rsquo;s name, specific missing work, Class Schedule reference, specific date, supportive tone</td></tr>
-        <tr><td>Resubmission opened for a student</td><td>Feedback Box</td><td>Specific resubmission deadline, summary of feedback, invitation to ask questions</td></tr>
-        <tr><td>Student has not responded to prior outreach</td><td>Direct Outreach (follow-up)</td><td>Reference prior message, updated deadline, escalation note if needed</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr>
-
-  <div class="section-label">Quick Takeaways</div>
-  <h2>What to Remember</h2>
-  <ul class="takeaways">
-    <li><span class="ck">&#10003;</span><span><strong>Announcements are for broad, proactive reminders</strong> &mdash; post them at pacing checkpoints before students fall behind.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>Direct outreach should name specifics</strong> &mdash; the student&rsquo;s missing work, the Class Schedule, and a concrete date.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>The feedback box is the most reliable channel for assignment-specific deadlines</strong> &mdash; students see it when they check their grade.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>Always reference the Class Schedule</strong> so students have something they can find and act on themselves.</span></li>
-    <li><span class="ck">&#10003;</span><span><strong>Consistent, specific, and supportive</strong> communication is more effective than occasional general reminders.</span></li>
-  </ul>
-
-  <div class="section-label">Related Resource</div>
-  <h2>See Also</h2>
-  <div class="reminder">
-    <p>This page pairs with <strong>Class Schedule</strong>, which explains what the Class Schedule is, where students find it in CTLS, and how teachers should use it as a reference point when monitoring pacing and conducting outreach.</p>
-  </div>
-
-  <div class="doc-footer"><strong>Class. Virtually. Anywhere.</strong></div>
+  <!-- FOOTER -->
+  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
+  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
+<script src="nav.js"></script>
+</body>
+</html>
