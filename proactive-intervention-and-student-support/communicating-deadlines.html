@@ -1,73 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communicating Deadlines to Students | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── White card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented card ── */
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Callout ── */
+  .cva-callout {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Channel cards (stack) ── */
+  .cva-channel-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cva-channel-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .cva-best-use {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .cva-sample {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 4px solid #bb0000;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  /* ── Principles grid ── */
+  .cva-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Takeaway list ── */
+  .cva-takeaway-list {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+    padding: 8px 24px;
+  }
+
+  .cva-takeaway-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #d9dde3;
+  }
+
+  .cva-takeaway-item:last-child { border-bottom: none; }
+
+  .cva-takeaway-icon {
+    font-size: 20px;
+    line-height: 1;
+    color: #bb0000;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-channel-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-sample-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-takeaway-list {
+      padding: 8px 16px;
+    }
+
+    .cva-grid-6 {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Student Support</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Student Support</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Communicating Deadlines to Students</h1>
     <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0;">Deadlines exist inside the Class Schedule, but students do not always check it or recognize when they are falling behind. Consistent teacher communication helps students know what to check, what to complete, and when to ask for help.</p>
   </div>
 
   <!-- OVERVIEW -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Use the Right Channel for the Right Situation</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">CVA teachers have three main channels for communicating deadline expectations to students. Each serves a different purpose and reaches students in a different context. Using all three at the right moments helps deadline communication feel consistent rather than sporadic.</p>
-    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+    <div class="cva-callout">
       <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;"><strong>Big Idea:</strong> Use announcements for broad reminders, direct outreach for individual concerns, and the feedback box for assignment-specific deadlines.</p>
     </div>
   </div>
 
   <!-- COMMUNICATION CHANNELS -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Communication Channels</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Communication Channels</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">When and How to Communicate</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use these three channels together to create a clear, supportive communication routine for students.</p>
-
-    <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div class="cva-channel-stack">
 
       <!-- CHANNEL 1 -->
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Channel 1</p>
+      <div class="cva-channel-card">
+        <span class="cva-channel-label">Channel 1</span>
         <h3 style="font-size: 22px; line-height: 1.15; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Class Announcements</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">Use Class Announcements for broad, proactive reminders to all students. Post at natural pacing checkpoints, such as the end of a unit, the midpoint of the term, or before a common submission window. Reference the <strong>Class Schedule</strong> by name so students know where to find the details.</p>
-        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box; margin-bottom: 12px;">
+        <div class="cva-best-use">
           <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #333333;"><strong>Best use:</strong> Early reminders before students are behind.</p>
         </div>
-        <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 4px solid #bb0000; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
-          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Sample Announcement</p>
+        <div class="cva-sample">
+          <span class="cva-sample-label">Sample Announcement</span>
           <p style="font-size: 15px; line-height: 1.65; margin: 0; color: #333333;">We are approaching the end of Unit 2. Check your Class Schedule to make sure your work is on track. If you have missing assignments, now is a great time to reach out. I am happy to help you get caught up.</p>
         </div>
       </div>
 
       <!-- CHANNEL 2 -->
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Channel 2</p>
+      <div class="cva-channel-card">
+        <span class="cva-channel-label">Channel 2</span>
         <h3 style="font-size: 22px; line-height: 1.15; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Direct Student Outreach</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">Use direct outreach for individual students who are visibly behind based on the Progress Tracker. Be specific: name the missing work, reference the Class Schedule, and include a deadline. Keep the tone supportive so the message removes barriers rather than adding pressure.</p>
-        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box; margin-bottom: 12px;">
+        <div class="cva-best-use">
           <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #333333;"><strong>Best use:</strong> Individual concerns, missing work, or lack of progress.</p>
         </div>
-        <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 4px solid #bb0000; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
-          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Sample Outreach Message</p>
+        <div class="cva-sample">
+          <span class="cva-sample-label">Sample Outreach Message</span>
           <p style="font-size: 15px; line-height: 1.65; margin: 0; color: #333333;">Hi [Name], I noticed you have not submitted [assignment] yet and wanted to check in. According to the Class Schedule, this work was due [date]. Please reach out if you have any questions. I am happy to help you get caught up.</p>
         </div>
       </div>
 
       <!-- CHANNEL 3 -->
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Channel 3</p>
+      <div class="cva-channel-card">
+        <span class="cva-channel-label">Channel 3</span>
         <h3 style="font-size: 22px; line-height: 1.15; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Feedback Box</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">Use the feedback box for deadline expectations tied to a specific assignment, especially resubmissions. This is one of the most reliable places for a student to see a message about their own work. Always name a specific date instead of giving an open-ended window.</p>
-        <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; box-sizing: border-box; margin-bottom: 12px;">
+        <div class="cva-best-use">
           <p style="font-size: 14px; line-height: 1.6; margin: 0; color: #333333;"><strong>Best use:</strong> Assignment-specific reminders or resubmission deadlines.</p>
         </div>
-        <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 4px solid #bb0000; border-radius: 12px; padding: 14px 16px; box-sizing: border-box;">
-          <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Sample Feedback Box Message</p>
+        <div class="cva-sample">
+          <span class="cva-sample-label">Sample Feedback Box Message</span>
           <p style="font-size: 15px; line-height: 1.65; margin: 0; color: #333333;">Your resubmission is due by [date]. Please review the feedback above, revise your work, and resubmit before that date. Reach out if you have any questions.</p>
         </div>
       </div>
@@ -76,89 +281,92 @@
   </div>
 
   <!-- PRINCIPLES -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Principles</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Principles</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">Four Principles for Effective Deadline Communication</h2>
+    <div class="cva-grid-6">
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Be Specific</h3>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">“You have three missing assignments” is more useful than “please catch up.” Name what is missing when you can.</p>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">"You have three missing assignments" is more useful than "please catch up." Name what is missing when you can.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Reference the Schedule</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Point students to the Class Schedule so they have something concrete to find and act on beyond your message.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Name a Deadline</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Always give a specific date when you can. Open-ended urgency rarely produces action.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Stay Supportive</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Frame outreach as help, not a warning. Students respond better when the message signals you are on their side.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Use the Right Channel</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Match your message to the situation: broad reminder, individual concern, or assignment-specific deadline.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Be Consistent</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">One strong message at the start of the term is less effective than steady, well-timed communication throughout.</p>
       </div>
+
     </div>
   </div>
 
-
   <!-- QUICK TAKEAWAYS -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Takeaways</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Quick Takeaways</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What to Remember</h2>
+    <div class="cva-takeaway-list">
 
-    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; box-sizing: border-box;">
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Announcements are for broad, proactive reminders</strong> at pacing checkpoints before students fall behind.</p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
-        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Direct outreach should name specifics</strong>, including the student’s missing work, the Class Schedule, and a concrete date.</p>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Direct outreach should name specifics</strong>, including the student's missing work, the Class Schedule, and a concrete date.</p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>The feedback box is best for assignment-specific deadlines</strong> because students see it when they check their grade or resubmission.</p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #d9dde3;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Always reference the Class Schedule</strong> so students have something they can find and act on themselves.</p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Consistent, specific, and supportive communication</strong> is more effective than occasional general reminders.</p>
       </div>
+
     </div>
   </div>
 
   <!-- RELATED RESOURCE -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Related Resource</p>
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Related Resource</span>
     <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Class Schedule</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">This page pairs with the <strong>Class Schedule</strong> resource, which explains what the Class Schedule is, where students find it in CTLS, and how teachers should use it as a reference point when monitoring pacing and conducting outreach.</p>
   </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>
