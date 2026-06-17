@@ -16,7 +16,6 @@
       label: "Grading and Feedback",
       pages: [
         { title: "Grading Policy at CVA",                 href: BASE + "/grading-and-feedback/cva-grading-policy.html" },
-        { title: "Accepting Student Work",                href: BASE + "/grading-and-feedback/accepting-student-work.html" },
         { title: "Submission Expectations",               href: BASE + "/grading-and-feedback/submission-expectations.html" },
         { title: "Resolving In Progress Student Work",    href: BASE + "/grading-and-feedback/resolving-in-progress-work.html" },
         { title: "Resubmission Opportunities",            href: BASE + "/grading-and-feedback/allowing-resubmissions.html" },
@@ -44,7 +43,6 @@
     {
       label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Parent Access to CTLS Learn",              href: BASE + "/proactive-intervention-and-student-support/parent-access-to-ctls.html" },
         { title: "Student Accommodations and Accessibility", href: BASE + "/proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
         { title: "Class Schedule",                           href: BASE + "/proactive-intervention-and-student-support/class-schedule.html" },
         { title: "Communicating Deadlines",                  href: BASE + "/proactive-intervention-and-student-support/communicating-deadlines.html" },
