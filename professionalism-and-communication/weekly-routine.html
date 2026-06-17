@@ -1,462 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Facilitation Routine | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --red: #BB0000; --black: #222222; --gray: #C8C7C7; --white: #FFFFFF; --bg: #F5F5F5; }
-  .cva-doc-wrap { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; color: var(--black); background: var(--white); line-height: 1.75; max-width: 1100px; margin: 0 auto; padding: 24px 18px; }
-  .category-tag { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; padding: 0 0 12px; }
-  .cva-doc-wrap h1 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--black); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
-  .lead { font-size: 1rem; margin-bottom: 12px; max-width: 740px; }
-  .big-idea { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 14px 20px; margin: 20px 0 36px; font-size: 0.95rem; max-width: 100%; }
+
+  :root {
+    --red: #BB0000;
+    --black: #222222;
+    --gray: #C8C7C7;
+    --white: #FFFFFF;
+    --bg: #F5F5F5;
+  }
+
+  .cva-doc-wrap {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.75;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+  }
+
+  /* ── Typography ── */
+  .cva-doc-wrap h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .cva-doc-wrap h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 18px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .cva-doc-wrap p {
+    font-size: 0.97rem;
+    margin-bottom: 14px;
+    max-width: 740px;
+  }
+
   hr { border: none; border-top: 1px solid var(--gray); margin: 36px 0; }
-  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px; }
-  .cva-doc-wrap h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--black); margin-bottom: 18px; line-height: 1.2; text-transform: uppercase; }
-  .cva-doc-wrap p { font-size: 0.97rem; margin-bottom: 14px; max-width: 740px; }
-  .req-item { display: grid; grid-template-columns: 56px 1fr; border-top: 0px solid var(--gray); padding: 24px 0; }
-  .req-item:last-of-type { border-bottom: 0px solid var(--gray); margin-bottom: 28px; }
-  .req-num { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gray); line-height: 1; padding-top: 4px; }
-  .req-body h3 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--black); margin-bottom: 8px; text-transform: uppercase; }
-  .req-body p { font-size: 0.93rem; }
-  .req-body p:last-child { margin-bottom: 0; }
-  .principle { font-style: italic; font-size: 0.9rem; border-left: 3px solid var(--red); padding: 6px 14px; margin-top: 10px; max-width: 660px; }
-  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 8px 0 28px; }
-  .reason-card { background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; }
-  .reason-card h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .reason-card p { font-size: 0.88rem; margin: 0; }
-  .table-wrap { overflow-x: auto; margin-bottom: 28px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-  thead tr { background: #222222; color: #ffffff; }
-  thead th { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.04em; text-align: left; padding: 11px 16px; }
-  tbody tr:nth-child(odd) { background: var(--bg); }
-  tbody tr:nth-child(even) { background: var(--white); }
-  tbody td { padding: 10px 16px; border-bottom: 1px solid var(--gray); vertical-align: top; }
-  .takeaways { list-style: none; padding: 0; margin: 8px 0 28px; }
-  .takeaways li { display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--gray); font-size: 0.95rem; align-items: start; }
-  .takeaways li:first-child { border-top: 0px solid var(--gray); }
-  .takeaways li .ck { font-weight: 700; padding-top: 2px; color: #bb0000; }
-  .reminder { background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px 24px; margin: 8px 0 28px; }
-  .reminder p { margin: 0; font-size: 0.95rem; }
-  .doc-footer { border-top: 1px solid var(--gray); padding: 20px 0 8px; font-family: 'Oswald', Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
-  @media (max-width: 640px) { .cva-doc-wrap h1 { font-size: 1.9rem; } .req-item { grid-template-columns: 44px 1fr; } }
+
+  /* ── Shared labels ── */
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Cards ── */
+  .cva-hero-card {
+    background: #f5f5f5;
+    border: 1px solid #d9dde3;
+    border-left: 8px solid #bb0000;
+    border-radius: 16px;
+    padding: 30px 28px;
+    margin: 32px 0 28px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-bottom: 22px;
+  }
+
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+
+  /* ── Routine items ── */
+  .routine-item {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    padding: 22px 0;
+    border-top: 1px solid #d9dde3;
+  }
+
+  .routine-num {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    color: #c8c7c7;
+    font-weight: 900;
+  }
+
+  .routine-principle {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333333;
+    font-style: italic;
+    border-left: 3px solid #bb0000;
+    padding-left: 14px;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* ── Why It Matters grid ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .why-card {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-top: 5px solid #bb0000;
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  /* ── Weekly checklist ── */
+  .checklist-row {
+    display: grid;
+    grid-template-columns: 34px 1.3fr 1fr 1.4fr;
+    gap: 14px;
+    align-items: start;
+    padding: 16px 0;
+    border-bottom: 1px solid #d9dde3;
+    cursor: pointer;
+  }
+
+  .checklist-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .col-label {
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 4px 0;
+  }
+
+  /* ── Quick takeaways ── */
+  .takeaway-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #d9dde3;
+  }
+
+  .takeaway-item:last-child { border-bottom: none; }
+
+  .takeaway-icon {
+    font-size: 20px;
+    line-height: 1;
+    color: #bb0000;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .doc-footer {
+    border-top: 1px solid var(--gray);
+    padding: 20px 0 8px;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-doc-wrap {
+      padding: 12px 12px 36px;
+    }
+
+    .cva-hero-card,
+    .cva-card {
+      padding: 20px 18px;
+      margin-bottom: 14px;
+    }
+
+    .cva-hero-card {
+      margin: 20px 0 14px;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Checklist: stack all columns vertically */
+    .checklist-row {
+      grid-template-columns: 34px 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    /* Checkbox spans its own row; task name spans col 2 */
+    .checklist-row > input[type="checkbox"] {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .checklist-row > .col-task {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    /* Frequency and expectation drop below, full width */
+    .checklist-row > .col-freq,
+    .checklist-row > .col-expect {
+      grid-column: 1 / -1;
+      padding-left: 38px;
+    }
+
+    .doc-footer { font-size: 18px; }
+  }
 </style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
 
 <div class="cva-doc-wrap">
 
-<!-- HERO CARD -->
-<div style="background:#f5f5f5; border:1px solid #d9dde3; border-left:8px solid #bb0000; border-radius:16px; padding:30px 28px; margin:32px 0 28px; box-sizing:border-box;">
+  <!-- HERO CARD -->
+  <div class="cva-hero-card">
+    <span class="eyebrow">Online Teaching Practices</span>
+    <h1>Weekly Facilitation Routine</h1>
+    <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 18px 0;">In an asynchronous course, students experience their teacher primarily through grading, feedback, and communication — not through a shared classroom space. A consistent weekly routine is what makes that presence visible, predictable, and effective.</p>
+    <div class="cva-callout">
+      <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;"><strong>Big Idea:</strong> Async teaching requires intentional structure. A predictable routine is what makes responsive, student-centered instruction sustainable.</p>
+    </div>
+  </div>
 
-	<p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 10px 0;">
-		Online Teaching Practices
-	</p>
-
-	<h1 style="font-family:Oswald, Arial, sans-serif; font-size:48px; line-height:1.05; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 14px 0;">
-		Weekly Facilitation Routine
-	</h1>
-
-	<p style="font-size:16px; line-height:1.6; color:#222222; margin:0 0 18px 0;">
-		In an asynchronous course, students experience their teacher primarily through grading, feedback, and communication — not through a shared classroom space. A consistent weekly routine is what makes that presence visible, predictable, and effective.
-	</p>
-
-	<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:14px; padding:18px 20px; box-sizing:border-box;">
-		<p style="font-size:16px; line-height:1.7; color:#333333; margin:0;">
-			<strong>Big Idea:</strong> Async teaching requires intentional structure. A predictable routine is what makes responsive, student-centered instruction sustainable.
-		</p>
-	</div>
-
-</div>
-
-<!-- OVERVIEW CARD -->
-<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 26px; box-sizing:border-box; margin-bottom:22px;">
-
-	<p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
-		Overview
-	</p>
-
-	<h2 style="font-family:Oswald, Arial, sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
-		Teaching Online Is Ongoing, Not Event-Based
-	</h2>
-
-	<p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 14px 0;">
-		In a traditional classroom, the bell schedule creates natural rhythms. In an asynchronous environment, teachers create their own. Strong CVA teachers don't wait for students to fall behind before taking action. They build routines that surface concerns early, keep communication flowing, and make feedback feel like a consistent part of the course experience.
-	</p>
-</div>
-  <hr>
-
- <!-- CORE ROUTINE SINGLE CARD -->
-<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 26px; box-sizing:border-box; margin-bottom:26px;">
-
-	<p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
-		Core Routine
-	</p>
-
-	<h2 style="font-family:Oswald, Arial, sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
-		A Framework for the CVA Teaching Week
-	</h2>
-
-	<p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 22px 0;">
-		The tasks below represent the core habits of effective CVA facilitation. Not every task happens every day, but all of them should happen every week.
-	</p>
-
-	<!-- ROUTINE ITEM 1 -->
-	<div style="display:grid; grid-template-columns:44px 1fr; gap:14px; padding:22px 0; border-top:1px solid #d9dde3; box-sizing:border-box;">
-
-		<div style="font-family:Oswald, Arial, sans-serif; font-size:36px; line-height:1; color:#c8c7c7; font-weight:900;">
-			1
-		</div>
-
-		<div>
-			<h3 style="font-family:Oswald, Arial, sans-serif; font-size:18px; line-height:1.25; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-				Check Progress and Identify Concerns
-			</h3>
-
-			<p style="font-size:16px; line-height:1.7; color:#222222; margin:0 0 12px 0;">
-				Use the Progress Tracker in CTLS to review student activity across your classes. Look for students who have not accessed the course recently, are falling behind the Class Schedule, or have missing work accumulating.
-			</p>
-
-			<p style="font-size:15px; line-height:1.7; color:#333333; font-style:italic; border-left:3px solid #bb0000; padding-left:14px; margin:0;">
-				In an online course, silence is not neutral. A student who stops showing up in the gradebook needs outreach — not a waiting period.
-			</p>
-		</div>
-
-	</div>
-
-	<!-- ROUTINE ITEM 2 -->
-	<div style="display:grid; grid-template-columns:44px 1fr; gap:14px; padding:22px 0; border-top:1px solid #d9dde3; box-sizing:border-box;">
-
-		<div style="font-family:Oswald, Arial, sans-serif; font-size:36px; line-height:1; color:#c8c7c7; font-weight:900;">
-			2
-		</div>
-
-		<div>
-			<h3 style="font-family:Oswald, Arial, sans-serif; font-size:18px; line-height:1.25; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-				Grade and Return Feedback
-			</h3>
-
-			<p style="font-size:16px; line-height:1.7; color:#222222; margin:0 0 12px 0;">
-				Work toward returning graded feedback within CVA's 48-hour expectation. Prioritize recently submitted work and any assignments approaching feedback deadlines. When you grade, leave feedback — not just a score.
-			</p>
-
-			<p style="font-size:15px; line-height:1.7; color:#333333; font-style:italic; border-left:3px solid #bb0000; padding-left:14px; margin:0;">
-				Grades without feedback are missed teaching moments. In an async environment, your written feedback is often the only instructional conversation a student receives.
-			</p>
-		</div>
-
-	</div>
-
-	<!-- ROUTINE ITEM 3 -->
-	<div style="display:grid; grid-template-columns:44px 1fr; gap:14px; padding:22px 0; border-top:1px solid #d9dde3; box-sizing:border-box;">
-
-		<div style="font-family:Oswald, Arial, sans-serif; font-size:36px; line-height:1; color:#c8c7c7; font-weight:900;">
-			3
-		</div>
-
-		<div>
-			<h3 style="font-family:Oswald, Arial, sans-serif; font-size:18px; line-height:1.25; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-				Communicate Proactively
-			</h3>
-
-			<p style="font-size:16px; line-height:1.7; color:#222222; margin:0 0 12px 0;">
-				Reach out to students who are falling behind, missing work, or disengaged before the concern becomes a crisis. Post a Class Announcement when there is something timely students need to know — an upcoming deadline, a common mistake you are noticing, or a word of encouragement.
-			</p>
-
-			<p style="font-size:15px; line-height:1.7; color:#333333; font-style:italic; border-left:3px solid #bb0000; padding-left:14px; margin:0;">
-				Students should hear from you before they feel lost. Proactive communication signals that you are present and that their success matters to you. Don't just rely on email; use CTLS Parent and voice calls to reach students and families.
-			</p>
-		</div>
-
-	</div>
-
-	<!-- ROUTINE ITEM 4 -->
-	<div style="display:grid; grid-template-columns:44px 1fr; gap:14px; padding:22px 0; border-top:1px solid #d9dde3; box-sizing:border-box;">
-
-		<div style="font-family:Oswald, Arial, sans-serif; font-size:36px; line-height:1; color:#c8c7c7; font-weight:900;">
-			4
-		</div>
-
-		<div>
-			<h3 style="font-family:Oswald, Arial, sans-serif; font-size:18px; line-height:1.25; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-				Respond to Messages
-			</h3>
-
-			<p style="font-size:16px; line-height:1.7; color:#222222; margin:0 0 12px 0;">
-				Check and respond to student and family messages within 24 hours. Review any emails or messages forwarded through your Department Lead or sent by CVA Leadership. Do not let messages sit unanswered into a second day.
-			</p>
-
-			<p style="font-size:15px; line-height:1.7; color:#333333; font-style:italic; border-left:3px solid #bb0000; padding-left:14px; margin:0;">
-				Response time is presence. In an online course, a prompt reply can be the difference between a student who pushes through and a student who disengages.
-			</p>
-		</div>
-
-	</div>
-
-	<!-- ROUTINE ITEM 5 -->
-	<div style="display:grid; grid-template-columns:44px 1fr; gap:14px; padding:22px 0; border-top:1px solid #d9dde3; box-sizing:border-box;">
-
-		<div style="font-family:Oswald, Arial, sans-serif; font-size:36px; line-height:1; color:#c8c7c7; font-weight:900;">
-			5
-		</div>
-
-		<div>
-			<h3 style="font-family:Oswald, Arial, sans-serif; font-size:18px; line-height:1.25; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-				Review Your Gradebook
-			</h3>
-
-			<p style="font-size:16px; line-height:1.7; color:#222222; margin:0 0 12px 0;">
-				At least once a week, scan your gradebook for accuracy. Look for missing grades, assessments stuck In Progress, or patterns in student performance that might signal a need for intervention or a shift in your feedback approach. Check both CTLS and Synergy to ensure assignments and settings are correctly applied.
-			</p>
-
-			<p style="font-size:15px; line-height:1.7; color:#333333; font-style:italic; border-left:3px solid #bb0000; padding-left:14px; margin:0;">
-				Your gradebook is the primary window students and families have into academic progress. Keeping it accurate and current is part of your instructional practice and responsibility as a teacher. Contact CVA Teacher Support right away if you notice any discrepancies between the CTLS Grading Center and Synergy Gradebook. Remember that Synergy is the gradebook of record for all CCSD students.
-			</p>
-		</div>
-
-	</div>
-
-	<!-- WHY IT MATTERS -->
-	<div style="border-top:1px solid #d9dde3; padding-top:24px; margin-top:22px; box-sizing:border-box;">
-
-		
-
-		<h2 style="font-family:Oswald, Arial, sans-serif; font-size:28px; line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 18px 0;">
-			Why This Matters
-		</h2>
-
-		<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
-
-			<div style="background:#f7f8fa; border:1px solid #d9dde3; border-top:5px solid #bb0000; border-radius:14px; padding:18px; box-sizing:border-box;">
-				<h3 style="font-family:Oswald, Arial, sans-serif; font-size:20px; line-height:1.2; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-					Student Presence
-				</h3>
-				<p style="font-size:15px; line-height:1.65; color:#333333; margin:0;">
-					Consistent routines help students feel seen and supported even in a fully async environment.
-				</p>
-			</div>
-
-			<div style="background:#f7f8fa; border:1px solid #d9dde3; border-top:5px solid #bb0000; border-radius:14px; padding:18px; box-sizing:border-box;">
-				<h3 style="font-family:Oswald, Arial, sans-serif; font-size:20px; line-height:1.2; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-					Early Intervention
-				</h3>
-				<p style="font-size:15px; line-height:1.65; color:#333333; margin:0;">
-					Regular progress checks let teachers catch concerns before they become withdrawal risks.
-				</p>
-			</div>
-
-			<div style="background:#f7f8fa; border:1px solid #d9dde3; border-top:5px solid #bb0000; border-radius:14px; padding:18px; box-sizing:border-box;">
-				<h3 style="font-family:Oswald, Arial, sans-serif; font-size:20px; line-height:1.2; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">
-					IPR Alignment
-				</h3>
-				<p style="font-size:15px; line-height:1.65; color:#333333; margin:0;">
-					Each routine area connects directly to the domains reviewed in the Instructional Practice Review.
-				</p>
-			</div>
-
-		</div>
-
-	</div>
-
-</div>
+  <!-- OVERVIEW CARD -->
+  <div class="cva-card">
+    <span class="eyebrow">Overview</span>
+    <h2>Teaching Online Is Ongoing, Not Event-Based</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">In a traditional classroom, the bell schedule creates natural rhythms. In an asynchronous environment, teachers create their own. Strong CVA teachers don't wait for students to fall behind before taking action. They build routines that surface concerns early, keep communication flowing, and make feedback feel like a consistent part of the course experience.</p>
+  </div>
 
   <hr>
 
-<!-- PUTTING IT TOGETHER - WEEKLY TO-DO LIST WITH WORKING CHECKBOXES -->
-<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 26px; box-sizing:border-box; margin-bottom:26px;">
+  <!-- CORE ROUTINE CARD -->
+  <div class="cva-card">
+    <span class="eyebrow">Core Routine</span>
+    <h2>A Framework for the CVA Teaching Week</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 22px 0;">The tasks below represent the core habits of effective CVA facilitation. Not every task happens every day, but all of them should happen every week.</p>
 
-	<p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
-		Putting It Together
-	</p>
+    <!-- ITEM 1 -->
+    <div class="routine-item">
+      <div class="routine-num">1</div>
+      <div>
+        <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 18px; line-height: 1.25; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Check Progress and Identify Concerns</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0 0 12px 0;">Use the Progress Tracker in CTLS to review student activity across your classes. Look for students who have not accessed the course recently, are falling behind the Class Schedule, or have missing work accumulating.</p>
+        <p class="routine-principle">In an online course, silence is not neutral. A student who stops showing up in the gradebook needs outreach — not a waiting period.</p>
+      </div>
+    </div>
 
-	<h2 style="font-family:Oswald, Arial, sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
-		What a Strong Teaching Week Looks Like
-	</h2>
+    <!-- ITEM 2 -->
+    <div class="routine-item">
+      <div class="routine-num">2</div>
+      <div>
+        <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 18px; line-height: 1.25; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Grade and Return Feedback</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0 0 12px 0;">Work toward returning graded feedback within CVA's 48-hour expectation. Prioritize recently submitted work and any assignments approaching feedback deadlines. When you grade, leave feedback — not just a score.</p>
+        <p class="routine-principle">Grades without feedback are missed teaching moments. In an async environment, your written feedback is often the only instructional conversation a student receives.</p>
+      </div>
+    </div>
 
-	<p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 20px 0;">
-		Use this weekly to-do list as a quick reference for the routines that help keep CVA classes active, responsive, and student-centered. The items are organized by urgency, beginning with the tasks that most directly affect student support and response time.
-	</p>
+    <!-- ITEM 3 -->
+    <div class="routine-item">
+      <div class="routine-num">3</div>
+      <div>
+        <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 18px; line-height: 1.25; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Communicate Proactively</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0 0 12px 0;">Reach out to students who are falling behind, missing work, or disengaged before the concern becomes a crisis. Post a Class Announcement when there is something timely students need to know — an upcoming deadline, a common mistake you are noticing, or a word of encouragement.</p>
+        <p class="routine-principle">Students should hear from you before they feel lost. Proactive communication signals that you are present and that their success matters to you. Don't just rely on email; use CTLS Parent and voice calls to reach students and families.</p>
+      </div>
+    </div>
 
-	<div style="border-top:1px solid #d9dde3;">
+    <!-- ITEM 4 -->
+    <div class="routine-item">
+      <div class="routine-num">4</div>
+      <div>
+        <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 18px; line-height: 1.25; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Respond to Messages</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0 0 12px 0;">Check and respond to student and family messages within 24 hours. Review any emails or messages forwarded through your Department Lead or sent by CVA Leadership. Do not let messages sit unanswered into a second day.</p>
+        <p class="routine-principle">Response time is presence. In an online course, a prompt reply can be the difference between a student who pushes through and a student who disengages.</p>
+      </div>
+    </div>
 
-		<!-- ROW 1 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0; border-bottom:1px solid #d9dde3; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Respond to Student and Family Messages</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Within 24 hours</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Communication &amp; Responsiveness</p>
-			</div>
-		</label>
+    <!-- ITEM 5 -->
+    <div class="routine-item">
+      <div class="routine-num">5</div>
+      <div>
+        <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 18px; line-height: 1.25; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Review Your Gradebook</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: #222222; margin: 0 0 12px 0;">At least once a week, scan your gradebook for accuracy. Look for missing grades, assessments stuck In Progress, or patterns in student performance that might signal a need for intervention or a shift in your feedback approach. Check both CTLS and Synergy to ensure assignments and settings are correctly applied.</p>
+        <p class="routine-principle">Your gradebook is the primary window students and families have into academic progress. Keeping it accurate and current is part of your instructional practice and responsibility as a teacher. Contact CVA Teacher Support right away if you notice any discrepancies between the CTLS Grading Center and Synergy Gradebook. Remember that Synergy is the gradebook of record for all CCSD students.</p>
+      </div>
+    </div>
 
-		<!-- ROW 2 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0; border-bottom:1px solid #d9dde3; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Grade Submitted Work</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Daily or every other day, within 48 hours of submission</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Grading &amp; Feedback</p>
-			</div>
-		</label>
-
-		<!-- ROW 3 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0; border-bottom:1px solid #d9dde3; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Leave Meaningful Written Feedback</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Every graded item</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Grading &amp; Feedback</p>
-			</div>
-		</label>
-
-		<!-- ROW 4 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0; border-bottom:1px solid #d9dde3; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Check Progress Tracker</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">2–3× per week</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Proactive Intervention &amp; Student Support</p>
-			</div>
-		</label>
-
-		<!-- ROW 5 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0; border-bottom:1px solid #d9dde3; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Reach Out to Disengaged Students</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">As needed, weekly minimum</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Proactive Intervention &amp; Student Support</p>
-			</div>
-		</label>
-
-		<!-- ROW 6 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0; border-bottom:1px solid #d9dde3; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Post a Class Announcement</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Weekly</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Rapport &amp; Relationships</p>
-			</div>
-		</label>
-
-		<!-- ROW 7 -->
-		<label style="display:grid; grid-template-columns:34px 1.3fr 1fr 1.4fr; gap:14px; align-items:start; padding:16px 0 0 0; box-sizing:border-box; cursor:pointer;">
-			<input type="checkbox" style="width:24px; height:24px; accent-color:#bb0000; margin-top:2px;">
-			<div>
-				<p style="font-size:16px; line-height:1.4; color:#000000; font-weight:800; margin:0;">Scan Gradebook for Accuracy</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Frequency</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Weekly</p>
-			</div>
-			<div>
-				<p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 4px 0;">Expectation Area</p>
-				<p style="font-size:14px; line-height:1.5; color:#333333; margin:0;">Grading &amp; Feedback along with Professionalism &amp; Communication</p>
-			</div>
-		</label>
-
-	</div>
-
-</div>
+    <!-- WHY IT MATTERS -->
+    <div style="border-top: 1px solid #d9dde3; padding-top: 24px; margin-top: 22px;">
+      <h2 style="margin-bottom: 18px;">Why This Matters</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 20px; line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Student Presence</h3>
+          <p style="font-size: 15px; line-height: 1.65; color: #333333; margin: 0;">Consistent routines help students feel seen and supported even in a fully async environment.</p>
+        </div>
+        <div class="why-card">
+          <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 20px; line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Early Intervention</h3>
+          <p style="font-size: 15px; line-height: 1.65; color: #333333; margin: 0;">Regular progress checks let teachers catch concerns before they become withdrawal risks.</p>
+        </div>
+        <div class="why-card">
+          <h3 style="font-family: Oswald, Arial, sans-serif; font-size: 20px; line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">IPR Alignment</h3>
+          <p style="font-size: 15px; line-height: 1.65; color: #333333; margin: 0;">Each routine area connects directly to the domains reviewed in the Instructional Practice Review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <hr>
 
-  <!-- QUICK TAKEAWAYS CARD -->
-<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 26px; box-sizing:border-box; margin-bottom:22px;">
+  <!-- WEEKLY TO-DO CHECKLIST -->
+  <div class="cva-card" style="margin-bottom: 26px;">
+    <span class="eyebrow">Putting It Together</span>
+    <h2>What a Strong Teaching Week Looks Like</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use this weekly to-do list as a quick reference for the routines that help keep CVA classes active, responsive, and student-centered. The items are organized by urgency, beginning with the tasks that most directly affect student support and response time.</p>
 
-	<p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
-		Quick Takeaways
-	</p>
+    <div style="border-top: 1px solid #d9dde3;">
 
-	<h2 style="font-family:Oswald, Arial, sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 18px 0;">
-		What to Remember
-	</h2>
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Respond to Student and Family Messages</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Within 24 hours</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Communication &amp; Responsiveness</p>
+        </div>
+      </label>
 
-	<div style="border-top:1px dashed #d9dde3;">
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Grade Submitted Work</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Daily or every other day, within 48 hours of submission</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Grading &amp; Feedback</p>
+        </div>
+      </label>
 
-		<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-			<div style="font-size:20px; line-height:1; color:#bb0000; margin-top:4px;">✓</div>
-			<div style="font-size:16px; line-height:1.6; color:#333333;">
-				<strong>Async teaching requires you to create your own rhythm</strong> — the schedule won’t do it for you.
-			</div>
-		</div>
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Leave Meaningful Written Feedback</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Every graded item</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Grading &amp; Feedback</p>
+        </div>
+      </label>
 
-		<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-			<div style="font-size:20px; line-height:1; color:#bb0000; margin-top:4px;">✓</div>
-			<div style="font-size:16px; line-height:1.6; color:#333333;">
-				<strong>Check the Progress Tracker regularly</strong> so you can reach out before students fall too far behind.
-			</div>
-		</div>
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Check Progress Tracker</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">2–3× per week</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Proactive Intervention &amp; Student Support</p>
+        </div>
+      </label>
 
-		<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-			<div style="font-size:20px; line-height:1; color:#bb0000; margin-top:4px;">✓</div>
-			<div style="font-size:16px; line-height:1.6; color:#333333;">
-				<strong>Feedback, communication, and gradebook accuracy are weekly responsibilities</strong>, not monthly ones or tasks left to the end of the term.
-			</div>
-		</div>
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Reach Out to Disengaged Students</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">As needed, weekly minimum</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Proactive Intervention &amp; Student Support</p>
+        </div>
+      </label>
 
-		<div style="display:flex; align-items:flex-start; gap:12px; padding:14px 0;">
-			<div style="font-size:20px; line-height:1; color:#bb0000; margin-top:4px;">✓</div>
-			<div style="font-size:16px; line-height:1.6; color:#333333;">
-				<strong>A consistent routine is the foundation</strong> of CVA Teaching Expectations and a strong student experience.
-			</div>
-		</div>
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Post a Class Announcement</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Weekly</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Rapport &amp; Relationships</p>
+        </div>
+      </label>
 
-	</div>
+      <label class="checklist-row">
+        <input type="checkbox" style="width: 24px; height: 24px; accent-color: #bb0000; margin-top: 2px;">
+        <div class="col-task"><p style="font-size: 16px; line-height: 1.4; color: #000000; font-weight: 800; margin: 0;">Scan Gradebook for Accuracy</p></div>
+        <div class="col-freq">
+          <p class="col-label">Frequency</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Weekly</p>
+        </div>
+        <div class="col-expect">
+          <p class="col-label">Expectation Area</p>
+          <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">Grading &amp; Feedback along with Professionalism &amp; Communication</p>
+        </div>
+      </label>
 
-</div>
+    </div>
+  </div>
 
- <!-- IMPORTANT REMINDER CARD -->
-<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 26px; box-sizing:border-box; margin-bottom:22px;">
+  <hr>
 
-	<p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
-		Important Reminder
-	</p>
+  <!-- QUICK TAKEAWAYS -->
+  <div class="cva-card">
+    <span class="eyebrow">Quick Takeaways</span>
+    <h2>What to Remember</h2>
+    <div style="border-top: 1px dashed #d9dde3;">
 
-	<h2 style="font-family:Oswald, Arial, sans-serif; font-size:30px; line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
-		Routine Is What Makes This Work
-	</h2>
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✓</div>
+        <div style="font-size: 16px; line-height: 1.6; color: #333333;"><strong>Async teaching requires you to create your own rhythm</strong> — the schedule won't do it for you.</div>
+      </div>
 
-	<p style="font-size:16px; line-height:1.7; color:#333333; margin:0;">
-		<strong>No single week will be perfect. </strong>What distinguishes effective CVA teachers is not perfection. It is consistency. <strong>Students in asynchronous courses succeed when they can count on their teacher to show up, respond, and follow through, week after week.</strong>
-	</p>
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✓</div>
+        <div style="font-size: 16px; line-height: 1.6; color: #333333;"><strong>Check the Progress Tracker regularly</strong> so you can reach out before students fall too far behind.</div>
+      </div>
 
-</div>
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✓</div>
+        <div style="font-size: 16px; line-height: 1.6; color: #333333;"><strong>Feedback, communication, and gradebook accuracy are weekly responsibilities</strong>, not monthly ones or tasks left to the end of the term.</div>
+      </div>
+
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✓</div>
+        <div style="font-size: 16px; line-height: 1.6; color: #333333;"><strong>A consistent routine is the foundation</strong> of CVA Teaching Expectations and a strong student experience.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IMPORTANT REMINDER -->
+  <div class="cva-card">
+    <span class="eyebrow">Important Reminder</span>
+    <h2>Routine Is What Makes This Work</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;"><strong>No single week will be perfect.</strong> What distinguishes effective CVA teachers is not perfection. It is consistency. <strong>Students in asynchronous courses succeed when they can count on their teacher to show up, respond, and follow through, week after week.</strong></p>
+  </div>
 
   <div class="doc-footer"><strong>Class. Virtually. Anywhere.</strong></div>
 
 </div>
+
 <script src="nav.js"></script>
+
 </body>
 </html>

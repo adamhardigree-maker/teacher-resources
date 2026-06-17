@@ -1,191 +1,343 @@
-<p>
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessing the Course | CVA Teacher Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-	.cva-wrap h1,
-	.cva-wrap h2,
-	.cva-wrap h3,
-	.cva-wrap h4 {
-		font-family: 'Oswald', Arial, sans-serif;
-	}
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3, .cva-wrap h4 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── White card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented card ── */
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Step cards ── */
+  .cva-step-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cva-step-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .cva-step-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+    gap: 18px;
+    align-items: center;
+  }
+
+  .cva-step-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .cva-step-num {
+    min-width: 42px;
+    height: 42px;
+    background: #bb0000;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .cva-step-img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #d9dde3;
+  }
+
+  /* ── Course structure grid ── */
+  .cva-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-step-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 4px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-step-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-step-img {
+      max-width: 100%;
+    }
+
+    .cva-grid-4 {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
 </style>
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
-	<!-- HERO -->
-	<div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
 
-		<p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Professional learning</p>
+<div class="cva-wrap">
 
-		<h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Accessing the Course</h1>
+  <!-- HERO -->
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Professional Learning</span>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Accessing the Course</h1>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Inside the course, you will find training materials and useful information, along with the teaching and learning expectations for CVA and New Teacher Onboarding resources.</p>
+  </div>
 
-		<p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;" id="isPasted">Inside the course, you will find training materials anduseful information, along with the teaching and learning expecations for CVA and New Teacher Onboarding resources.</p>
-	</div>
-	<!-- OVERVIEW -->
-	<div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+  <!-- OVERVIEW -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Professional Learning Course</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">After logging in to CTLS, select the <strong>Graduation Cap</strong> icon to view your <strong>Professional Learning Courses</strong>. Then click on the <strong>CVA Professional Learning</strong> course.</p>
+  </div>
 
-		<p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <!-- ACCESS STEPS -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Steps</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">How to Access the Course</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use the steps below to locate and open the CVA New Teacher Training course in CTLS.</p>
+    <div class="cva-step-stack">
 
-		<h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Professional Learning Course</h2>
+      <!-- STEP 1 -->
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">1</div>
+            <div>
+              <span class="cva-step-label">Step 1</span>
+              <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Log in to CTLS</h4>
+              <p style="font-size: 15px; line-height: 1.6; margin: 0 0 8px 0; color: #333333;">Log in to CTLS and open your <strong>Dashboard</strong>.</p>
+              <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
+            </div>
+          </div>
+          <a href="professionalism-and-communication/images/Dashboard Screenshot.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
+            <img
+              src="professionalism-and-communication/images/Dashboard Screenshot.png"
+              alt="CTLS dashboard screen with a black arrow pointing to the My Dashboard icon in the left navigation menu."
+              class="cva-step-img"
+            >
+          </a>
+        </div>
+      </div>
 
-		<p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">After logging in to CTLS, select the <strong>Graduation Cap</strong> icon to view your <strong>Professional Learning Courses</strong>. Then click on the <strong>CVA Professional Learning&nbsp;</strong>course.</p>
-	</div>
-<!-- ACCESS STEPS -->
-<div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
+      <!-- STEP 2 -->
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">2</div>
+            <div>
+              <span class="cva-step-label">Step 2</span>
+              <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Select the Graduation Cap Icon</h4>
+              <p style="font-size: 15px; line-height: 1.6; margin: 0 0 8px 0; color: #333333;">Select the <strong>Graduation Cap</strong> icon to view your <strong>Professional Learning Courses</strong>.</p>
+              <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
+            </div>
+          </div>
+          <a href="professionalism-and-communication/images/Dashboard Grad Cap Screenshot.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
+            <img
+              src="professionalism-and-communication/images/Dashboard Grad Cap Screenshot.png"
+              alt="CTLS dashboard screen with a red circle around the graduation cap icon in the top-right corner."
+              class="cva-step-img"
+            >
+          </a>
+        </div>
+      </div>
 
-	<p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Steps</p>
+      <!-- STEP 3 -->
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">3</div>
+            <div>
+              <span class="cva-step-label">Step 3</span>
+              <h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Open CVA Professional Learning Course</h4>
+              <p style="font-size: 15px; line-height: 1.6; margin: 0 0 8px 0; color: #333333;">Click on the <strong>CVA Professional Learning</strong> course to begin.</p>
+              <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
+            </div>
+          </div>
+          <a href="professionalism-and-communication/images/Open PL Course Screenshot.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
+            <img
+              src="professionalism-and-communication/images/Open PL Course Screenshot.png"
+              alt="Professional Learning course page in CTLS with a red circle around the CVA Professional Learning course tile."
+              class="cva-step-img"
+            >
+          </a>
+        </div>
+      </div>
 
-	<h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">How to Access the Course</h2>
+    </div>
+  </div>
 
-	<p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use the steps below to locate and open the CVA New Teacher Training course in CTLS.</p>
+  <!-- COURSE STRUCTURE -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Inside the Course</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">What You Will Find</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">The training course is organized to help you move through each section while also giving you the information and resources you need for onboarding.</p>
+    <div class="cva-grid-4">
 
-	<div style="display: flex; flex-direction: column; gap: 14px;">
+      <div class="cva-card">
+        <span class="cva-card-label">Training Links</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Return to Each Part</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">You will find links back to each part of the training so you can review content when needed.</p>
+      </div>
 
-		<!-- STEP 1 -->
-		<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-			<div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,320px); gap:18px; align-items:center;">
+      <div class="cva-card">
+        <span class="cva-card-label">Learning Targets</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Know the Goal</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Learning Targets help clarify what you should understand or be able to do in each section.</p>
+      </div>
 
-				<div style="display:flex; align-items:flex-start; gap:18px;">
-					<div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">1</div>
+      <div class="cva-card">
+        <span class="cva-card-label">Standards Alignment</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Connect to Expectations</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Standards Alignment explains how the training connects to the expectations for your role.</p>
+      </div>
 
-					<div style="flex: 1; min-width: 200px;">
-						<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 1</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Guided Notes</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Essential Questions</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Guided Notes with Essential Questions are provided for each section to help you focus your learning.</p>
+      </div>
 
-						<h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Log in to CTLS</h4>
+    </div>
+  </div>
 
-						<p style="font-size: 15px; line-height: 1.6; margin: 0 0 8px 0; color: #333333;">Log in to CTLS and open your <strong>Dashboard</strong>.</p>
+  <!-- COURSE ACCESS REMINDER -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Moving Forward</span>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Course Access</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">You will have access to the CVA Professional Learning course each new term.</p>
+  </div>
 
-						<p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
-					</div>
-				</div>
+  <!-- FOOTER -->
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
-				<a href="professionalism-and-communication/images/Dashboard Screenshot.png" target="_blank" rel="noopener" style="display:block; text-decoration:none;">
-					<img 
-						src="professionalism-and-communication/images/Dashboard Screenshot.png" 
-						alt="CTLS dashboard screen with a black arrow pointing to the My Dashboard icon in the left navigation menu."
-						style="display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:1px solid #d9dde3;"
-					>
-				</a>
-
-			</div>
-		</div>
-
-		<!-- STEP 2 -->
-		<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-			<div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,320px); gap:18px; align-items:center;">
-
-				<div style="display:flex; align-items:flex-start; gap:18px;">
-					<div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">2</div>
-
-					<div style="flex: 1; min-width: 200px;">
-						<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 2</p>
-
-						<h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Select the Graduation Cap Icon</h4>
-
-						<p style="font-size: 15px; line-height: 1.6; margin: 0 0 8px 0; color: #333333;">Select the <strong>Graduation Cap</strong> icon to view your <strong>Professional Learning Courses</strong>.</p>
-
-						<p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
-					</div>
-				</div>
-
-				<a href="professionalism-and-communication/images/Dashboard Grad Cap Screenshot.png" target="_blank" rel="noopener" style="display:block; text-decoration:none;">
-					<img 
-						src="professionalism-and-communication/images/Dashboard Grad Cap Screenshot.png" 
-						alt="CTLS dashboard screen with a red circle around the graduation cap icon in the top-right corner."
-						style="display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:1px solid #d9dde3;"
-					>
-				</a>
-
-			</div>
-		</div>
-
-		<!-- STEP 3 -->
-		<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-			<div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,320px); gap:18px; align-items:center;">
-
-				<div style="display:flex; align-items:flex-start; gap:18px;">
-					<div style="min-width: 42px; height: 42px; background: #bb0000; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0;">3</div>
-
-					<div style="flex: 1; min-width: 200px;">
-						<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 4px 0;">Step 3</p>
-
-						<h4 style="font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Open CVA Professional Learning Course</h4>
-
-						<p style="font-size: 15px; line-height: 1.6; margin: 0 0 8px 0; color: #333333;">Click on the <strong>CVA Professional Learning</strong> course to begin.</p>
-
-						<p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
-					</div>
-				</div>
-
-				<a href="professionalism-and-communication/images/Open PL Course Screenshot.png" target="_blank" rel="noopener" style="display:block; text-decoration:none;">
-					<img 
-						src="professionalism-and-communication/images/Open PL Course Screenshot.png" 
-						alt="Professional Learning course page in CTLS with a red circle around the CVA Professional Learning course tile."
-						style="display:block; width:100%; max-width:320px; height:auto; border-radius:12px; border:1px solid #d9dde3;"
-					>
-				</a>
-
-			</div>
-		</div>
-
-	</div>
 </div>
-	<!-- COURSE STRUCTURE -->
-	<div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
 
-		<p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Inside the Course</p>
-
-		<h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">What You Will Find</h2>
-
-		<p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">The training course is organized to help you move through each section while also giving you the information and resources you need for onboarding.</p>
-		<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-			<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-
-				<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Training Links</p>
-
-				<h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Return to Each Part</h3>
-
-				<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">You will find links back to each part of the training so you can review content when needed.</p>
-			</div>
-			<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-
-				<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Learning Targets</p>
-
-				<h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Know the Goal</h3>
-
-				<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Learning Targets help clarify what you should understand or be able to do in each section.</p>
-			</div>
-			<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-
-				<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Standards Alignment</p>
-
-				<h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Connect to Expectations</h3>
-
-				<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Standards Alignment explains how the training connects to the expectations for your role.</p>
-			</div>
-			<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-
-				<p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Guided Notes</p>
-
-				<h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Essential Questions</h3>
-
-				<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Guided Notes with Essential Questions are provided for each section to help you focus your learning.</p>
-			</div></div></div>
-	<!-- ASSIGNMENT PAGE -->
-	<!-- MOVING THROUGH COURSEWORK -->
-	<!-- ACCESS DATE REMINDER -->
-	<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-
-		<p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Moving Forward</p>
-
-		<h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Course Access</h2>
-
-		<p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">You will have access to the CVA Professional Leaning course each new term.&nbsp;</p>
-	</div>
-	<!-- FOOTER -->
-	<hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-
-	<p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
-</div>
 <script src="nav.js"></script>
+
 </body>
 </html>

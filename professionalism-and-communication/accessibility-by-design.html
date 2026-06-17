@@ -1,62 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility Guidelines | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-  .cva-acc-details { border:1px solid #d9dde3; border-radius:14px; overflow:hidden; background:#ffffff; margin-bottom:10px; }
-  .cva-acc-details:last-child { margin-bottom:0; }
-  .cva-acc-details summary { background:#222222; color:#ffffff; font-family:'Oswald',Arial,sans-serif; font-size:17px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:16px 20px; cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-  .cva-acc-details summary::-webkit-details-marker { display:none; }
-  .cva-acc-details summary::after { content:'﹢'; font-size:20px; font-weight:400; flex-shrink:0; transition:transform .2s; }
-  .cva-acc-details[open] summary { background:#222222; }
-  .cva-acc-details[open] summary::after { content:'﹣'; }
-  .cva-acc-details summary .tool-meta { font-family:'Montserrat',Arial,sans-serif; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-top:3px; }
-  .cva-sub-acc { border:1px solid #d9dde3; border-radius:10px; overflow:hidden; margin-bottom:8px; }
-  .cva-sub-acc:last-child { margin-bottom:0; }
-  .cva-sub-acc summary { background:#f7f8fa; font-family:'Montserrat',Arial,sans-serif; font-size:14px; font-weight:700; padding:12px 16px; cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:8px; border-bottom:1px solid transparent; }
-  .cva-sub-acc summary::-webkit-details-marker { display:none; }
-  .cva-sub-acc summary::after { content:'›'; font-size:18px; color:#888888; flex-shrink:0; transition:transform .2s; }
-  .cva-sub-acc[open] summary { border-bottom:1px solid #d9dde3; }
-  .cva-sub-acc[open] summary::after { transform:rotate(90deg); }
-  .cva-sub-body { padding:16px 18px; background:#ffffff; font-size:15px; line-height:1.7; color:#333333; }
-  .cva-sub-body ul { margin:8px 0 0 0; padding-left:20px; }
-  .cva-sub-body li { margin-bottom:4px; }
-</style>
+  *, *::before, *::after { box-sizing: border-box; }
 
-<div style="font-family:Montserrat,Arial,sans-serif; color:#222222; max-width:960px; margin:0 auto; padding:0 20px 48px; box-sizing:border-box;">
+  /* ── Accordion ── */
+  .cva-acc-details {
+    border: 1px solid #d9dde3;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .cva-acc-details:last-child { margin-bottom: 0; }
+
+  .cva-acc-details summary {
+    background: #222222;
+    color: #ffffff;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .cva-acc-details summary::-webkit-details-marker { display: none; }
+  .cva-acc-details summary::after { content: '﹢'; font-size: 20px; font-weight: 400; flex-shrink: 0; transition: transform .2s; }
+  .cva-acc-details[open] summary { background: #222222; }
+  .cva-acc-details[open] summary::after { content: '﹣'; }
+
+  .cva-acc-details summary .tool-meta {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 3px;
+  }
+
+  /* ── Sub-accordion ── */
+  .cva-sub-acc {
+    border: 1px solid #d9dde3;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .cva-sub-acc:last-child { margin-bottom: 0; }
+
+  .cva-sub-acc summary {
+    background: #f7f8fa;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 16px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 1px solid transparent;
+  }
+  .cva-sub-acc summary::-webkit-details-marker { display: none; }
+  .cva-sub-acc summary::after { content: '›'; font-size: 18px; color: #888888; flex-shrink: 0; transition: transform .2s; }
+  .cva-sub-acc[open] summary { border-bottom: 1px solid #d9dde3; }
+  .cva-sub-acc[open] summary::after { transform: rotate(90deg); }
+
+  .cva-sub-body {
+    padding: 16px 18px;
+    background: #ffffff;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333333;
+  }
+  .cva-sub-body ul { margin: 8px 0 0 0; padding-left: 20px; }
+  .cva-sub-body li { margin-bottom: 4px; }
+
+  /* ── Page layout ── */
+  .cva-page {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px 48px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f5f5f5;
+    border: 1px solid #d9dde3;
+    border-left: 8px solid #bb0000;
+    border-radius: 16px;
+    padding: 30px 28px;
+    margin: 32px 0 20px;
+  }
+
+  /* ── Scope card ── */
+  .cva-scope {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+
+  .cva-scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .cva-scope-yours {
+    background: #f5f5f5;
+    border: 1px solid #d9dde3;
+    border-top: 6px solid #bb0000;
+    border-radius: 14px;
+    padding: 20px;
+  }
+
+  .cva-scope-cva {
+    background: #f5f5f5;
+    border: 1px solid #d9dde3;
+    border-top: 6px solid #222222;
+    border-radius: 14px;
+    padding: 20px;
+  }
+
+  /* ── Accordion section card ── */
+  .cva-acc-section {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 8px solid #bb0000;
+    border-radius: 16px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+
+  /* ── Callout ── */
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  /* ── Quick check list ── */
+  .cva-check-list {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 14px;
+    padding: 6px 22px;
+  }
+
+  .cva-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #d9dde3;
+  }
+  .cva-check-item:last-child { border-bottom: none; }
+
+  .cva-check-icon {
+    font-size: 18px;
+    color: #bb0000;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 28px 0 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-page {
+      padding: 0 12px 36px;
+    }
+
+    .cva-hero {
+      padding: 22px 18px;
+      margin: 20px 0 14px;
+    }
+
+    .cva-scope,
+    .cva-acc-section {
+      padding: 20px 18px;
+      margin-bottom: 14px;
+    }
+
+    .cva-scope-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-check-list {
+      padding: 6px 14px;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-page">
 
   <!-- HERO -->
-  <div style="background:#f5f5f5; border:1px solid #d9dde3; border-left:8px solid #BB0000; border-radius:16px; padding:30px 28px; margin:32px 0 20px; box-sizing:border-box;">
-    <p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 10px 0;">Online Teaching Practices</p>
-    <h1 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(32px,5vw,48px); line-height:1.05; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 14px 0;">Accessibility Guidelines</h1>
-    <p style="font-size:16px; line-height:1.7; margin:0 0 18px 0;">In an asynchronous class, students experience much of the course through your announcements, videos, and supplemental materials. <strong>Course content is provided and maintained by CVA, but any materials you create and share are your responsibility.</strong></p>
-    <div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #BB0000; border-radius:12px; padding:16px 18px; box-sizing:border-box;">
-      <p style="font-size:16px; line-height:1.6; margin:0;"><strong>Big Idea:</strong> Accessibility is not an extra step. It is a requirement for anything you create or share with students.</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Online Teaching Practices</span>
+    <h1 style="font-family: Oswald, Arial, sans-serif; font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #222222; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Accessibility Guidelines</h1>
+    <p style="font-size: 16px; line-height: 1.7; margin: 0 0 18px 0;">In an asynchronous class, students experience much of the course through your announcements, videos, and supplemental materials. <strong>Course content is provided and maintained by CVA, but any materials you create and share are your responsibility.</strong></p>
+    <div class="cva-callout">
+      <p style="font-size: 16px; line-height: 1.6; margin: 0;"><strong>Big Idea:</strong> Accessibility is not an extra step. It is a requirement for anything you create or share with students.</p>
     </div>
   </div>
 
-  <!-- SCOPE — What's yours vs CVA's -->
-  <div style="background:#ffffff; border:1px solid #d9dde3; border-radius:16px; padding:26px 28px; margin-bottom:20px; box-sizing:border-box;">
-    <p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 6px 0;">Know Your Scope</p>
-    <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 16px 0;">What's Your Responsibility vs. CVA's?</h2>
-    <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 20px 0;">CVA builds and maintains all core course content. Your accessibility responsibility applies to the supplemental layer: the materials you personally create, record, or post alongside the course.</p>
+  <!-- SCOPE -->
+  <div class="cva-scope">
+    <span class="cva-eyebrow">Know Your Scope</span>
+    <h2 style="font-family: Oswald, Arial, sans-serif; font-size: clamp(24px, 4vw, 34px); line-height: 1.15; color: #222222; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What's Your Responsibility vs. CVA's?</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">CVA builds and maintains all core course content. Your accessibility responsibility applies to the supplemental layer: the materials you personally create, record, or post alongside the course.</p>
+    <div class="cva-scope-grid">
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;">
-
-      <div style="background:#f5f5f5; border:1px solid #d9dde3; border-top:6px solid #BB0000; border-radius:14px; padding:20px; box-sizing:border-box;">
-        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 0 10px 0;">Your Responsibility</p>
-        <ul style="font-size:15px; line-height:1.7; margin:0; padding-left:18px; color:#222222;">
+      <div class="cva-scope-yours">
+        <p style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Your Responsibility</p>
+        <ul style="font-size: 15px; line-height: 1.7; margin: 0; padding-left: 18px; color: #222222;">
           <li>Class Announcements you write</li>
           <li>Digital graphics and one-pagers you create</li>
           <li>Videos and screen recordings you record</li>
-          
-        
-         
           <li>Images you insert into announcements</li>
         </ul>
       </div>
 
-      <div style="background:#f5f5f5; border:1px solid #d9dde3; border-top:6px solid #222222; border-radius:14px; padding:20px; box-sizing:border-box;">
-        <p style="font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#222222; font-weight:800; margin:0 0 10px 0;">CVA's Responsibility</p>
-        <ul style="font-size:15px; line-height:1.7; margin:0; padding-left:18px; color:#222222;">
+      <div class="cva-scope-cva">
+        <p style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #222222; font-weight: 800; margin: 0 0 10px 0;">CVA's Responsibility</p>
+        <ul style="font-size: 15px; line-height: 1.7; margin: 0; padding-left: 18px; color: #222222;">
           <li>Course pages and modules</li>
           <li>Assignments and rubrics built into the course</li>
           <li>Embedded videos provided in the course shell</li>
@@ -68,12 +278,11 @@
     </div>
   </div>
 
-  
-  <!-- ACCORDION CHECKLIST BY TOOL -->
-    <div style="background:#ffffff; border:1px solid #d9dde3; border-left:8px solid #BB0000; border-radius:16px; padding:26px 28px; margin-bottom:20px; box-sizing:border-box;">
-    <p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 px 6px 0;">Accessibility Basics</p>
-    <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 8px 0;">Guidelines to follow</h2>
-    <p style="font-size:15px; line-height:1.7; color:#555555; margin:0 0 20px 0;">Select the tool you are using to see specific accessibility requirements and subcategories. <strong> Reach out to CVA Teacher Support if you need any additional help or guidance in leveraging accessibility basics for all learners.</strong></p>
+  <!-- ACCORDION CHECKLIST -->
+  <div class="cva-acc-section">
+    <span class="cva-eyebrow">Accessibility Basics</span>
+    <h2 style="font-family: Oswald, Arial, sans-serif; font-size: clamp(24px, 4vw, 34px); line-height: 1.15; color: #222222; text-transform: uppercase; font-weight: 900; margin: 0 0 8px 0;">Guidelines to Follow</h2>
+    <p style="font-size: 15px; line-height: 1.7; color: #555555; margin: 0 0 20px 0;">Select the tool you are using to see specific accessibility requirements and subcategories. <strong>Reach out to CVA Teacher Support if you need any additional help or guidance in leveraging accessibility basics for all learners.</strong></p>
 
     <!-- ── CANVA ── -->
     <details class="cva-acc-details">
@@ -83,20 +292,22 @@
           <div class="tool-meta">Graphics &bull; Visual Announcements &bull; Infographics</div>
         </div>
       </summary>
-      <div style="padding:20px; background:#ffffff;">
-        <p style="font-size:15px; line-height:1.7; color:#333333; margin:0 0 16px 0;">Announcements are one of the primary ways students receive information from you inside the Digital Classroom. Canva is useful for creating polished visuals, but <strong>a graphic alone is not enough when it contains important course information</strong>. Students using screen readers, translation tools, small screens, or low-bandwidth connections may not be able to access information that only lives inside an image.</p>
-<details class="cva-sub-acc">
+      <div style="padding: 20px; background: #ffffff;">
+        <p style="font-size: 15px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">Announcements are one of the primary ways students receive information from you inside the Digital Classroom. Canva is useful for creating polished visuals, but <strong>a graphic alone is not enough when it contains important course information</strong>. Students using screen readers, translation tools, small screens, or low-bandwidth connections may not be able to access information that only lives inside an image.</p>
+
+        <details class="cva-sub-acc">
           <summary>Text</summary>
           <div class="cva-sub-body">
             <p>Accessible text helps all students access important information, whether they are reading it, listening to it, translating it, or using assistive technology.</p>
-              <ul>
-                <li>Break long announcements into short paragraphs or sections.</li>
-                <li>Avoid large blocks of unbroken text.</li>
-                <li>Use bold to highlight key information, not color alone.</li>
-              </ul>
+            <ul>
+              <li>Break long announcements into short paragraphs or sections.</li>
+              <li>Avoid large blocks of unbroken text.</li>
+              <li>Use bold to highlight key information, not color alone.</li>
+            </ul>
           </div>
         </details>
-         <details class="cva-sub-acc">
+
+        <details class="cva-sub-acc">
           <summary>Color, Contrast, and Readability</summary>
           <div class="cva-sub-body">
             <p>Design choices affect whether students can read the content at all.</p>
@@ -108,6 +319,7 @@
             </ul>
           </div>
         </details>
+
         <details class="cva-sub-acc">
           <summary>Text and Information Inside Graphics</summary>
           <div class="cva-sub-body">
@@ -120,8 +332,6 @@
           </div>
         </details>
 
-       
-
         <details class="cva-sub-acc">
           <summary>Alt Text for Images</summary>
           <div class="cva-sub-body">
@@ -133,6 +343,7 @@
             </ul>
           </div>
         </details>
+
         <details class="cva-sub-acc">
           <summary>Links and Buttons</summary>
           <div class="cva-sub-body">
@@ -178,8 +389,8 @@
           <div class="tool-meta">Teams and Zoom Recordings &bull; Panopto &bull; Welcome Videos &bull; Tutorials</div>
         </div>
       </summary>
-      <div style="padding:20px; background:#ffffff;">
-        <p style="font-size:15px; line-height:1.7; color:#333333; margin:0 0 16px 0;">Teacher-created videos must be accessible to students who cannot hear the audio, students who process information better through text, and students who need to review content later or in a different language.</p>
+      <div style="padding: 20px; background: #ffffff;">
+        <p style="font-size: 15px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">Teacher-created videos must be accessible to students who cannot hear the audio, students who process information better through text, and students who need to review content later or in a different language.</p>
 
         <details class="cva-sub-acc">
           <summary>Captions</summary>
@@ -216,57 +427,58 @@
             </ul>
           </div>
         </details>
-
       </div>
     </details>
-<!-- BEFORE YOU POST CHECKLIST — elevated -->
- <br>
- <br>
-    <p style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#BB0000; font-weight:800; margin:0 8px 6px 0;">Quick Check</p>
-    <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#222222; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Before You Post, Ask Yourself These Six Questions</h2>
-    <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 20px 0;">Run through this list before posting any announcement, video, graphic, or document. If you answer <strong>no</strong> to any of these, revise before sharing. If you or a student encounter an accessibility issue, contact CVA Teacher Support. </p>
 
-    <div style="background:#ffffff; border:1px solid #d9dde3; border-radius:14px; padding:6px 22px 6px; box-sizing:border-box;">
+    <!-- QUICK CHECK -->
+    <div style="margin-top: 28px;">
+      <span class="cva-eyebrow">Quick Check</span>
+      <h2 style="font-family: Oswald, Arial, sans-serif; font-size: clamp(24px, 4vw, 34px); line-height: 1.15; color: #222222; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Before You Post, Ask Yourself These Six Questions</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Run through this list before posting any announcement, video, graphic, or document. If you answer <strong>no</strong> to any of these, revise before sharing. If you or a student encounter an accessibility issue, contact CVA Teacher Support.</p>
 
-      <div style="display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-        <div style="font-size:18px; color:#BB0000; margin-top:2px; flex-shrink:0;">✓</div>
-        <p style="font-size:15px; line-height:1.6; margin:0;"><strong>Can students access the same information without relying only on an image?</strong><br><span style="color:#555555; font-size:14px;">If important info is only inside a graphic, repeat it as regular text.</span></p>
+      <div class="cva-check-list">
+
+        <div class="cva-check-item">
+          <div class="cva-check-icon">✓</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0;"><strong>Can students access the same information without relying only on an image?</strong><br><span style="color: #555555; font-size: 14px;">If important info is only inside a graphic, repeat it as regular text.</span></p>
+        </div>
+
+        <div class="cva-check-item">
+          <div class="cva-check-icon">✓</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0;"><strong>Did I include alt text for meaningful images?</strong><br><span style="color: #555555; font-size: 14px;">Describe what the image shows and why it matters — not just "image" or "screenshot."</span></p>
+        </div>
+
+        <div class="cva-check-item">
+          <div class="cva-check-icon">✓</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0;"><strong>Do my videos include accurate captions and a transcript when needed?</strong><br><span style="color: #555555; font-size: 14px;">Auto-captions alone are often inaccurate. Review and correct them before posting.</span></p>
+        </div>
+
+        <div class="cva-check-item">
+          <div class="cva-check-icon">✓</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0;"><strong>Is the text readable? High contrast, large enough, and easy to scan?</strong><br><span style="color: #555555; font-size: 14px;">Decorative fonts and low-contrast color combinations create barriers for many students.</span></p>
+        </div>
+
+        <div class="cva-check-item">
+          <div class="cva-check-icon">✓</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0;"><strong>Are links and buttons clearly labeled?</strong><br><span style="color: #555555; font-size: 14px;">Use "Open the Week 3 Assignment" — not "click here."</span></p>
+        </div>
+
+        <div class="cva-check-item">
+          <div class="cva-check-icon">✓</div>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0;"><strong>Would this resource still make sense if a student couldn't see the visual design?</strong><br><span style="color: #555555; font-size: 14px;">Screen readers, translation tools, and low-bandwidth devices may strip visuals entirely.</span></p>
+        </div>
+
       </div>
-
-      <div style="display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-        <div style="font-size:18px; color:#BB0000; margin-top:2px; flex-shrink:0;">✓</div>
-        <p style="font-size:15px; line-height:1.6; margin:0;"><strong>Did I include alt text for meaningful images?</strong><br><span style="color:#555555; font-size:14px;">Describe what the image shows and why it matters — not just "image" or "screenshot."</span></p>
-      </div>
-
-      <div style="display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-        <div style="font-size:18px; color:#BB0000; margin-top:2px; flex-shrink:0;">✓</div>
-        <p style="font-size:15px; line-height:1.6; margin:0;"><strong>Do my videos include accurate captions and a transcript when needed?</strong><br><span style="color:#555555; font-size:14px;">Auto-captions alone are often inaccurate. Review and correct them before posting.</span></p>
-      </div>
-
-      <div style="display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-        <div style="font-size:18px; color:#BB0000; margin-top:2px; flex-shrink:0;">✓</div>
-        <p style="font-size:15px; line-height:1.6; margin:0;"><strong>Is the text readable? High contrast, large enough, and easy to scan?</strong><br><span style="color:#555555; font-size:14px;">Decorative fonts and low-contrast color combinations create barriers for many students.</span></p>
-      </div>
-
-      <div style="display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px dashed #d9dde3;">
-        <div style="font-size:18px; color:#BB0000; margin-top:2px; flex-shrink:0;">✓</div>
-        <p style="font-size:15px; line-height:1.6; margin:0;"><strong>Are links and buttons clearly labeled?</strong><br><span style="color:#555555; font-size:14px;">Use "Open the Week 3 Assignment" — not "click here."</span></p>
-      </div>
-
-      <div style="display:flex; align-items:flex-start; gap:14px; padding:14px 0;">
-        <div style="font-size:18px; color:#BB0000; margin-top:2px; flex-shrink:0;">✓</div>
-        <p style="font-size:15px; line-height:1.6; margin:0;"><strong>Would this resource still make sense if a student couldn't see the visual design?</strong><br><span style="color:#555555; font-size:14px;">Screen readers, translation tools, and low-bandwidth devices may strip visuals entirely.</span></p>
     </div>
-    </div>
-
-
   </div>
 
   <!-- FOOTER -->
-  <hr style="border:none; border-top:1px solid #d9dde3; margin:28px 0 14px 0;">
-  <p style="font-family:Oswald,Arial,sans-serif; font-size:22px; color:#63666A; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin:0; text-align:center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>
