@@ -16,6 +16,7 @@
       label: "Grading and Feedback",
       pages: [
         { title: "Grading Policy at CVA",                 href: BASE + "/grading-and-feedback/cva-grading-policy.html" },
+        { title: "Accepting Student Work",                href: BASE + "/grading-and-feedback/accepting-student-work.html" },
         { title: "Submission Expectations",               href: BASE + "/grading-and-feedback/submission-expectations.html" },
         { title: "Resolving In Progress Student Work",    href: BASE + "/grading-and-feedback/resolving-in-progress-work.html" },
         { title: "Resubmission Opportunities",            href: BASE + "/grading-and-feedback/allowing-resubmissions.html" },
@@ -69,8 +70,21 @@
   /* ── Styles ──────────────────────────────────────────────── */
   const style = document.createElement("style");
   style.textContent = `
-    /* Prevent content hiding behind fixed header */
+    /* Prevent content hiding behind fixed header — adjusted by JS */
     body { padding-top: 56px !important; }
+
+    /* ── Banner image ── */
+    #cva-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1001;
+      line-height: 0;
+    }
+    #cva-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* ── Top header bar ── */
     #cva-header {
@@ -253,6 +267,27 @@
     <a id="cva-header-home" href="https://adamhardigree-maker.github.io/teacher-resources/">CVA Teacher Resources Hub</a>
   `;
   document.body.prepend(header);
+
+  /* ── Banner image ────────────────────────────────────────── */
+  const banner = document.createElement("div");
+  banner.id = "cva-banner";
+  const bannerImg = document.createElement("img");
+  bannerImg.src = "../images/Website Banner Teacher Resources Hub.png";
+  bannerImg.alt = "Cobb Virtual Academy Teacher Resources";
+  banner.appendChild(bannerImg);
+  document.body.prepend(banner);
+
+  /* Position nav bar below banner and adjust body padding */
+  function updateLayout() {
+    const bannerH = bannerImg.offsetHeight;
+    const sideEl = document.getElementById("cva-sidebar");
+    header.style.top = bannerH + "px";
+    if (sideEl) sideEl.style.top = (bannerH + 56) + "px";
+    document.body.style.paddingTop = (bannerH + 56) + "px";
+  }
+  bannerImg.addEventListener("load", updateLayout);
+  if (bannerImg.complete && bannerImg.naturalHeight !== 0) updateLayout();
+  window.addEventListener("resize", updateLayout);
 
   /* ── Build sidebar ───────────────────────────────────────── */
   const sidebar = document.createElement("nav");
