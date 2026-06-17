@@ -58,6 +58,8 @@
         { title: "Instructional Practice Review", href: BASE + "/professionalism-and-collaboration/instructional-practice-review.html" },
         { title: "Weekly Facilitation Routine",   href: BASE + "/professionalism-and-collaboration/weekly-routine.html" },
         { title: "Accessibility by Design",       href: BASE + "/professionalism-and-collaboration/accessibility-by-design.html" },
+        { title: "Views and Tools",       href: BASE + "/professionalism-and-collaboration/views-and-tools.html" },
+        { title: "Synergy Gradebook Setup",       href: BASE + "/professionalism-and-collaboration/synergy.gradebook.html" },
       ],
     },
   ];
