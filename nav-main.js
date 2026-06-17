@@ -9,57 +9,57 @@
   /* ── Site map ─────────────────────────────────────────────
      Add sub-pages under each section as links become available.
      External links open in a new tab automatically.
-     Use href: "#" as a placeholder until real links are ready.
   ──────────────────────────────────────────────────────────── */
   const NAV = [
     {
       label: "Grading and Feedback",
       pages: [
-        { title: "Grading Policy at CVA",                    href: "cva-grading-policy.html" },
-        { title: "Resolving In Progress Student Work",        href: "resolving-in-progress-work.html" },
-        { title: "Resubmission Opportunities",               href: "allowing-resubmissions.html" },
-        { title: "Discussion to Drive Learning",             href: "discussions-as-learning.html" },
-        { title: "Academic Integrity and Paused Grading",    href: "paused-grading.html" },
-        { title: "Effective Feedback",                       href: "effective-feedback.html" },
+        { title: "Grading Policy at CVA",                 href: "grading-and-feedback/cva-grading-policy.html" },
+        { title: "Accepting Student Work",                href: "grading-and-feedback/accepting-student-work.html" },
+        { title: "Submission Expectations",               href: "grading-and-feedback/submission-expectations.html" },
+        { title: "Resolving In Progress Student Work",    href: "grading-and-feedback/resolving-in-progress-work.html" },
+        { title: "Resubmission Opportunities",            href: "grading-and-feedback/allowing-resubmissions.html" },
+        { title: "Academic Integrity and Paused Grading", href: "grading-and-feedback/paused-grading.html" },
+        { title: "Effective Feedback",                    href: "grading-and-feedback/effective-feedback.html" },
       ],
     },
     {
       label: "Communication and Responsiveness",
       pages: [
-        { title: "Email Communication",      href: "email-communication.html" },
-        { title: "Required Email Signature", href: "cva-email-signature.html" },
-        { title: "Who Do Students Contact?", href: "who-do-students-contact.html" },
+        { title: "Email Communication",      href: "communication-and-responsiveness/email-communication.html" },
+        { title: "Required Email Signature", href: "communication-and-responsiveness/cva-email-signature.html" },
+        { title: "Who Do Students Contact?", href: "communication-and-responsiveness/who-do-students-contact.html" },
+        { title: "Contacting Local Schools", href: "communication-and-responsiveness/contacting-local-schools.html" },
       ],
     },
     {
       label: "Rapport and Relationships",
       pages: [
-        { title: "Instructor Profile",      href: "https://www.cobbk12.org/cobbvirtualacademy/instructor-profile" },
-        { title: "Classroom Announcements", href: "classroom-announcements.html" },
+        { title: "Instructor Profile",           href: "rapport-and-relationships/instructor-profile.html" },
+        { title: "Classroom Announcements",      href: "rapport-and-relationships/classroom-announcements.html" },
+        { title: "Discussion to Drive Learning", href: "rapport-and-relationships/discussions-as-learning.html" },
       ],
     },
     {
       label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Parent Access to CTLS Learn",              href: "parent-access-to-ctls.html" },
-        { title: "Navigating with CTLS Icons",               href: "https://www.cobbk12.org/cobbvirtualacademy/navigating-ctls-icons" },
-        { title: "Checking Grades",                          href: "https://www.cobbk12.org/cobbvirtualacademy/checking-grades" },
-        { title: "Checking Feedback",                        href: "https://www.cobbk12.org/cobbvirtualacademy/checking-feedback" },
-        { title: "Student Accommodations and Accessibility", href: "accommodations-and-accessibility.html" },
-        { title: "Progress Tracker",                         href: "progress-tracker.html" },
-        { title: "Practice Student View",                    href: "practice-student.html" },
-        { title: "Contact from Local Schools",               href: "contacting-local-schools.html" },
+        { title: "Parent Access to CTLS Learn",              href: "proactive-intervention-and-student-support/parent-access-to-ctls.html" },
+        { title: "Student Accommodations and Accessibility", href: "proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
+        { title: "Class Schedule",                           href: "proactive-intervention-and-student-support/class-schedule.html" },
+        { title: "Communicating Deadlines",                  href: "proactive-intervention-and-student-support/communicating-deadlines.html" },
+        { title: "Grades and Feedback Support",              href: "proactive-intervention-and-student-support/grades-and-feedback-support.html" },
+        { title: "Progress Tracker",                         href: "proactive-intervention-and-student-support/progress-tracker.html" },
+        { title: "Practice Student View",                    href: "proactive-intervention-and-student-support/practice-student.html" },
       ],
     },
     {
-      label: "Professionalism and Collaboration",
+      label: "Professionalism and Communication",
       pages: [
-        { title: "Professional Learning Course",  href: "professional-learning-course.html" },
-        { title: "Instructional Practice Review", href: "instructional-practice-review.html" },
-        { title: "Weekly Facilitation Routine",   href: "weekly-facilitation-routine.html" },
-      
+        { title: "Professional Learning Course",  href: "professionalism-and-communication/professional-learning-course.html" },
+        { title: "Instructional Practice Review", href: "professionalism-and-communication/instructional-practice-review.html" },
+        { title: "Weekly Facilitation Routine",   href: "professionalism-and-communication/weekly-routine.html" },
+        { title: "Accessibility by Design",       href: "professionalism-and-communication/accessibility-by-design.html" },
       ],
-      
     },
     /* ── External tool links (no sub-pages, open in new tab) ── */
     {
@@ -233,13 +233,6 @@
     }
     .cva-main-group-pages a:last-child { border-bottom: none; }
     .cva-main-group-pages a:hover { background: #f0e8e8; color: #BB0000; }
-    .cva-main-group-pages a.active {
-      color: #BB0000;
-      font-weight: 700;
-      background: #f5eded;
-      border-left: 3px solid #BB0000;
-      padding-left: 21px;
-    }
 
     /* External direct links (no sub-pages) */
     .cva-main-external-link {
@@ -296,8 +289,6 @@
   title.textContent = "CVA Teacher Resources Hub";
   bar.appendChild(title);
 
-
-
   /* ── Banner image (above nav bar) ────────────────────── */
   const banner = document.createElement("div");
   banner.id = "cva-main-banner";
@@ -347,8 +338,6 @@
   drawer.appendChild(drawerHome);
 
   /* ── Build nav items ──────────────────────────────────── */
-  const currentPage = location.pathname.split("/").pop() || "index.html";
-
   NAV.forEach(function (section) {
 
     /* External direct link — no sub-pages */
@@ -374,28 +363,16 @@
     const pages = document.createElement("div");
     pages.className = "cva-main-group-pages";
 
-    let hasActive = false;
     section.pages.forEach(function (page) {
       const a = document.createElement("a");
       a.href = page.href;
       a.textContent = page.title;
-      /* External sub-pages open in new tab */
       if (page.href.startsWith("http")) {
         a.target = "_blank";
         a.rel = "noopener";
       }
-      if (page.href !== "#" && page.href.split("/").pop() === currentPage) {
-        a.classList.add("active");
-        hasActive = true;
-      }
       pages.appendChild(a);
     });
-
-    /* Auto-expand the active section */
-    if (hasActive) {
-      btn.classList.add("open");
-      pages.classList.add("open");
-    }
 
     btn.addEventListener("click", function () {
       const isOpen = pages.classList.contains("open");
