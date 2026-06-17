@@ -227,7 +227,7 @@
     <button id="cva-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="cva-sidebar">
       <span></span><span></span><span></span>
     </button>
-    <a id="cva-header-home" href="index.html">CVA Teacher Resources Hub</a>
+    <a id="cva-header-home" href="https://adamhardigree-maker.github.io/teacher-resources/">CVA Teacher Resources Hub</a>
   `;
   document.body.prepend(header);
 
@@ -236,7 +236,7 @@
   sidebar.id = "cva-sidebar";
   sidebar.setAttribute("aria-label", "Resource navigation");
 
-  let sidebarHTML = `<a class="cva-nav-home" href="index.html">&#8592; Resource Hub Home</a>`;
+  let sidebarHTML = `<a class="cva-nav-home" href="https://adamhardigree-maker.github.io/teacher-resources/">&#8592; Resource Hub Home</a>`;
 
   NAV.forEach((group, gi) => {
     // Auto-expand the group that contains the current page
