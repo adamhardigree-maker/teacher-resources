@@ -70,8 +70,7 @@
   /* ── Styles ──────────────────────────────────────────────── */
   const style = document.createElement("style");
   style.textContent = `
-    /* Prevent content hiding behind fixed header — adjusted by JS */
-    body { padding-top: 56px !important; }
+    /* Padding set dynamically by JS to account for banner + nav bar */
 
     /* ── Banner image ── */
     #cva-banner {
@@ -284,8 +283,9 @@
     const sideEl = document.getElementById("cva-sidebar");
     header.style.top = bannerH + "px";
     if (sideEl) sideEl.style.top = (bannerH + 56) + "px";
-    document.body.style.paddingTop = (bannerH + 56) + "px";
+    document.body.style.paddingTop = (bannerH + 56 + 16) + "px";
   }
+  updateLayout();
   bannerImg.addEventListener("load", updateLayout);
   if (bannerImg.complete && bannerImg.naturalHeight !== 0) updateLayout();
   window.addEventListener("resize", updateLayout);
