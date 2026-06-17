@@ -52,7 +52,7 @@
       ],
     },
     {
-      label: "Professionalism and Communication",
+      label: "Professionalism and Collaboration",
       pages: [
         { title: "Professional Learning Course",  href: "professional-learning-course.html" },
         { title: "Instructional Practice Review", href: "instructional-practice-review.html" },
