@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Practice Student View | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
   .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3, .cva-wrap h4 { font-family: 'Oswald', Arial, sans-serif; }
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3, .cva-wrap h4 {
+    font-family: 'Oswald', Arial, sans-serif;
+  }
 
   .cva-wrap {
     font-family: Montserrat, Arial, sans-serif;
@@ -22,7 +25,7 @@
     gap: 14px;
   }
 
-  /* ── Hero ── */
+  /* HERO */
   .cva-hero {
     background: #f7f8fa;
     border: 1px solid #d9dde3;
@@ -31,7 +34,7 @@
     padding: 28px 26px;
   }
 
-  /* ── White card ── */
+  /* WHITE CARD */
   .cva-white {
     background: #ffffff;
     border: 1px solid #d9dde3;
@@ -39,7 +42,7 @@
     padding: 26px 28px;
   }
 
-  /* ── Gray card ── */
+  /* GRAY CARD */
   .cva-gray {
     background: #f7f8fa;
     border: 1px solid #d9dde3;
@@ -47,7 +50,7 @@
     padding: 26px 28px;
   }
 
-  /* ── Left-accented card ── */
+  /* LEFT-ACCENTED CARD */
   .cva-accent {
     background: #ffffff;
     border: 1px solid #d9dde3;
@@ -56,7 +59,7 @@
     padding: 24px 28px;
   }
 
-  /* ── Callout ── */
+  /* CALLOUT */
   .cva-callout {
     background: #ffffff;
     border: 1px solid #d9dde3;
@@ -65,7 +68,7 @@
     padding: 18px 20px;
   }
 
-  /* ── Card grids ── */
+  /* CARD GRIDS */
   .cva-grid-4 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -80,7 +83,7 @@
     padding: 18px 20px;
   }
 
-  /* ── Step cards with side image ── */
+  /* STEP CARDS WITH SIDE IMAGE */
   .cva-step-card {
     background: #ffffff;
     border: 1px solid #d9dde3;
@@ -105,7 +108,7 @@
     border: 1px solid #d9dde3;
   }
 
-  /* ── Takeaway list ── */
+  /* TAKEAWAY LIST */
   .cva-takeaway-list {
     background: #ffffff;
     border: 1px solid #d9dde3;
@@ -121,7 +124,9 @@
     border-bottom: 1px dashed #e5e4e2;
   }
 
-  .cva-takeaway-item:last-child { border-bottom: none; }
+  .cva-takeaway-item:last-child {
+    border-bottom: none;
+  }
 
   .cva-takeaway-icon {
     font-size: 20px;
@@ -131,8 +136,13 @@
     flex-shrink: 0;
   }
 
-  /* ── Footer ── */
-  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  /* FOOTER */
+  .cva-footer-rule {
+    border: none;
+    border-top: 1px solid #d9dde3;
+    margin: 14px 0;
+  }
+
   .cva-footer {
     font-family: Oswald, Arial, sans-serif;
     font-size: 22px;
@@ -144,7 +154,7 @@
     text-align: center;
   }
 
-  /* ── Shared text ── */
+  /* SHARED TEXT */
   .cva-eyebrow {
     font-size: 12px;
     letter-spacing: .13em;
@@ -165,7 +175,7 @@
     display: block;
   }
 
-  /* ── Responsive ── */
+  /* RESPONSIVE */
   @media (max-width: 640px) {
     .cva-wrap {
       padding: 12px 12px 36px;
@@ -183,7 +193,6 @@
       grid-template-columns: 1fr;
     }
 
-    /* On mobile, image comes after the text */
     .cva-step-img {
       max-width: 100%;
     }
@@ -196,10 +205,13 @@
       padding: 8px 16px;
     }
 
-    .cva-footer { font-size: 18px; }
+    .cva-footer {
+      font-size: 18px;
+    }
   }
 </style>
 </head>
+
 <body style="margin: 0; padding-top: 56px; background: #ffffff;">
 
 <div class="cva-wrap">
@@ -223,6 +235,7 @@
   <div class="cva-gray">
     <span class="cva-eyebrow">Why It Matters</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What Practice Student View Helps You Check</h2>
+
     <div class="cva-grid-4">
 
       <div class="cva-card">
@@ -257,9 +270,10 @@
         <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px 0; color: #333333;">From the CTLS dashboard, click the graduation cap icon in the top-right toolbar.</p>
         <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
       </div>
-      <a href="professionalism-and-collaboration/images/Graduation Cap.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
+
+      <a href="images/graduation-cap.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
         <img
-          src="professionalism-and-collaboration/images/Graduation Cap.png"
+          src="images/graduation-cap.png"
           alt="CTLS dashboard screen with a black arrow pointing to the graduation cap icon in the top-right toolbar."
           class="cva-step-img"
         >
@@ -276,9 +290,10 @@
         <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px 0; color: #333333;">Use the Select a Class dropdown menu to view the courses connected to the student account.</p>
         <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
       </div>
-      <a href="professionalism-and-collaboration/images/Select a Class.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
+
+      <a href="images/select-a-class.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
         <img
-          src="professionalism-and-collaboration/images/Select a Class.png"
+          src="images/select-a-class.png"
           alt="CTLS class selection screen with an arrow pointing to the Select a Class dropdown menu."
           class="cva-step-img"
         >
@@ -295,9 +310,10 @@
         <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px 0; color: #333333;">Click the course tile for the class you need to open.</p>
         <p style="font-size: 13px; line-height: 1.5; color: #666666; margin: 0;">Click the image to enlarge.</p>
       </div>
-      <a href="professionalism-and-collaboration/images/Class Tile.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
+
+      <a href="images/class-tile.png" target="_blank" rel="noopener" style="display: block; text-decoration: none;">
         <img
-          src="professionalism-and-collaboration/images/Class Tile.png"
+          src="images/class-tile.png"
           alt="CTLS class selection screen with an arrow pointing to a course tile for Multicultural Literature."
           class="cva-step-img"
         >
@@ -310,6 +326,7 @@
     <span class="cva-eyebrow">Teacher View + Student View</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Keep Both Views Open</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Because the CTLS Learn Portal opens in a new browser tab, you can keep your Teacher View open while also checking the course from the Practice Student View.</p>
+
     <div class="cva-callout">
       <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;"><strong>Tip:</strong> Use Teacher View to make or check course updates, then use Practice Student View to confirm what students will actually see.</p>
     </div>
@@ -319,6 +336,7 @@
   <div class="cva-white">
     <span class="cva-eyebrow">Best Uses</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">Use Practice Student View To...</h2>
+
     <div class="cva-grid-4">
 
       <div class="cva-card">
@@ -348,6 +366,7 @@
   <div class="cva-gray">
     <span class="cva-eyebrow">Quick Takeaways</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What to Remember</h2>
+
     <div class="cva-takeaway-list">
 
       <div class="cva-takeaway-item">
