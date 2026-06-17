@@ -255,10 +255,8 @@
         <div class="cva-nav-pages${isActiveGroup ? " open" : ""}" id="cva-group-${gi}">
           ${group.pages.map(p => {
             const isCurrent = p.href === currentURL;
-            const isExternal = p.href.startsWith("http");
             return `<a href="${p.href}"
                        class="${isCurrent ? "current" : ""}"
-                       ${isExternal ? 'target="_blank" rel="noopener"' : ""}
                     >${p.title}</a>`;
           }).join("")}
         </div>
@@ -296,6 +294,11 @@
 
   toggle.addEventListener("click", toggleMenu);
   overlayEl.addEventListener("click", closeMenu);
+
+  /* ── Close menu when a page link is clicked ──────────────── */
+  sidebar.querySelectorAll(".cva-nav-pages a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
 
   /* ── Accordion inside sidebar ────────────────────────────── */
   sidebar.querySelectorAll(".cva-nav-group-btn").forEach(btn => {
