@@ -53,12 +53,12 @@
       ],
     },
     {
-      label: "Professionalism and Communication",
+      label: "Professionalism and Collaboration",
       pages: [
-        { title: "Professional Learning Course",  href: "professionalism-and-communication/professional-learning-course.html" },
-        { title: "Instructional Practice Review", href: "professionalism-and-communication/instructional-practice-review.html" },
-        { title: "Weekly Facilitation Routine",   href: "professionalism-and-communication/weekly-routine.html" },
-        { title: "Accessibility by Design",       href: "professionalism-and-communication/accessibility-by-design.html" },
+        { title: "Professional Learning Course",  href: "professionalism-and-collaboration/professional-learning-course.html" },
+        { title: "Instructional Practice Review", href: "professionalism-and-collaboration/instructional-practice-review.html" },
+        { title: "Weekly Facilitation Routine",   href: "professionalism-and-collaboration/weekly-routine.html" },
+        { title: "Accessibility by Design",       href: "professionalism-and-collaboration/accessibility-by-design.html" },
       ],
     },
     /* ── External tool links (no sub-pages, open in new tab) ── */
