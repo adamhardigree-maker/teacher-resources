@@ -13,48 +13,51 @@
     {
       label: "Grading and Feedback",
       pages: [
-        { title: "Grading Policy at CVA",            href: "cva-grading-policy.html" },
-        { title: "Resolving In Progress Student Work",href: "resolving-in-progress-work.html" },
-        { title: "Resubmission Opportunities",        href: "allowing-resubmissions.html" },
-        { title: "Discussion to Drive Learning",      href: "discussions-as-learning.html" },
+        { title: "Grading Policy at CVA",              href: "cva-grading-policy.html" },
+        { title: "Accepting Student Work",             href: "accepting-student-work.html" },
+        { title: "Submission Expectations",            href: "submission-expectations.html" },
+        { title: "Resolving In Progress Student Work", href: "resolving-in-progress-work.html" },
+        { title: "Resubmission Opportunities",         href: "allowing-resubmissions.html" },
         { title: "Academic Integrity and Paused Grading", href: "paused-grading.html" },
-        { title: "Effective Feedback",                href: "effective-feedback.html" },
+        { title: "Effective Feedback",                 href: "effective-feedback.html" },
       ],
     },
     {
       label: "Communication and Responsiveness",
       pages: [
-        { title: "Email Communication",       href: "email-communication.html" },
-        { title: "Required Email Signature",  href: "cva-email-signature.html" },
-        { title: "Who Do Students Contact?",  href: "who-do-students-contact.html" },
+        { title: "Email Communication",      href: "email-communication.html" },
+        { title: "Required Email Signature", href: "cva-email-signature.html" },
+        { title: "Who Do Students Contact?", href: "who-do-students-contact.html" },
+        { title: "Contacting Local Schools", href: "contacting-local-schools.html" },
       ],
     },
     {
       label: "Rapport and Relationships",
       pages: [
-        { title: "Instructor Profile",       href: "https://www.cobbk12.org/cobbvirtualacademy/instructor-profile" },
-        { title: "Classroom Announcements",  href: "classroom-announcements.html" },
+        { title: "Instructor Profile",           href: "instructor-profile.html" },
+        { title: "Classroom Announcements",    href: "classroom-announcements.html" },
+        { title: "Discussion to Drive Learning", href: "discussions-as-learning.html" },
       ],
     },
     {
       label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Parent Access to CTLS Learn",          href: "parent-access-to-ctls.html" },
-        { title: "Navigating with CTLS Icons",           href: "https://www.cobbk12.org/cobbvirtualacademy/navigating-ctls-icons" },
-        { title: "Checking Grades",                      href: "https://www.cobbk12.org/cobbvirtualacademy/checking-grades" },
-        { title: "Checking Feedback",                    href: "https://www.cobbk12.org/cobbvirtualacademy/checking-feedback" },
+        { title: "Parent Access to CTLS Learn",           href: "parent-access-to-ctls.html" },
         { title: "Student Accommodations and Accessibility", href: "accommodations-and-accessibility.html" },
-        { title: "Progress Tracker",                     href: "progress-tracker.html" },
-        { title: "Practice Student View",                href: "practice-student.html" },
-        { title: "Contact from Local Schools",           href: "contacting-local-schools.html" },
+        { title: "Class Schedule",                        href: "class-schedule.html" },
+        { title: "Communicating Deadlines",               href: "communicating-deadlines.html" },
+        { title: "Grades and Feedback Support",           href: "grades-and-feedback-support.html" },
+        { title: "Progress Tracker",                      href: "progress-tracker.html" },
+        { title: "Practice Student View",                 href: "practice-student.html" },
       ],
     },
     {
-      label: "Professionalism and Collaboration",
+      label: "Professionalism and Communication",
       pages: [
-        { title: "Professional Learning Course",   href: "professional-learning-course.html" },
-        { title: "Instructional Practice Review",  href: "instructional-practice-review.html" },
-        { title: "Weekly Facilitation Routine",    href: "weekly-facilitation-routine.html" },
+        { title: "Professional Learning Course",  href: "professional-learning-course.html" },
+        { title: "Instructional Practice Review", href: "instructional-practice-review.html" },
+        { title: "Weekly Facilitation Routine",   href: "weekly-routine.html" },
+        { title: "Accessibility by Design",       href: "accessibility-by-design.html" },
       ],
     },
   ];
@@ -272,8 +275,8 @@
   document.body.appendChild(overlay);
 
   /* ── Toggle logic ────────────────────────────────────────── */
-  const toggle   = document.getElementById("cva-menu-toggle");
-  const sideEl   = document.getElementById("cva-sidebar");
+  const toggle    = document.getElementById("cva-menu-toggle");
+  const sideEl    = document.getElementById("cva-sidebar");
   const overlayEl = document.getElementById("cva-overlay");
 
   function openMenu() {
