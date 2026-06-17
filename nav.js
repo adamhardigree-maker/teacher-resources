@@ -219,6 +219,28 @@
       border-left-color: #BB0000;
       background: #fff;
     }
+
+    /* External links at bottom of sidebar */
+    .cva-nav-external {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 20px 13px 16px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #BB0000;
+      text-decoration: none;
+      border-bottom: 1px solid #C8C7C7;
+    }
+    .cva-nav-external:hover { background: #fafafa; }
+    .cva-nav-external .cva-ext-arrow { font-size: 0.7rem; opacity: 0.6; }
+    .cva-nav-external-group {
+      border-top: 2px solid #BB0000;
+      margin-top: 8px;
+    }
   `;
   document.head.appendChild(style);
 
@@ -262,6 +284,14 @@
         </div>
       </div>`;
   });
+
+  sidebarHTML += `
+    <div class="cva-nav-external-group">
+      <a class="cva-nav-external" href="https://www.cobbk12.org/cobbvirtualacademy" target="_blank" rel="noopener">CVA Homepage <span class="cva-ext-arrow">↗</span></a>
+      <a class="cva-nav-external" href="https://www.cobbk12.org/ctls-support" target="_blank" rel="noopener">CTLS Support <span class="cva-ext-arrow">↗</span></a>
+      <a class="cva-nav-external" href="https://incite.educationincites.com/#/initUser" target="_blank" rel="noopener">CTLS Teach <span class="cva-ext-arrow">↗</span></a>
+      <a class="cva-nav-external" href="https://synergy.cobbk12.org/" target="_blank" rel="noopener">Synergy <span class="cva-ext-arrow">↗</span></a>
+    </div>`;
 
   sidebar.innerHTML = sidebarHTML;
   document.body.appendChild(sidebar);
