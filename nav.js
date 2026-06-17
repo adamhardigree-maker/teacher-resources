@@ -289,6 +289,7 @@
   bannerImg.addEventListener("load", updateLayout);
   if (bannerImg.complete && bannerImg.naturalHeight !== 0) updateLayout();
   window.addEventListener("resize", updateLayout);
+  window.addEventListener("load", updateLayout);
 
   /* ── Build sidebar ───────────────────────────────────────── */
   const sidebar = document.createElement("nav");
