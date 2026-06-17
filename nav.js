@@ -9,61 +9,63 @@
   /* ── Site map ─────────────────────────────────────────────
      Add new pages here. The menu rebuilds automatically.
   ──────────────────────────────────────────────────────────── */
+  const BASE = "https://adamhardigree-maker.github.io/teacher-resources";
+
   const NAV = [
     {
       label: "Grading and Feedback",
       pages: [
-        { title: "Grading Policy at CVA",              href: "cva-grading-policy.html" },
-        { title: "Accepting Student Work",             href: "accepting-student-work.html" },
-        { title: "Submission Expectations",            href: "submission-expectations.html" },
-        { title: "Resolving In Progress Student Work", href: "resolving-in-progress-work.html" },
-        { title: "Resubmission Opportunities",         href: "allowing-resubmissions.html" },
-        { title: "Academic Integrity and Paused Grading", href: "paused-grading.html" },
-        { title: "Effective Feedback",                 href: "effective-feedback.html" },
+        { title: "Grading Policy at CVA",                 href: BASE + "/grading-and-feedback/cva-grading-policy.html" },
+        { title: "Accepting Student Work",                href: BASE + "/grading-and-feedback/accepting-student-work.html" },
+        { title: "Submission Expectations",               href: BASE + "/grading-and-feedback/submission-expectations.html" },
+        { title: "Resolving In Progress Student Work",    href: BASE + "/grading-and-feedback/resolving-in-progress-work.html" },
+        { title: "Resubmission Opportunities",            href: BASE + "/grading-and-feedback/allowing-resubmissions.html" },
+        { title: "Academic Integrity and Paused Grading", href: BASE + "/grading-and-feedback/paused-grading.html" },
+        { title: "Effective Feedback",                    href: BASE + "/grading-and-feedback/effective-feedback.html" },
       ],
     },
     {
       label: "Communication and Responsiveness",
       pages: [
-        { title: "Email Communication",      href: "email-communication.html" },
-        { title: "Required Email Signature", href: "cva-email-signature.html" },
-        { title: "Who Do Students Contact?", href: "who-do-students-contact.html" },
-        { title: "Contacting Local Schools", href: "contacting-local-schools.html" },
+        { title: "Email Communication",      href: BASE + "/communication-and-responsiveness/email-communication.html" },
+        { title: "Required Email Signature", href: BASE + "/communication-and-responsiveness/cva-email-signature.html" },
+        { title: "Who Do Students Contact?", href: BASE + "/communication-and-responsiveness/who-do-students-contact.html" },
+        { title: "Contacting Local Schools", href: BASE + "/communication-and-responsiveness/contacting-local-schools.html" },
       ],
     },
     {
       label: "Rapport and Relationships",
       pages: [
-        { title: "Instructor Profile",           href: "instructor-profile.html" },
-        { title: "Classroom Announcements",    href: "classroom-announcements.html" },
-        { title: "Discussion to Drive Learning", href: "discussions-as-learning.html" },
+        { title: "Instructor Profile",           href: BASE + "/rapport-and-relationships/instructor-profile.html" },
+        { title: "Classroom Announcements",      href: BASE + "/rapport-and-relationships/classroom-announcements.html" },
+        { title: "Discussion to Drive Learning", href: BASE + "/rapport-and-relationships/discussions-as-learning.html" },
       ],
     },
     {
       label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Parent Access to CTLS Learn",           href: "parent-access-to-ctls.html" },
-        { title: "Student Accommodations and Accessibility", href: "accommodations-and-accessibility.html" },
-        { title: "Class Schedule",                        href: "class-schedule.html" },
-        { title: "Communicating Deadlines",               href: "communicating-deadlines.html" },
-        { title: "Grades and Feedback Support",           href: "grades-and-feedback-support.html" },
-        { title: "Progress Tracker",                      href: "progress-tracker.html" },
-        { title: "Practice Student View",                 href: "practice-student.html" },
+        { title: "Parent Access to CTLS Learn",              href: BASE + "/proactive-intervention-and-student-support/parent-access-to-ctls.html" },
+        { title: "Student Accommodations and Accessibility", href: BASE + "/proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
+        { title: "Class Schedule",                           href: BASE + "/proactive-intervention-and-student-support/class-schedule.html" },
+        { title: "Communicating Deadlines",                  href: BASE + "/proactive-intervention-and-student-support/communicating-deadlines.html" },
+        { title: "Grades and Feedback Support",              href: BASE + "/proactive-intervention-and-student-support/grades-and-feedback-support.html" },
+        { title: "Progress Tracker",                         href: BASE + "/proactive-intervention-and-student-support/progress-tracker.html" },
+        { title: "Practice Student View",                    href: BASE + "/proactive-intervention-and-student-support/practice-student.html" },
       ],
     },
     {
       label: "Professionalism and Collaboration",
       pages: [
-        { title: "Professional Learning Course",  href: "professional-learning-course.html" },
-        { title: "Instructional Practice Review", href: "instructional-practice-review.html" },
-        { title: "Weekly Facilitation Routine",   href: "weekly-routine.html" },
-        { title: "Accessibility by Design",       href: "accessibility-by-design.html" },
+        { title: "Professional Learning Course",  href: BASE + "/professionalism-and-collaboration/professional-learning-course.html" },
+        { title: "Instructional Practice Review", href: BASE + "/professionalism-and-collaboration/instructional-practice-review.html" },
+        { title: "Weekly Facilitation Routine",   href: BASE + "/professionalism-and-collaboration/weekly-routine.html" },
+        { title: "Accessibility by Design",       href: BASE + "/professionalism-and-collaboration/accessibility-by-design.html" },
       ],
     },
   ];
 
   /* ── Detect current page ─────────────────────────────────── */
-  const currentFile = window.location.pathname.split("/").pop() || "index.html";
+  const currentURL = window.location.href.split("?")[0];
 
   /* ── Styles ──────────────────────────────────────────────── */
   const style = document.createElement("style");
@@ -240,9 +242,7 @@
 
   NAV.forEach((group, gi) => {
     // Auto-expand the group that contains the current page
-    const isActiveGroup = group.pages.some(p =>
-      p.href === currentFile || p.href.endsWith("/" + currentFile)
-    );
+    const isActiveGroup = group.pages.some(p => p.href === currentURL);
 
     sidebarHTML += `
       <div class="cva-nav-group">
@@ -254,8 +254,7 @@
         </button>
         <div class="cva-nav-pages${isActiveGroup ? " open" : ""}" id="cva-group-${gi}">
           ${group.pages.map(p => {
-            const isCurrent =
-              p.href === currentFile || p.href.endsWith("/" + currentFile);
+            const isCurrent = p.href === currentURL;
             const isExternal = p.href.startsWith("http");
             return `<a href="${p.href}"
                        class="${isCurrent ? "current" : ""}"
