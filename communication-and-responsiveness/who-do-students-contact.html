@@ -1,46 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Do Students Contact? | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── Standard white card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Standard gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented reminder card ── */
+  .cva-reminder {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Card grids ── */
+  .cva-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── Individual item card ── */
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Sample responses stack ── */
+  .cva-response-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hub link button ── */
+  .cva-hub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #bb0000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 8px 8px 8px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.14);
+  }
+
+  .cva-hub-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #bb0000;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-reminder {
+      padding: 20px 18px;
+    }
+
+    .cva-grid-3,
+    .cva-grid-4 {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-hub-btn {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Communication</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Communication</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Who Do Students Contact?</h1>
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0;">Students get help faster when they know who to contact. CVA teachers are the first stop for questions related to the class itself, while counselors and CVA support teams help with scheduling, credits, graduation planning, and additional layers of support.</p>
   </div>
 
   <!-- OVERVIEW -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Point Students to the Right Support</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 14px 0;">Teachers are the first stop for anything related to the class itself. If a student is confused about instructions, needs clarification on feedback, or wants help understanding the content, the teacher is the right person to contact.</p>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">When teachers consistently point students to the right place, two things happen: students get help faster, and teachers can focus on teaching rather than trying to solve every type of problem.</p>
   </div>
 
   <!-- QUICK GUIDE -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Guide</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Quick Guide</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Who Handles What?</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use these categories to help students contact the person who can best answer their question.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+    <div class="cva-grid-3">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">First Stop</p>
+      <div class="cva-card">
+        <span class="cva-card-label">First Stop</span>
         <h3 style="font-size: 22px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Teacher</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Teachers answer questions about the class, assignment directions, feedback, content, due dates, grading, and student progress in the course.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Additional CVA Support</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Additional CVA Support</span>
         <h3 style="font-size: 22px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Teacher Support</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Department Leads help support learning strategies and academic progress across courses. They serve as a bridge between the student and additional layers of CVA support.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Big-Picture Planning</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Big-Picture Planning</span>
         <h3 style="font-size: 22px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">School Counselor</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">School counselors address scheduling, credits, graduation requirements, transcripts, and college or career planning.</p>
       </div>
@@ -49,38 +225,38 @@
   </div>
 
   <!-- TEACHER SUPPORT -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">First Stop</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">First Stop</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Questions Teachers Should Answer</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Teachers should be the first point of contact when the question is connected to classroom learning, assignments, feedback, or academic progress in the course.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+    <div class="cva-grid-4">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Class Content</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Answers questions about the class and helps students understand the content.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Assignment Directions</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Clarifies assignment directions, expectations, rubrics, and requirements.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Feedback</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Explains feedback on submitted assignments and helps students understand how to improve.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Skills and Concepts</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Helps students understand a skill, concept, reading, problem, or task.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Due Dates and Grading</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Answers questions about course due dates, grading expectations, and assignment status.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Academic Progress</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Checks in on struggling students and helps them create a realistic plan to get back on track.</p>
       </div>
@@ -89,103 +265,93 @@
   </div>
 
   <!-- ONLINE LEARNING SUPPORT -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Online Learning Support</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Online Learning Support</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Study Tips and Learning Strategies</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Teachers can also provide study tips and learning support to help students manage their work and succeed in the course.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+    <div class="cva-grid-4" style="margin-bottom: 28px;">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Time Management</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Helps students plan their time and keep up with coursework.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Organization</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Helps students organize tasks, assignments, and course expectations.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Getting Caught Up</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Helps students create realistic plans when they fall behind.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Academic Success</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Supports students with strategies that help them improve and move forward.</p>
-      </div></div><div></div>
-    
-
-<!-- STUDENT RESOURCES HUB SIMPLE CARD -->
- <br>
-<p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 px 8px 0;">Studenet Support</p>
-    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 18px
-     12px 0;">Student Resources Hub</h2>
-  
-
-  <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 16px 0;">
-    <strong>The Student Resources Hub</strong> gives CVA students one place to find help with common questions about online learning, CTLS, assignment submissions, grades, communication, troubleshooting, and staying on track.
-  </p>
-  <p style="font-size:16px; line-height:1.6; color:#333333; margin:0 0 20px 0;">
-    Teachers can share this link with students as a first stop before walking them through common course questions individually.
-  </p>
-<a href="https://www.cobbk12.org/cobbvirtualacademy/student-resources-hub" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:12px; background:#bb0000; color:#ffffff; text-decoration:none; font-size:15px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; border-radius:999px; padding:8px 8px 8px 20px; box-shadow:0 4px 10px rgba(0,0,0,.14);">
-  <span>Open Student Resources Hub</span>
-  <span style="display:inline-flex; align-items:center; justify-content:center; background:#ffffff; color:#bb0000; width:34px; height:34px; border-radius:50%; font-size:18px; font-weight:900;">↗</span>
-</a>
-  <br>
-  <br>
-  <br>
-
-  <!-- SAMPLE RESPONSES -->
-
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 18px
- 8px 0;">Teacher Language</p>
-    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Sample Responses</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use clear, supportive language to help students understand their next step.</p>
-    <div style="display: flex; flex-direction: column; gap: 14px;">
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Assignment Question</p>
-        <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;That&rsquo;s a great question about the assignment directions. Let me walk you through what the rubric says about the assignment.&rdquo;</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Falling Behind</p>
-        <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;You&#39;ve fallen behind, and reaching out is the first step! Let&#39;s work together to come up with a realistic schedule to get you back on track.&rdquo;</p>
-      </div>
+    </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Counselor Question</p>
-        <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;That&rsquo;s a great question about your graduation requirements. Your school counselor will be the best person to help with that.&rdquo;</p>
-      </div>
+    <!-- STUDENT RESOURCES HUB -->
+    <span class="cva-eyebrow">Student Support</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Student Resources Hub</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;"><strong>The Student Resources Hub</strong> gives CVA students one place to find help with common questions about online learning, CTLS, assignment submissions, grades, communication, troubleshooting, and staying on track.</p>
+    <p style="font-size: 16px; line-height: 1.6; color: #333333; margin: 0 0 20px 0;">Teachers can share this link with students as a first stop before walking them through common course questions individually.</p>
+    <a href="https://www.cobbk12.org/cobbvirtualacademy/student-resources-hub" target="_blank" rel="noopener" class="cva-hub-btn">
+      <span>Open Student Resources Hub</span>
+      <span class="cva-hub-btn-icon">↗</span>
+    </a>
 
+    <!-- SAMPLE RESPONSES -->
+    <div style="margin-top: 28px;">
+      <span class="cva-eyebrow">Teacher Language</span>
+      <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Sample Responses</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Use clear, supportive language to help students understand their next step.</p>
+      <div class="cva-response-stack">
+
+        <div class="cva-card">
+          <span class="cva-card-label">Assignment Question</span>
+          <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;That&rsquo;s a great question about the assignment directions. Let me walk you through what the rubric says about the assignment.&rdquo;</p>
+        </div>
+
+        <div class="cva-card">
+          <span class="cva-card-label">Falling Behind</span>
+          <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;You&rsquo;ve fallen behind, and reaching out is the first step! Let&rsquo;s work together to come up with a realistic schedule to get you back on track.&rdquo;</p>
+        </div>
+
+        <div class="cva-card">
+          <span class="cva-card-label">Counselor Question</span>
+          <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;">&ldquo;That&rsquo;s a great question about your graduation requirements. Your school counselor will be the best person to help with that.&rdquo;</p>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <!-- SCHOOL COUNSELOR -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">School Counselor</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">School Counselor</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">When Students Need Big-Picture Academic Planning</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">School counselors focus on big-picture academic planning rather than day-to-day coursework.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+    <div class="cva-grid-4">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Course Scheduling</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Questions about schedule changes, course placement, or future course plans.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Graduation Requirements</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Questions about what a student needs to graduate.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Credits and Transcripts</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Questions about credit checks, transcripts, and academic records.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">College and Career Planning</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Questions about post-secondary planning, pathway decisions, or future goals.</p>
       </div>
@@ -194,17 +360,19 @@
   </div>
 
   <!-- IMPORTANT REMINDER -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Important Reminder</p>
+  <div class="cva-reminder">
+    <span class="cva-eyebrow">Important Reminder</span>
     <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Do Not Contact the Student&rsquo;s Local School</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">CVA teachers should not contact a student&rsquo;s local school directly. Direct all questions or concerns to <strong>CVA Teacher Support</strong>. If a school reaches out to you, forward that email or message to <strong>CVA Teacher Support</strong>. Do not respond to any teacher or school communication without first hearing from CVA Teacher Support.</p>
   </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>

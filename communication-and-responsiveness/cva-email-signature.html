@@ -1,101 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Required Email Signature | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 32px 30px;
+  }
+
+  /* ── Overview ── */
+  .cva-overview {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 28px 30px;
+  }
+
+  /* ── Download ── */
+  .cva-download {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 28px 30px;
+  }
+
+  .cva-download-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+
+  .cva-file-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    border-top: 1px solid #d9dde3;
+    padding-top: 18px;
+  }
+
+  .cva-file-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .cva-doc-icon {
+    width: 48px;
+    height: 58px;
+    background: #e8edf8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #244f9e;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .cva-download-btn {
+    display: inline-block;
+    background: #bb0000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 11px 20px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* ── What to Update ── */
+  .cva-update {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 28px 30px;
+  }
+
+  .cva-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Callout ── */
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 14px;
+    }
+
+    .cva-hero,
+    .cva-overview,
+    .cva-download,
+    .cva-update {
+      padding: 20px 18px;
+    }
+
+    .cva-download-card {
+      padding: 16px 16px;
+    }
+
+    .cva-file-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cva-file-info {
+      min-width: unset;
+      width: 100%;
+    }
+
+    .cva-download-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .cva-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 32px 30px; margin-bottom: 20px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Communication &amp; Responsiveness</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Communication &amp; Responsiveness</span>
     <h1 style="font-size: clamp(32px, 5vw, 52px); line-height: 1.05; color: #000000; margin: 0 0 14px 0; font-weight: 900; text-transform: uppercase;">Required Email Signature</h1>
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0 0 20px 0;">Every CCSD employee and CVA Adjunct Teacher is required to use a standard email signature format. This helps keep communication professional, consistent, and easy for students and families to recognize.</p>
-    <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box;">
+    <div class="cva-callout">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Directions:</strong> Download the MS Word file for the CCSD Email Signature and update the template with your own information.</p>
     </div>
   </div>
 
   <!-- OVERVIEW -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 28px 30px; margin-bottom: 20px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <div class="cva-overview">
+    <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size: clamp(24px, 4vw, 36px); line-height: 1.1; color: #000000; margin: 0 0 14px 0; font-weight: 900; text-transform: uppercase;">Use the Standard CCSD Email Signature Format</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Your email signature should follow the approved format so that all CVA communication looks consistent and includes the correct contact information. Use the template file below to create or update your signature.</p>
   </div>
 
- <!-- DOWNLOAD -->
-<div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 28px 30px; margin-bottom: 20px; box-sizing: border-box;">
-  <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Download Template</p>
+  <!-- DOWNLOAD -->
+  <div class="cva-download">
+    <span class="cva-eyebrow">Download Template</span>
+    <h2 style="font-size: clamp(24px, 4vw, 36px); line-height: 1.1; color: #000000; margin: 0 0 14px 0; font-weight: 900; text-transform: uppercase;">CCSD Email Signature Template</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Click below to download the MS Word file. After downloading, replace the sample information with your own name, title, phone number, and email address.</p>
 
-  <h2 style="font-size: clamp(24px, 4vw, 36px); line-height: 1.1; color: #000000; margin: 0 0 14px 0; font-weight: 900; text-transform: uppercase;">CCSD Email Signature Template</h2>
-
-  <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Click below to download the MS Word file. After downloading, replace the sample information with your own name, title, phone number, and email address.</p>
-
-  <!-- DOWNLOAD CARD -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 22px 24px; box-sizing: border-box;">
-
-    <!-- CENTERED IMAGE -->
-    <div style="text-align: center; margin: 0 0 22px 0;">
-      <img 
-        src="images\email-signature-screenshot.png" 
-        alt="Screenshot of an email message showing a completed CCSD and Cobb Virtual Academy email signature highlighted near the bottom of the message."
-        style="display: inline-block; width: 100%; max-width: 560px; height: auto; border-radius: 12px;"
-      >
-    </div>
-
-    <!-- FILE DOWNLOAD ROW -->
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid #d9dde3; padding-top: 18px;">
-
-      <div style="display: flex; align-items: center; gap: 14px; flex: 1; min-width: 240px;">
-        <div style="width: 48px; height: 58px; background: #e8edf8; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #244f9e; font-size: 13px; font-weight: 900; flex-shrink: 0;">
-          DOC
-        </div>
-
-        <div>
-          <p style="font-size: 15px; font-weight: 900; color: #000000; margin: 0 0 4px 0;">
-            email-signature-template-cva-teachers.docx
-          </p>
-
-          <p style="font-size: 13px; color: #666666; margin: 0;">
-            MS Word file for creating your required CCSD/CVA email signature.
-          </p>
-        </div>
+    <div class="cva-download-card">
+      <!-- SCREENSHOT -->
+      <div style="text-align: center; margin: 0 0 22px 0;">
+        <img
+          src="images/email-signature-screenshot.png"
+          alt="Screenshot of an email message showing a completed CCSD and Cobb Virtual Academy email signature highlighted near the bottom of the message."
+          style="display: inline-block; width: 100%; max-width: 560px; height: auto; border-radius: 12px;"
+        >
       </div>
 
-      <a href="pages\email-signature-template-cva-teachers.docx" download style="display: inline-block; background: #bb0000; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 800; padding: 11px 20px; border-radius: 999px; white-space: nowrap;">
-        Download Template
-      </a>
-
+      <!-- FILE DOWNLOAD ROW -->
+      <div class="cva-file-row">
+        <div class="cva-file-info">
+          <div class="cva-doc-icon">DOC</div>
+          <div>
+            <p style="font-size: 15px; font-weight: 900; color: #000000; margin: 0 0 4px 0;">email-signature-template-cva-teachers.docx</p>
+            <p style="font-size: 13px; color: #666666; margin: 0;">MS Word file for creating your required CCSD/CVA email signature.</p>
+          </div>
+        </div>
+        <a href="pages/email-signature-template-cva-teachers.docx" download class="cva-download-btn">Download Template</a>
+      </div>
     </div>
-
   </div>
-</div>
 
   <!-- WHAT TO UPDATE -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 28px 30px; margin-bottom: 20px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">What to Update</p>
+  <div class="cva-update">
+    <span class="cva-eyebrow">What to Update</span>
     <h2 style="font-size: clamp(24px, 4vw, 36px); line-height: 1.1; color: #000000; margin: 0 0 20px 0; font-weight: 900; text-transform: uppercase;">Customize the Template With Your Information</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+    <div class="cva-card-grid">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Field 1</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Field 1</span>
         <h3 style="font-size: 20px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Name and Title</h3>
         <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">Replace the sample name and job title with your own professional information.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Field 2</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Field 2</span>
         <h3 style="font-size: 20px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">CVA Information</h3>
         <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">Keep the Cobb Virtual Academy name, address, work phone, and website listed in the template.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Field 3</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Field 3</span>
         <h3 style="font-size: 20px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Contact Details</h3>
         <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">Update the cell phone and email address fields as needed.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;">Field 4</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Field 4</span>
         <h3 style="font-size: 20px; font-weight: 900; color: #000000; margin: 0 0 8px 0; text-transform: uppercase;">Logo and Formatting</h3>
         <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">Do not remove the CCSD logo or change the overall signature format.</p>
       </div>
@@ -103,12 +289,13 @@
     </div>
   </div>
 
-  
- 
-
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 28px 0 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
+
 <script src="../nav.js"></script>
+
+</body>
+</html>

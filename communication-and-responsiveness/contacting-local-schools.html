@@ -1,37 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacting Local Schools | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── White card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented card ── */
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Situation cards grid ── */
+  .cva-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 14px;
+    padding: 20px;
+  }
+
+  /* ── Takeaway list ── */
+  .cva-takeaway-list {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+    padding: 8px 24px;
+  }
+
+  .cva-takeaway-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #e5e4e2;
+  }
+
+  .cva-takeaway-item:last-child {
+    border-bottom: none;
+  }
+
+  .cva-takeaway-icon {
+    font-size: 20px;
+    line-height: 1;
+    color: #bb0000;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-takeaway-list {
+      padding: 8px 16px;
+    }
+
+    .cva-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Teacher Communication</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Teacher Communication</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Contacting Local Schools</h1>
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0;"><strong>CVA teachers should not contact a student&rsquo;s local school directly.</strong> All questions, concerns, requests, or school-related inquiries should be directed to <strong>CVA Teacher Support</strong> so communication can be handled through the appropriate process.</p>
   </div>
 
   <!-- WHAT TO DO -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">What to Do</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">What to Do</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">Follow the Right Communication Path</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+    <div class="cva-grid">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Situation 1</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Situation 1</span>
         <h3 style="font-size: 20px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">You Have a Question or Concern</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Send the question or concern to <strong>CVA Teacher Support</strong> instead of contacting the student&rsquo;s local school.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Situation 2</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Situation 2</span>
         <h3 style="font-size: 20px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">A Local School Contacts You</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Forward the email or message to <strong>CVA Teacher Support</strong> so the request can be handled through the correct CVA channel.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Situation 3</p>
+      <div class="cva-card">
+        <span class="cva-card-label">Situation 3</span>
         <h3 style="font-size: 20px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">You Are Unsure What to Do</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">When in doubt, contact <strong>CVA Teacher Support</strong> first. Do not guess or reach out to the local school directly.</p>
       </div>
@@ -40,28 +198,28 @@
   </div>
 
   <!-- QUICK TAKEAWAYS -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Quick Takeaways</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Quick Takeaways</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What to Remember</h2>
-    <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; box-sizing: border-box;">
+    <div class="cva-takeaway-list">
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Do not contact a student&rsquo;s local school directly.</strong></p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Direct questions, concerns, and inquiries to CVA Teacher Support.</strong></p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Forward any message from a local school to CVA Teacher Support.</strong></p>
       </div>
 
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0;">
-        <div style="font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0;">✓</div>
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
         <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0;"><strong>Wait for guidance before taking action or responding.</strong></p>
       </div>
 
@@ -69,14 +227,19 @@
   </div>
 
   <!-- BOTTOM LINE -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Bottom Line</p>
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Bottom Line</span>
     <h2 style="font-size: clamp(22px, 3vw, 32px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Send It to CVA Teacher Support</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Whether you have a question, concern, or received a message from a local school, the next step is the same: send it to <strong>CVA Teacher Support</strong>.</p>
   </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>

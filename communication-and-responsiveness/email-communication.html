@@ -1,34 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Communication | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── Overview ── */
+  .cva-overview {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Do's and Don'ts ── */
+  .cva-dos-donts {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-dd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+    align-items: start;
+  }
+
+  .cva-dos {
+    background: #ffffff;
+    border: 2px solid #19a84a;
+    border-radius: 16px;
+    padding: 22px;
+  }
+
+  .cva-donts {
+    background: #ffffff;
+    border: 2px solid #bb0000;
+    border-radius: 16px;
+    padding: 22px;
+  }
+
+  /* ── When to Call ── */
+  .cva-call {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Reminder ── */
+  .cva-reminder {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Callout ── */
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-overview,
+    .cva-dos-donts,
+    .cva-call,
+    .cva-reminder {
+      padding: 20px 18px;
+    }
+
+    .cva-dd-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Communication &amp; Responsiveness</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Communication &amp; Responsiveness</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Email Communication</h1>
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0 0 20px 0;">Email is an important part of professional communication in an online learning environment. Messages should be factual, respectful, timely, and written with the understanding that email is part of the public record.</p>
-    <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box;">
+    <div class="cva-callout">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Big Idea:</strong> Clear email communication helps students, families, teachers, and schools stay informed and supported.</p>
     </div>
   </div>
 
   <!-- OVERVIEW -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <div class="cva-overview">
+    <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Follow District Email Expectations</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Cobb County School District has specific guidelines for email and email signatures that all teachers must follow. These standards help ensure that communication is professional, clear, respectful, and timely.</p>
   </div>
 
   <!-- DO'S AND DON'TS -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Email Expectations</p>
+  <div class="cva-dos-donts">
+    <span class="cva-eyebrow">Email Expectations</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">Do&rsquo;s and Don&rsquo;ts for Professional Email</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start;">
+    <div class="cva-dd-grid">
 
-      <div style="background: #ffffff; border: 2px solid #19a84a; border-radius: 16px; padding: 22px; box-sizing: border-box;">
+      <div class="cva-dos">
         <h3 style="font-size: 26px; line-height: 1.2; color: #000000; margin: 0 0 14px 0; font-weight: 900; text-transform: uppercase;"><span style="color: #19a84a;">☑</span> Do&rsquo;s</h3>
         <ul style="font-size: 16px; line-height: 1.7; margin: 0; padding-left: 22px; color: #333333;">
           <li>Respond to emails within <strong>24 hours</strong>.</li>
@@ -43,7 +183,7 @@
         </ul>
       </div>
 
-      <div style="background: #ffffff; border: 2px solid #bb0000; border-radius: 16px; padding: 22px; box-sizing: border-box;">
+      <div class="cva-donts">
         <h3 style="font-size: 26px; line-height: 1.2; color: #000000; margin: 0 0 14px 0; font-weight: 900; text-transform: uppercase;"><span style="color: #bb0000;">✕</span> Don&rsquo;ts</h3>
         <ul style="font-size: 16px; line-height: 1.7; margin: 0; padding-left: 22px; color: #333333;">
           <li>Do not email when <strong>emotions are high</strong> or the issue is sensitive.</li>
@@ -60,28 +200,29 @@
   </div>
 
   <!-- WHEN TO CALL -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Communication Choice</p>
+  <div class="cva-call">
+    <span class="cva-eyebrow">Communication Choice</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Know When Email Is Not Enough</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">Email is helpful for clear, concise information. However, if the message is becoming too long, too sensitive, or too emotionally charged, a phone call may be the better choice.</p>
-    <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box; margin-bottom: 20px;">
+    <div class="cva-callout">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Rule of Thumb:</strong> If the email is over 5&ndash;7 lines, consider making a phone call instead.</p>
     </div>
-   
   </div>
 
   <!-- PROFESSIONAL REMINDER -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Professional Reminder</p>
+  <div class="cva-reminder">
+    <span class="cva-eyebrow">Professional Reminder</span>
     <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Write every email as if it may be read beyond the original recipient.</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Keep communication factual, respectful, timely, and professional. When the situation is sensitive or complex, choose a conversation instead of a long email.</p>
   </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>
