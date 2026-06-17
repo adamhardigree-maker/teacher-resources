@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Views &amp; Tools | CVA Teacher Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .cva-wrap a { color: inherit; text-decoration: none; }
+  .cva-wrap strong { color: inherit; }
+
+  /* ── Cards ── */
+  .cva-hero {
+    background: #f7f8fa; border: 1px solid #d9dde3;
+    border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px;
+  }
+  .cva-white { background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; }
+  .cva-gray  { background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; }
+  .cva-accent {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px;
+  }
+  .cva-callout {
+    background: #f7f8fa; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px;
+  }
+
+  /* ── Eyebrow ── */
+  .cva-eyebrow {
+    font-size: 12px; letter-spacing: .13em; text-transform: uppercase;
+    color: #bb0000; font-weight: 800; margin: 0 0 8px 0; display: block;
+  }
+
+  /* ── Info grid ── */
+  .cva-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cva-info-card {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-top: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px;
+  }
+
+  /* ── Tool cards (left-accent style) ── */
+  .cva-tool-card {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px 22px;
+  }
+
+  /* ── Screenshot placeholder ── */
+  .cva-img-placeholder {
+    background: #e8edf8; border: 1px solid #d9dde3; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 24px;
+    gap: 10px; min-height: 140px; color: #666;
+    font-size: 13px; text-align: center; line-height: 1.5;
+  }
+  .cva-img-placeholder svg { opacity: 0.4; }
+
+  /* ── Side-by-side step+image layout ── */
+  .cva-side {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* ── Nav path badge ── */
+  .cva-nav-path {
+    display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    background: #222222; border-radius: 8px; padding: 8px 14px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 13px; font-weight: 700; color: #ffffff;
+    margin-bottom: 16px;
+  }
+  .cva-nav-path span { color: rgba(255,255,255,0.5); font-weight: 400; font-size: 11px; }
+
+  /* ── Takeaways ── */
+  .cva-takeaway-list { background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; }
+  .cva-takeaway-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 0; border-bottom: 1px dashed #e5e4e2;
+  }
+  .cva-takeaway-item:last-child { border-bottom: none; }
+  .cva-takeaway-icon { font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0; }
+
+  /* ── Contact card ── */
+  .cva-contact-card {
+    background: #222222; border-radius: 16px; padding: 28px 26px;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  }
+  .cva-contact-btn {
+    display: inline-block; background: #ffffff; color: #222222;
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 13px;
+    font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    padding: 12px 24px; border-radius: 999px; text-decoration: none; border: 2px solid #ffffff;
+  }
+  .cva-contact-btn:hover { background: #bb0000; color: #ffffff; border-color: #bb0000; }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A;
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap { padding: 12px 12px 36px; gap: 12px; }
+    .cva-hero, .cva-white, .cva-gray, .cva-accent { padding: 20px 18px; }
+    .cva-side { grid-template-columns: 1fr; }
+    .cva-grid { grid-template-columns: 1fr; }
+    .cva-takeaway-list { padding: 8px 16px; }
+    .cva-contact-card { padding: 22px 18px; }
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
+
+  <!-- ══ HERO ══ -->
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Navigating CTLS</span>
+    <h1 style="font-size: clamp(32px,5vw,48px); line-height:1.05; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 14px 0;">Views &amp; Tools</h1>
+    <p style="font-size:17px; line-height:1.7; color:#222; margin:0 0 20px 0;">The Views &amp; Tools area gives you powerful insights into your students — information that helps you teach more confidently and support them more intentionally.</p>
+    <div class="cva-callout">
+      <p style="font-size:16px; line-height:1.6; margin:0; color:#222;"><strong>Big Idea:</strong> These tools don't just keep you organized — they help you understand who your students are, what they need, and how you can support them more effectively. Take a few minutes to explore Views &amp; Tools in your own class as you move through this material.</p>
+    </div>
+  </div>
+
+  <!-- ══ OVERVIEW ══ -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What Is Views &amp; Tools?</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Views &amp; Tools is a dedicated section in CTLS that brings together student data, progress information, and class management features in one place. It sits in the left-hand navigation of your CTLS classroom and gives you a real-time picture of how your students are doing — so you can respond quickly and teach with intention.</p>
+    <div class="cva-grid">
+      <div class="cva-info-card">
+        <h3 style="font-size:20px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Student Insights</h3>
+        <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">See who your students are, which school they attend, and how they are progressing through the course — all in one view.</p>
+      </div>
+      <div class="cva-info-card">
+        <h3 style="font-size:20px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Proactive Support</h3>
+        <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Identify students who need outreach before they fall behind. Views &amp; Tools surfaces the information you need to act early.</p>
+      </div>
+      <div class="cva-info-card">
+        <h3 style="font-size:20px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Class Management</h3>
+        <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Filter by course, school, or student. Export your roster and data to support communication, planning, and reporting.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HOW TO ACCESS ══ -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Accessing</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">How to Access Views &amp; Tools</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Views &amp; Tools is available directly from your CTLS classroom. You can access it at any time from the left-hand navigation menu.</p>
+
+    <div class="cva-side" style="margin-bottom: 20px;">
+      <div>
+        <div class="cva-nav-path">
+          CTLS <span>›</span> My Digital Classrooms <span>›</span> Views &amp; Tools
+        </div>
+        <ol style="padding-left: 20px; margin: 0; font-size: 15px; line-height: 1.9; color: #333;">
+          <li>Log in to <strong>CTLS</strong> and open your course from <strong>My Digital Classrooms</strong>.</li>
+          <li>In the left-hand navigation, click the <strong>Views &amp; Tools</strong> icon (the gear/analytics icon).</li>
+          <li>Use the course dropdown at the top to filter the view to a specific class.</li>
+          <li>Use the <strong>Select School</strong> and <strong>Student</strong> filters to narrow results further.</li>
+          <li>Click <strong>Export</strong> to download your student roster data if needed.</li>
+        </ol>
+      </div>
+      <div class="cva-img-placeholder">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="5" height="18" rx="1" stroke="#444" stroke-width="1.4"/>
+          <rect x="9" y="3" width="13" height="18" rx="1" stroke="#444" stroke-width="1.4"/>
+          <path d="M5 7H2M5 12H2M5 17H2" stroke="#bb0000" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span>CTLS: Views &amp; Tools icon<br>in the left navigation menu</span>
+      </div>
+    </div>
+
+    <div class="cva-callout">
+      <p style="font-size:15px; line-height:1.7; margin:0; color:#222;">As you move through this material, take a few minutes to explore Views &amp; Tools in your own class. This is your chance to build confidence with the systems you use every day and ensure every student gets the attention and care they deserve.</p>
+    </div>
+  </div>
+
+  <!-- ══ WHAT YOU'LL FIND ══ -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Exploring</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What You Will Find</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Views &amp; Tools brings together several features that work together to give you a complete picture of your students. Each one surfaces a different layer of information to help you act with intention.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <div class="cva-tool-card">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="min-width:42px; height:42px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#bb0000; font-weight:800; display:block; margin:0 0 4px 0;">Student Roster</span>
+            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">My Students</h3>
+            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">See a full list of your enrolled students, including their first name and the school they attend. Use the course dropdown to filter by class and the School and Student filters to quickly locate specific students. The <strong>Export</strong> button lets you download your roster for planning and communication purposes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-tool-card">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="min-width:42px; height:42px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M3 9h18M8 4v5M16 4v5M8 13h2M8 17h2M13 13h3M13 17h3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#bb0000; font-weight:800; display:block; margin:0 0 4px 0;">Monitoring Progress</span>
+            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Progress Tracker</h3>
+            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">Monitor where each student is in the course relative to the Class Schedule. The Progress Tracker helps you identify students who are falling behind, missing work, or disengaged — so you can reach out before a concern becomes a crisis.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-tool-card">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="min-width:42px; height:42px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 18l4-8 4 5 3-3 4 6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="2" stroke="#fff" stroke-width="1.8"/></svg>
+          </div>
+          <div>
+            <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#bb0000; font-weight:800; display:block; margin:0 0 4px 0;">Data &amp; Reporting</span>
+            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Additional Views</h3>
+            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">Views &amp; Tools contains additional reporting and analytics views accessible within the section. Explore your own class in CTLS to discover the full set of tools and build confidence with the information available to you each week.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SCREENSHOT REFERENCE ══ -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Reference</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">The My Students View</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">When you open Views &amp; Tools and select My Students, you'll see a roster of your enrolled students. Here's how to read the screen and use its controls.</p>
+
+    <div style="display: grid; grid-template-columns: minmax(0,1fr) minmax(200px,300px); gap: 20px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+
+        <div style="display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start;">
+          <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">1</div>
+          <div>
+            <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Course Dropdown</p>
+            <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Filter the student list by course. Select any class you teach to see only those enrolled students.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start;">
+          <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">2</div>
+          <div>
+            <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Select School Filter</p>
+            <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Filter by the student's home school. Useful when your class includes students from multiple Cobb County schools.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start;">
+          <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">3</div>
+          <div>
+            <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Student Filter</p>
+            <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Search or filter by individual student name to quickly locate a specific student in your roster.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start;">
+          <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">4</div>
+          <div>
+            <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Export Button</p>
+            <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Download your student roster data. The export includes First Name and School columns and can be used for communication planning and reporting.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start;">
+          <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">5</div>
+          <div>
+            <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Student List</p>
+            <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">The main table shows each student's first name and home school. Students from multiple Cobb County schools may appear in a single class.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cva-img-placeholder" style="min-height: 200px;">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#444" stroke-width="1.4"/>
+          <path d="M3 8h18M8 3v5" stroke="#444" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M7 12h10M7 15h7" stroke="#444" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span>CTLS: My Students view<br>showing roster with First Name<br>and School columns</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ WHY IT MATTERS ══ -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Why It Matters</span>
+    <h2 style="font-size:clamp(22px,3vw,30px); line-height:1.2; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Teaching with Intention</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">In an asynchronous online course, the data in Views &amp; Tools is often the earliest signal you have that a student needs support. A student who stops showing up in the roster data, falls behind on progress, or accumulates missing work needs outreach — not a waiting period. Regular use of Views &amp; Tools is what makes proactive, student-centered teaching possible at CVA.</p>
+  </div>
+
+  <!-- ══ TAKEAWAYS ══ -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Quick Takeaways</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 16px 0;">What to Remember</h2>
+    <div class="cva-takeaway-list">
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Views &amp; Tools lives in the CTLS left navigation.</strong> Access it from any class in My Digital Classrooms.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>My Students shows your full roster</strong> with home school information. Filter by course, school, or student name, and use Export to download the list.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Check Views &amp; Tools regularly</strong> — not just when something seems wrong. Consistent use is what lets you catch concerns early.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>These tools don't just keep you organized</strong> — they help you understand who your students are, what they need, and how you can support them more effectively.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Explore Views &amp; Tools in your own class</strong> as you move through onboarding. Hands-on familiarity with the system is the best way to build confidence.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ CONTACT ══ -->
+<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 28px; margin-bottom:20px; box-sizing:border-box;">
+  
+  <p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
+    Need Help?
+  </p>
+
+  <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
+    Have Questions?
+  </h2>
+
+  <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 18px 0;">
+    We're here to support you. If you have questions about Views &amp; Tools or anything else in CTLS, contact CVA Teacher Support.
+  </p>
+
+  <a href="mailto:cvateachersupport@cobbk12.org" style="display:inline-block; background:#bb0000; color:#ffffff; text-decoration:none; font-size:14px; font-weight:800; padding:11px 20px; border-radius:999px;">
+    Contact Teacher Support
+  </a>
+
+</div>
+
+  <!-- FOOTER -->
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
+
+</div><!-- /.cva-wrap -->
+
+<script src="../nav.js"></script>
+</body>
+</html>
