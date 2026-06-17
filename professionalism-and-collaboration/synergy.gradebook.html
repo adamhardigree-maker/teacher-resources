@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synergy Gradebooks | CVA Teacher Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .cva-wrap a { color: inherit; text-decoration: none; }
+  .cva-wrap strong { color: inherit; }
+
+  /* ── Cards ── */
+  .cva-hero {
+    background: #f7f8fa; border: 1px solid #d9dde3;
+    border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px;
+  }
+  .cva-white { background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; }
+  .cva-gray  { background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; }
+  .cva-accent {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px;
+  }
+  .cva-callout {
+    background: #f7f8fa; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px;
+  }
+  .cva-callout-white {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px;
+  }
+  .cva-warning {
+    background: #fff8e1; border: 1px solid #ffe082;
+    border-left: 6px solid #f9a825; border-radius: 12px;
+    padding: 14px 16px; font-size: 14px; line-height: 1.65; color: #444444;
+  }
+
+  /* ── Eyebrow ── */
+  .cva-eyebrow {
+    font-size: 12px; letter-spacing: .13em; text-transform: uppercase;
+    color: #bb0000; font-weight: 800; margin: 0 0 8px 0; display: block;
+  }
+  .cva-step-label {
+    font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+    color: #bb0000; font-weight: 800; margin: 0 0 4px 0; display: block;
+  }
+
+  /* ── Info grid cards ── */
+  .cva-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cva-info-card {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-top: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px;
+  }
+
+  /* ── Journey flow (CTLS → Synergy → Report Card) ── */
+  .cva-flow {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border: 1px solid #d9dde3; border-radius: 12px; overflow: hidden;
+  }
+  .cva-flow-step {
+    padding: 20px 18px; text-align: center; position: relative;
+  }
+  .cva-flow-step:not(:last-child) { border-right: 1px solid #d9dde3; }
+  .cva-flow-icon {
+    width: 48px; height: 48px; background: #bb0000; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px; font-family: 'Oswald', Arial, sans-serif;
+    font-size: 20px; font-weight: 900; color: #ffffff;
+  }
+  .cva-flow-arrow {
+    position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
+    color: #bb0000; font-size: 22px; font-weight: 900; z-index: 2; display: none;
+  }
+
+  /* ── Step cards ── */
+  .cva-step-stack { display: flex; flex-direction: column; gap: 14px; }
+  .cva-step-card {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px;
+  }
+  .cva-step-inner {
+    display: grid; grid-template-columns: minmax(0,1fr) minmax(200px,300px);
+    gap: 18px; align-items: center;
+  }
+  .cva-step-text { display: flex; align-items: flex-start; gap: 16px; }
+  .cva-step-num {
+    min-width: 40px; height: 40px; background: #bb0000; color: #ffffff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', Arial, sans-serif; font-size: 18px; font-weight: 900; flex-shrink: 0;
+  }
+
+  /* ── Placeholder image ── */
+  .cva-img-placeholder {
+    background: #e8edf8; border: 1px solid #d9dde3; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 20px; gap: 8px;
+    min-height: 110px; color: #666; font-size: 12px; text-align: center; line-height: 1.4;
+  }
+  .cva-img-placeholder svg { opacity: 0.4; flex-shrink: 0; }
+
+  /* ── Compare two-column ── */
+  .cva-compare-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  .cva-compare-card {
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-radius: 12px; overflow: hidden;
+  }
+  .cva-compare-header {
+    padding: 12px 16px; font-family: 'Oswald', Arial, sans-serif;
+    font-size: 16px; font-weight: 700; text-transform: uppercase;
+    color: #ffffff; background: #222222;
+  }
+  .cva-compare-body { padding: 16px; font-size: 15px; line-height: 1.7; color: #333333; }
+
+  /* ── Section accordions ── */
+  .cva-section-acc { border: 1px solid #d9dde3; border-radius: 14px; overflow: hidden; margin-bottom: 10px; }
+  .cva-section-acc:last-child { margin-bottom: 0; }
+  .cva-section-acc > summary {
+    background: #222222; color: #ffffff;
+    font-family: 'Oswald', Arial, sans-serif; font-size: 18px; font-weight: 700;
+    letter-spacing: .03em; text-transform: uppercase;
+    padding: 16px 20px; cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .cva-section-acc > summary::-webkit-details-marker { display: none; }
+  .cva-section-acc > summary::after { content: '﹢'; font-size: 20px; font-weight: 400; flex-shrink: 0; }
+  .cva-section-acc[open] > summary::after { content: '﹣'; }
+  .cva-section-body {
+    background: #ffffff; border-top: 1px solid #d9dde3;
+    padding: 24px 22px; display: flex; flex-direction: column; gap: 18px;
+  }
+
+  /* ── FAQ accordion ── */
+  .cva-faq-item {
+    border: 1px solid #d9dde3; border-radius: 10px; overflow: hidden;
+    margin-bottom: 8px; background: #ffffff;
+  }
+  .cva-faq-item:last-child { margin-bottom: 0; }
+  .cva-faq-item > summary {
+    background: #f7f8fa; font-size: 15px; font-weight: 800; color: #000000;
+    padding: 16px 18px; cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .cva-faq-item > summary::-webkit-details-marker { display: none; }
+  .cva-faq-item > summary::after { content: '+'; font-size: 18px; color: #bb0000; font-weight: 900; flex-shrink: 0; }
+  .cva-faq-item[open] > summary { border-bottom: 1px solid #d9dde3; }
+  .cva-faq-item[open] > summary::after { content: '−'; }
+  .cva-faq-body { padding: 16px 18px; font-size: 15px; line-height: 1.7; color: #333333; }
+  .cva-faq-steps { padding-left: 0; list-style: none; margin: 10px 0 0 0; display: flex; flex-direction: column; gap: 8px; }
+  .cva-faq-steps li {
+    display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: start;
+    font-size: 14px; line-height: 1.6; color: #333333;
+  }
+  .cva-faq-steps li span:first-child {
+    background: #bb0000; color: #ffffff; border-radius: 50%;
+    width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ── Takeaways ── */
+  .cva-takeaway-list { background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; }
+  .cva-takeaway-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 0; border-bottom: 1px dashed #e5e4e2;
+  }
+  .cva-takeaway-item:last-child { border-bottom: none; }
+  .cva-takeaway-icon { font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0; }
+
+  /* ── Contact card ── */
+  .cva-contact-card {
+    background: #222222; border-radius: 16px; padding: 28px 26px;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  }
+  .cva-contact-btn {
+    display: inline-block; background: #ffffff; color: #222222;
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 13px;
+    font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    padding: 12px 24px; border-radius: 999px; text-decoration: none; border: 2px solid #ffffff;
+  }
+  .cva-contact-btn:hover { background: #bb0000; color: #ffffff; border-color: #bb0000; }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A;
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 720px) {
+    .cva-flow { grid-template-columns: 1fr; }
+    .cva-flow-step:not(:last-child) { border-right: none; border-bottom: 1px solid #d9dde3; }
+    .cva-compare-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .cva-wrap { padding: 12px 12px 36px; gap: 12px; }
+    .cva-hero, .cva-white, .cva-gray, .cva-accent { padding: 20px 18px; }
+    .cva-step-inner { grid-template-columns: 1fr; }
+    .cva-grid { grid-template-columns: 1fr; }
+    .cva-section-body { padding: 18px 14px; }
+    .cva-takeaway-list { padding: 8px 16px; }
+    .cva-contact-card { padding: 22px 18px; }
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
+
+  <!-- ══ HERO ══ -->
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Navigating CTLS</span>
+    <h1 style="font-size: clamp(32px,5vw,48px); line-height:1.05; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 14px 0;">Synergy Gradebooks</h1>
+    <p style="font-size:17px; line-height:1.7; color:#222; margin:0 0 20px 0;">Synergy is the official gradebook of record for Cobb County Schools. Teachers are responsible for maintaining an accurate and up-to-date gradebook, entering grades in the CTLS Grading Center within 48 hours of submission, marking missing assignments, and correcting errors when identified.</p>
+    <div class="cva-callout">
+      <p style="font-size:16px; line-height:1.6; margin:0; color:#222;"><strong>Big Idea:</strong> Synergy Gradebook updates as you enter new scores in CTLS via a nightly sync. <strong>What students and families see in ParentVUE and StudentVUE is the grade that will be reported at the end of each term.</strong></p>
+    </div>
+  </div>
+
+  <!-- ══ OVERVIEW ══ -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">How CTLS and Synergy Work Together</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">After updating Synergy Settings for assignments, grades sync from CTLS to Synergy each night. Direct students to <strong>CTLS My Grades</strong> for assignment-by-assignment progress and feedback. Always point them to <strong>StudentVUE</strong> for their true overall average — that is what goes to the report card and transcript.</p>
+    <div class="cva-grid" style="margin-bottom: 24px;">
+      <div class="cva-info-card">
+        <h3 style="font-size:20px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">CTLS My Grades</h3>
+        <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Assignment-by-assignment progress and feedback. Use for day-to-day monitoring.</p>
+      </div>
+      <div class="cva-info-card">
+        <h3 style="font-size:20px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Synergy / StudentVUE</h3>
+        <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">The official overall average and <strong>gradebook of record</strong>. This is what goes to ParentVUE, StudentVUE, the report card, and transcript.</p>
+      </div>
+      <div class="cva-info-card">
+        <h3 style="font-size:20px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Nightly Sync</h3>
+        <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Grades entered in the CTLS Grading Center appear in Synergy after the overnight sync. <strong>Wait up to 24 hours before checking Synergy for updated scores.</strong></p>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <!-- ══ GRADEBOOK SETUP ══ -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Setup</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Gradebook Setup</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Complete each section below before syncing grades. <strong>Assignment Types and Weights must be configured first — the 24-hour sync process cannot begin until setup is complete.</strong></p>
+
+    <!-- Assignment Types -->
+    <details class="cva-section-acc">
+      <summary>Assignment Types</summary>
+      <div class="cva-section-body">
+        <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">If new Assignment Types are needed, teachers can add them on the Assignment Types screen. Returning teachers should review existing types to decide if they will be used for the current term. Assignment Types must match the Grading Categories in CTLS. Use the the Class Schedule or CVA Course Syllabus as the quickest reference.</p>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">1</div>
+              <div>
+                <span class="cva-step-label">Step 1</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Assignment Types</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click the <strong>Assignment Types</strong> sub-menu in Synergy. Returning teachers should review existing types to decide if they will be used for the current term.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="14" rx="2" fill="none" stroke="#444" stroke-width="1.5"/><path d="M8 7h8M8 10h5" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Synergy: Assignment Types screen</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">2</div>
+              <div>
+                <span class="cva-step-label">Step 2</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click New</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click the <strong>New</strong> button in the navigation ribbon to begin adding a new Assignment Type.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#444" stroke-width="1.5"/><path d="M12 8v8M8 12h8" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Synergy: NEW button in ribbon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">3</div>
+              <div>
+                <span class="cva-step-label">Step 3</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Enter the Assignment Details</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0 0 10px 0; color:#333;">Enter the <strong>Name</strong>, <strong>Sequence</strong>, toggle <strong>Due Date</strong> to Yes, and select a custom color. Include the prefix <strong>CVA</strong> in front of every Assignment Type name.</p>
+                <div class="cva-warning"><strong>EOC Courses:</strong> EOC classes must have an Assignment Type named <strong>EOC</strong>. Do <em>not</em> apply the CVA prefix to this type. This applies only to EOC courses.</div>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="14" rx="2" fill="none" stroke="#444" stroke-width="1.5"/><path d="M7 8h10M7 11h6M7 14h4" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Synergy: Assignment details form</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">4</div>
+              <div>
+                <span class="cva-step-label">Step 4</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Insert</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click <strong>Insert</strong> when all options are set. Repeat the process for additional Assignment Types. To correct a mistake, click <strong>Edit</strong>, make your changes, then click <strong>Save</strong>.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="14" rx="2" fill="none" stroke="#444" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#bb0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Synergy: INSERT button circled in ribbon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">5</div>
+              <div>
+                <span class="cva-step-label">Step 5</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">View Assignment Types</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Make sure your Assignment Types match the Grading Categories in CTLS. The CVA Course Syllabus is the quickest reference for Assignment Categories and Weights.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="14" rx="2" fill="none" stroke="#444" stroke-width="1.5"/><path d="M7 7h10M7 10h8M7 13h6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Synergy: Completed Assignment Types list</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </details>
+
+    <!-- Assignment Type Weights -->
+    <details class="cva-section-acc">
+      <summary>Assignment Type Weights</summary>
+      <div class="cva-section-body">
+        <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">Assignment Type Weights ensure the grading system reflects the importance of each assignment type. All classes require Weights to be added early in the term. <strong>They are not automatically assigned and can only be set by the classroom teacher.</strong></p>
+
+        <div class="cva-callout-white">
+          <p style="font-size:15px; line-height:1.7; margin:0 0 8px 0; color:#222;"><strong>Set up weights before syncing.</strong> A synchronization process between Synergy and CTLS takes 24 hours before you can attach Synergy Settings in CTLS.</p>
+          <ul style="margin:0; padding-left:20px; font-size:15px; line-height:1.8; color:#333;">
+            <li>Weights in the class <strong>must total 100%.</strong></li>
+            <li><strong>Do not delete or adjust Assignment Type Weights</strong> once set. If a type is no longer needed, leave the weight at zero. <strong>Contact CVA Teacher Support immediately for any errors because changes to weights can affect calculations in previous grading periods.</strong></li>
+          </ul>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">1</div>
+              <div>
+                <span class="cva-step-label">Step 1</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Grade Book Setup</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">After adding Assignment Types, click the <strong>Grade Book Setup</strong> tab in Synergy.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#444" stroke-width="1.5"/><path d="M2 9h20" stroke="#444" stroke-width="1.5"/></svg>
+              <span>Synergy: Grade Book Setup tab</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">2</div>
+              <div>
+                <span class="cva-step-label">Step 2</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Assignment Weighting Tab</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select the <strong>Assignment Weighting</strong> tab to apply category weights.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#444" stroke-width="1.5"/><path d="M2 9h20M7 9v10" stroke="#444" stroke-width="1.5"/></svg>
+              <span>Synergy: Assignment Weighting tab circled</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">3</div>
+              <div>
+                <span class="cva-step-label">Step 3</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Assign Weights</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Enter the <strong>Weights</strong> for each Assignment Type. Consult the CVA Course Syllabus for correct values. Weights must total <strong>100%</strong> for each class.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="14" rx="2" stroke="#444" stroke-width="1.5"/><path d="M7 8h10M7 11h8M7 14h6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Synergy: Assignment Weighting form</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">4</div>
+              <div>
+                <span class="cva-step-label">Step 4</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Select Dropdown &amp; Check Classes</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">From the dropdown, select <strong>Add My Types to District Types</strong>. Then find your CVA courses and check the box to apply settings to those classes.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="18" height="4" rx="1" stroke="#444" stroke-width="1.5"/><path d="M7 14h10M7 17h6" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Synergy: Dropdown + class selection</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cva-step-card">
+          <div class="cva-step-inner">
+            <div class="cva-step-text">
+              <div class="cva-step-num">5</div>
+              <div>
+                <span class="cva-step-label">Step 5</span>
+                <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Update</h3>
+                <p style="font-size:15px; line-height:1.6; margin:0; color:#333;"><strong>Be sure to click Update.</strong> Without clicking Update, your Assignment Weighting details will not be saved to your Synergy Gradebook.</p>
+              </div>
+            </div>
+            <div class="cva-img-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#bb0000" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#bb0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Synergy: UPDATE button circled</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </details>
+
+    <!-- Gradebook Settings -->
+    <details class="cva-section-acc">
+      <summary>Gradebook Settings</summary>
+      <div class="cva-section-body">
+        <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 16px 0;">Before syncing grades, take a moment to check your Synergy Gradebook Settings. The way your gradebook is configured (marking period, assignment types/weights, and how zeros or missing work are handled) can impact student averages. <strong>A quick settings check now prevents grade discrepancies later.</strong></p>
+        <div class="cva-grid">
+          <div class="cva-info-card">
+            <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Teacher Type Defaults</h3>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In Teacher Type Defaults, select <strong>Add My Types to the District Types</strong>.</p>
+          </div>
+          <div class="cva-info-card">
+            <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Grading Period</h3>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In Grading Period Default For New Assignments, select <strong>Assignment Due Date</strong>. This ensures grades calculate correctly and in the correct grading period.</p>
+          </div>
+          <div class="cva-info-card">
+            <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Grade Rounding</h3>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In Default Final Grade Rounding Settings, set Class Percentage to <strong>Rounding On</strong> and <strong>2 Decimal Places</strong>. Click Edit, adjust the setting, then Save.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </div><!-- /.cva-gray setup -->
+
+  <!-- ══ SYNCING CTLS TO SYNERGY ══ -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Syncing Grades</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Syncing CTLS Grading Categories and Synergy</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Feedback and grading happen in the CTLS Grading Center. You must sync <strong>Assignment Synergy Settings</strong> in CTLS to allow grades to flow to your Synergy Gradebook. Follow these steps for every assignment you grade.</p>
+    <div class="cva-step-stack">
+
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">1</div>
+            <div>
+              <span class="cva-step-label">Step 1</span>
+              <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Select the Term</h3>
+              <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In the Assignment Synergy Settings panel, select the <strong>Term</strong> — Fall is S1, Spring is S2.</p>
+            </div>
+          </div>
+          <div class="cva-img-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#444" stroke-width="1.5"/><path d="M3 9h18M8 4v5M16 4v5" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>CTLS: Synergy Settings — Term dropdown</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">2</div>
+            <div>
+              <span class="cva-step-label">Step 2</span>
+              <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Select Your CVA Section</h3>
+              <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select your <strong>CVA Section</strong>. You can find this number on the Classroom Profile page in CTLS.</p>
+            </div>
+          </div>
+          <div class="cva-img-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="#444" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>CTLS: Section dropdown — use Classroom Profile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">3</div>
+            <div>
+              <span class="cva-step-label">Step 3</span>
+              <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Select the Synergy Category</h3>
+              <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select the correct <strong>Synergy Category</strong>. It matches the category name shown beneath the assignment title in the CTLS Grading Center.</p>
+            </div>
+          </div>
+          <div class="cva-img-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="18" height="12" rx="2" stroke="#444" stroke-width="1.5"/><path d="M7 12h10M7 9h5M7 15h7" stroke="#444" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>CTLS: Category dropdown — must match CTLS Grading Center</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">4</div>
+            <div>
+              <span class="cva-step-label">Step 4</span>
+              <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Check to Enable</h3>
+              <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Check the box next to <strong>Check to Enable</strong> to activate the Synergy sync for this assignment.</p>
+            </div>
+          </div>
+          <div class="cva-img-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#444" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#bb0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>CTLS: Check to Enable checkbox</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">5</div>
+            <div>
+              <span class="cva-step-label">Step 5</span>
+              <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Apply to All</h3>
+              <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click <strong>Apply to All</strong> to apply the Synergy settings to all students in the class.</p>
+            </div>
+          </div>
+          <div class="cva-img-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="16" height="8" rx="4" stroke="#bb0000" stroke-width="1.5"/><path d="M9 12h6M14 10l2 2-2 2" stroke="#bb0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>CTLS: Apply to All button</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cva-step-card">
+        <div class="cva-step-inner">
+          <div class="cva-step-text">
+            <div class="cva-step-num">6</div>
+            <div>
+              <span class="cva-step-label">Step 6</span>
+              <h3 style="font-size:18px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Click Finish Student</h3>
+              <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">After grading and entering feedback, click <strong>Finish Student</strong>. The CTLS Gradebook syncs to Synergy nightly — <strong>wait 24 hours</strong> for grades to appear in Synergy.</p>
+            </div>
+          </div>
+          <div class="cva-img-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#bb0000" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#bb0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>CTLS: Finish Student button</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ CHECKING COURSE AVERAGES ══ -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Verifying Grades</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Checking Course Averages</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">After grading, take a moment to verify that assignment scores and overall averages align between CTLS and Synergy. They may not always match exactly — especially if an assignment is missing or hasn't synced yet — but consistent discrepancies need attention.</p>
+
+    <div class="cva-compare-grid" style="margin-bottom: 20px;">
+      <div class="cva-compare-card">
+        <div class="cva-compare-header">In CTLS</div>
+        <div class="cva-compare-body">Open your course and go to the <strong>Grading Center</strong>. You'll see scores for each assignment that has been graded. CTLS shows individual grades and student averages, but it may not always calculate the overall average the same way Synergy does, especially if an assignment is missing or hasn't been synced yet.</div>
+      </div>
+      <div class="cva-compare-card">
+        <div class="cva-compare-header">In Synergy</div>
+        <div class="cva-compare-body">Open the <strong>Gradebook</strong> in Synergy to see students' grades and course averages. Synergy automatically applies the settings you selected in CTLS, including term, section, category, and syncing missing work. This is the official overall average.</div>
+      </div>
+    </div>
+
+    <div class="cva-callout">
+      <p style="font-size:15px; line-height:1.7; margin:0; color:#222;">
+        <strong>Do the grades match?</strong> Take a moment to review your gradebooks in both CTLS and Synergy. Do the assignment scores match, and do the overall averages for all students in Synergy match the averages shown in CTLS? If yes — you're all set. If no — see the Troubleshooting section below for common fixes.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══ TROUBLESHOOTING ══ -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Troubleshooting</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Troubleshooting 101</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Common fixes for errors in your Synergy gradebook. Click a question to expand the answer.</p>
+
+    <details class="cva-faq-item">
+      <summary>Why can't I see all of the assignments/grades in Synergy?</summary>
+      <div class="cva-faq-body">Check that you completed the Synergy sync process in CTLS for each assignment, that Assignment Type Weights are set, and that the nightly sync has had time to run (up to 24 hours). If grades are still missing, contact CVA Teacher Support.</div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>Why does the student have an empty box in the Synergy gradebook?</summary>
+      <div class="cva-faq-body">An empty box typically means no score has been synced for that assignment. Verify that you clicked <strong>Finish Student</strong> after grading in CTLS and that the Assignment Synergy Settings were configured correctly for that assignment.</div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>How can I check categories in CTLS and Synergy?</summary>
+      <div class="cva-faq-body">In CTLS, the category name appears beneath the assignment title in the Grading Center. In Synergy, go to Assignment Types to view your configured types. Make sure they match. The CVA Course Syllabus is the quickest reference for Assignment Categories and Weights.</div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>Who do I contact if I entered the wrong category in CTLS?</summary>
+      <div class="cva-faq-body">Reach out to <strong>CVA Teacher Support</strong>. They can reset the Synergy Sync settings for you. Be sure to include the name of the assignment and the course section when reaching out. CVA Teacher Support will let you know any additional steps to take once the settings have been reset.</div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>Why are the averages different in CTLS and Synergy?</summary>
+      <div class="cva-faq-body">CTLS and Synergy calculate grades differently. CTLS shows progress based on what has been submitted and scored in the course shell. Synergy applies Assignment Type Weights to calculate the official average. Discrepancies can also occur if the nightly sync has not yet run or if Assignment Type Weights are not correctly configured. Contact CVA Teacher Support if averages seem persistently off.</div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>Why doesn't the Synergy average on the right (Unit, Date, Week, Category) match the overall average on the left?</summary>
+      <div class="cva-faq-body">
+        <p style="margin:0 0 12px 0;">When the left and right columns don't match in Synergy, it is usually a straightforward fix involving Grading Periods:</p>
+        <ul class="cva-faq-steps">
+          <li><span>1</span><span>Open your <strong>Synergy Gradebook</strong>.</span></li>
+          <li><span>2</span><span>Click <strong>Gradebook</strong> at the top, then navigate to <strong>Assignments</strong>.</span></li>
+          <li><span>3</span><span>Open the <strong>Grading Periods</strong> tab.</span></li>
+          <li><span>4</span><span>Look for <strong>6th Six Week Grade Period</strong> and check <strong>All</strong>.</span></li>
+          <li><span>5</span><span>Click <strong>Save Grading Periods</strong>.</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>Why are the weights blank in Assignment Weighting?</summary>
+      <div class="cva-faq-body">You may have missed clicking <strong>Update</strong> after entering Assignment Weighting details. Re-enter the details and click <strong>Update</strong> to save.</div>
+    </details>
+
+    <details class="cva-faq-item">
+      <summary>How do I assign different Rounding Percentages to my classes?</summary>
+      <div class="cva-faq-body">CVA uses <strong>2 Decimal Places</strong> for Percentage Rounding. Go to Class Settings, click <strong>Edit</strong>, toggle Percentage Rounding on, select 2 Decimal Places, then click <strong>Save</strong>.</div>
+    </details>
+
+  </div>
+
+  <!-- ══ QUICK TAKEAWAYS ══ -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Quick Takeaways</span>
+    <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 16px 0;">What to Remember</h2>
+    <div class="cva-takeaway-list">
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Synergy is the gradebook of record.</strong> What students and families see in ParentVUE/StudentVUE is what goes on the report card and transcript.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Set up Assignment Type Weights before syncing.</strong> Weights must total 100% and cannot be easily changed mid-term without affecting previous grading periods.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Allow 24 hours for the nightly sync.</strong> Grades entered in CTLS take up to one day to appear in Synergy.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Always click Finish Student</strong> after grading and entering feedback in CTLS — this is what triggers the sync.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Verify that averages match</strong> in both CTLS and Synergy after grading. If they don't, check the Troubleshooting section or contact CVA Teacher Support.</p>
+      </div>
+
+      <div class="cva-takeaway-item">
+        <div class="cva-takeaway-icon">✓</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Contact CVA Teacher Support immediately</strong> if you notice grade discrepancies or if you entered the wrong category — include the assignment name and course section.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ CONTACT ══ -->
+  <div class="cva-contact-card">
+    <div>
+      <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(26px,4vw,34px); color:#fff; text-transform:uppercase; font-weight:900; margin:0 0 10px 0;">Have Questions?</h2>
+      <p style="font-size:16px; line-height:1.7; color:rgba(255,255,255,0.85); margin:0;">CVA Teacher Support can help with gradebook setup, syncing issues, category errors, and anything else related to Synergy. When reaching out, include the assignment name and course section for the fastest resolution.</p>
+    </div>
+    <a href="mailto:cvateachersupport@cobbk12.org" class="cva-contact-btn">Contact Teacher Support</a>
+  </div>
+
+  <!-- FOOTER -->
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
+
+</div><!-- /.cva-wrap -->
+
+<script src="../nav.js"></script>
+</body>
+</html>
