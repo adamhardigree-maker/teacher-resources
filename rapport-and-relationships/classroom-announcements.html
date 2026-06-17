@@ -1,41 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Board | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
-</style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
 
-<div class="cva-wrap" style="font-family: Montserrat, Arial, sans-serif; color: #222222; background: #ffffff; max-width: 1100px; margin: 0 auto; padding: 24px 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px;">
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── White card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented card ── */
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Callout box ── */
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .cva-callout-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+
+  /* ── Grids ── */
+  .cva-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .cva-card-lg {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  /* ── Canva embed ── */
+  .cva-canva-wrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 33.3333%;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    margin-top: 1.6em;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+  }
+
+  .cva-canva-wrap iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-grid-2,
+    .cva-grid-4,
+    .cva-grid-6 {
+      grid-template-columns: 1fr;
+    }
+
+    /* Canva embed: taller aspect ratio on narrow screens for readability */
+    .cva-canva-wrap {
+      padding-top: 56.25%;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
 
   <!-- HERO -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 10px 0;">Digital Classroom Setup</p>
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Digital Classroom Setup</span>
     <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Class Board</h1>
     <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0 0 20px 0;">When students first enter your Digital Classroom in CTLS, the Class Board is already visible. Board Topics and Announcements help you set the tone, share important information, and create teacher presence from the start.</p>
-    <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box;">
+    <div class="cva-callout">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Big Idea:</strong> The Class Board gives you a visible space to engage, inform, guide, and support students throughout the course.</p>
     </div>
   </div>
 
   <!-- OVERVIEW -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Overview</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Two Types of Class Board Entries</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Students will see two types of entries on the Class Board: <strong>Board Topics</strong> and <strong>Announcements</strong>. Both help students know where to find information, what to pay attention to, and how to stay connected to the course.</p>
   </div>
 
   <!-- BOARD TOPICS VS ANNOUNCEMENTS -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Class Board Tools</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Class Board Tools</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">Board Topics vs. Announcements</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px;">
+    <div class="cva-grid-2">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 22px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Ongoing Information</p>
+      <div class="cva-card-lg">
+        <span class="cva-card-label">Ongoing Information</span>
         <h3 style="font-size: 24px; line-height: 1.2; margin: 0 0 12px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Board Topics</h3>
         <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #333333;">Board Topics are designed for information students may need to revisit throughout the term. They are a good place to organize helpful resources, course reminders, support information, and other content students may need more than once.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 22px; box-sizing: border-box;">
-        <p style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Time-Sensitive Updates</p>
+      <div class="cva-card-lg">
+        <span class="cva-card-label">Time-Sensitive Updates</span>
         <h3 style="font-size: 24px; line-height: 1.2; margin: 0 0 12px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Announcements</h3>
         <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #333333;">Announcements are time-sensitive posts meant to get students&rsquo; attention right away. They appear on the student Dashboard and send a notification to the CTLS Parent app, making them hard to miss.</p>
       </div>
@@ -44,117 +240,111 @@
   </div>
 
   <!-- CVA NEWS YOU CAN USE -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Board Topic Highlight</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Board Topic Highlight</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">CVA News You Can Use</h2>
     <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">CVA will automatically post a Board Topic titled <strong>CVA News You Can Use</strong> in your Digital Classroom. This topic is updated regularly with program-wide information students may need during the term.</p>
-    <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; box-sizing: border-box; margin-bottom: 20px;">
+    <div class="cva-callout-gray">
       <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Directions:</strong> Use the arrows to click through the CVA News You Can Use posts.</p>
     </div>
-    <div style="position: relative; width: 100%; height: 0; padding-top: 33.3333%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAG0dCuWjio/wHFneXZ43epBtpWi0AJ6aA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG0dCuWjio&#x2F;wHFneXZ43epBtpWi0AJ6aA&#x2F;view?utm_content=DAG0dCuWjio&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
-<br>
-  <!-- PROGRAM-WIDE SUPPORT INFO -->
-  
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">What Students May Find There</p>
-    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">Program-Wide Student Support Information</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Getting-Started Steps</h3>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Helpful reminders for beginning the course successfully.</p>
+    <div class="cva-canva-wrap">
+      <iframe loading="lazy"
+        src="https://www.canva.com/design/DAG0dCuWjio/wHFneXZ43epBtpWi0AJ6aA/view?embed"
+        allowfullscreen="allowfullscreen" allow="fullscreen">
+      </iframe>
+    </div>
+
+    <!-- PROGRAM-WIDE SUPPORT INFO -->
+    <div style="margin-top: 28px;">
+      <span class="cva-eyebrow">What Students May Find There</span>
+      <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">Program-Wide Student Support Information</h2>
+      <div class="cva-grid-4">
+
+        <div class="cva-card">
+          <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Getting-Started Steps</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Helpful reminders for beginning the course successfully.</p>
+        </div>
+
+        <div class="cva-card">
+          <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Make-Up Opportunities</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Information about ways students can get back on track.</p>
+        </div>
+
+        <div class="cva-card">
+          <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Learning Center Details</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Information about available student learning support.</p>
+        </div>
+
+        <div class="cva-card">
+          <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Student Support Resources</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Resources from CVA departments and support teams.</p>
+        </div>
+
       </div>
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Make-Up Opportunities</h3>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Information about ways students can get back on track.</p>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Learning Center Details</h3>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Information about available student learning support.</p>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
-        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Student Support Resources</h3>
-        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Resources from CVA departments and support teams.</p>
-      </div>
-
     </div>
   </div>
 
   <!-- ANNOUNCEMENT IDEAS -->
-  <div style="background: #ffffff; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Announcement Ideas</p>
+  <div class="cva-white">
+    <span class="cva-eyebrow">Announcement Ideas</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 18px 0;">Use Announcements to Build Presence and Support Students</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+    <div class="cva-grid-6">
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Show Your Personality</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Use a warm tone, quick video, or personal note to help students see the human behind the course.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Connect to Current Events</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Share timely articles, videos, or examples that connect directly to your course content.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Support Learning</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Post district-vetted videos, readings, or practice opportunities to revisit challenging concepts.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Clarify Directions</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Break down multi-step tasks, highlight common questions, or model expectations.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Recognize Success</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Celebrate student achievements or spotlight professional models to motivate learners.</p>
       </div>
 
-      <div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px; box-sizing: border-box;">
+      <div class="cva-card">
         <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Share Success Tips</h3>
         <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Reinforce due dates, pacing suggestions, and study strategies to help students stay on track.</p>
       </div>
 
     </div>
   </div>
-  
+
   <!-- SCHEDULE AND TARGET -->
-  <div style="background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px; padding: 26px 28px; box-sizing: border-box;">
-    <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Helpful Feature</p>
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Helpful Feature</span>
     <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Schedule and Target Announcements</h2>
-    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 16px 0;">Announcements can be scheduled with a start and end date, and they automatically post to the Digital Classroom calendar. You can also limit visibility to specific students for targeted reminders, make-up work, or individual follow-ups.</p>
-   
-   
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Announcements can be scheduled with a start and end date, and they automatically post to the Digital Classroom calendar. You can also limit visibility to specific students for targeted reminders, make-up work, or individual follow-ups.</p>
   </div>
- <!-- IMPORTANT REMINDER -->
 
-<div style="background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px; box-sizing: border-box;">
-  <p style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;">Important Reminder</p>
-
-  <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Using Canva Effectively.</h2>
-
-  <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">
-    <strong>Canva Design School</strong> offers quick ideas, tutorials, and design tips teachers can use to create more engaging classroom announcements. 
-    <a href="https://www.canva.com/design-school" target="_blank" rel="noopener" style="color:#bb0000; font-weight:800; text-decoration:underline;">Click here to explore and learn simple ways to improve visual design, organize information clearly, and make announcements more inviting for students.</a>
-  </p>
-</div>
-
+  <!-- IMPORTANT REMINDER -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Important Reminder</span>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Using Canva Effectively</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;"><strong>Canva Design School</strong> offers quick ideas, tutorials, and design tips teachers can use to create more engaging classroom announcements. <a href="https://www.canva.com/design-school" target="_blank" rel="noopener" style="color:#bb0000; font-weight:800; text-decoration:underline;">Click here to explore and learn simple ways to improve visual design, organize information clearly, and make announcements more inviting for students.</a></p>
+  </div>
 
   <!-- FOOTER -->
-  <hr style="border: none; border-top: 1px solid #d9dde3; margin: 14px 0;">
-  <p style="font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;"><strong>Class. Virtually. Anywhere.</strong></p>
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
 
 </div>
-<script src="nav.js"></script>
+
+<script src="../nav.js"></script>
+
 </body>
 </html>
