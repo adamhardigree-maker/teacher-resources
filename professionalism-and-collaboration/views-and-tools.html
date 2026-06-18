@@ -6,6 +6,8 @@
 <title>Views &amp; Tools | CVA Teacher Resources</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+  *, *::before, *::after { box-sizing: border-box; }
+
   .cva-wrap, .cva-wrap * { box-sizing: border-box; }
   .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
   .cva-wrap {
@@ -22,7 +24,7 @@
   .cva-wrap a { color: inherit; text-decoration: none; }
   .cva-wrap strong { color: inherit; }
 
-  /* ── Cards ── */
+  /* ── Core cards ── */
   .cva-hero {
     background: #f7f8fa; border: 1px solid #d9dde3;
     border-radius: 16px; border-top: 8px solid #bb0000; padding: 28px 26px;
@@ -37,6 +39,7 @@
     background: #f7f8fa; border: 1px solid #d9dde3;
     border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px;
   }
+  .cva-callout p { font-size: 16px; line-height: 1.6; margin: 0; color: #222; }
 
   /* ── Eyebrow ── */
   .cva-eyebrow {
@@ -44,84 +47,133 @@
     color: #bb0000; font-weight: 800; margin: 0 0 8px 0; display: block;
   }
 
-  /* ── Info grid ── */
-  .cva-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  .cva-info-card {
-    background: #ffffff; border: 1px solid #d9dde3;
-    border-top: 6px solid #bb0000; border-radius: 12px; padding: 18px 20px;
-  }
-
-  /* ── Tool cards (left-accent style) ── */
+  /* ── Tool stack ── */
+  .cva-tool-stack { display: flex; flex-direction: column; gap: 14px; }
   .cva-tool-card {
     background: #ffffff; border: 1px solid #d9dde3;
     border-left: 6px solid #bb0000; border-radius: 12px; padding: 20px 22px;
   }
-
-  /* ── Screenshot placeholder ── */
-  .cva-img-placeholder {
-    background: #e8edf8; border: 1px solid #d9dde3; border-radius: 12px;
-    display: flex; flex-direction: column; align-items: center;
-    justify-content: center; padding: 24px;
-    gap: 10px; min-height: 140px; color: #666;
-    font-size: 13px; text-align: center; line-height: 1.5;
+  .cva-tool-inner { display: flex; align-items: flex-start; gap: 16px; }
+  .cva-tool-icon {
+    min-width: 42px; height: 42px; background: #bb0000; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .cva-img-placeholder svg { opacity: 0.4; }
+  .cva-tool-label {
+    font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+    color: #bb0000; font-weight: 800; display: block; margin: 0 0 4px 0;
+  }
+  .cva-tool-body { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .cva-tool-body p { font-size: 15px; line-height: 1.65; margin: 0; color: #333; }
 
-  /* ── Side-by-side step+image layout ── */
-  .cva-side {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
-    gap: 20px;
-    align-items: center;
+  /* ── Screenshots ── */
+  .cva-screenshot {
+    display: block; width: 100%; max-width: 720px; height: auto;
+    margin: 8px auto 4px; border-radius: 12px;
   }
 
-  /* ── Nav path badge ── */
-  .cva-nav-path {
-    display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;
-    background: #222222; border-radius: 8px; padding: 8px 14px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 13px; font-weight: 700; color: #ffffff;
-    margin-bottom: 16px;
+  /* ── Directions callout ── */
+  .cva-directions {
+    background: #f7f8fa; border: 1px solid #d9dde3; border-radius: 16px;
+    padding: 20px 22px; display: flex; align-items: flex-start; gap: 14px; margin: 8px 0 4px;
   }
-  .cva-nav-path span { color: rgba(255,255,255,0.5); font-weight: 400; font-size: 11px; }
+  .cva-directions-icon {
+    width: 40px; height: 40px; min-width: 40px; background: #bb0000;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin-top: 2px; flex-shrink: 0;
+  }
+  .cva-directions-label {
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    color: #bb0000; font-weight: 800; margin: 0 0 6px 0; display: block;
+  }
+
+  /* ── Notes accordion ── */
+  .cva-accordion { display: grid; gap: 10px; }
+  .cva-accordion-item { border-radius: 7px; overflow: hidden; }
+  .cva-accordion-item > summary {
+    list-style: none; cursor: pointer; padding: 15px 18px; background: #1f1f1f;
+    font-family: Montserrat, Arial, sans-serif; font-size: 15px; line-height: 1.3;
+    color: #ffffff; font-weight: 800; display: flex; align-items: center;
+    justify-content: flex-start; gap: 12px; border-radius: 7px;
+    transition: background .2s; user-select: none;
+  }
+  .cva-accordion-item > summary:hover { background: #2b2b2b; }
+  .cva-accordion-item > summary::-webkit-details-marker { display: none; }
+  .cva-accordion-item > summary::before {
+    content: "+"; color: #ffffff; font-size: 18px; font-weight: 900; line-height: 1; flex-shrink: 0;
+  }
+  .cva-accordion-item[open] > summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+  .cva-accordion-item[open] > summary::before { content: "\2013"; }
+  .cva-accordion-content {
+    padding: 20px; background: #f7f8fa; border: 1px solid #d9dde3;
+    border-top: none; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;
+  }
+  .cva-accordion-content > p { font-size: 16px; line-height: 1.7; color: #333; margin: 0 0 16px 0; }
+
+  /* ── Tag grid ── */
+  .cva-tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .cva-tag-card { background: #ffffff; border: 1px solid #d9dde3; border-radius: 14px; padding: 18px; }
+  .cva-tag-card h3 {
+    font-family: Oswald, Arial, sans-serif; font-size: 20px; line-height: 1.2;
+    color: #000; text-transform: uppercase; font-weight: 800; margin: 0 0 10px 0;
+  }
+  .cva-tag-card p { font-size: 15px; line-height: 1.65; color: #333; margin: 0; }
+  .cva-staff-badge {
+    display: inline-block; background: #bb0000; color: #ffffff; font-size: 11px;
+    letter-spacing: .08em; text-transform: uppercase; font-weight: 800;
+    border-radius: 999px; padding: 4px 9px; margin: 0 0 8px 0;
+  }
 
   /* ── Takeaways ── */
   .cva-takeaway-list { background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 8px 24px; }
-  .cva-takeaway-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 14px 0; border-bottom: 1px dashed #e5e4e2;
-  }
+  .cva-takeaway-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #e5e4e2; }
   .cva-takeaway-item:last-child { border-bottom: none; }
   .cva-takeaway-icon { font-size: 20px; line-height: 1; color: #bb0000; margin-top: 2px; flex-shrink: 0; }
 
+  /* ── Tag key ── */
+  .cva-tag-key { display: grid; gap: 8px; margin-top: 10px; }
+  .cva-tag-key-row {
+    display: grid; grid-template-columns: minmax(150px, 210px) 1fr; gap: 10px;
+    align-items: start; background: #ffffff; border: 1px solid #d9dde3;
+    border-radius: 10px; padding: 10px 12px;
+  }
+  .cva-tag-key-name { font-size: 13px; line-height: 1.4; color: #000; font-weight: 900; margin: 0; }
+  .cva-tag-key-desc { font-size: 13px; line-height: 1.5; color: #333; margin: 0; }
+  .cva-inline-badge {
+    display: inline-block; background: #bb0000; color: #ffffff; border-radius: 999px;
+    padding: 2px 6px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+    margin-left: 4px; font-weight: 800;
+  }
+
   /* ── Contact card ── */
   .cva-contact-card {
-    background: #222222; border-radius: 16px; padding: 28px 26px;
-    display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+    background: #ffffff; border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000; border-radius: 16px; padding: 24px 28px;
   }
   .cva-contact-btn {
-    display: inline-block; background: #ffffff; color: #222222;
-    font-family: 'Montserrat', Arial, sans-serif; font-size: 13px;
-    font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-    padding: 12px 24px; border-radius: 999px; text-decoration: none; border: 2px solid #ffffff;
+    display: inline-block; background: #bb0000; color: #ffffff; text-decoration: none;
+    font-family: Montserrat, Arial, sans-serif; font-size: 14px; font-weight: 800;
+    padding: 11px 20px; border-radius: 999px;
   }
-  .cva-contact-btn:hover { background: #bb0000; color: #ffffff; border-color: #bb0000; }
+  .cva-contact-btn:hover { background: #990000; }
 
   /* ── Footer ── */
   .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
   .cva-footer {
-    font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A;
+    font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666a;
     font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;
   }
 
   /* ── Responsive ── */
   @media (max-width: 640px) {
     .cva-wrap { padding: 12px 12px 36px; gap: 12px; }
-    .cva-hero, .cva-white, .cva-gray, .cva-accent { padding: 20px 18px; }
-    .cva-side { grid-template-columns: 1fr; }
-    .cva-grid { grid-template-columns: 1fr; }
+    .cva-hero, .cva-white, .cva-gray, .cva-accent,
+    .cva-tool-card, .cva-contact-card { padding: 20px 18px; }
+    .cva-accordion-item > summary { font-size: 14px; padding: 14px 16px; }
+    .cva-accordion-content { padding: 16px; }
+    .cva-tag-grid { grid-template-columns: 1fr; }
+    .cva-tag-key-row { grid-template-columns: 1fr; }
     .cva-takeaway-list { padding: 8px 16px; }
-    .cva-contact-card { padding: 22px 18px; }
+    .cva-directions { flex-direction: column; gap: 10px; }
     .cva-footer { font-size: 18px; }
   }
 </style>
@@ -130,626 +182,281 @@
 
 <div class="cva-wrap">
 
-  <!-- ══ HERO ══ -->
+  <!-- HERO -->
   <div class="cva-hero">
     <span class="cva-eyebrow">Professional Learning</span>
-    <h1 style="font-size: clamp(32px,5vw,48px); line-height:1.05; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 14px 0;">Views &amp; Tools</h1>
-    <p style="font-size:17px; line-height:1.7; color:#222; margin:0 0 20px 0;">The Views &amp; Tools area gives you powerful insights into your students: information that makes it easier to understand and support your students. You’ll see where to find student, guardian, and school details; how to check academic progress at a glance; and how to use notes to keep track of important context shared by families or other CVA teachers. You’ll also learn about handy features—like Impersonating Students—that can help you troubleshoot, clarify questions, and communicate more accurately.</p>
+    <h1 style="font-size:clamp(32px,5vw,48px); line-height:1.05; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 14px 0;">Views &amp; Tools</h1>
+    <p style="font-size:17px; line-height:1.7; color:#222; margin:0 0 20px 0;">The Views &amp; Tools area gives you powerful insights into your students: information that makes it easier to understand and support your students. You'll see where to find student, guardian, and school details; how to check academic progress at a glance; and how to use notes to keep track of important context shared by families or other CVA teachers. You'll also learn about handy features—like Impersonating Students—that can help you troubleshoot, clarify questions, and communicate more accurately.</p>
     <div class="cva-callout">
-      <p style="font-size:16px; line-height:1.6; margin:0; color:#222;"><strong>Big Idea:</strong> These tools don't just keep you organized. They help you understand who your students are, what they need, and how you can support them more effectively. The more comfortable you are with these tools, the easier it becomes to personalize communication, spot concerns early, and strengthen the partnership between teachers, students, families, and CVA support staff.</p>
+      <p><strong>Big Idea:</strong> These tools don't just keep you organized. They help you understand who your students are, what they need, and how you can support them more effectively. The more comfortable you are with these tools, the easier it becomes to personalize communication, spot concerns early, and strengthen the partnership between teachers, students, families, and CVA support staff.</p>
     </div>
   </div>
 
-  <!-- ══ OVERVIEW ══ -->
+  <!-- OVERVIEW -->
   <div class="cva-white">
     <span class="cva-eyebrow">Overview</span>
     <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What Is Views &amp; Tools?</h2>
-    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Views &amp; Tools is a dedicated section in CTLS that brings together student data, progress information, and communication management features in one place. It sits in the left-hand navigation of your CTLS Classroom, helping you respond quickly and teach with intention.</p>
-    
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">Views &amp; Tools is a dedicated section in CTLS that brings together student data, progress information, and communication management features in one place. It sits in the left-hand navigation of your CTLS Classroom, helping you respond quickly and teach with intention.</p>
   </div>
 
-  <!-- ══ HOW TO ACCESS ══ -->
+  <!-- ACCESSING -->
   <div class="cva-white">
     <span class="cva-eyebrow">Accessing</span>
     <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">How to Access Views &amp; Tools</h2>
     <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Views &amp; Tools is available directly from your CTLS Classroom or Dashboard. You can access it at any time from the left-hand navigation menu.</p>
-
-   
-      <!-- IMAGE: VIEWS & TOOLS ACCESS -->
-<div style="background:#ffffff; border:0px solid #d9dde3; border-radius:12px; padding:18px 20px; box-sizing:border-box; text-align:center;">
-
-  <img 
-    src="images/views-and-tools-access.png" 
-    alt="CTLS screen showing the Views & Tools area, with a magnifying glass highlighting the Views & Tools button in the left navigation menu."
-    style="display:block; width:100%; max-width:720px; height:auto; margin:0 auto; border-radius:12px;"
-  >
-
-</div>
-      <br>
-
+    <img
+      src="images/views-and-tools-access.png"
+      alt="CTLS screen showing the Views &amp; Tools area, with a magnifying glass highlighting the Views &amp; Tools button in the left navigation menu."
+      class="cva-screenshot"
+      style="margin-bottom:20px;"
+    >
     <div class="cva-callout">
-      <p style="font-size:15px; line-height:1.7; margin:0; color:#222;">As you move through this material, take a few minutes to explore Views &amp; Tools in your own class. This is your chance to build confidence with the systems you use every day and ensure every student gets the attention and care they deserve.</p>
+      <p>As you move through this material, take a few minutes to explore Views &amp; Tools in your own class. This is your chance to build confidence with the systems you use every day and ensure every student gets the attention and care they deserve.</p>
     </div>
-    </div>
+  </div>
 
-  <!-- ══ WHAT YOU'LL FIND ══ -->
+  <!-- EXPLORING / WHAT YOU'LL FIND -->
   <div class="cva-white">
     <span class="cva-eyebrow">Exploring</span>
     <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">What You Will Find</h2>
     <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Views &amp; Tools brings together several features that work together to give you a complete picture of your students. Each one surfaces a different layer of information to help you act with intention.</p>
 
-    
-    <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div class="cva-tool-stack">
 
+      <!-- PROFILE -->
       <div class="cva-tool-card">
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="min-width:42px; height:42px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <div class="cva-tool-inner">
+          <div class="cva-tool-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
-          <div>
-            
-            <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#bb0000; font-weight:800; display:block; margin:0 0 4px 0;">Profile</span>
-            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Student Information and Guardian information</h3>
-            <!-- IMAGE: PROFILE TAB -->
-<div style="background:#ffffff; padding:18px 20px; box-sizing:border-box; text-align:center;">
-
-  <img 
-    src="images/profile-tab.png" 
-    alt="CTLS student profile screen with a magnifying glass highlighting the Profile tab and student information tabs."
-    style="display:block; width:100%; max-width:720px; height:auto; margin:0 auto; border-radius:12px;"
-  >
-
-</div>
-
-            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">Let’s take a quick look at the <strong>Student Info</strong> section. When you scroll down, you’ll see the student’s preferred email address. This is a good way to reach them directly, butt’s always worth double-checking that email before sending important messages or feedback. This is the email address that was entered when the students enrolled.</p>
-            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">From there, click over to <strong>Guardian Info</strong>. You’ll find contact details for parents and guardians, including phone numbers and emails. This section comes in handy when you need to share academic updates or start a support conversation.</p>
-            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">Look at <strong>School Info</strong>. This tells you where the student chose to work on the course during registration—at home, at school, or a mix of the two. Knowing their learning environment gives you helpful context as you support them throughout the term. A quick review of these details now can make your communication more personal and your support even more effective.</p>
-</p>
+          <div class="cva-tool-body">
+            <span class="cva-tool-label">Profile</span>
+            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0;">Student Information and Guardian information</h3>
+            <img
+              src="images/profile-tab.png"
+              alt="CTLS student profile screen with a magnifying glass highlighting the Profile tab and student information tabs."
+              class="cva-screenshot"
+            >
+            <p>Let's take a quick look at the <strong>Student Info</strong> section. When you scroll down, you'll see the student's preferred email address. This is a good way to reach them directly, butt's always worth double-checking that email before sending important messages or feedback. This is the email address that was entered when the students enrolled.</p>
+            <p>From there, click over to <strong>Guardian Info</strong>. You'll find contact details for parents and guardians, including phone numbers and emails. This section comes in handy when you need to share academic updates or start a support conversation.</p>
+            <p>Look at <strong>School Info</strong>. This tells you where the student chose to work on the course during registration—at home, at school, or a mix of the two. Knowing their learning environment gives you helpful context as you support them throughout the term. A quick review of these details now can make your communication more personal and your support even more effective.</p>
           </div>
         </div>
       </div>
 
+      <!-- ACADEMICS -->
       <div class="cva-tool-card">
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="min-width:42px; height:42px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <div class="cva-tool-inner">
+          <div class="cva-tool-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M3 9h18M8 4v5M16 4v5M8 13h2M8 17h2M13 13h3M13 17h3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
-          <div>
-            <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#bb0000; font-weight:800; display:block; margin:0 0 4px 0;">Academics</span>
-            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Progress Tracker Review</h3>
-            <!-- IMAGE: ACADEMICS TAB -->
-<div style="background:#ffffff; border-radius:12px; padding:18px 20px; box-sizing:border-box; text-align:center;">
-
-  <img 
-    src="images/academics-tab.png" 
-    alt="CTLS student information screen with a yellow circle highlighting the Academics tab near the top of the student profile."
-    style="display:block; width:100%; max-width:720px; height:auto; margin:0 auto; border-radius:12px;"
-  >
-
-</div>
-            <p style="font-size:15px; line-height:1.65; margin:0; color:#333;">The <strong>Academics</strong> section is where you’ll find the <strong>Progress Tracker Preview</strong> tiles—your quick-glance view of how each student is moving through their CVA courses. When you hover over a tile, you’ll see the student’s current percent completion. It’s an easy way to spot who’s pacing well and who might need a check-in or a little encouragement to get back on track. And here’s a helpful shortcut: click any tile to jump straight into the student’s full Progress Tracker. That’s where you can dig into assignment-level details, pacing information, and overall performance—all in one place.</p>
+          <div class="cva-tool-body">
+            <span class="cva-tool-label">Academics</span>
+            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0;">Progress Tracker Review</h3>
+            <img
+              src="images/academics-tab.png"
+              alt="CTLS student information screen with a yellow circle highlighting the Academics tab near the top of the student profile."
+              class="cva-screenshot"
+            >
+            <p>The <strong>Academics</strong> section is where you'll find the <strong>Progress Tracker Preview</strong> tiles—your quick-glance view of how each student is moving through their CVA courses. When you hover over a tile, you'll see the student's current percent completion. It's an easy way to spot who's pacing well and who might need a check-in or a little encouragement to get back on track. And here's a helpful shortcut: click any tile to jump straight into the student's full Progress Tracker. That's where you can dig into assignment-level details, pacing information, and overall performance—all in one place.</p>
           </div>
         </div>
       </div>
-<div class="cva-tool-card">
-  <div style="display:flex; align-items:flex-start; gap:16px;">
 
-    <!-- ICON -->
-    <div style="min-width:42px; height:42px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 5h14v10H9l-4 4V5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M8 9h8M8 12h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-  </svg>
-    </div>
+      <!-- NOTES -->
+      <div class="cva-tool-card">
+        <div class="cva-tool-inner">
+          <div class="cva-tool-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5h14v10H9l-4 4V5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="cva-tool-body">
+            <span class="cva-tool-label">Notes</span>
+            <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0;">Adding Notes in Views &amp; Tools</h3>
+            <img
+              src="images/notes-tab.png"
+              alt="CTLS student information screen with a yellow circle highlighting the Notes tab and note filters near the top of the student profile."
+              class="cva-screenshot"
+            >
+            <p>The <strong>Notes</strong> section holds some of the most valuable information you can gather about your students. Think of it as both a personal reference point and a shared space where insights from other CVA teachers live. It's a running record that helps everyone who works with that student stay in the loop.</p>
+            <p>These notes can be especially useful when you're reviewing progress or checking for academic integrity concerns. If a student or guardian shares something important, such as health concerns, family updates, or challenges that might affect their work, you can document it in the Notes section.</p>
+            <p><strong>The more context we have, the better we can guide students, encourage them, and respond to what they need for success.</strong> Notes should be clear, professional, and focused on information that helps CVA staff support the student. <strong>Only include information that is relevant to the student's learning, participation, communication, or support needs.</strong></p>
 
-    <!-- CARD CONTENT -->
-    <div style="width:100%;">
-      <span style="font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#bb0000; font-weight:800; display:block; margin:0 0 4px 0;">
-        Notes
-      </span>
+            <!-- Category Tags sub-section -->
+            <div>
+              <span class="cva-eyebrow" style="margin-top: 8px;">Views &amp; Tools Notes</span>
+              <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 10px 0;">Category Tags</h3>
+              <p style="font-size:15px; line-height:1.7; color:#333; margin:0 0 14px 0;">Notes in Views &amp; Tools help CVA teachers and staff document important student information in one consistent location. Category tags make notes easier to organize, locate, and understand when staff members need to review student history, support needs, communication, or concerns.</p>
 
-      <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">
-        Adding Notes in Views &amp; Tools
-      </h3>
-
-      <!-- IMAGE: NOTES TAB -->
-      <div style="background:#ffffff; padding:18px 0 20px 0; box-sizing:border-box; text-align:left;">
-        <img
-          src="images/notes-tab.png"
-          alt="CTLS student information screen with a yellow circle highlighting the Notes tab and note filters near the top of the student profile."
-          style="display:block; width:100%; max-width:720px; height:auto; margin:0 auto; border-radius:12px;"
-        />
-      </div>
-
-      <p style="font-size:15px; line-height:1.65; margin:0 0 12px 0; color:#333;">
-        The <strong>Notes</strong> section holds some of the most valuable information you can gather about your students. Think of it as both a personal reference point and a shared space where insights from other CVA teachers live. It’s a running record that helps everyone who works with that student stay in the loop.
-      </p>
-
-      <p style="font-size:15px; line-height:1.65; margin:0 0 12px 0; color:#333;">
-        These notes can be especially useful when you’re reviewing progress or checking for academic integrity concerns. If a student or guardian shares something important, such as health concerns, family updates, or challenges that might affect their work, you can document it in the Notes section.
-      </p>
-
-      <p style="font-size:15px; line-height:1.65; margin:0 0 22px 0; color:#333;">
-        <strong>The more context we have, the better we can guide students, encourage them, and respond to what they need for success.</strong> Notes should be clear, professional, and focused on information that helps CVA staff support the student.<strong>Only include information that is relevant to the student’s learning, participation, communication, or support needs.</strong>
-      </p>
-
-      <!-- CVA NOTES ACCORDION SECTION -->
-      <div class="cva-notes-wrap" style="font-family:Montserrat, Arial, sans-serif; color:#222222; background:#ffffff; max-width:1100px; margin:0 auto; padding:0; box-sizing:border-box;">
-
-        <style>
-          .cva-notes-wrap h1,
-          .cva-notes-wrap h2,
-          .cva-notes-wrap h3 {
-            font-family: Oswald, Arial, sans-serif;
-          }
-
-          .cva-notes-intro {
-            margin-bottom: 24px;
-          }
-
-          .cva-notes-eyebrow {
-            font-size: 12px;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            color: #BB0000;
-            font-weight: 800;
-            margin: 0 0 8px 0;
-          }
-
-          .cva-notes-title {
-            font-size: clamp(26px, 4vw, 36px);
-            line-height: 1.1;
-            color: #000000;
-            text-transform: uppercase;
-            font-weight: 900;
-            margin: 0 0 12px 0;
-          }
-
-          .cva-notes-lead {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #333333;
-            margin: 0 0 12px 0;
-            max-width: 900px;
-          }
-
-          .cva-notes-reminder {
-            background: #f7f8fa;
-            border: 1px solid #d9dde3;
-            border-radius: 14px;
-            padding: 16px 18px;
-            margin: 18px 0 26px 0;
-            box-sizing: border-box;
-          }
-
-          .cva-notes-reminder p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #333333;
-            margin: 0;
-          }
-
-          .cva-accordion {
-            display: grid;
-            gap: 10px;
-          }
-
-          .cva-accordion-item {
-            background: #ffffff;
-            border: none;
-            border-radius: 7px;
-            overflow: hidden;
-            box-sizing: border-box;
-          }
-
-          .cva-accordion-item summary {
-            list-style: none;
-            cursor: pointer;
-            padding: 15px 18px;
-            background: #1f1f1f;
-            font-family: Montserrat, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.3;
-            color: #ffffff;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 12px;
-            border-radius: 7px;
-            transition: background .2s ease, color .2s ease;
-          }
-
-          .cva-accordion-item summary:hover {
-            background: #2b2b2b;
-          }
-
-          .cva-accordion-item summary::-webkit-details-marker {
-            display: none;
-          }
-
-          .cva-accordion-item summary::before {
-            content: "+";
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 900;
-            line-height: 1;
-            flex: 0 0 auto;
-          }
-
-          .cva-accordion-item[open] summary {
-            background: #1f1f1f;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .cva-accordion-item[open] summary::before {
-            content: "–";
-            color: #ffffff;
-          }
-
-          .cva-accordion-content {
-            padding: 20px;
-            background: #f7f8fa;
-            border: 1px solid #d9dde3;
-            border-top: none;
-            border-bottom-left-radius: 7px;
-            border-bottom-right-radius: 7px;
-            box-sizing: border-box;
-          }
-
-          .cva-accordion-content > p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #333333;
-            margin: 0 0 16px 0;
-          }
-
-          .cva-tag-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 14px;
-          }
-
-          .cva-tag-card {
-            background: #ffffff;
-            border: 1px solid #d9dde3;
-            border-radius: 14px;
-            padding: 18px;
-            box-sizing: border-box;
-            box-shadow: 0 2px 8px rgba(0,0,0,.04);
-          }
-
-          .cva-tag-card h3 {
-            font-size: 20px;
-            line-height: 1.2;
-            color: #000000;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin: 0 0 10px 0;
-          }
-
-          .cva-tag-card p {
-            font-size: 15px;
-            line-height: 1.65;
-            color: #333333;
-            margin: 0;
-          }
-
-          .cva-staff-label {
-            display: inline-block;
-            background: #BB0000;
-            color: #ffffff;
-            font-size: 11px;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            font-weight: 800;
-            border-radius: 999px;
-            padding: 5px 9px;
-            margin: 0 0 10px 0;
-          }
-
-          @media (max-width: 700px) {
-            .cva-accordion-item summary {
-              font-size: 15px;
-              padding: 15px 16px;
-            }
-
-            .cva-accordion-content {
-              padding: 16px;
-            }
-          }
-        </style>
-
-        <!-- INTRO / DIRECTIONS -->
-        <div class="cva-notes-intro">
-          <p class="cva-notes-eyebrow">Views &amp; Tools Notes</p>
-
-          <h3 style="font-size:19px; font-weight:900; color:#000; text-transform:uppercase; margin:0 0 8px 0;">Category Tags</h3>
-
-          <p class="cva-notes-lead">
-            Notes in Views &amp; Tools help CVA teachers and staff document important student information in one consistent location. Category tags make notes easier to organize, locate, and understand when staff members need to review student history, support needs, communication, or concerns.
-          <!-- CVA DIRECTIONS CALLOUT -->
-<div style="background:#f7f8fa; border:1px solid #d9dde3; border-radius:16px; padding:20px 22px; margin:20px 0 24px 0; box-sizing:border-box;">
-
-  <div style="display:flex; align-items:flex-start; gap:14px;">
-
-    <!-- ICON -->
-    <div style="width:40px; height:40px; min-width:40px; background:#bb0000; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px;">
-      <span style="color:#ffffff; font-size:22px; font-weight:900; line-height:1;">i</span>
-    </div>
-
-    <!-- TEXT -->
-    <div>
-      <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 6px 0;">
-        Directions
-      </p>
-
-      <h3 style="font-family:Oswald, Arial, sans-serif; font-size:24px; line-height:1.2; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 8px 0;">
-        Review the Note Category Tags
-      </h3>
-
-      <p style="font-size:15px; line-height:1.65; color:#333333; margin:0 0 10px 0;">
-        Use the accordion folders below to review how each note category tag should be used in Views &amp; Tools. Click or tap a folder title to expand it. Click or tap the title again to collapse it.
-      </p>
-    </div>
-  </div>
-</div>
-        <!-- ACCORDION -->
-        <div class="cva-accordion">
-
-          
-          <!-- STUDENT SUPPORT -->
-          <details class="cva-accordion-item">
-            <summary>Student Support &amp; Progress Tags</summary>
-            <div class="cva-accordion-content">
-              <p>
-                Use these tags to document student support, progress concerns, help sessions, and positive student milestones.
-              </p>
-
-              <div class="cva-tag-grid">
-
-                <div class="cva-tag-card">
-                  <h3>Failure Concern</h3>
-                  <p>
-                    Use this tag to record when you have reached out to a student or their family about failure concerns.
-                  </p>
+              <div class="cva-directions">
+                <div class="cva-directions-icon">
+                  <span style="color:#fff; font-size:22px; font-weight:900; line-height:1;">i</span>
                 </div>
-
-                <div class="cva-tag-card">
-                  <h3>Help Session</h3>
-                  <p>
-                    Use this tag whenever you provide guidance, clarification, or tutoring to a student, or communicate with a family to support the student’s progress. Include the focus of the session and any next steps or follow-up needed.
-                  </p>
-                </div>
-
-                <div class="cva-tag-card">
-                  <h3>Student Success Highlight</h3>
-                  <p>
-                    Use this tag to record when you reach out to acknowledge a student’s accomplishment, growth, or milestone. Include the nature of the success and any feedback shared.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </details>
-
-          <!-- ACADEMIC CONCERNS -->
-          <details class="cva-accordion-item">
-            <summary>Academic Concern Tags</summary>
-            <div class="cva-accordion-content">
-              <p>
-                Use this tag when documenting academic concerns that may need to be monitored or reviewed by CVA staff.
-              </p>
-
-              <div class="cva-tag-grid">
-                <div class="cva-tag-card">
-                  <h3>Academic Integrity</h3>
-                  <p>
-                    Used to document and monitor concerns related to academic integrity. This tag helps identify patterns or repeated issues, allowing teachers and staff to respond consistently and collaboratively to support student growth and uphold expectations.
-                  </p>
+                <div>
+                  <span class="cva-directions-label">Directions</span>
+                  <h3 style="font-family:Oswald,Arial,sans-serif; font-size:24px; line-height:1.2; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 8px 0;">Review the Note Category Tags</h3>
+                  <p style="font-size:15px; line-height:1.65; color:#333; margin:0;">Use the accordion folders below to review how each note category tag should be used in Views &amp; Tools. Click or tap a folder title to expand it. Click or tap the title again to collapse it.</p>
                 </div>
               </div>
-            </div>
-          </details>
 
-          <!-- STUDENT RECORDS -->
-          <details class="cva-accordion-item">
-            <summary>Student Record &amp; Profile Tags</summary>
-            <div class="cva-accordion-content">
-              <p>
-                Use these tags when documenting information that helps keep student records accurate or supports appropriate participation in the course.
-              </p>
+              <div class="cva-accordion" style="margin-top: 14px;">
 
-              <div class="cva-tag-grid">
+                <details class="cva-accordion-item">
+                  <summary>Student Support &amp; Progress Tags</summary>
+                  <div class="cva-accordion-content">
+                    <p>Use these tags to document student support, progress concerns, help sessions, and positive student milestones.</p>
+                    <div class="cva-tag-grid">
+                      <div class="cva-tag-card">
+                        <h3>Failure Concern</h3>
+                        <p>Use this tag to record when you have reached out to a student or their family about failure concerns.</p>
+                      </div>
+                      <div class="cva-tag-card">
+                        <h3>Help Session</h3>
+                        <p>Use this tag whenever you provide guidance, clarification, or tutoring to a student, or communicate with a family to support the student's progress. Include the focus of the session and any next steps or follow-up needed.</p>
+                      </div>
+                      <div class="cva-tag-card">
+                        <h3>Student Success Highlight</h3>
+                        <p>Use this tag to record when you reach out to acknowledge a student's accomplishment, growth, or milestone. Include the nature of the success and any feedback shared.</p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
 
-                <div class="cva-tag-card">
-                  <h3>Profile Updates</h3>
-                  <p>
-                    Use this tag to note important updates that help keep student records accurate and ensure CVA can communicate effectively with families.
-                  </p>
-                </div>
+                <details class="cva-accordion-item">
+                  <summary>Academic Concern Tags</summary>
+                  <div class="cva-accordion-content">
+                    <p>Use this tag when documenting academic concerns that may need to be monitored or reviewed by CVA staff.</p>
+                    <div class="cva-tag-grid">
+                      <div class="cva-tag-card">
+                        <h3>Academic Integrity</h3>
+                        <p>Used to document and monitor concerns related to academic integrity. This tag helps identify patterns or repeated issues, allowing teachers and staff to respond consistently and collaboratively to support student growth and uphold expectations.</p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
 
-                <div class="cva-tag-card">
-                  <h3>Medical/Health Information</h3>
-                  <p>
-                    Use this tag to note any medical or health information that affects a student’s learning or participation. Include details that help staff provide accommodation or support, while maintaining student privacy.
-                  </p>
-                </div>
+                <details class="cva-accordion-item">
+                  <summary>Student Record &amp; Profile Tags</summary>
+                  <div class="cva-accordion-content">
+                    <p>Use these tags when documenting information that helps keep student records accurate or supports appropriate participation in the course.</p>
+                    <div class="cva-tag-grid">
+                      <div class="cva-tag-card">
+                        <h3>Profile Updates</h3>
+                        <p>Use this tag to note important updates that help keep student records accurate and ensure CVA can communicate effectively with families.</p>
+                      </div>
+                      <div class="cva-tag-card">
+                        <h3>Medical/Health Information</h3>
+                        <p>Use this tag to note any medical or health information that affects a student's learning or participation. Include details that help staff provide accommodation or support, while maintaining student privacy.</p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
 
-              </div>
-            </div>
-          </details>
+                <details class="cva-accordion-item">
+                  <summary>CVA Staff-Only Tags</summary>
+                  <div class="cva-accordion-content">
+                    <p>These tags are for CVA staff use only. They should be used when documenting enrollment-related situations or communication with local school contacts.</p>
+                    <div class="cva-tag-grid">
+                      <div class="cva-tag-card">
+                        <span class="cva-staff-badge">CVA Staff Only</span>
+                        <h3>Enrollment</h3>
+                        <p>This tag is for CVA staff use only. Use it to note any important enrollment-related situations such as schedule changes, late enrollment, withdrawals, or unique circumstances.</p>
+                      </div>
+                      <div class="cva-tag-card">
+                        <span class="cva-staff-badge">CVA Staff Only</span>
+                        <h3>Local School Contact</h3>
+                        <p>This tag is for CVA staff only. Use it to record any communication with a student's local school contacts, including key details and next steps.</p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
 
-          <!-- STAFF ONLY -->
-          <details class="cva-accordion-item">
-            <summary>CVA Staff-Only Tags</summary>
-            <div class="cva-accordion-content">
-              <p>
-                These tags are for CVA staff use only. They should be used when documenting enrollment-related situations or communication with local school contacts.
-              </p>
+              </div><!-- /.cva-accordion -->
+            </div><!-- /.category-tags -->
 
-              <div class="cva-tag-grid">
+          </div><!-- /.cva-tool-body -->
+        </div><!-- /.cva-tool-inner -->
+      </div><!-- /.cva-tool-card Notes -->
 
-                <div class="cva-tag-card">
-                  <span class="cva-staff-label">CVA Staff Only</span>
-                  <h3>Enrollment</h3>
-                  <p>
-                    This tag is for CVA staff use only. Use it to note any important enrollment-related situations such as schedule changes, late enrollment, withdrawals, or unique circumstances.
-                  </p>
-                </div>
+    </div><!-- /.cva-tool-stack -->
+  </div><!-- /.cva-white Exploring -->
 
-                <div class="cva-tag-card">
-                  <span class="cva-staff-label">CVA Staff Only</span>
-                  <h3>Local School Contact</h3>
-                  <p>
-                    This tag is for CVA staff only. Use it to record any communication with a student’s local school contacts, including key details and next steps.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </details>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>          </div> </div>
-<!-- ══ SCREENSHOT REFERENCE ══ -->
-<div class="cva-gray">
-  <span class="cva-eyebrow">Reference</span>
-
-  <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
-    The My Students View
-  </h2>
-
-  <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">
-    When you open Views &amp; Tools and select My Students, you'll see a roster of your enrolled students. Here's how to read the screen and use its controls.
-  </p>
-
-  <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(200px,300px); gap:20px; align-items:start;">
-
-    <!-- REFERENCE LIST -->
-    <div style="display:flex; flex-direction:column; gap:10px;">
-
-      <div style="display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start;">
-        <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">1</div>
-        <div>
-          <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Course Dropdown</p>
-          <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Filter the student list by course. Select any class you teach to see only those enrolled students.</p>
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start;">
-        <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">2</div>
-        <div>
-          <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Select School Filter</p>
-          <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Filter by the student's home school. Useful when your class includes students from multiple Cobb County schools.</p>
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start;">
-        <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">3</div>
-        <div>
-          <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Student Filter</p>
-          <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Search or filter by individual student name to quickly locate a specific student in your roster.</p>
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start;">
-        <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">4</div>
-        <div>
-          <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Export Button</p>
-          <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">Download your student roster data. The export includes First Name and School columns and can be used for communication planning and reporting.</p>
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start;">
-        <div style="background:#bb0000; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; flex-shrink:0; margin-top:2px;">5</div>
-        <div>
-          <p style="font-size:15px; font-weight:800; color:#000; margin:0 0 2px 0;">Student List</p>
-          <p style="font-size:14px; line-height:1.6; color:#444; margin:0;">The main table shows each student's first name and home school. Students from multiple Cobb County schools may appear in a single class.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="cva-img-placeholder" style="min-height:200px;">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="18" height="18" rx="2" stroke="#444" stroke-width="1.4"/>
-        <path d="M3 8h18M8 3v5" stroke="#444" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M7 12h10M7 15h7" stroke="#444" stroke-width="1.4" stroke-linecap="round"/>
-      </svg>
-      <span>CTLS: My Students view<br>showing roster with First Name<br>and School columns</span>
-    </div>
-
-  </div>
-</div>
-```
-
-  <!-- ══ WHY IT MATTERS ══ -->
+  <!-- WHY IT MATTERS -->
   <div class="cva-accent">
     <span class="cva-eyebrow">Why It Matters</span>
     <h2 style="font-size:clamp(22px,3vw,30px); line-height:1.2; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Teaching with Intention</h2>
-    <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">In an asynchronous online course, the data in Views &amp; Tools is often the earliest signal you have that a student needs support. A student who stops showing up in the roster data, falls behind on progress, or accumulates missing work needs outreach — not a waiting period. Regular use of Views &amp; Tools is what makes proactive, student-centered teaching possible at CVA.</p>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">In an asynchronous online course, the data in Views &amp; Tools is often the earliest signal you have that a student needs support. A student who stops showing up in the roster data, falls behind on progress, or accumulates missing work needs outreach, not a waiting period. <strong>Regular use of Views &amp; Tools is what makes proactive, student-centered teaching possible at CVA.</strong></p>
   </div>
 
-  <!-- ══ TAKEAWAYS ══ -->
+  <!-- QUICK TAKEAWAYS -->
   <div class="cva-white">
     <span class="cva-eyebrow">Quick Takeaways</span>
     <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 16px 0;">What to Remember</h2>
     <div class="cva-takeaway-list">
 
       <div class="cva-takeaway-item">
-        <div class="cva-takeaway-icon">✓</div>
+        <div class="cva-takeaway-icon">&#10003;</div>
         <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Views &amp; Tools lives in the CTLS left navigation.</strong> Access it from any class in My Digital Classrooms.</p>
       </div>
 
       <div class="cva-takeaway-item">
-        <div class="cva-takeaway-icon">✓</div>
-        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>My Students shows your full roster</strong> with home school information. Filter by course, school, or student name, and use Export to download the list.</p>
+        <div class="cva-takeaway-icon">&#10003;</div>
+        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Check Views &amp; Tools regularly</strong>, not just when something seems wrong. Consistent use is what lets you catch concerns early.</p>
       </div>
 
       <div class="cva-takeaway-item">
-        <div class="cva-takeaway-icon">✓</div>
-        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Check Views &amp; Tools regularly</strong> — not just when something seems wrong. Consistent use is what lets you catch concerns early.</p>
-      </div>
-
-      <div class="cva-takeaway-item">
-        <div class="cva-takeaway-icon">✓</div>
+        <div class="cva-takeaway-icon">&#10003;</div>
         <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>These tools don't just keep you organized</strong> — they help you understand who your students are, what they need, and how you can support them more effectively.</p>
       </div>
 
       <div class="cva-takeaway-item">
-        <div class="cva-takeaway-icon">✓</div>
-        <p style="font-size:16px; line-height:1.6; color:#222; margin:0;"><strong>Explore Views &amp; Tools in your own class</strong> as you move through onboarding. Hands-on familiarity with the system is the best way to build confidence.</p>
+        <div class="cva-takeaway-icon">&#10003;</div>
+        <div style="width:100%;">
+          <p style="font-size:16px; line-height:1.6; color:#222; margin:0 0 12px 0;"><strong>Tag all Notes correctly</strong> to ensure teachers and staff respond consistently to support student growth and uphold expectations.</p>
+          <div class="cva-tag-key">
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Academic Integrity</p>
+              <p class="cva-tag-key-desc">Use for academic integrity concerns, patterns, or repeated issues that need documentation.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Failure Concern</p>
+              <p class="cva-tag-key-desc">Use when you contact a student or family about course progress, failing grades, or risk of not passing.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Help Session</p>
+              <p class="cva-tag-key-desc">Use when you provide guidance, clarification, tutoring, or family support. Include the focus and next steps.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Student Success Highlight</p>
+              <p class="cva-tag-key-desc">Use to document student growth, accomplishments, milestones, or positive communication.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Medical/Health Information</p>
+              <p class="cva-tag-key-desc">Use for health information that affects learning or participation. Include only relevant support details.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Profile Updates</p>
+              <p class="cva-tag-key-desc">Use for updates that help keep student records accurate and support communication with families.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Enrollment <span class="cva-inline-badge">Staff Only</span></p>
+              <p class="cva-tag-key-desc">For CVA staff use only. Used for schedule changes, late enrollment, withdrawals, or unique enrollment circumstances.</p>
+            </div>
+            <div class="cva-tag-key-row">
+              <p class="cva-tag-key-name">Local School Contact <span class="cva-inline-badge">Staff Only</span></p>
+              <p class="cva-tag-key-desc">For CVA staff use only. Used to document communication with local school contacts, including key details and next steps.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 
-  <!-- ══ CONTACT ══ -->
-<div style="background:#ffffff; border:1px solid #d9dde3; border-left:6px solid #bb0000; border-radius:16px; padding:24px 28px; margin-bottom:20px; box-sizing:border-box;">
-  
-  <p style="font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#bb0000; font-weight:800; margin:0 0 8px 0;">
-    Need Help?
-  </p>
-
-  <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#000000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">
-    Have Questions?
-  </h2>
-
-  <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 18px 0;">
-    We're here to support you. If you have questions about Views &amp; Tools or anything else in CTLS, contact CVA Teacher Support.
-  </p>
-
-  <a href="mailto:cvateachersupport@cobbk12.org" style="display:inline-block; background:#bb0000; color:#ffffff; text-decoration:none; font-size:14px; font-weight:800; padding:11px 20px; border-radius:999px;">
-    Contact Teacher Support
-  </a>
-
-</div>
+  <!-- CONTACT -->
+  <div class="cva-contact-card">
+    <span class="cva-eyebrow">Need Help?</span>
+    <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Have Questions?</h2>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 18px 0;">We're here to support you. If you have questions about Views &amp; Tools or anything else in CTLS, contact CVA Teacher Support.</p>
 
   <!-- FOOTER -->
   <hr class="cva-footer-rule">
