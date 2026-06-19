@@ -514,23 +514,75 @@
 
     <!-- Gradebook Settings -->
     <details class="cva-section-acc">
-      <summary>Gradebook Settings</summary>
+      <summary>Gradebook and Class Settings</summary>
       <div class="cva-section-body">
-        <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 16px 0;">Before syncing grades, take a moment to check your Synergy Gradebook Settings. The way your gradebook is configured (marking period, assignment types/weights, and how zeros or missing work are handled) can impact student averages. <strong>A quick settings check now prevents grade discrepancies later.</strong></p>
+        <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 16px 0;">Before syncing grades, take a moment to check your <strong>Synergy Gradebook Settings. </strong> The way your gradebook is configured (marking period, assignment types/weights, and how zeros or missing work are handled) can impact student averages. <strong>A quick settings check now prevents grade discrepancies later.</strong></p>
         <div class="cva-grid">
           <div class="cva-info-card">
             <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Teacher Type Defaults</h3>
-            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In Teacher Type Defaults, select <strong>Add My Types to the District Types</strong>.</p>
-          </div>
+          <img 
+  src="images/teacher-type-default.png" 
+  alt="Synergy Gradebook Settings screen with a red circle highlighting the Teacher Type Defaults section and the Add My Types to the District Types option."
+  style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;"
+>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In <strong>Teacher Type Defaults</strong>, select <strong>Add My Types to the District Types</strong>.</p>
+                    </div>
           <div class="cva-info-card">
             <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Grading Period</h3>
-            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In Grading Period Default For New Assignments, select <strong>Assignment Due Date</strong>. This ensures grades calculate correctly and in the correct grading period.</p>
+             <img
+             src="images/grading-period-default.png" 
+  alt="Synergy Gradebook Settings screen with a red circle highlighting the Grading Period Default For New Assignments section."
+  style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;"
+>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In <strong>Grading Period Default For New Assignments</strong>, select <strong>Assignment Due Date</strong>. This ensures grades calculate correctly and in the correct grading period.</p>
+
+
           </div>
           <div class="cva-info-card">
             <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Grade Rounding</h3>
-            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In Default Final Grade Rounding Settings, set Class Percentage to <strong>Rounding On</strong> and <strong>2 Decimal Places</strong>. Click Edit, adjust the setting, then Save.</p>
+            <img 
+  src="images/grade-rounding.png" 
+  alt="Synergy Gradebook Settings screen with a red circle highlighting the Default Final Grade Rounding Settings section."
+  style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;"
+>
+            <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In <strong>Default Final Grade Rounding Settings</strong>, set Class Percentage to <strong>Rounding On</strong> and <strong>2 Decimal Places</strong>. Click Edit, adjust the setting, then Save.</p>
           </div>
-        </div>
+          </div>
+         <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,360px); gap:22px; align-items:center;">
+</div>
+  <div>
+
+  <!-- FULL-WIDTH INTRO PARAGRAPH -->
+  <h3 style="font-size:20px; font-weight:900; color:#000000; margin:0 0 10px 0; text-transform:uppercase;">
+    Class Settings
+  </h3>
+
+  <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 18px 0;">
+    <strong>Class Settings in Synergy</strong> are the controls that determine how your gradebook works for a specific class — how grades calculate and how scores are handled. Most settings have already been pre-determined by CCSD, so there is nothing you need to do as a teacher.
+  </p>
+
+  <!-- IMAGE LEFT / TEXT RIGHT -->
+  <div style="display:grid; grid-template-columns:minmax(220px,360px) minmax(0,1fr); gap:22px; align-items:center;">
+
+    <div style="text-align:center;">
+      <img 
+        src="images/change-rounding.gif" 
+        alt="Animated Synergy Class Settings screen showing how to edit Percentage Rounding and select 2 Decimal Places."
+        style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;"
+      >
+    </div>
+
+    <div>
+      <p style="font-size:16px; line-height:1.7; color:#333333; margin:0;">
+        <strong>One Class Setting that varies from school to school is Percentage Rounding. CVA rounds using 2 Decimal Places, so you might need to adjust the setting.</strong> Start by clicking <strong>Edit</strong>. Then, you can either toggle <strong>on/off</strong> for Rounding and select <strong>2 Decimal Places</strong>. Finally, click <strong>Save</strong>.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+
       </div>
     </details>
 
@@ -540,7 +592,7 @@
   <div class="cva-white">
     <span class="cva-eyebrow">Syncing Grades</span>
     <h2 style="font-size:clamp(26px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Syncing CTLS Grading Categories and Synergy</h2>
-    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Feedback and grading happen in the CTLS Grading Center. You must sync <strong>Assignment Synergy Settings</strong> in CTLS to allow grades to flow to your Synergy Gradebook. Follow these steps for every assignment you grade.</p>
+    <p style="font-size:16px; line-height:1.7; color:#333; margin:0 0 20px 0;">Feedback and grading happen in the CTLS Grading Center. <strong>You must sync Assignment Synergy Settings in CTLS to allow grades to flow to your Synergy Gradebook.</strong> Follow these steps for every assignment you grade.</p>
     <div class="cva-step-stack">
 
       <div class="cva-step-card">
