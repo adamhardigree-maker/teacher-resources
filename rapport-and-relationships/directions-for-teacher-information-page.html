@@ -1,4 +1,194 @@
-<div style="width:100%;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:10px;box-sizing:border-box;font-family:'Montserrat',Arial,sans-serif;color:#222222;">
+<style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── White card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented card ── */
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Callout box ── */
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .cva-callout-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+
+  /* ── Grids ── */
+  .cva-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .cva-card-lg {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  /* ── Canva embed ── */
+  .cva-canva-wrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 33.3333%;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    margin-top: 1.6em;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+  }
+
+  .cva-canva-wrap iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-grid-2,
+    .cva-grid-4,
+    .cva-grid-6 {
+      grid-template-columns: 1fr;
+    }
+
+    /* Canva embed: taller aspect ratio on narrow screens for readability */
+    .cva-canva-wrap {
+      padding-top: 56.25%;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style><div style="width:100%;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:10px;box-sizing:border-box;font-family:'Montserrat',Arial,sans-serif;color:#222222;">
 <!-- HERO -->
 <div style="width:100%;box-sizing:border-box;background:#f4f4f4;border-radius:16px;border-left:6px solid #bb0000;padding:28px 26px;">
 <div style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">
@@ -14,8 +204,7 @@
 <!-- STEP 1 -->
 <details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
 <summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 1: Add the Teacher Information Page</span></summary>
-<!-- OVERVIEW -->
-<div style="width:100%;box-sizing:border-box;background:#f4f4f4;border:1px solid #d9dde3;border-radius:16px;padding:26px 28px;"><span style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">Getting Started</span><h2 style="font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,4vw,34px);line-height:1.15;color:#222222;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">Adding the Teacher Information Page</h2><p style="font-size:16px;line-height:1.7;color:#333333;margin:0 0 18px 0;">To maintain a consistent experience for all CVA students, use the current Teacher Information Page template. The page is available in CTLS and can be copied directly into your Digital Classroom.</p><div style="background:#ffffff;border:2px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;padding:16px 18px;"><strong style="display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:6px;">Important</strong><p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></div>
+<div style="width:100%;box-sizing:border-box;background:#ffffff;border:1px solid #d9dde3;border-top:none;border-radius:0;padding:26px 28px;"><span style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">Getting Started</span><h2 style="font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,4vw,34px);line-height:1.15;color:#222222;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">Adding the Teacher Information Page</h2><p style="font-size:16px;line-height:1.7;color:#333333;margin:0 0 18px 0;">To maintain a consistent experience for all CVA students, use the current Teacher Information Page template. The page is available in CTLS and can be copied directly into your Digital Classroom.</p><div style="background:#ffffff;border:2px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;padding:16px 18px;"><strong style="display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:6px;">Important</strong><p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></div>
 <div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
 <div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
 <strong style="color:#bb0000;font-weight:800;">Goal:</strong> Copy the CVA Teacher Information Page into your CTLS Digital Classroom and move it into the correct course folder.
