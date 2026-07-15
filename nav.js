@@ -38,6 +38,7 @@
         { title: "Instructor Profile",           href: BASE + "/rapport-and-relationships/instructor-profile.html" },
         { title: "Classroom Announcements",      href: BASE + "/rapport-and-relationships/classroom-announcements.html" },
         { title: "Discussion to Drive Learning", href: BASE + "/rapport-and-relationships/discussions-as-learning.html" },
+        { title: "Teacher Information Page", href: BASE + "/rapport-and-relationships/directions-for-teacher-information-page.html" },
       ],
     },
     {
