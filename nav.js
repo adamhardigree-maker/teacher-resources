@@ -45,12 +45,13 @@
     {
       label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Student Accommodations and Accessibility", href: BASE + "/proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
+       
         { title: "Class Schedule",                           href: BASE + "/proactive-intervention-and-student-support/class-schedule.html" },
         { title: "Communicating Deadlines",                  href: BASE + "/proactive-intervention-and-student-support/communicating-deadlines.html" },
         { title: "Grades and Feedback Support",              href: BASE + "/proactive-intervention-and-student-support/grades-and-feedback-support.html" },
         { title: "Progress Tracker",                         href: BASE + "/proactive-intervention-and-student-support/progress-tracker.html" },
         { title: "Practice Student View",                    href: BASE + "/proactive-intervention-and-student-support/practice-student.html" },
+          { title: "Student Accommodations and Accessibility", href: BASE + "/proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
       ],
     },
     {
