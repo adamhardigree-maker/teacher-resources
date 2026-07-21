@@ -15,21 +15,22 @@
     {
       label: "Grading and Feedback",
       pages: [
-        { title: "Grading Policy at CVA",                 href: BASE + "/grading-and-feedback/cva-grading-policy.html" },
-        { title: "Submission Expectations",               href: BASE + "/grading-and-feedback/submission-expectations.html" },
-        { title: "Resolving In Progress Student Work",    href: BASE + "/grading-and-feedback/resolving-in-progress-work.html" },
-        { title: "Resubmission Opportunities",            href: BASE + "/grading-and-feedback/allowing-resubmissions.html" },
         { title: "Academic Integrity and Paused Grading", href: BASE + "/grading-and-feedback/paused-grading.html" },
         { title: "Effective Feedback",                    href: BASE + "/grading-and-feedback/effective-feedback.html" },
+          { title: "Grading Policy at CVA",                 href: BASE + "/grading-and-feedback/cva-grading-policy.html" },
+          
+        { title: "Resubmission Opportunities",            href: BASE + "/grading-and-feedback/allowing-resubmissions.html" },
+         { title: "Submission Expectations",               href: BASE + "/grading-and-feedback/submission-expectations.html" },
       ],
     },
     {
       label: "Communication and Responsiveness",
       pages: [
         { title: "Email Communication",      href: BASE + "/communication-and-responsiveness/email-communication.html" },
+         { title: "Not Contacting Local Schools", href: BASE + "/communication-and-responsiveness/contacting-local-schools.html" },
         { title: "Required Email Signature", href: BASE + "/communication-and-responsiveness/cva-email-signature.html" },
         { title: "Who Do Students Contact?", href: BASE + "/communication-and-responsiveness/who-do-students-contact.html" },
-        { title: "Contacting Local Schools", href: BASE + "/communication-and-responsiveness/contacting-local-schools.html" },
+        
       ],
     },
     {
@@ -44,22 +45,23 @@
     {
       label: "Proactive Intervention and Student Support",
       pages: [
-        { title: "Student Accommodations and Accessibility", href: BASE + "/proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
+       
         { title: "Class Schedule",                           href: BASE + "/proactive-intervention-and-student-support/class-schedule.html" },
         { title: "Communicating Deadlines",                  href: BASE + "/proactive-intervention-and-student-support/communicating-deadlines.html" },
         { title: "Grades and Feedback Support",              href: BASE + "/proactive-intervention-and-student-support/grades-and-feedback-support.html" },
         { title: "Progress Tracker",                         href: BASE + "/proactive-intervention-and-student-support/progress-tracker.html" },
         { title: "Practice Student View",                    href: BASE + "/proactive-intervention-and-student-support/practice-student.html" },
+          { title: "Student Accommodations and Accessibility", href: BASE + "/proactive-intervention-and-student-support/accommodations-and-accessibility.html" },
       ],
     },
     {
       label: "Professionalism and Collaboration",
       pages: [
-        { title: "Professional Learning Course",  href: BASE + "/professionalism-and-collaboration/professional-learning-course.html" },
+ { title: "Accessibility by Design",       href: BASE + "/professionalism-and-collaboration/accessibility-by-design.html" },
         { title: "Instructional Practice Review", href: BASE + "/professionalism-and-collaboration/instructional-practice-review.html" },
-        { title: "Weekly Facilitation Routine",   href: BASE + "/professionalism-and-collaboration/weekly-routine.html" },
-        { title: "Accessibility by Design",       href: BASE + "/professionalism-and-collaboration/accessibility-by-design.html" },
+           { title: "Professional Learning Course",  href: BASE + "/professionalism-and-collaboration/professional-learning-course.html" },
         { title: "Views and Tools",       href: BASE + "/professionalism-and-collaboration/views-and-tools.html" },
+         { title: "Weekly Facilitation Routine",   href: BASE + "/professionalism-and-collaboration/weekly-routine.html" },
         { title: "Synergy Gradebook Setup",       href: BASE + "/professionalism-and-collaboration/synergy.gradebook.html" },
       ],
     },
