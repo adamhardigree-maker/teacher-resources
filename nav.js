@@ -18,7 +18,7 @@
         { title: "Academic Integrity and Paused Grading", href: BASE + "/grading-and-feedback/paused-grading.html" },
         { title: "Effective Feedback",                    href: BASE + "/grading-and-feedback/effective-feedback.html" },
           { title: "Grading Policy at CVA",                 href: BASE + "/grading-and-feedback/cva-grading-policy.html" },
-          { title: "Resolving In Progress Student Work",    href: BASE + "/grading-and-feedback/resolving-in-progress-work.html" },
+          
         { title: "Resubmission Opportunities",            href: BASE + "/grading-and-feedback/allowing-resubmissions.html" },
          { title: "Submission Expectations",               href: BASE + "/grading-and-feedback/submission-expectations.html" },
       ],
