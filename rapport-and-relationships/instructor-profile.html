@@ -1,153 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instructor Profile | CVA Teacher Resource</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructor Profile | CVA Teacher Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 {
+    font-family: 'Oswald', Arial, sans-serif;
+  }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .cva-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .cva-card-lg {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  .cva-eyebrow,
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-steps {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .cva-steps li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333333;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e5e9;
+  }
+
+  .cva-steps li:last-child {
+    border-bottom: none;
+  }
+
+  .cva-checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px 22px;
+  }
+
+  .cva-check-item {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    padding: 7px 0;
+  }
+
+  .cva-check {
+    color: #bb0000;
+    font-weight: 900;
+    margin-right: 6px;
+  }
+
+  .cva-footer-rule {
+    border: none;
+    border-top: 1px solid #d9dde3;
+    margin: 14px 0;
+  }
+
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-grid-2,
+    .cva-grid-4,
+    .cva-checklist {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer {
+      font-size: 18px;
+    }
+  }
+</style>
 </head>
-<body style="margin:0;padding:0;background:#f3f4f6;">
-  <div style="max-width:1100px;margin:0 auto;padding:24px 16px 40px 16px;font-family:Montserrat,Arial,sans-serif;color:#222222;line-height:1.6;box-sizing:border-box;">
+<body style="margin:0; padding-top:56px; background:#ffffff;">
 
-    <!-- HERO -->
-    <div style="background:#ffffff;border:1px solid #d9dde3;border-top:8px solid #bb0000;border-radius:16px;padding:32px 28px;margin:0 0 22px 0;box-sizing:border-box;">
-      <div style="display:inline-block;background:#bb0000;color:#ffffff;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:6px 11px;margin:0 0 14px 0;">
-        CVA Teacher Resource
-      </div>
-      <h1 style="font-family:Oswald,Arial,sans-serif;font-size:40px;line-height:1.1;text-transform:uppercase;color:#111111;margin:0 0 12px 0;">
-        Instructor Profile
-      </h1>
-      <p style="font-size:18px;line-height:1.6;margin:0;max-width:900px;">
-        Your Instructor profile is one of the first things students see when they enter your Digital Classroom. It gives students a reliable place to find your name, photo, and contact information.
+<div class="cva-wrap">
+
+  <!-- HERO -->
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Digital Classroom Setup</span>
+    <h1 style="font-size:clamp(32px,5vw,48px);line-height:1.05;color:#000000;font-weight:900;text-transform:uppercase;margin:0 0 14px 0;">
+      Instructor Profile
+    </h1>
+    <p style="font-size:17px;line-height:1.7;color:#222222;margin:0 0 20px 0;">
+      Your Instructor profile is one of the first things students see when they enter your Digital Classroom. It gives students a reliable place to find your name, photo, and contact information.
+    </p>
+    <div class="cva-callout">
+      <p style="font-size:16px;line-height:1.6;margin:0;color:#222222;">
+        <strong>Big Idea:</strong> A complete Instructor profile helps students know who you are and how to reach you when they need support.
       </p>
     </div>
+  </div>
 
-    <!-- WHY IT MATTERS -->
-    <div style="background:#ffffff;border:1px solid #d9dde3;border-left:7px solid #bb0000;border-radius:14px;padding:24px;margin:0 0 22px 0;box-sizing:border-box;">
-      <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 7px 0;">
-        Why It Matters
-      </div>
-      <h2 style="font-family:Oswald,Arial,sans-serif;font-size:27px;line-height:1.2;text-transform:uppercase;margin:0 0 10px 0;color:#111111;">
-        Make it easy for students to contact you
-      </h2>
-      <p style="font-size:16px;margin:0;">
-        Students should not have to search through announcements, assignments, or old messages to locate your contact information. A complete profile helps students know who you are and how to reach you when they need support.
-      </p>
-    </div>
+  <!-- WHY IT MATTERS -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
+    <h2 style="font-size:clamp(26px,4vw,34px);line-height:1.15;color:#000000;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">
+      Make It Easy for Students to Contact You
+    </h2>
+    <p style="font-size:16px;line-height:1.7;color:#333333;margin:0;">
+      Students should not have to search through announcements, assignments, or old messages to locate your contact information. Your profile should provide a clear, dependable place for students to identify their teacher and find the information they need to make contact.
+    </p>
+  </div>
 
-    <!-- REQUIRED INFORMATION -->
-    <div style="margin:0 0 12px 0;">
-      <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 6px 0;">
-        Required Information
-      </div>
-      <h2 style="font-family:Oswald,Arial,sans-serif;font-size:29px;line-height:1.2;text-transform:uppercase;color:#111111;margin:0 0 14px 0;">
-        Every profile should include
-      </h2>
-    </div>
+  <!-- REQUIRED INFORMATION -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Required Information</span>
+    <h2 style="font-size:clamp(26px,4vw,34px);line-height:1.15;color:#000000;text-transform:uppercase;font-weight:900;margin:0 0 18px 0;">
+      Every Profile Should Include
+    </h2>
 
-    <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 22px 0;">
-      <div style="flex:1 1 220px;min-width:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:14px;padding:20px;box-sizing:border-box;">
-        <h3 style="font-family:Oswald,Arial,sans-serif;font-size:22px;line-height:1.2;text-transform:uppercase;margin:0 0 7px 0;color:#111111;">Photo</h3>
-        <p style="font-size:15px;margin:0;">Use a clear, professional photo that helps students recognize their teacher.</p>
-      </div>
+    <div class="cva-grid-4">
 
-      <div style="flex:1 1 220px;min-width:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:14px;padding:20px;box-sizing:border-box;">
-        <h3 style="font-family:Oswald,Arial,sans-serif;font-size:22px;line-height:1.2;text-transform:uppercase;margin:0 0 7px 0;color:#111111;">Name</h3>
-        <p style="font-size:15px;margin:0;">Enter the name students should use when communicating with you.</p>
-      </div>
-
-      <div style="flex:1 1 220px;min-width:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:14px;padding:20px;box-sizing:border-box;">
-        <h3 style="font-family:Oswald,Arial,sans-serif;font-size:22px;line-height:1.2;text-transform:uppercase;margin:0 0 7px 0;color:#111111;">CCSD Email</h3>
-        <p style="font-size:15px;margin:0;">Provide your official CCSD email address.</p>
-      </div>
-
-      <div style="flex:1 1 220px;min-width:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:14px;padding:20px;box-sizing:border-box;">
-        <h3 style="font-family:Oswald,Arial,sans-serif;font-size:22px;line-height:1.2;text-transform:uppercase;margin:0 0 7px 0;color:#111111;">Virtual Phone</h3>
-        <p style="font-size:15px;margin:0;">Include your CVA Virtual Phone number so students have a contact method other than email.</p>
-      </div>
-    </div>
-
-    <!-- IMPORTANT CONTACT REQUIREMENT -->
-    <div style="background:#fff7f7;border:2px solid #bb0000;border-radius:14px;padding:22px;margin:0 0 22px 0;box-sizing:border-box;">
-      <div style="display:flex;align-items:flex-start;gap:14px;">
-        <div aria-hidden="true" style="flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:#bb0000;color:#ffffff;font-size:23px;font-weight:900;display:flex;align-items:center;justify-content:center;">!</div>
-        <div>
-          <h2 style="font-family:Oswald,Arial,sans-serif;font-size:25px;line-height:1.2;text-transform:uppercase;color:#111111;margin:0 0 7px 0;">
-            Students need another way to contact you
-          </h2>
-          <p style="font-size:16px;margin:0;">
-            Email cannot be the only contact option listed in your profile. Include your <strong>Virtual Phone number</strong> so students have another way to reach you.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SHARED VS CLASS-SPECIFIC -->
-    <div style="display:flex;flex-wrap:wrap;gap:16px;margin:0 0 22px 0;">
-      <div style="flex:1 1 420px;min-width:0;background:#ffffff;border:1px solid #d9dde3;border-radius:14px;padding:23px;box-sizing:border-box;">
-        <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 7px 0;">Shared Profile</div>
-        <h2 style="font-family:Oswald,Arial,sans-serif;font-size:25px;line-height:1.2;text-transform:uppercase;color:#111111;margin:0 0 10px 0;">
-          Use your profile across classrooms
-        </h2>
-        <p style="font-size:16px;margin:0;">
-          If you also teach face-to-face in a Cobb school, you may share your Instructor profile across all of your Digital Classrooms. This can save time when the same basic information applies to every course.
+      <div class="cva-card">
+        <h3 style="font-size:20px;line-height:1.25;margin:0 0 8px 0;color:#000000;font-weight:900;text-transform:uppercase;">Photo</h3>
+        <p style="font-size:15px;line-height:1.6;margin:0;color:#333333;">
+          Use a clear, professional photo that helps students recognize their teacher.
         </p>
       </div>
-    </div>
 
-    <!-- STEPS -->
-    <div style="margin:0 0 12px 0;">
-      <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 6px 0;">Directions</div>
-      <h2 style="font-family:Oswald,Arial,sans-serif;font-size:29px;line-height:1.2;text-transform:uppercase;color:#111111;margin:0 0 14px 0;">
-        Update your profile
-      </h2>
-    </div>
-
-    <div style="background:#ffffff;border:1px solid #d9dde3;border-radius:14px;padding:8px 20px;margin:0 0 22px 0;box-sizing:border-box;">
-      <ol style="margin:0;padding:0 0 0 28px;">
-        <li style="padding:15px 4px;border-bottom:1px solid #e2e5e9;font-size:16px;">
-          Select the <strong>pencil icon</strong> beneath your Instructor profile.
-        </li>
-        <li style="padding:15px 4px;border-bottom:1px solid #e2e5e9;font-size:16px;">
-          Add or update your <strong>photo, name, CCSD email address, and Virtual Phone number</strong>.
-        </li>
-        <li style="padding:15px 4px;border-bottom:1px solid #e2e5e9;font-size:16px;">
-          Update the <strong>Notes</strong> field with any class-specific information for that course.
-        </li>
-        <li style="padding:15px 4px;border-bottom:1px solid #e2e5e9;font-size:16px;">
-          Select the <strong>green checkmark</strong> to finish editing.
-        </li>
-        <li style="padding:15px 4px;font-size:16px;">
-          Confirm that the message <strong>“All changes have been saved”</strong> appears and verify that the updated information is visible.
-        </li>
-      </ol>
-    </div>
-
-    <!-- FINAL CHECKLIST -->
-    <div style="background:#ffffff;border:1px solid #d9dde3;border-top:7px solid #bb0000;border-radius:16px;padding:25px;margin:0;box-sizing:border-box;">
-      <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 6px 0;">
-        Before You Finish
+      <div class="cva-card">
+        <h3 style="font-size:20px;line-height:1.25;margin:0 0 8px 0;color:#000000;font-weight:900;text-transform:uppercase;">Name</h3>
+        <p style="font-size:15px;line-height:1.6;margin:0;color:#333333;">
+          Enter the name students should use when communicating with you.
+        </p>
       </div>
-      <h2 style="font-family:Oswald,Arial,sans-serif;font-size:28px;line-height:1.2;text-transform:uppercase;color:#111111;margin:0 0 14px 0;">
-        Profile checklist
-      </h2>
 
-      <div style="display:flex;flex-wrap:wrap;gap:10px 22px;">
-        <div style="flex:1 1 420px;font-size:16px;padding:7px 0;"><span aria-hidden="true" style="color:#bb0000;font-weight:900;">✓</span> A professional photo is visible.</div>
-        <div style="flex:1 1 420px;font-size:16px;padding:7px 0;"><span aria-hidden="true" style="color:#bb0000;font-weight:900;">✓</span> Your name is correct.</div>
-        <div style="flex:1 1 420px;font-size:16px;padding:7px 0;"><span aria-hidden="true" style="color:#bb0000;font-weight:900;">✓</span> Your CCSD email address is correct.</div>
-        <div style="flex:1 1 420px;font-size:16px;padding:7px 0;"><span aria-hidden="true" style="color:#bb0000;font-weight:900;">✓</span> A Virtual Phone or Remind contact option is included.</div>
-        <div style="flex:1 1 420px;font-size:16px;padding:7px 0;"><span aria-hidden="true" style="color:#bb0000;font-weight:900;">✓</span> The Notes section has been reviewed and updated, if needed.</div>
-        <div style="flex:1 1 420px;font-size:16px;padding:7px 0;"><span aria-hidden="true" style="color:#bb0000;font-weight:900;">✓</span> The system confirms that all changes were saved.</div>
+      <div class="cva-card">
+        <h3 style="font-size:20px;line-height:1.25;margin:0 0 8px 0;color:#000000;font-weight:900;text-transform:uppercase;">CCSD Email</h3>
+        <p style="font-size:15px;line-height:1.6;margin:0;color:#333333;">
+          Provide your official CCSD email address.
+        </p>
       </div>
-    </div>
 
+      <div class="cva-card">
+        <h3 style="font-size:20px;line-height:1.25;margin:0 0 8px 0;color:#000000;font-weight:900;text-transform:uppercase;">Virtual Phone</h3>
+        <p style="font-size:15px;line-height:1.6;margin:0;color:#333333;">
+          Include your CVA Virtual Phone number so students have a contact method other than email.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTACT REQUIREMENT -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Important Requirement</span>
+    <h2 style="font-size:clamp(22px,3vw,30px);line-height:1.2;color:#000000;text-transform:uppercase;font-weight:900;margin:0 0 10px 0;">
+      Email Cannot Be the Only Contact Option
+    </h2>
+    <p style="font-size:16px;line-height:1.7;color:#333333;margin:0;">
+      Include your <strong>Virtual Phone number</strong> so students have another way to reach you when they need help.
+    </p>
+  </div>
+
+  <!-- SHARED PROFILE -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Shared Profile</span>
+    <h2 style="font-size:clamp(26px,4vw,34px);line-height:1.15;color:#000000;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">
+      Use Your Profile Across Digital Classrooms
+    </h2>
+    <p style="font-size:16px;line-height:1.7;color:#333333;margin:0;">
+      If you also teach face-to-face in a Cobb school, you may share your Instructor profile across all of your Digital Classrooms. This can save time when the same basic information applies to every course.
+    </p>
+  </div>
+
+  <!-- DIRECTIONS -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Directions</span>
+    <h2 style="font-size:clamp(26px,4vw,34px);line-height:1.15;color:#000000;text-transform:uppercase;font-weight:900;margin:0 0 16px 0;">
+      Update Your Instructor Profile
+    </h2>
+
+    <ol class="cva-steps">
+      <li>Select the <strong>pencil icon</strong> beneath your Instructor profile.</li>
+      <li>Add or update your <strong>photo, name, CCSD email address, and Virtual Phone number</strong>.</li>
+      <li>Review the <strong>Notes</strong> field and update it if needed.</li>
+      <li>Select the <strong>green checkmark</strong> to finish editing.</li>
+      <li>Confirm that the message <strong>“All changes have been saved”</strong> appears and verify that the updated information is visible.</li>
+    </ol>
+  </div>
+
+  <!-- FINAL CHECKLIST -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Before You Finish</span>
+    <h2 style="font-size:clamp(26px,4vw,34px);line-height:1.15;color:#000000;text-transform:uppercase;font-weight:900;margin:0 0 16px 0;">
+      Profile Checklist
+    </h2>
+
+    <div class="cva-checklist">
+      <div class="cva-check-item"><span class="cva-check" aria-hidden="true">✓</span>A professional photo is visible.</div>
+      <div class="cva-check-item"><span class="cva-check" aria-hidden="true">✓</span>Your name is correct.</div>
+      <div class="cva-check-item"><span class="cva-check" aria-hidden="true">✓</span>Your CCSD email address is correct.</div>
+      <div class="cva-check-item"><span class="cva-check" aria-hidden="true">✓</span>Your Virtual Phone number is included.</div>
+      <div class="cva-check-item"><span class="cva-check" aria-hidden="true">✓</span>The Notes section has been reviewed and updated, if needed.</div>
+      <div class="cva-check-item"><span class="cva-check" aria-hidden="true">✓</span>The system confirms that all changes were saved.</div>
+    </div>
   </div>
 
   <!-- FOOTER -->
   <hr class="cva-footer-rule">
   <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
-</body>
-</html>
+
 </div>
 
 <script src="../nav.js"></script>
+
+</body>
+</html>
