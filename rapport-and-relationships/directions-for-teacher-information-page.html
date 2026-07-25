@@ -1,1675 +1,684 @@
-<style>
-  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+<!DOCTYPE html>
 
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Teacher Information Page | CVA Teacher Resources</title><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&amp;family=Montserrat:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/><style>
+.cva-wrap,
+.cva-wrap * {
+  box-sizing: border-box;
+}
 
+.cva-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  color: #222222;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.cva-wrap h1,
+.cva-wrap h2,
+.cva-wrap h3 {
+  font-family: 'Oswald', Arial, sans-serif;
+}
+
+.cva-wrap p,
+.cva-wrap li,
+.cva-wrap a {
+  overflow-wrap: anywhere;
+}
+
+.cva-hero {
+  padding: 28px 26px;
+  background: #f7f8fa;
+  border: 1px solid #d9dde3;
+  border-top: 8px solid #bb0000;
+  border-radius: 16px;
+}
+
+.cva-hero h1 {
+  margin: 0 0 14px;
+  color: #000000;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.cva-hero > p {
+  margin: 0;
+  color: #222222;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.cva-white {
+  padding: 26px 28px;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-radius: 16px;
+}
+
+.cva-white h2 {
+  margin: 0 0 14px;
+  color: #000000;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.cva-white > p {
+  margin: 0 0 18px;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cva-eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  color: #bb0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.cva-callout {
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-left: 6px solid #bb0000;
+  border-radius: 12px;
+}
+
+.cva-callout-label {
+  display: block;
+  margin: 0 0 6px;
+  color: #bb0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.cva-callout p {
+  margin: 0;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.cva-accordion {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #1e1e1e;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+}
+
+.cva-accordion summary {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 16px 18px;
+  background: #1e1e1e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.4;
+  list-style: none;
+  user-select: none;
+}
+
+.cva-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.cva-accordion summary::before {
+  content: "+";
+  flex: 0 0 auto;
+  width: 24px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.cva-accordion[open] summary::before {
+  content: "−";
+}
+
+.cva-accordion summary:hover,
+.cva-accordion summary:focus-visible {
+  background: #2a2a2a;
+}
+
+.cva-accordion summary:focus-visible {
+  outline: 3px solid #bb0000;
+  outline-offset: -3px;
+}
+
+.cva-accordion-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 18px;
+  background: #ffffff;
+  border-top: 1px solid #d9dde3;
+}
+
+.cva-goal {
+  padding: 14px 16px;
+  background: #f7f8fa;
+  border: 1px solid #d9dde3;
+  border-left: 6px solid #bb0000;
+  border-radius: 12px;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cva-goal strong {
+  color: #bb0000;
+  font-weight: 800;
+}
+
+.cva-intro {
+  margin: 0 0 2px;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cva-step-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-top: 6px solid #bb0000;
+  border-radius: 16px;
+}
+
+.cva-step-content {
+  min-width: 0;
+  padding: 22px;
+  align-self: center;
+}
+
+.cva-card-label {
+  display: block;
+  margin: 0 0 8px;
+  color: #bb0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.cva-step-content h3 {
+  margin: 0 0 10px;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cva-step-content p {
+  margin: 0 0 12px;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cva-step-content p:last-child {
+  margin-bottom: 0;
+}
+
+.cva-media {
+  min-width: 0;
+  padding: 14px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  border-left: 1px solid #d9dde3;
+  text-align: center;
+}
+
+.cva-image-link {
+  display: block;
+  text-decoration: none;
+}
+
+.cva-media img {
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 10px;
+}
+
+.cva-image-note {
+  margin: 7px 0 0;
+  color: #777777;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.cva-button {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 10px 16px;
+  background: #bb0000;
+  border-radius: 999px;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cva-button:hover,
+.cva-button:focus-visible {
+  background: #8f0000;
+  text-decoration: underline;
+}
+
+.cva-checklist {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+}
+
+.cva-checklist-item {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 10px;
+  padding: 17px 16px;
+  border-bottom: 1px solid #d9dde3;
+}
+
+.cva-checklist-item:last-child {
+  border-bottom: 0;
+}
+
+.cva-checklist-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #bb0000;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.cva-checklist-copy {
+  min-width: 0;
+}
+
+.cva-checklist-copy h3 {
+  margin: 0 0 4px;
+  color: #000000;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.cva-checklist-copy p {
+  margin: 0;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cva-reminder {
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-left: 6px solid #bb0000;
+  border-radius: 16px;
+}
+
+.cva-reminder h3 {
+  margin: 0 0 8px;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cva-reminder p {
+  margin: 0;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.cva-section-divider {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.cva-section-divider span {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background: #bb0000;
+  border-radius: 999px;
+}
+
+.cva-footer-rule {
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px solid #d9dde3;
+}
+
+.cva-footer {
+  margin: 0;
+  color: #63666a;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .cva-step-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cva-media {
+    border-top: 1px solid #d9dde3;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
   .cva-wrap {
-    font-family: Montserrat, Arial, sans-serif;
-    color: #222222;
-    background: #ffffff;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 24px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    padding: 12px 12px 36px;
+    gap: 12px;
   }
 
-  /* ── Hero ── */
-  .cva-hero {
-    background: #f7f8fa;
-    border: 1px solid #d9dde3;
-    border-radius: 16px;
-    border-top: 8px solid #bb0000;
-    padding: 28px 26px;
-  }
-
-  /* ── White card ── */
+  .cva-hero,
   .cva-white {
-    background: #ffffff;
-    border: 1px solid #d9dde3;
-    border-radius: 16px;
-    padding: 26px 28px;
+    padding: 20px 18px;
   }
 
-  /* ── Gray card ── */
-  .cva-gray {
-    background: #f7f8fa;
-    border: 1px solid #d9dde3;
-    border-radius: 16px;
-    padding: 26px 28px;
+  .cva-hero h1 {
+    font-size: clamp(30px, 10vw, 40px);
   }
 
-  /* ── Left-accented card ── */
-  .cva-accent {
-    background: #ffffff;
-    border: 1px solid #d9dde3;
-    border-left: 6px solid #bb0000;
-    border-radius: 16px;
-    padding: 24px 28px;
+  .cva-accordion summary {
+    padding: 15px 14px;
   }
 
-  /* ── Callout box ── */
-  .cva-callout {
-    background: #ffffff;
-    border: 1px solid #d9dde3;
-    border-left: 6px solid #bb0000;
-    border-radius: 12px;
-    padding: 16px 18px;
+  .cva-accordion-body {
+    padding: 16px 12px;
   }
 
-  .cva-callout-gray {
-    background: #f7f8fa;
-    border: 1px solid #d9dde3;
-    border-left: 6px solid #bb0000;
-    border-radius: 12px;
-    padding: 16px 18px;
-    margin-bottom: 20px;
+  .cva-step-content {
+    padding: 19px 17px;
   }
 
-  /* ── Grids ── */
-  .cva-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 14px;
+  .cva-step-content h3 {
+    font-size: 20px;
   }
 
-  .cva-grid-4 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-  }
-
-  .cva-grid-6 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 14px;
-  }
-
-  .cva-card {
-    background: #ffffff;
-    border: 1px solid #d9dde3;
-    border-left: 6px solid #bb0000;
-    border-radius: 12px;
-    padding: 18px 20px;
-  }
-
-  .cva-card-lg {
-    background: #ffffff;
-    border: 1px solid #d9dde3;
-    border-left: 6px solid #bb0000;
-    border-radius: 14px;
-    padding: 22px;
-  }
-
-  /* ── Canva embed ── */
-  .cva-canva-wrap {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 33.3333%;
-    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
-    margin-top: 1.6em;
-    margin-bottom: 0.9em;
-    overflow: hidden;
-    border-radius: 8px;
-    will-change: transform;
-  }
-
-  .cva-canva-wrap iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  /* ── Footer ── */
-  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
   .cva-footer {
-    font-family: Oswald, Arial, sans-serif;
-    font-size: 22px;
-    color: #63666A;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0;
-    text-align: center;
+    font-size: 18px;
   }
+}
 
-  /* ── Shared text ── */
-  .cva-eyebrow {
-    font-size: 12px;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: #bb0000;
-    font-weight: 800;
-    margin: 0 0 8px 0;
-    display: block;
+@media (prefers-reduced-motion: reduce) {
+  .cva-wrap *,
+  .cva-wrap *::before,
+  .cva-wrap *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
   }
-
-  .cva-card-label {
-    font-size: 12px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: #bb0000;
-    font-weight: 800;
-    margin: 0 0 8px 0;
-    display: block;
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 640px) {
-    .cva-wrap {
-      padding: 12px 12px 36px;
-      gap: 12px;
-    }
-
-    .cva-hero,
-    .cva-white,
-    .cva-gray,
-    .cva-accent {
-      padding: 20px 18px;
-    }
-
-    .cva-grid-2,
-    .cva-grid-4,
-    .cva-grid-6 {
-      grid-template-columns: 1fr;
-    }
-
-    /* Canva embed: taller aspect ratio on narrow screens for readability */
-    .cva-canva-wrap {
-      padding-top: 56.25%;
-    }
-
-    .cva-footer { font-size: 18px; }
-  }
-</style><div style="width:100%;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:10px;box-sizing:border-box;font-family:'Montserrat',Arial,sans-serif;color:#222222;">
-<!-- HERO -->
-<div style="width:100%;box-sizing:border-box;background:#f4f4f4;border-radius:16px;border-left:6px solid #bb0000;padding:28px 26px;">
-<div style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">
-			Professionalism &amp; Communication
-		</div>
-<h1 style="width:100%;max-width:none;font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,5vw,48px);line-height:1;color:#000000;font-weight:700;text-transform:uppercase;margin:0 0 12px 0;">
-			Teacher Information Page
-		</h1>
-<p style="width:100%;max-width:none;font-size:16px;line-height:1.7;color:#333333;margin:0;">
-<span>The Teacher Information Page helps students get to know you, understand how to contact you, and feel more connected to the course. Completing it gives students a clear, welcoming place to find your introduction, office hours, contact information, and welcome video. <strong>Click each of the steps below for step-by-step instructions.</strong></span>
-</p>
-</div>
-<hr class="cva-footer-rule">
-<!-- OVERVIEW -->
-<div style="width:100%;box-sizing:border-box;background:#f4f4f4;border:1px solid #d9dde3;border-radius:16px;padding:26px 28px;"><span style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">First Thing First</span><h2 style="font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,4vw,34px);line-height:1.15;color:#222222;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">Adding the Teacher Information Page</h2><p style="font-size:16px;line-height:1.7;color:#333333;margin:0 0 18px 0;">To maintain a consistent experience for all CVA students, use the current Teacher Information Page template. The page is available in CTLS and can be copied directly into your Digital Classroom.</p><div style="background:#ffffff;border:2px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;padding:16px 18px;"><strong style="display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:6px;">Important</strong><p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></div>
-<!-- STEP 1 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 1: Add the Teacher Information Page</span></summary>
-<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
-<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
-<strong style="color:#bb0000;font-weight:800;">Goal:</strong> Copy the CVA Teacher Information Page into your CTLS Digital Classroom and move it into the correct course folder.
-			</div>
-<!-- STEP 1.1 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 1</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Open Your Digital Classroom</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Open your <strong style="font-weight:800;color:inherit;">Digital Classroom</strong> in CTLS.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.1.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.1.png"
-    alt="CTLS Digital Classroom home screen showing the course dashboard and navigation menu."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.2 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Open Student Coursework</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Select <strong style="font-weight:800;color:inherit;">Student Coursework</strong>.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.2.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.2.png"
-    alt="CTLS Digital Classroom home screen with an arrow pointing to Student Coursework in the course navigation menu."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0pxsolid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.3 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 3</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Expand Browse Coursework</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Open the <strong style="font-weight:800;color:inherit;">Browse Coursework</strong> feature by selecting the dropdown arrow.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.3.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.3.png"
-    alt="Student Coursework page with a magnifying glass highlighting the Browse Coursework option."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.4 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 4</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Open the Catalog</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Select the <strong style="font-weight:800;color:inherit;">Catalog</strong> button.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.4.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.4.png"
-    alt="Browse Coursework window with the Catalog button circled near the upper-left corner."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.5 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 5</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Search District Coursework</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								In <strong style="font-weight:800;color:inherit;">District Coursework</strong>, search for <strong style="font-weight:800;color:inherit;">CVA Teacher Templates</strong>.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.5.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.5.png"
-    alt="CDistrict Coursework search screen with a magnifying glass highlighting the search field containing “CVA Teacher Templates.”"
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.6 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 6</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Open the CVA Teacher Templates Tile</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Select the <strong style="font-weight:800;color:inherit;">CVA Teacher Templates</strong> class tile.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.6.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.6.png"
-    alt="District Coursework search results with the CVA Teacher Templates course tile circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.7 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 7</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Find the Teacher Information Page</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Locate the <strong style="font-weight:800;color:inherit;">Teacher Information Page</strong> folder.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.7.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.7.png"
-    alt="CVA Teacher Templates coursework list with an arrow pointing to the Teacher Information Page folder and its contents."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.8 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 8</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Copy the Page</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Select the <strong style="font-weight:800;color:inherit;">Copy</strong> icon to add the page to your course. Then, click <strong>Add Selected </strong>to finish the step.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.8.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.8.png"
-    alt="CVA Teacher Templates coursework list with a magnifying glass highlighting the Copy icon."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-
-<!-- STEP 1.9 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 9</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Find the Copied Page</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
+}
+</style></head><body style="margin: 0; padding-top: 56px; background: #ffffff;"><div class="cva-wrap"><header class="cva-hero"><span class="cva-eyebrow">Professionalism &amp; Communication</span><h1>Teacher Information Page</h1><p>
+The Teacher Information Page helps students get to know you, understand how to contact you, and feel more connected to the course. Completing it gives students a clear, welcoming place to find your introduction, office hours, contact information, and welcome video. <strong>Click each of the steps below for step-by-step instructions.</strong>
+</p></header><section class="cva-white"><span class="cva-eyebrow">First Things First</span><h2>Adding the Teacher Information Page</h2><p>To maintain a consistent experience for all CVA students, use the current Teacher Information Page template. The page is available in CTLS and can be copied directly into your Digital Classroom.</p><div class="cva-callout"><span class="cva-callout-label">Important</span><p>Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></section><details aria-label="Step 1: Add the Teacher Information Page" class="cva-accordion"><summary>Step 1: Add the Teacher Information Page</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Copy the CVA Teacher Information Page into your CTLS Digital Classroom and move it into the correct course folder.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Open Your Digital Classroom</h3><p>
+								Open your <strong>Digital Classroom</strong> in CTLS.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.1.png" rel="noopener" target="_blank">
+<img alt="CTLS Digital Classroom home screen showing the course dashboard and navigation menu." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.1.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Open Student Coursework</h3><p>
+								Select <strong>Student Coursework</strong>.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.2.png" rel="noopener" target="_blank">
+<img alt="CTLS Digital Classroom home screen with an arrow pointing to Student Coursework in the course navigation menu." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.2.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Expand Browse Coursework</h3><p>
+								Open the <strong>Browse Coursework</strong> feature by selecting the dropdown arrow.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.3.png" rel="noopener" target="_blank">
+<img alt="Student Coursework page with a magnifying glass highlighting the Browse Coursework option." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.3.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Open the Catalog</h3><p>
+								Select the <strong>Catalog</strong> button.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.4.png" rel="noopener" target="_blank">
+<img alt="Browse Coursework window with the Catalog button circled near the upper-left corner." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.4.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 5</span><h3>Search District Coursework</h3><p>
+								In <strong>District Coursework</strong>, search for <strong>CVA Teacher Templates</strong>.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.5.png" rel="noopener" target="_blank">
+<img alt="District Coursework search screen with a magnifying glass highlighting the search field containing “CVA Teacher Templates.”" decoding="async" loading="lazy" src="../images/teacher-information-page/step1.5.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Open the CVA Teacher Templates Tile</h3><p>
+								Select the <strong>CVA Teacher Templates</strong> class tile.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.6.png" rel="noopener" target="_blank">
+<img alt="District Coursework search results with the CVA Teacher Templates course tile circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.6.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 7</span><h3>Find the Teacher Information Page</h3><p>
+								Locate the <strong>Teacher Information Page</strong> folder.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.7.png" rel="noopener" target="_blank">
+<img alt="CVA Teacher Templates coursework list with an arrow pointing to the Teacher Information Page folder and its contents." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.7.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 8</span><h3>Copy the Page</h3><p>
+								Select the <strong>Copy</strong> icon to add the page to your course. Then, click <strong>Add Selected </strong>to finish the step.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.8.png" rel="noopener" target="_blank">
+<img alt="CVA Teacher Templates coursework list with a magnifying glass highlighting the Copy icon." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.8.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 9</span><h3>Find the Copied Page</h3><p>
 								Return to your Digital Classroom. Locate the copied Teacher Information Page at the bottom of the Student Coursework folders.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.9.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.9.png"
-    alt="Student Coursework page with the copied Teacher Information Page circled near the bottom of the course folders."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 1.10 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 10</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Move the Page into the Correct Folder</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Drag the Teacher Information Page into the <strong style="font-weight:800;color:inherit;">Class Schedule and Teacher Information</strong> folder.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step1.10.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step1.10.png"
-    alt="Student Coursework editor showing the copied Teacher Information Page moved into the Class Schedule and Teacher Information folder."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div style="margin:20px 0 0 0;padding:18px 20px;background:#ffffff;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:16px;">
-<h3 style="font-size:18px;line-height:1.2;color:#000000;font-weight:900;text-transform:uppercase;margin:0 0 8px 0;">
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.9.png" rel="noopener" target="_blank">
+<img alt="Student Coursework page with the copied Teacher Information Page circled near the bottom of the course folders." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.9.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 10</span><h3>Move the Page into the Correct Folder</h3><p>
+								Drag the Teacher Information Page into the <strong>Class Schedule and Teacher Information</strong> folder.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.10.png" rel="noopener" target="_blank">
+<img alt="Student Coursework editor showing the copied Teacher Information Page moved into the Class Schedule and Teacher Information folder." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.10.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-reminder"><h3>
 					Reminder
-				</h3>
-<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">
+				</h3><p>
 					The copied page will usually appear at the bottom of Student Coursework before you move it into the correct folder.
-				</p>
-</div>
-</div>
-</details>
-<br>
-
-<p style="text-align:center;margin:0;">
-  <strong>|||</strong>
-</p>
-
-<br>
-<!-- OVERVIEW -->
-<div style="width:100%;box-sizing:border-box;background:#f5f5f5;border:1px solid #d9dde3;border-radius:16px;padding:26px 28px;"><span style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">Building Teacher Presence</span><h2 style="font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,4vw,34px);line-height:1.15;color:#222222;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">Recording the Welcome Video</h2><p style="font-size:16px;line-height:1.7;color:#333333;margin:0 0 18px 0;">A short welcome video helps students connect a face and voice with the name they see in the course. Aim for about one to two minutes. Introduce yourself, share something students may find interesting, and remind them that you are available to help.</p><div style="background:#ffffff;border:2px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;padding:16px 18px;"><strong style="display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:6px;">Accessibility Requirement</strong><p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">All teacher-recorded videos must include accurate captions. Automatically generated captions must be reviewed and corrected before the video is published. Other digital materials must also follow accessible design practices.</p></div></div>
-	<!-- STEP 2 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 2: Open Panopto</span></summary>
-<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
-<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
-<strong style="color:#bb0000;font-weight:800;">Goal:</strong> Access Panopto, open Panopto Capture, and confirm that your camera and microphone are working.
-			</div>
-<!-- STEP 2.1 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 1</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Sign In to Panopto</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
+				</p></div></div></details><div aria-hidden="true" class="cva-section-divider"><span></span><span></span><span></span></div><section class="cva-white"><span class="cva-eyebrow">Building Teacher Presence</span><h2>Recording the Welcome Video</h2><p>A short welcome video helps students connect a face and voice with the name they see in the course. Aim for about one to two minutes. Introduce yourself, share something students may find interesting, and remind them that you are available to help.</p><div class="cva-callout"><span class="cva-callout-label">Accessibility Requirement</span><p>All teacher-recorded videos must include accurate captions. Automatically generated captions must be reviewed and corrected before the video is published. Other digital materials must also follow accessible design practices.</p></div></section><details aria-label="Step 2: Open Panopto" class="cva-accordion"><summary>Step 2: Open Panopto</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Access Panopto, open Panopto Capture, and confirm that your camera and microphone are working.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Sign In to Panopto</h3><p>
 								Open the Panopto platform and sign in with your CCSD credentials.
-							</p>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-<a href="https://cobbk12.hosted.panopto.com/Panopto/Pages/Home.aspx" rel="noopener" style="display:inline-block;text-decoration:none;background:#bb0000;color:#ffffff;border-radius:999px;padding:10px 16px;font-size:14px;font-weight:800;margin-top:2px;" target="_blank">
+							</p><p>
+<a class="cva-button" href="https://cobbk12.hosted.panopto.com/Panopto/Pages/Home.aspx" rel="noopener" target="_blank">
                   Open CCSD Panopto ↗
                 </a>
-</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step2.1.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step2.1.png"
-    alt="Laptop displaying the Cobb County School District Microsoft sign-in page with fields for entering a district username."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 2.2 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Getting Started</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
-								Select <strong style="font-weight:800;color:inherit;">Create</strong>. Then, choose <strong>Panopto Capture</strong>.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step2.2.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step2.2.gif"
-    alt="Animated Panopto homepage showing the red Create button circled in the upper-left corner."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 2.3 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 3</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Allow Camera and Microphone Access</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
+</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.1.png" rel="noopener" target="_blank">
+<img alt="Laptop displaying the Cobb County School District Microsoft sign-in page with fields for entering a district username." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Getting Started</h3><p>
+								Select <strong>Create</strong>. Then, choose <strong>Panopto Capture</strong>.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.2.gif" rel="noopener" target="_blank">
+<img alt="Animated Panopto homepage showing the red Create button circled in the upper-left corner." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.2.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Allow Camera and Microphone Access</h3><p>
 								If prompted, allow your browser to use your camera and microphone.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step2.3.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step2.3.png"
-    alt="Panopto recorder with the browser camera and microphone permission menu open and “Allow while visiting the site” circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 2.4 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 4</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Check the Camera Preview</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.3.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder with the browser camera and microphone permission menu open and “Allow while visiting the site” circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Check the Camera Preview</h3><p>
 								Position yourself near the center of the frame and confirm that you can see yourself in the preview.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step2.4.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step2.4.png"
-    alt="Panopto recorder displaying available camera and microphone options, including a live webcam preview."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 2.5 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 5</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Check the Audio Indicator</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.4.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder displaying available camera and microphone options, including a live webcam preview." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.4.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 5</span><h3>Check the Audio Indicator</h3><p>
 								Speak normally and watch the audio indicator. A moving indicator means the microphone is receiving sound. If the audio indicator does not move, select a different microphone.
-							</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step2.5.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step2.5.png"
-    alt="Panopto recorder with the microphone input level circled to show that audio is being detected."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div style="margin:20px 0 0 0;padding:18px 20px;background:#ffffff;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:16px;">
-<h3 style="font-size:18px;line-height:1.2;color:#000000;font-weight:900;text-transform:uppercase;margin:0 0 8px 0;">
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.5.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder with the microphone input level circled to show that audio is being detected." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.5.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>
 					Keep It Simple
-				</h3>
-<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">
+				</h3><p>
 					For a simple welcome message, you do not need to record your screen or add presentation slides.
-				</p>
-</div>
-</div>
-</details>
-<!-- STEP 3 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-	<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;">
-		<span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span>
-		<span style="color:#ffffff;">Step 3: Prepare What You Will Say</span>
-	</summary>
-
-	<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;font-family:'Montserrat',Arial,sans-serif;">
-
-		<!-- GOAL -->
-		<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:10px;font-size:15px;line-height:1.6;color:#333333;">
-			<strong style="color:#bb0000;font-weight:800;">Goal:</strong>
+				</p></div></div></details><details aria-label="Step 3: Prepare What You Will Say" class="cva-accordion"><summary>Step 3: Prepare What You Will Say</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong>
 			Prepare a few notes for a natural one- to two-minute welcome message.
-		</div>
-
-		<p style="font-size:16px;line-height:1.7;color:#333333;margin:0 0 18px 0;">
+		</div><p class="cva-intro">
 			You do not need to write a formal script. Use the prompts below to organize what you would like to share.
-		</p>
-
-		<!-- PREPARATION CHECKLIST -->
-		<div style="border:1px solid #d9dde3;border-radius:12px;overflow:hidden;background:#ffffff;">
-
-			<!-- ITEM 1 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								1
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+		</p><div class="cva-checklist"><div class="cva-checklist-item"><div class="cva-checklist-number">1</div><div class="cva-checklist-copy"><h3>
 								Introduce Yourself
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Share your name and the course you teach.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 2 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								2
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">2</div><div class="cva-checklist-copy"><h3>
 								Share Your Background
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Include a little about your teaching experience or background.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 3 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								3
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">3</div><div class="cva-checklist-copy"><h3>
 								Share Something Personal
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Mention an interest, hobby, family detail, or favorite place.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 4 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								4
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">4</div><div class="cva-checklist-copy"><h3>
 								Explain How to Contact You
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Let students know how they should contact you when they need help.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 5 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								5
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">5</div><div class="cva-checklist-copy"><h3>
 								End with Support
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Remind students that you are available to answer questions and support their success.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-		</div>
-
-		<!-- TEACHER TIP -->
-		<div style="margin:18px 0 0 0;padding:16px 18px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:10px;">
-			<div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 5px 0;">
-				Teacher Tip
-			</div>
-			<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">
+							</p></div></div></div><div class="cva-callout"><span class="cva-callout-label">Teacher Tip</span><p>
 				Aim for about one to two minutes. Your recording should feel welcoming and natural rather than highly produced.
-			</p>
-		</div>
-
-	</div>
-</details>
-<!-- STEP 4 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 4: Record the Video</span></summary>
-<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
-<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
-<strong style="color:#bb0000;font-weight:800;">Goal:</strong> Record your welcome message using Panopto Capture.
-			</div>
-
-<!-- STEP 4.1 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Select Record</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Select the <strong style="font-weight:800;color:inherit;">Record</strong> button at the bottom of the screen.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step4.1.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step4.1.png"
-    alt="Panopto recorder showing the subject centered in the video preview, with the red Record button circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 4.2 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Wait for the Countdown</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Wait for the five-second countdown.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step4.2.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step4.2.png"
-    alt="Panopto recorder displaying a five-second countdown over the subject before recording begins."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 4.3 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 3</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Deliver Your Message</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Deliver your welcome message at a natural pace.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step4.3.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step4.3.png"
-    alt="Panopto recorder actively recording the subject in the video preview."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 4.4 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 4</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Stop the Recording</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Select the <strong style="font-weight:800;color:inherit;">Stop</strong> button when you are finished. Once you stop, you'll have the chance to redo or record a new video on the next screen. Otherwise, </p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step4.4.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step4.4.png"
-    alt="Panopto recorder showing the subject in the video preview, with the red Stop button circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div style="margin:20px 0 0 0;padding:18px 20px;background:#ffffff;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:16px;">
-<h3 style="font-size:18px;line-height:1.2;color:#000000;font-weight:900;text-transform:uppercase;margin:0 0 8px 0;">
+			</p></div></div></details><details aria-label="Step 4: Record the Video" class="cva-accordion"><summary>Step 4: Record the Video</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Record your welcome message using Panopto Capture.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Select Record</h3><p>Select the <strong>Record</strong> button at the bottom of the screen.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.1.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder showing the subject centered in the video preview, with the red Record button circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Wait for the Countdown</h3><p>Wait for the five-second countdown.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.2.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder displaying a five-second countdown over the subject before recording begins." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.2.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Deliver Your Message</h3><p>Deliver your welcome message at a natural pace.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.3.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder actively recording the subject in the video preview." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Stop the Recording</h3><p>Select the <strong>Stop</strong> button when you are finished. Once you stop, you’ll have the chance to redo or record a new video on the next screen. Otherwise, continue to the next step to name and save the recording.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.4.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder showing the subject in the video preview, with the red Stop button circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.4.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>
 					It Does Not Have to Be Perfect
-				</h3>
-<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">
-					Look toward the camera rather than at your own image.A small pause or natural correction is fine. The goal is to help students see the person behind the course.
-				</p>
-</div>
-</div>
-</details>
-<!-- STEP 5 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 5: Name and Save the Recording</span></summary>
-<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
-<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
-<strong style="color:#bb0000;font-weight:800;">Goal:</strong> Give your recording a clear title and allow Panopto to upload and process it.
-			</div>
-<!-- STEP 5.1 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 1</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Enter a Title</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Enter a clear title for the recording.</p>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Example: Welcome from First Name Last Name</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step5.1.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step5.1.png"
-    alt="Panopto finishing screen showing the recorded subject, with an arrow pointing to the video title field labeled “Welcome from First Name Last Name.”"
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 5.2 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Confirm the Folder</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">By default, your videos will be saved in the SCH folder. You can use the search bar to find videos by creator or title. <strong>NOTE: CVA Teachers currenly do not have access to the Cobb Virtual Academy folders in Panopto. This feature has been requested.</strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step5.2.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step5.2.png"
-    alt="Panopto finishing screen with the folder menu open and an arrow pointing to the Cobb Virtual Academy folder."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 5.3 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 3</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Wait for the Upload</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Wait while Panopto uploads and processes the video. Do not close the browser until Panopto indicates that it is safe to do so.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step5.3.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step5.3.png"
-    alt="Panopto finishing screen showing the recorded subject, with the “Upload complete” confirmation circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 5.4 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 4</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">View Everything</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Once Panopto gives you the all clear, go ahead and close the window. Don't worry. Your video is saved automatically, and you'll be redirected to the Panopto Homescreen. Click <strong>Everything</strong> in the left-navigation menu to see your video. You may need to scroll, so keep an eye out for your video.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step5.4.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step5.4.gif"
-    alt="Panopto upload window showing a completed upload, highlighted upload confirmation, and video details ready to save."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div style="margin:20px 0 0 0;padding:18px 20px;background:#ffffff;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:16px;">
-<h3 style="font-size:18px;line-height:1.2;color:#000000;font-weight:900;text-transform:uppercase;margin:0 0 8px 0;">Processing Time</h3>
-<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">Processing may take a few minutes.</p>
-</div>
-</div>
-</details>
-<!-- STEP 7 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-	<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;">
-		<span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span>
-		<span style="color:#ffffff;">Step 7: Review the Video</span>
-	</summary>
-
-	<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;font-family:'Montserrat',Arial,sans-serif;">
-
-		<!-- GOAL -->
-		<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:10px;font-size:15px;line-height:1.6;color:#333333;">
-			<strong style="color:#bb0000;font-weight:800;">Goal:</strong>
+				</h3><p>
+					Look toward the camera rather than at your own image. A small pause or natural correction is fine. The goal is to help students see the person behind the course.
+				</p></div></div></details><details aria-label="Step 5: Name and Save the Recording" class="cva-accordion"><summary>Step 5: Name and Save the Recording</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Give your recording a clear title and allow Panopto to upload and process it.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Enter a Title</h3><p>Enter a clear title for the recording.</p><p>Example: Welcome from First Name Last Name</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.1.png" rel="noopener" target="_blank">
+<img alt="Panopto finishing screen showing the recorded subject, with an arrow pointing to the video title field labeled “Welcome from First Name Last Name.”" decoding="async" loading="lazy" src="../images/teacher-information-page/step5.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Confirm the Folder</h3><p>By default, your videos will be saved in the SCH folder. You can use the search bar to find videos by creator or title. <strong>NOTE: CVA teachers currently do not have access to the Cobb Virtual Academy folders in Panopto. This feature has been requested.</strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.2.png" rel="noopener" target="_blank">
+<img alt="Panopto finishing screen with the folder menu open and an arrow pointing to the Cobb Virtual Academy folder." decoding="async" loading="lazy" src="../images/teacher-information-page/step5.2.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Wait for the Upload</h3><p>Wait while Panopto uploads and processes the video. Do not close the browser until Panopto indicates that it is safe to do so.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.3.png" rel="noopener" target="_blank">
+<img alt="Panopto finishing screen showing the recorded subject, with the “Upload complete” confirmation circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step5.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>View Everything</h3><p>Once Panopto gives you the all clear, go ahead and close the window. Don't worry. Your video is saved automatically, and you'll be redirected to the Panopto home screen. Click <strong>Everything</strong> in the left-navigation menu to see your video. You may need to scroll, so keep an eye out for your video.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.4.gif" rel="noopener" target="_blank">
+<img alt="Panopto upload window showing a completed upload, highlighted upload confirmation, and video details ready to save." decoding="async" loading="lazy" src="../images/teacher-information-page/step5.4.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>Processing Time</h3><p>Processing may take a few minutes.</p></div></div></details><details aria-label="Step 7: Review the Video" class="cva-accordion"><summary>Step 7: Review the Video</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong>
 			Confirm that the recording is clear, complete, and ready for students to view.
-		</div>
-
-		<p style="font-size:16px;line-height:1.7;color:#333333;margin:0 0 18px 0;">
+		</div><p class="cva-intro">
 			Watch your recording once before adding it to the Teacher Information Page. Use the checklist below as you review.
-		</p>
-
-		<!-- REVIEW CHECKLIST -->
-		<div style="border:1px solid #d9dde3;border-radius:12px;overflow:hidden;background:#ffffff;">
-
-			<!-- ITEM 1 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								1
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+		</p><div class="cva-checklist"><div class="cva-checklist-item"><div class="cva-checklist-number">1</div><div class="cva-checklist-copy"><h3>
 								Check the Beginning and End
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Make sure the video begins and ends where you intended, without unnecessary silence or preparation time.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 2 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								2
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">2</div><div class="cva-checklist-copy"><h3>
 								Check the Audio
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Confirm that your voice is clear, easy to hear, and not covered by background noise.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 3 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								3
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">3</div><div class="cva-checklist-copy"><h3>
 								Check the Lighting
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Make sure your face is visible and that the image is not too dark or overly bright.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 4 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								4
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">4</div><div class="cva-checklist-copy"><h3>
 								Check for Private Information
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Confirm that no student information, passwords, email messages, or other private content appears.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 5 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								5
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;border-bottom:1px solid #d9dde3;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">5</div><div class="cva-checklist-copy"><h3>
 								Check for Notifications
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Make sure no unexpected messages, alerts, or pop-up notifications appear in the recording.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<!-- ITEM 6 -->
-			<table role="presentation" style="width:100%;border-collapse:collapse;">
-				<tbody>
-					<tr>
-						<td style="width:54px;padding:17px 10px 17px 16px;vertical-align:top;">
-							<div style="width:32px;height:32px;line-height:32px;text-align:center;background:#bb0000;color:#ffffff;border-radius:50%;font-size:14px;font-weight:800;">
-								6
-							</div>
-						</td>
-						<td style="padding:17px 16px 17px 6px;vertical-align:top;">
-							<h3 style="font-size:17px;line-height:1.3;color:#000000;font-weight:900;margin:0 0 4px 0;">
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">6</div><div class="cva-checklist-copy"><h3>
 								Review the Captions
-							</h3>
-							<p style="font-size:15px;line-height:1.6;color:#444444;margin:0;">
+							</h3><p>
 								Read the automatic captions and correct names, course titles, and any words Panopto transcribed incorrectly.
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
-		</div>
-
-		<!-- ACCESSIBILITY REMINDER -->
-		<div style="margin:18px 0 0 0;padding:16px 18px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:10px;">
-			<div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 5px 0;">
-				Accessibility Reminder
-			</div>
-			<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">
+							</p></div></div></div><div class="cva-callout"><span class="cva-callout-label">Accessibility Reminder</span><p>
 				Automatic captions must be reviewed for accuracy before the video is shared with students.
-			</p>
-		</div>
-
-	</div>
-</details>
-<!-- STEP 7 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 8: Add the Video to the Teacher Information Page</span></summary>
-<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
-<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
-<strong style="color:#bb0000;font-weight:800;">Goal:</strong> Replace the sample Panopto video with your own recording.
-			</div>
-<!-- STEP 7.1 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 1</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Open the Video</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Open your welcome video in Panopto and click the <strong>Share icon</strong>.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step7.1.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step7.1.png"
-    alt="Panopto video library with a magnifying glass highlighting the Share symbol."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<!-- STEP 7.2 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Confirm Viewing Permissions</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Confirm that students in the course have permission to view the recording. The settings should be "Anyone who has the link." If not, click Change and select the correct permissions.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step7.2.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step7.2.png"
-    alt="Panopto Share settings showing the video access level, “Anyone who has the link.”"
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 7.3 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 3</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Open the Embed Option</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Locate the video’s <strong style="font-weight:800;color:inherit;">Embed</strong> option.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step7.3.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step7.3.png"
-    alt="Panopto Share settings with the Link and Embed options highlighted."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 7.4 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 4</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Embed Code Settings</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Mark the following settings: <strong>Enable Watch in Panopto</strong> and <strong>Show Captions</strong>. Uncheck <Strong>Responsive embed</strong>. <strong>IMPORTANT: Change the Aspect Ratio to Custom and set the Width to 640 and Height to 330.</strong> Then click <strong> Copy Embed Code</strong>. Click <strong>Done </strong> to close the window.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step7.4.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step7.4.gif"
-    alt="Animated Panopto Share settings showing how to select Embed and view the available embed options."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 7.5 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 6</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Return to CTLS</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Return to the Teacher Information Page in your CTLS Digital Classroom. Unlock the page by clicking the <strong>Lock icon</strong>.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step7.5.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step7.5.png"
-    alt="Teacher Information Page editor with the green folder icon highlighted above the page."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 7.6 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 6</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Replace the Video</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Replace the sample Panopto video with your own recording. Carefully click near the edge of the video to replace it. Be sure that you are replacing the video, not the image behind it. Click the <strong>Replace Video</strong> icon.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step7.6.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step7.6.png"
-    alt="Teacher Information Page editor with the replace and delete controls highlighted for the selected video placeholder."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div style="margin:20px 0 0 0;padding:18px 20px;background:#ffffff;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:16px;">
-<h3 style="font-size:18px;line-height:1.2;color:#000000;font-weight:900;text-transform:uppercase;margin:0 0 8px 0;">
+			</p></div></div></details><details aria-label="Step 8: Add the Video to the Teacher Information Page" class="cva-accordion"><summary>Step 8: Add the Video to the Teacher Information Page</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Replace the sample Panopto video with your own recording.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Open the Video</h3><p>Open your welcome video in Panopto and click the <strong>Share icon</strong>.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.1.png" rel="noopener" target="_blank">
+<img alt="Panopto video library with a magnifying glass highlighting the Share symbol." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Confirm Viewing Permissions</h3><p>Confirm that students in the course have permission to view the recording. The settings should be "Anyone who has the link." If not, click Change and select the correct permissions.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.2.png" rel="noopener" target="_blank">
+<img alt="Panopto Share settings showing the video access level, “Anyone who has the link.”" decoding="async" loading="lazy" src="../images/teacher-information-page/step7.2.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Open the Embed Option</h3><p>Locate the video’s <strong>Embed</strong> option.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.3.png" rel="noopener" target="_blank">
+<img alt="Panopto Share settings with the Link and Embed options highlighted." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Embed Code Settings</h3><p>Mark the following settings: <strong>Enable Watch in Panopto</strong> and <strong>Show Captions</strong>. Uncheck <strong>Responsive embed</strong>. <strong>IMPORTANT: Change the Aspect Ratio to Custom and set the Width to 640 and Height to 330.</strong> Then click <strong> Copy Embed Code</strong>. Click <strong>Done </strong> to close the window.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.4.gif" rel="noopener" target="_blank">
+<img alt="Animated Panopto Share settings showing how to select Embed and view the available embed options." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.4.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Return to CTLS</h3><p>Return to the Teacher Information Page in your CTLS Digital Classroom. Unlock the page by clicking the <strong>Lock icon</strong>.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.5.png" rel="noopener" target="_blank">
+<img alt="Teacher Information Page editor with the green folder icon highlighted above the page." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.5.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Replace the Video</h3><p>Replace the sample Panopto video with your own recording. Carefully click near the edge of the video to replace it. Be sure that you are replacing the video, not the image behind it. Click the <strong>Replace Video</strong> icon.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.6.png" rel="noopener" target="_blank">
+<img alt="Teacher Information Page editor with the replace and delete controls highlighted for the selected video placeholder." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.6.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>
 					Check Viewing Permissions
-				</h3>
-<p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">
+				</h3><p>
 					A video may appear correctly for you while still being unavailable to students. Always test it in Student View.
-				</p>
-</div>
-</div>
-</details>
-<br>
+				</p></div></div></details><div aria-hidden="true" class="cva-section-divider"><span></span><span></span><span></span></div><section class="cva-white"><span class="cva-eyebrow">Adding Teacher Details</span><h2>Editing the Teacher Information Page</h2><p>Edit the other details on the page, including your name, office hours, and contact information.</p><div class="cva-callout"><span class="cva-callout-label">Important</span><p>Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></section><details aria-label="Step 9: Edit the Teacher Information Page" class="cva-accordion"><summary>Step 9: Edit the Teacher Information Page</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Update your name, contact information, and office hours, then save the page.
+</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Unlock the Page</h3><p>To edit the Teacher Information Page, you must first unlock it by clicking on the <strong>Lock icon.</strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.1.png" rel="noopener" target="_blank">
+<img alt="CTLS page editor with the green lock button circled near the upper-left corner of the editing area." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Teacher Name</h3><p>Locate First Name Last Name near the top of the page. Highlight the text and begin typing your name. You can also add any honorific (Mr., Ms., etc.).
+<strong>NOTE: The font, size, and color should remain the same. You'll notice that CVA uses consistent fonts and colors in most of our designs. Don't change the font, size, or color when editing the Teacher Information Page template.</strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.2.gif" rel="noopener" target="_blank">
+<img alt="Animated CTLS page editor showing the placeholder teacher name replaced with Adam Hardigree." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.2.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>About Me</h3><p>Write a short bio about your education, teaching experience, hobbies, family, travel experiences, etc. Tell students something about the class or what they can expect from you. This space is limited, so plan on about 30-40 words maximum.
 
-<p style="text-align:center;margin:0;">
-  <strong>|||</strong>
-</p>
+<strong>NOTE:</strong> Be sure to <strong>proofread </strong> your bio. The font, size, and color should remain the same. <strong>Don't change the font, size, or color when editing the Teacher Information Page template. </strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.3.gif" rel="noopener" target="_blank">
+<img alt="Animated CTLS page editor showing a short teacher biography entered beneath the name Adam Hardigree." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.3.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Office Hours</h3><p>Office Hours are times set aside just to support students. They are meant to give students a chance to connect when they’re free—after school, in the evening, or at another agreed-upon time. This is a space for questions, help with assignments, feedback, or a quick check-in. The goal is simple: be available, approachable, and flexible so students can get support when they need it.
 
-<br>
-<!-- EDITING OVERVIEW -->
-<div style="width:100%;box-sizing:border-box;background:#f5f5f5;border:1px solid #d9dde3;border-radius:16px;padding:26px 28px;">
-<span style="font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:10px;display:block;">Adding Teacher Details</span>
-<h2 style="font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,4vw,34px);line-height:1.15;color:#222222;text-transform:uppercase;font-weight:900;margin:0 0 12px 0;">Editing the Teacher Information Page</h2>
-<p style="font-size:16px;line-height:1.7;color:#333333;margin:0;">Edit the other details on the page, including your name, office hours, and contact information.</p>
-<div style="background:#ffffff;border:2px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;padding:16px 18px;"><strong style="display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin-bottom:6px;">Important</strong><p style="font-size:15px;line-height:1.65;color:#333333;margin:0;">Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></div>
-<!-- STEP 9 -->
-<details style="display:block;width:100%;box-sizing:border-box;border-radius:6px;margin:0;overflow:hidden;background:#1e1e1e;">
-<summary style="list-style:none;cursor:pointer;background:#1e1e1e;color:#ffffff;padding:15px 18px;font-family:'Montserrat',Arial,sans-serif;font-size:15px;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none;"><span aria-hidden="true" style="color:#ffffff;font-size:18px;font-weight:800;line-height:1;flex:0 0 auto;">+</span><span style="color:#ffffff;">Step 9: Edit the Teacher Information Page</span></summary>
-<div style="background:#ffffff;border:1px solid #d9dde3;border-top:none;padding:20px 18px;box-sizing:border-box;">
-<div style="margin:0 0 18px 0;padding:14px 16px;background:#f7f8fa;border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:12px;font-size:15px;line-height:1.6;color:#333333;">
-<strong style="color:#bb0000;font-weight:800;">Goal:</strong> Update your name, contact information, and office hours, then save the page.
-</div>
-<!-- STEP 9.1 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 1</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Unlock the Page</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">To edit the Teacher Information Page, you must first unlock it by clicking on the <strong>Lock icon.</strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.1.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.1.png"
-    alt="CTLS page editor with the green lock button circled near the upper-left corner of the editing area."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.2 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 2</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Teacher Name</h3>
-<p style="font-size:16px;line-height:1.6; color:#222222;margin:0 0 12px 0;">Locate First Name Last Name near the top of the page. Highlight the text and begin typing your name. You can also add any honorific (Mr., Ms., etc.).
-<strong>NOTE: The font, size, and color should remain the same. You'll notice that CVA uses consistent fonts and colors in most of our designs. Don't change the font, size, or color when editing the Teacher Information Page template.</strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.2.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.2.gif"
-    alt="Animated CTLS page editor showing the placeholder teacher name replaced with Adam Hardigree."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.3 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 3</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">About Me</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Write a short bio about your education, teaching experience, hobbies, family, travel experiences, etc. Tell students something about the class or what they can expect from you. This space is limited, so plan on about 30-40 words maximum.
-
-<strong>NOTE:</strong> Be sure to <strong>proofread </strong> your bio. The font, size, and color should remain the same. <strong>Don't change the font, size, or color when editing the Teacher Information Page template. </strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.3.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.3.gif"
-    alt="Animated CTLS page editor showing a short teacher biography entered beneath the name Adam Hardigree."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.4 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 4</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Office Hours</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Office Hours are times set aside just to support students. They are meant to give students a chance to connect when they’re free—after school, in the evening, or at another agreed-upon time. This is a space for questions, help with assignments, feedback, or a quick check-in. The goal is simple: be available, approachable, and flexible so students can get support when they need it.
-
-<strong>NOTE: Office Hours are not part of your face-to-face classroom hours or daily teaching responsibilities at your home school.</strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.4.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.4.png"
-    alt="CTLS Teacher Information Page editor with the Office Hours section circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.5 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 5</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Things to Know</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">We want all students to have a positive experience in all of their CVA classes, so we clearly communicate our expectations for teachers on the Teacher Information Page.</p>
-<ul>
-  <li>When you submit work by the due date, I’ll get assignment feedback to you within 48 hours after you submit.</li>
-  <li>If you are stuck or something is confusing, reach out. I’m here to help.</li>
-  <li>I’ll respond to your messages within 24 hours of reaching out to me.</li>
-</ul>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;"><strong>NOTE: These are not to be edited. If you have any questions about the CVA Teacher Expectations, don't hesitate to reach out to CVA Teacher Support.</strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.5.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.5.png"
-    alt="CTLS Teacher Information Page editor with the Things to Know section circled."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.6 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 6</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Voice Number</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Having accurate contact information (and more than one way to connect) matters because it removes barriers to communication. When students and families know exactly how to reach you, they’re more likely to ask questions and get support before small issues become bigger problems.
+<strong>NOTE: Office Hours are not part of your face-to-face classroom hours or daily teaching responsibilities at your home school.</strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.4.png" rel="noopener" target="_blank">
+<img alt="CTLS Teacher Information Page editor with the Office Hours section circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.4.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 5</span><h3>Things to Know</h3><p>We want all students to have a positive experience in all of their CVA classes, so we clearly communicate our expectations for teachers on the Teacher Information Page.</p><ul>
+<li>When you submit work by the due date, I’ll get assignment feedback to you within 48 hours after you submit.</li>
+<li>If you are stuck or something is confusing, reach out. I’m here to help.</li>
+<li>I’ll respond to your messages within 24 hours of reaching out to me.</li>
+</ul><p><strong>NOTE: These are not to be edited. If you have any questions about the CVA Teacher Expectations, don't hesitate to reach out to CVA Teacher Support.</strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.5.png" rel="noopener" target="_blank">
+<img alt="CTLS Teacher Information Page editor with the Things to Know section circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.5.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Voice Number</h3><p>Having accurate contact information (and more than one way to connect) matters because it removes barriers to communication. When students and families know exactly how to reach you, they’re more likely to ask questions and get support before small issues become bigger problems.
 
 To update your <strong>Voice Phone Number</strong>, you simply type over the number in the Teacher Information Page template. Use the following format <strong>XXX.XXX.XXXX</strong>.
 
-<strong>NOTE: </strong>As a CVA teacher, you access to Virtual Phone in CTLS Parent. This will allow you to create a Virtual Phone Number to use with students. <strong>Virtual Phone is built for voice communication, not texting.</strong></p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.6.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.6.gif"
-    alt="Animated CTLS page editor showing the Voice field updated with a phone number in the Contact Information section."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.7 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 7</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Email</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Left-click on the link to update your <strong>Email Address</strong>. Type over the email name and replace it with your address. <strong>Be sure to use your CCSD email.</strong> </p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.7.gif"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.7.gif"
-    alt="Animated CTLS page editor showing the edit icon selected for the Voice link and the hyperlink field updated."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- STEP 9.8 -->
-<table role="presentation" style="width:100%;margin:0 0 8px 0;border-collapse:separate;border-spacing:0;background:#ffffff;border:1px solid #d9dde3;border-top:6px solid #bb0000;border-radius:16px;overflow:hidden;">
-<tbody>
-<tr>
-<td style="width:52%;padding:22px;vertical-align:middle;box-sizing:border-box;">
-<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bb0000;font-weight:800;margin:0 0 8px 0;">Step 8</div><h3 style="font-size:22px;line-height:1.2;color:#000000;font-weight:900;margin:0 0 10px 0;">Save the Page</h3>
-<p style="font-size:16px;line-height:1.6;color:#222222;margin:0 0 12px 0;">Save your changes.</p>
-</td>
-<td style="width:48%;padding:14px;vertical-align:middle;text-align:center;background:#ffffff;border-left:1px solid #d9dde3;box-sizing:border-box;">
-<a href="../images/teacher-information-page/step8.8.png"
-   target="_blank"
-   rel="noopener"
-   aria-label="Open a larger version of the CTLS Digital Classroom screenshot"
-   style="display:block;text-decoration:none;">
-
-  <img
-    src="../images/teacher-information-page/step8.8.png"
-    alt="CTLS Teacher Information Page editor with the green Save button circled in the upper-right corner."
-    style="display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border:0px solid #d9dde3;border-radius:10px;box-sizing:border-box;"
-  >
-
-</a>
-<p style="margin:7px 0 0 0;color:#777777;font-size:12px;font-style:italic;line-height:1.4;">Select image to enlarge.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</details>
-
-  <!-- FOOTER -->
-  <hr class="cva-footer-rule">
-  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
-
-</div>
-
-<script src="../nav.js"></script>
-
-</body>
-</html>
+<strong>NOTE: </strong>As a CVA teacher, you access to Virtual Phone in CTLS Parent. This will allow you to create a Virtual Phone Number to use with students. <strong>Virtual Phone is built for voice communication, not texting.</strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.6.gif" rel="noopener" target="_blank">
+<img alt="Animated CTLS page editor showing the Voice field updated with a phone number in the Contact Information section." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.6.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 7</span><h3>Email</h3><p>Left-click on the link to update your <strong>Email Address</strong>. Type over the email name and replace it with your address. <strong>Be sure to use your CCSD email.</strong> </p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.7.gif" rel="noopener" target="_blank">
+<img alt="Animated CTLS page editor showing the edit icon selected for the Voice link and the hyperlink field updated." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.7.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 8</span><h3>Save the Page</h3><p>Save your changes.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step8.8.png" rel="noopener" target="_blank">
+<img alt="CTLS Teacher Information Page editor with the green Save button circled in the upper-right corner." decoding="async" loading="lazy" src="../images/teacher-information-page/step8.8.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div></div></details><hr class="cva-footer-rule"/><p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p></div><script src="../nav.js"></script></body></html>
