@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVA Teacher Resources Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Icon card grid ── */
+    .expectation-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .expectation-card {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 160px;
+      text-align: center;
+      transition: transform 0.15s;
+    }
+    .expectation-card:hover { transform: scale(1.05); }
+    .expectation-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Modal ── */
+    #exp-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+    }
+    #exp-modal-overlay.open {
+      display: flex;
+    }
+    #exp-modal {
+      background: #fff;
+      border-radius: 8px;
+      max-width: 520px;
+      width: 90%;
+      padding: 32px 28px 24px;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    #exp-modal-title {
+      font-family: 'Oswald', Arial, sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #BB0000;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+    }
+    #exp-modal-body {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+    #exp-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #666;
+      line-height: 1;
+    }
+    #exp-modal-close:hover { color: #BB0000; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+<br>
+  <div class="hero-card">
+    <p class="eyebrow">Teacher Support</p>
+    <h1>CVA Teacher Resources Hub</h1>
+    <p>Quick answers and resources for CVA teaching expectations, communication, feedback, student support, and professional collaboration.</p>
+  </div>
+
+  <!-- UPCOMING EVENTS -->
+  <div class="events-card" role="region" aria-label="Upcoming Events">
+    <p class="eyebrow">Teacher Schedule</p>
+    <h2 class="ev-title-heading">Upcoming Events</h2>
+    <div class="ev-divider"></div>
+    <div id="ev-eventSection">
+      <div id="ev-eventList" role="list"></div>
+    </div>
+    <div id="ev-statusMsg" role="alert" aria-live="polite"></div>
+    <div class="ev-footer-links">
+      <a href="https://cobbk12org-my.sharepoint.com/:x:/g/personal/cobbvirtualacademy_cobbk12_org/IQA_yWar5WG3RK25QNAcCl_2Abkv7cwcCI_fGTHs46ngwOk?e=T2UbMj" target="_blank" rel="noopener noreferrer">View CVA Teacher Schedule</a>
+      <a href="https://www.cobbk12.org/cobbvirtualacademy/calendars#monthview" target="_blank" rel="noopener noreferrer">View CVA Calendar</a>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview-card">
+    <p class="overview-label">Overview</p>
+    <h2>CVA Teacher Expectations</h2>
+    <p>Use this guide to review the core areas of effective online teaching at CVA. Click a card below to learn more about each expectation area.</p>
+
+    <div class="expectation-grid">
+      <button class="expectation-card"
+        data-title="Grading and Feedback"
+        data-body="Grading and Feedback are the expectations that a teacher regularly grades student work and provides timely, meaningful feedback aligned to course standards. Consistent feedback helps students understand their progress and next steps in an asynchronous learning environment."
+        aria-label="Grading and Feedback — click to learn more">
+        <img src="images/grading-and-feedback-icon.png" alt="Grading and Feedback icon showing a monitor with a checklist and A+ grade">
+      </button>
+
+      <button class="expectation-card"
+        data-title="Communication and Responsiveness"
+        data-body="Communication and Responsiveness is the expectation that a teacher communicates clearly and consistently so students and families understand expectations and feel supported. The CVA online teacher uses appropriate communication tools and responds within established timeframes to promote engagement and reduce barriers to learning."
+        aria-label="Communication and Responsiveness — click to learn more">
+        <img src="images/communication-and-responsiveness-icon.png" alt="Communication and Responsiveness icon showing two people with a speech bubble">
+      </button>
+
+      <button class="expectation-card"
+        data-title="Rapport and Relationships"
+        data-body="Rapport &amp; Relationships is the expectation that a teacher intentionally builds positive connections with students to foster engagement and belonging. The CVA online teacher uses personalized communication and encouragement so students feel known and supported."
+        aria-label="Rapport and Relationships — click to learn more">
+        <img src="images/rapport-and-relationships-icon.png" alt="Rapport and Relationships icon showing two people with a speech bubble indicating connection">
+      </button>
+
+      <button class="expectation-card"
+        data-title="Proactive Intervention and Student Support"
+        data-body="Proactive Intervention and Student Support is the expectation that a teacher monitors student progress and takes timely action when concerns arise. Early outreach and support help prevent students from falling behind and promote academic success."
+        aria-label="Proactive Intervention and Student Support — click to learn more">
+        <img src="images/proactive-interventions-and-support-icon.png" alt="Proactive Intervention and Student Support icon showing two people holding puzzle pieces together">
+      </button>
+
+      <button class="expectation-card"
+        data-title="Professionalism and Collaboration"
+        data-body="Professionalism and Collaboration reflects that a teacher demonstrates professional conduct and works collaboratively to support student success. Consistent communication and teamwork contribute to a high-quality learning experience for CVA students."
+        aria-label="Professionalism and Collaboration — click to learn more">
+        <img src="images/professionalism-and-collaboration-icon.png" alt="Professionalism and Collaboration icon showing a group of people seated in a collaborative arrangement">
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="exp-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="exp-modal-title">
+    <div id="exp-modal">
+      <button id="exp-modal-close" aria-label="Close">&times;</button>
+      <h2 id="exp-modal-title"></h2>
+      <p id="exp-modal-body"></p>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE GUIDE -->
+  <div class="quick-guide-card" id="quick-reference-guide">
+    <p class="quick-guide-label">Quick Reference Guide</p>
+    <h2>How Do I Find What I Need?</h2>
+    <p class="quick-guide-intro">Use the sections below to learn more about each CVA teacher expectation area. Search by keyword to quickly find a specific card.</p>
+    <p class="search-label">Search Keywords</p>
+    <div class="search-container">
+      <div class="search-wrap" id="cva-search-wrap">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <div id="cva-input" class="cva-search-input" contenteditable="true" spellcheck="false" data-placeholder="e.g. grading, feedback, communication, intervention..."><br></div>
+        <span id="cva-clear" class="search-clear ev-hidden" tabindex="0">&#10005; Clear</span>
+      </div>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+
+  <!-- ACCORDION SECTIONS -->
+  <div class="accordion-section">
+    <details class="quick-ref" style="display:block!important;visibility:visible!important;">
+      <summary><span class="quick-plus">+</span>Grading and Feedback</summary>
+      <div class="quick-ref-body"><div class="card-grid">
+        <div class="info-card" id="card-grading-policy"><p class="info-card-label">Grading Requirements</p><h3>Grading Policy at CVA</h3><p>Learn the core grading requirements that support accurate progress monitoring and meaningful student intervention.</p><div class="info-card-tags"><strong>Search:</strong> grading, feedback, 48 hours, CTLS submissions, missing coursework, student intervention, requirements, attachments, links</div><a href="grading-and-feedback/cva-grading-policy.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click Here to View More</a></div>
+        
+        <div class="info-card" id="card-resubmission"><p class="info-card-label">CTLS Gradebook Support</p><h3>Resubmission Opportunities</h3><p>Learn how to grade the original attempt, allow a resubmission, mark the new attempt missing, and add a resubmission deadline.</p><div class="info-card-tags"><strong>Search terms:</strong> Resubmission, Allow Resubmission, Finish Student, Missing, Feedback Deadline</div><a href="grading-and-feedback/allowing-resubmissions.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-academic-integrity"><p class="info-card-label">Grading Requirements</p><h3>Academic Integrity and Paused Grading</h3><p>Learn what to do when grading is paused for an Academic Integrity concern, including how to document feedback, contact the student, and keep the gradebook accurate.</p><div class="info-card-tags"><strong>Search terms:</strong> Academic Integrity, Paused Grading, Temporary 0, Scoring Required, Missing Status, AI</div><a href="grading-and-feedback/paused-grading.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-effective-feedback"><p class="info-card-label">Online Teaching Practices</p><h3>Effective Feedback</h3><p>Learn how to provide feedback that is clear, timely, respectful, connected to learning goals, and focused on helping students improve.</p><div class="info-card-tags"><strong>Search terms:</strong> Effective Feedback, Grading, Student Growth, Actionable Feedback, Learning Goals</div><a href="grading-and-feedback/effective-feedback.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-accepting-work-1"><p class="info-card-label">Submission Requirements</p><h3>Accepting Student Work</h3><p>Learn how student work should be submitted in CVA classes, including CTLS Coursework requirements, file uploads, links, and My Attachments.</p><div class="info-card-tags"><strong>Search terms:</strong> Student Work, Links, CTLS Coursework, My Attachments, File Uploads, Linked Work, OneDrive, Canva, Submissions</div><a href="grading-and-feedback/submission-expectations.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+      </div></div>
+    </details>
+    <details class="quick-ref" style="display:block!important;visibility:visible!important;">
+      <summary><span class="quick-plus">+</span>Communication and Responsiveness</summary>
+      <div class="quick-ref-body"><div class="card-grid">
+        <div class="info-card" id="card-email-comm"><p class="info-card-label">Email</p><h3>Email Communication</h3><p>Review professional email expectations, including response time, subject lines, message length, confidentiality, and when to choose a phone call instead.</p><div class="info-card-tags"><strong>Search terms:</strong> email communication, responsiveness, subject lines, public record, professional email, response time, tone</div><a href="communication-and-responsiveness/email-communication.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-email-sig"><p class="info-card-label">Email</p><h3>Required Email Signature</h3><p>Download the required CCSD/CVA email signature template and update it with your name, title, contact information, and approved signature format.</p><div class="info-card-tags"><strong>Search terms:</strong> email signature, CCSD signature, CVA signature, email template, communication standards</div><a href="communication-and-responsiveness/cva-email-signature.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-student-contact"><p class="info-card-label">Communication</p><h3>Who Do Students Contact?</h3><p>Help students understand who to contact for class questions, assignment help, feedback clarification, academic support, scheduling, credits, and graduation planning.</p><div class="info-card-tags"><strong>Search terms:</strong> Student Contact, Teacher Support, Department Lead, School Counselor, Assignment Help, Graduation Requirements</div><a href="communication-and-responsiveness/who-do-students-contact.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-local-schools"><p class="info-card-label">Communication</p><h3>Local Schools</h3><p>Learn what CVA teachers should do if they have questions about a student's local school or receive direct communication from school staff.</p><div class="info-card-tags"><strong>Search terms:</strong> Local School, Teacher Support, School Contact, Forward Email, Communication Path, Student Support</div><a href="communication-and-responsiveness/contacting-local-schools.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+      </div></div>
+    </details>
+    <details class="quick-ref" style="display:block!important;visibility:visible!important;"> 
+      <summary><span class="quick-plus">+</span>Rapport and Relationships</summary>
+      <div class="quick-ref-body"><div class="card-grid">
+        <div class="info-card" id="card-instructor-profile"><p class="info-card-label">Instructor Profile</p><h3>Instructor Profile</h3><p>Learn how to update your Instructor Profile with a professional picture, CCSD email address, virtual phone number, and office hours.</p><div class="info-card-tags"><strong>Search terms:</strong> Instructor Profile, Profile Picture, Contact Information, Office Hours, Digital Classroom</div><a href="rapport-and-relationships/instructor-profile.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+       <div class="info-card" id="card-teacher-information-page">
+  <p class="info-card-label">Professionalism &amp; Communication</p>
+  <h3>Teacher Information Page</h3>
+  <p>Learn how to copy the Teacher Information Page into your CTLS Digital Classroom, record and caption a brief welcome video in Panopto, and update the page with your contact information.</p>
+  <div class="info-card-tags">
+    <strong>Search terms:</strong> Teacher Information Page, Welcome Video, Panopto, Captions, Contact Information, Digital Classroom
+  </div>
+  <a href="https://adamhardigree-maker.github.io/teacher-resources/rapport-and-relationships/directions-for-teacher-information-page.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a>
+</div>
+        <div class="info-card" id="card-classroom-announcements"><p class="info-card-label">Classroom Announcements</p><h3>Classroom Announcements</h3><p>Learn how to use the Class Board, Board Topics, and Announcements to build teacher presence, share timely updates, and keep students informed.</p><div class="info-card-tags"><strong>Search terms:</strong> Class Board, Classroom Announcements, Board Topics, CVA News You Can Use, Teacher Presence</div><a href="rapport-and-relationships/classroom-announcements.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-discussion"><p class="info-card-label">Online Teaching Practices</p><h3>Discussion to Drive Learning and Presence</h3><p>Learn how to use discussion boards as formative learning spaces that reveal student thinking, strengthen teacher presence, and move beyond checklist-style participation.</p><div class="info-card-tags"><strong>Search terms:</strong> Discussion Boards, Grading Discussions, Formative Assessment, Teacher Presence, Student Thinking</div><a href="rapport-and-relationships/discussions-as-learning.html" target="_blank" rel="noopener noreferrer" class="btn-red">Click here to view more</a></div>
+      </div></div>
+    </details>
+    <details class="quick-ref" style="display:block!important;visibility:visible!important;">
+      <summary><span class="quick-plus">+</span>Proactive Intervention and Student Support</summary>
+      <div class="quick-ref-body"><div class="card-grid">
+        <div class="info-card" id="card-accommodations"><p class="info-card-label">Student Support</p><h3>Student Accommodations and Accessibility</h3><p>Learn how CVA teachers are notified about IEP and 504 accommodations, what adjunct teachers should do, and how CTLS accessibility tools can support students.</p><div class="info-card-tags"><strong>Search terms:</strong> Accommodations, IEP, 504 Plan, Accessibility Tools, Student Support, Case Manager</div><a href="proactive-intervention-and-student-support/accommodations-and-accessibility.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-grades-feedback"><p class="info-card-label">Student Support</p><h3>Grades and Feedback</h3><p>Help students understand where to check assignment progress, official grades, teacher feedback, missing work, and resubmissions.</p><div class="info-card-tags"><strong>Search terms:</strong> Grades, Feedback, Missing Work, Resubmissions, Student Support, CTLS</div><a href="proactive-intervention-and-student-support/grades-and-feedback-support.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-progress-tracker"><p class="info-card-label">Navigating CTLS</p><h3>Progress Tracker</h3><p>Learn how to use the Progress Tracker to view student course access, understand student tiles, and find more detailed performance data.</p><div class="info-card-tags"><strong>Search terms:</strong> Progress Tracker, Student Tiles, Course Progress, Assignments, Assessments, Student Performance</div><a href="proactive-intervention-and-student-support/progress-tracker.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-practice-student"><p class="info-card-label">Navigating CTLS</p><h3>Practice Student View</h3><p>Learn how to access Practice Student View in CTLS so you can experience your course as students do, check navigation flow, and verify access and visibility.</p><div class="info-card-tags"><strong>Search terms:</strong> Practice Student, Student View, Graduation Cap, CTLS Learn Portal, My Classes, Course Tile</div><a href="proactive-intervention-and-student-support/practice-student.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-communicating-deadlines"><p class="info-card-label">Student Support</p><h3>Communicating Deadlines to Students</h3><p>Learn how to use class announcements, direct student outreach, and feedback boxes to communicate deadlines clearly, consistently, and supportively.</p><div class="info-card-tags"><strong>Search terms:</strong> Deadlines, Class Schedule, Announcements, Direct Outreach, Feedback Box, Missing Work, Student Communication</div><a href="proactive-intervention-and-student-support/communicating-deadlines.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-class-schedule"><p class="info-card-label">Student Support</p><h3>Class Schedule</h3><p>Learn how teachers can use the Class Schedule as a pacing reference point for student outreach, announcements, and conversations with local schools.</p><div class="info-card-tags"><strong>Search terms:</strong> Class Schedule, CTLS, Pacing, Progress Tracker, Student Outreach, Announcements, Local School Communication</div><a href="proactive-intervention-and-student-support/class-schedule.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+      </div></div>
+    </details>
+    <details class="quick-ref" style="display:block!important;visibility:visible!important;">
+      <summary><span class="quick-plus">+</span>Professionalism and Collaboration</summary>
+      <div class="quick-ref-body"><div class="card-grid">
+        <div class="info-card" id="card-pl-course"><p class="info-card-label">Online Teaching Practices</p><h3>Professional Learning Course</h3><p>Learn how to access the CVA New Teacher Training course in CTLS, find professional learning content, and move through the onboarding course.</p><div class="info-card-tags"><strong>Search terms:</strong> Professional Learning, New Teacher Training, CTLS, Graduation Cap, My Coursework, Onboarding</div><a href="professionalism-and-collaboration/professional-learning-course.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-ipr"><p class="info-card-label">Online Teaching Practices</p><h3>Instructional Practice Review</h3><p>Learn how CVA uses the Instructional Practice Review to support growth, clarify instructional expectations, and strengthen asynchronous teaching practices.</p><div class="info-card-tags"><strong>Search terms:</strong> IPR, Instructional Practice Review, Teacher Growth, Instructional Expectations, Feedback, Professional Learning</div><a href="professionalism-and-collaboration/instructional-practice-review.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-weekly-routine"><p class="info-card-label">Online Teaching Practices</p><h3>Weekly Facilitation Routine</h3><p>Use this guide to build a consistent weekly routine for checking progress, grading work, providing feedback, communicating proactively, and keeping the gradebook current.</p><div class="info-card-tags"><strong>Search terms:</strong> Weekly Routine, Progress Tracker, Grading, Feedback, Communication, Gradebook, Student Support</div><a href="professionalism-and-collaboration/weekly-routine.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-accessibility-by-design"><p class="info-card-label">Online Teaching Practices</p><h3>Accessibility Guidelines for Digital Resources</h3><p>Learn how to create accessible announcements, Canva graphics, videos, documents, and digital supplements for asynchronous CVA classes.</p><div class="info-card-tags"><strong>Search terms:</strong> Accessibility, WCAG, Canva, ALT Text, Captions, Transcripts, Digital Resources, Announcements, Videos</div><a href="professionalism-and-collaboration/accessibility-by-design.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-views-and-tools"><p class="info-card-label">Professional Learning</p><h3>Views and Tools</h3><p>Learn how to access Views &amp; Tools in CTLS, review student roster information, monitor progress, filter student data, and use available tools to support students more intentionally.</p><div class="info-card-tags"><strong>Search terms:</strong> Views &amp; Tools, CTLS, My Students, Notes, Category, Tags, Profile, Progress Tracker, Student Roster, Export, Student Data</div><a href="professionalism-and-collaboration/views-and-tools.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-synergy-gradebook"><p class="info-card-label">Professional Learning</p><h3>Synergy Gradebook</h3><p>Learn how CTLS and Synergy work together, set up Assignment Types and Weights, sync grades, verify course averages, and troubleshoot common gradebook issues.</p><div class="info-card-tags"><strong>Search terms:</strong> Synergy, Gradebook, CTLS Sync, Assignment Types, Assignment Weights, StudentVUE, ParentVUE, Course Average</div><a href="professionalism-and-collaboration/synergy.gradebook.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+      <div class="info-card" id="card-ctls-training-center">
+  <p class="info-card-label">CTLS SUPPORT</p>
+
+  <h3>CTLS Training Center</h3>
+
+  <p>
+   Access the CTLS Training Center to find pages for different CTLS tools and functions. Each page includes tutorials and resources to help you use that feature.
+  </p>
+
+  <div class="info-card-tags">
+    <strong>Search terms:</strong>
+    Coursework, Direct Messages, Class Board, Announcements, Assessments,
+    Gradebook, Progress Tracker, Digital Classroom,
+    Pages, Booklets, Assignments, Discussions, Student Support Site, CTLS PL Opportunities, Enhancement Requests
+  </div>
+
+  <a
+    href="https://cobbk12org.sharepoint.com/sites/CTLS"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn-red">
+    Click here to view more
+  </a>
+</div>
+      </div></div>
+    </details>
+
+<details class="quick-ref" style="display:block!important;visibility:visible!important;">
+      <summary><span class="quick-plus">+</span>Technology How-to Guides</summary>
+      <div class="quick-ref-body"><div class="card-grid">
+        <div class="info-card" id="card-pl-course"><p class="info-card-label">Technology</p><h3>Keyboard Shortcuts</h3><p>A quick-reference guide to common keyboard shortcuts for both Windows PCs and Macs. Find shortcuts for editing, formatting, browser navigation, screenshots, screen controls, switching applications, and keyboard accessibility.</p><div class="info-card-tags"><strong>Search terms:</strong> Keyboard Shortcuts, Copy and Paste, Undo and Redo, Screenshot, Screen Capture, Browser Shortcuts, Refresh Page, Hard Refresh, Zoom, Accessibility Shortcuts</div><a href="professionalism-and-collaboration/keyboard-shortcuts.html" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div>
+        <div class="info-card" id="card-pl-course"><p class="info-card-label">Technology</p><h3>Keyboard Shortcuts</h3><p>Search Panopto’s support site for step-by-step guides: Create, Share, View, and Edit.</p><div class="info-card-tags"><strong>Search terms:</strong> Panopto, Create, Share, Video, Edit</div><a href="https://support.panopto.com/s/" target="_blank" rel="noopener" class="btn-red">Click here to view more</a></div> 
+
+</div></div>
+    </details>
+  </div>
+
+  <div class="cva-footer"><p><strong>Class. Virtually. Anywhere.</strong></p></div>
+</div>
+
+<script>
+  // ── Expectation card modal ──
+  const overlay = document.getElementById("exp-modal-overlay");
+  const modalTitle = document.getElementById("exp-modal-title");
+  const modalBody = document.getElementById("exp-modal-body");
+  const closeBtn = document.getElementById("exp-modal-close");
+
+  document.querySelectorAll(".expectation-card").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      modalTitle.textContent = btn.dataset.title;
+      modalBody.innerHTML = btn.dataset.body;
+      overlay.classList.add("open");
+      closeBtn.focus();
+    });
+  });
+
+  function closeModal() {
+    overlay.classList.remove("open");
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", function(e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeModal();
+  });
+</script>
+
+<script src="events.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
