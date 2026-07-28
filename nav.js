@@ -63,6 +63,13 @@
         { title: "Views and Tools",       href: BASE + "/professionalism-and-collaboration/views-and-tools.html" },
          { title: "Weekly Facilitation Routine",   href: BASE + "/professionalism-and-collaboration/weekly-routine.html" },
         { title: "Synergy Gradebook Setup",       href: BASE + "/professionalism-and-collaboration/synergy.gradebook.html" },
+          ],
+    },
+    {
+      label: "Technology How-To Guides",
+      pages: [
+ { title: "Keyboard Shortcuts",       href: BASE + "/keyboard-shortcuts.html" },
+        { title: "Panopto, href: BASE + "https://support.panopto.com/s/" },
       ],
     },
   ];
