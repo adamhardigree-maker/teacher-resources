@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Common Keyboard Shortcuts | CVA Teacher Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+
+  .cva-wrap h1,
+  .cva-wrap h2,
+  .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Hero */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* Main cards */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  .cva-callout {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  /* Grids and cards */
+  .cva-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+    min-width: 0;
+  }
+
+  .cva-card p:last-child { margin-bottom: 0 !important; }
+
+  /* Shortcut table */
+  .cva-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #d9dde3;
+    border-radius: 12px;
+  }
+
+  .cva-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    background: #ffffff;
+  }
+
+  .cva-table th {
+    background: #f7f8fa;
+    color: #000000;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.25;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    padding: 14px 16px;
+    border-bottom: 2px solid #bb0000;
+  }
+
+  .cva-table td {
+    font-size: 15px;
+    line-height: 1.55;
+    vertical-align: middle;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e4e7eb;
+  }
+
+  .cva-table tr:last-child td { border-bottom: none; }
+  .cva-table tbody tr:nth-child(even) { background: #fafbfc; }
+  .cva-table td:first-child { font-weight: 700; }
+
+  /* Keyboard keys */
+  .cva-key {
+    display: inline-block;
+    background: #f1f3f5;
+    border: 1px solid #c7ccd1;
+    border-bottom: 3px solid #aeb4ba;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin: 2px 1px;
+    color: #222222;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .cva-shortcut-line {
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0 0 9px 0;
+  }
+
+  .cva-shortcut-line:last-child { margin-bottom: 0; }
+
+  /* Shared labels */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* Footer */
+  .cva-footer-rule {
+    border: none;
+    border-top: 1px solid #d9dde3;
+    margin: 14px 0;
+  }
+
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    body { padding-top: 0 !important; }
+
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-grid-2,
+    .cva-grid-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
+
+  <!-- HERO -->
+  <div class="cva-hero">
+    <span class="cva-eyebrow">CVA Teacher Resource</span>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Common Keyboard Shortcuts</h1>
+    <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0 0 20px 0;"><strong>Keyboard shortcuts can save time when creating lessons, managing files, navigating CTLS, and working in a web browser.</strong> Use the Windows PC or Mac shortcut that matches your device.</p>
+    <div class="cva-callout">
+      <p style="font-size: 16px; line-height: 1.6; margin: 0; color: #222222;"><strong>Quick Reminder:</strong> Windows shortcuts usually use <strong>Ctrl</strong>. Mac shortcuts usually use <strong>Command (⌘)</strong>.</p>
+    </div>
+  </div>
+
+  <!-- READING THE SHORTCUTS -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Before You Begin</span>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Reading the Shortcuts</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Hold the first key, then press the next key. For example, <span class="cva-key">Ctrl</span> + <span class="cva-key">C</span> means hold <strong>Ctrl</strong> and press <strong>C</strong>. Some shortcuts may vary slightly by browser or application.</p>
+  </div>
+
+  <!-- ESSENTIAL EDITING -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Everyday Tasks</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Essential Editing</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 18px 0;">These shortcuts work in most documents, text editors, web browsers, and digital tools.</p>
+
+    <div class="cva-table-wrap" role="region" aria-label="Essential editing shortcuts" tabindex="0">
+      <table class="cva-table">
+        <thead>
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Windows PC</th>
+            <th scope="col">Mac</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Copy</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">C</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">C</span></td>
+          </tr>
+          <tr>
+            <td>Cut</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">X</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">X</span></td>
+          </tr>
+          <tr>
+            <td>Paste</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">V</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">V</span></td>
+          </tr>
+          <tr>
+            <td>Paste without formatting<br><span style="display:block; font-size:13px; font-weight:400; color:#5b6770;">Supported in many browsers and applications</span></td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">Shift</span> + <span class="cva-key">V</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">Shift</span> + <span class="cva-key">V</span></td>
+          </tr>
+          <tr>
+            <td>Undo</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">Z</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">Z</span></td>
+          </tr>
+          <tr>
+            <td>Redo</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">Y</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">Shift</span> + <span class="cva-key">Z</span></td>
+          </tr>
+          <tr>
+            <td>Select all</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">A</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">A</span></td>
+          </tr>
+          <tr>
+            <td>Save</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">S</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">S</span></td>
+          </tr>
+          <tr>
+            <td>Find on page or in document</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">F</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">F</span></td>
+          </tr>
+          <tr>
+            <td>Print</td>
+            <td><span class="cva-key">Ctrl</span> + <span class="cva-key">P</span></td>
+            <td><span class="cva-key">⌘</span> + <span class="cva-key">P</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TEXT FORMATTING -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Working With Text</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Text Formatting</h2>
+    <div class="cva-grid-3">
+      <div class="cva-card">
+        <span class="cva-card-label">Formatting</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Bold</h3>
+        <p class="cva-shortcut-line"><strong>Windows:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">B</span></p>
+        <p class="cva-shortcut-line"><strong>Mac:</strong> <span class="cva-key">⌘</span> + <span class="cva-key">B</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Formatting</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Italic</h3>
+        <p class="cva-shortcut-line"><strong>Windows:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">I</span></p>
+        <p class="cva-shortcut-line"><strong>Mac:</strong> <span class="cva-key">⌘</span> + <span class="cva-key">I</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Formatting</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Underline</h3>
+        <p class="cva-shortcut-line"><strong>Windows:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">U</span></p>
+        <p class="cva-shortcut-line"><strong>Mac:</strong> <span class="cva-key">⌘</span> + <span class="cva-key">U</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BROWSER AND TABS -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Web Browsing</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Browser and Tabs</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 18px 0;">Use these shortcuts to move more quickly between webpages, tabs, and links.</p>
+
+    <div class="cva-grid-2">
+      <div class="cva-card">
+        <span class="cva-card-label">Tabs</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Open and Close Tabs</h3>
+        <p class="cva-shortcut-line"><strong>New tab:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">T</span> / <span class="cva-key">⌘</span> + <span class="cva-key">T</span></p>
+        <p class="cva-shortcut-line"><strong>Close tab:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">W</span> / <span class="cva-key">⌘</span> + <span class="cva-key">W</span></p>
+        <p class="cva-shortcut-line"><strong>Reopen closed tab:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">Shift</span> + <span class="cva-key">T</span> / <span class="cva-key">⌘</span> + <span class="cva-key">Shift</span> + <span class="cva-key">T</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Tabs</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Move Between Tabs</h3>
+        <p class="cva-shortcut-line"><strong>Next tab:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">Tab</span> / <span class="cva-key">Control</span> + <span class="cva-key">Tab</span></p>
+        <p class="cva-shortcut-line"><strong>Previous tab:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">Shift</span> + <span class="cva-key">Tab</span> / <span class="cva-key">Control</span> + <span class="cva-key">Shift</span> + <span class="cva-key">Tab</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Page Controls</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Refresh a Page</h3>
+        <p class="cva-shortcut-line"><strong>Regular refresh:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">R</span> / <span class="cva-key">⌘</span> + <span class="cva-key">R</span></p>
+        <p class="cva-shortcut-line"><strong>Hard refresh:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">Shift</span> + <span class="cva-key">R</span> or <span class="cva-key">Ctrl</span> + <span class="cva-key">F5</span> / <span class="cva-key">⌘</span> + <span class="cva-key">Shift</span> + <span class="cva-key">R</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Navigation</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Address Bar and Links</h3>
+        <p class="cva-shortcut-line"><strong>Jump to address bar:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">L</span> / <span class="cva-key">⌘</span> + <span class="cva-key">L</span></p>
+        <p class="cva-shortcut-line"><strong>Open link in new tab:</strong> <span class="cva-key">Ctrl</span> + Click / <span class="cva-key">⌘</span> + Click</p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Display</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Zoom</h3>
+        <p class="cva-shortcut-line"><strong>Zoom in:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">Plus</span> / <span class="cva-key">⌘</span> + <span class="cva-key">Plus</span></p>
+        <p class="cva-shortcut-line"><strong>Zoom out:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">Minus</span> / <span class="cva-key">⌘</span> + <span class="cva-key">Minus</span></p>
+        <p class="cva-shortcut-line"><strong>Reset zoom:</strong> <span class="cva-key">Ctrl</span> + <span class="cva-key">0</span> / <span class="cva-key">⌘</span> + <span class="cva-key">0</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WINDOWS AND APPLICATIONS -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Device Navigation</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Windows and Applications</h2>
+    <div class="cva-grid-3">
+      <div class="cva-card">
+        <span class="cva-card-label">Multitasking</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Switch Between Open Apps</h3>
+        <p class="cva-shortcut-line"><strong>Windows:</strong> <span class="cva-key">Alt</span> + <span class="cva-key">Tab</span></p>
+        <p class="cva-shortcut-line"><strong>Mac:</strong> <span class="cva-key">⌘</span> + <span class="cva-key">Tab</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Applications</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Close an Application</h3>
+        <p class="cva-shortcut-line"><strong>Windows:</strong> <span class="cva-key">Alt</span> + <span class="cva-key">F4</span></p>
+        <p class="cva-shortcut-line"><strong>Mac:</strong> <span class="cva-key">⌘</span> + <span class="cva-key">Q</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Security</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Lock Your Screen</h3>
+        <p class="cva-shortcut-line"><strong>Windows:</strong> <span class="cva-key">Windows key</span> + <span class="cva-key">L</span></p>
+        <p class="cva-shortcut-line"><strong>Mac:</strong> <span class="cva-key">Control</span> + <span class="cva-key">⌘</span> + <span class="cva-key">Q</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Capture Your Screen</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Screenshots</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 18px 0;">Screenshots are useful for creating directions, documenting an issue, or showing students where to locate a tool.</p>
+
+    <div class="cva-grid-2">
+      <div class="cva-card">
+        <span class="cva-card-label">Windows PC</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Windows Screenshot Tools</h3>
+        <p class="cva-shortcut-line"><strong>Capture part of the screen:</strong> <span class="cva-key">Windows key</span> + <span class="cva-key">Shift</span> + <span class="cva-key">S</span></p>
+        <p class="cva-shortcut-line"><strong>Copy the full screen:</strong> <span class="cva-key">PrtScn</span></p>
+        <p class="cva-shortcut-line"><strong>Save the full screen:</strong> <span class="cva-key">Windows key</span> + <span class="cva-key">PrtScn</span></p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Mac</span>
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 10px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Mac Screenshot Tools</h3>
+        <p class="cva-shortcut-line"><strong>Capture the full screen:</strong> <span class="cva-key">Shift</span> + <span class="cva-key">⌘</span> + <span class="cva-key">3</span></p>
+        <p class="cva-shortcut-line"><strong>Capture part of the screen:</strong> <span class="cva-key">Shift</span> + <span class="cva-key">⌘</span> + <span class="cva-key">4</span></p>
+        <p class="cva-shortcut-line"><strong>Open screenshot and recording tools:</strong> <span class="cva-key">Shift</span> + <span class="cva-key">⌘</span> + <span class="cva-key">5</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEYBOARD NAVIGATION -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Accessibility and Navigation</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 14px 0;">Keyboard Navigation</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 18px 0;">These keys work on both Windows and Mac and can make websites and digital tools easier to navigate without a mouse.</p>
+
+    <div class="cva-grid-3">
+      <div class="cva-card">
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Tab</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Move to the next link, button, or field.</p>
+      </div>
+      <div class="cva-card">
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Shift + Tab</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Move to the previous item.</p>
+      </div>
+      <div class="cva-card">
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Enter</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Open a link or activate a selected control.</p>
+      </div>
+      <div class="cva-card">
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Spacebar</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Select a checkbox, activate a button, or scroll.</p>
+      </div>
+      <div class="cva-card">
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Esc</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Close a menu, dialog box, or full-screen view.</p>
+      </div>
+      <div class="cva-card">
+        <h3 style="font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900; text-transform: uppercase;">Arrow Keys</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Move through menus, lists, and text.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRACTICE TIP -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Practice Tip</span>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">Start With Three</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Choose three shortcuts you use often and practice them for a week. Once they become automatic, add a few more.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
+
+</div>
+
+</body>
+</html>
