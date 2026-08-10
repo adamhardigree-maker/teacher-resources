@@ -11,8 +11,7 @@
      Add new pages here. The menu rebuilds automatically.
   ──────────────────────────────────────────────────────────── */
 
-  const BASE =
-    "https://adamhardigree-maker.github.io/teacher-resources";
+  const BASE = window.location.origin;
 
   const NAV = [
     {
@@ -484,15 +483,8 @@
 
   const bannerImg = document.createElement("img");
 
-  const pathParts = window.location.pathname
-    .split("/")
-    .filter(Boolean);
-
-  const isRoot = pathParts.length <= 2;
-
   bannerImg.src =
-    (isRoot ? "" : "../") +
-    "images/Website Banner Teacher Resources Hub.png";
+    "/images/Website Banner Teacher Resources Hub.png";
 
   bannerImg.alt = "Cobb Virtual Academy Teacher Resources";
 
