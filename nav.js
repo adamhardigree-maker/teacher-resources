@@ -3,6 +3,25 @@
    Usage: Add ONE line to every resource page, just before </body>:
      <script src="nav.js"></script>
    ============================================================ */
+  /* ── Google Analytics ───────────────────────────────────── */
+
+  const GA_ID = "G-444E1VXNYV";
+
+  const gaScript = document.createElement("script");
+  gaScript.async = true;
+  gaScript.src =
+    "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", GA_ID);
 
 (function () {
   "use strict";
