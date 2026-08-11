@@ -778,7 +778,7 @@ gtag("config", GA_ID);
   disclaimer.innerHTML = `
     <div class="cva-disclaimer-inner">
       <p>
-        This resource is intended to support Cobb Virtual Academy teachers. Content is provided for instructional reference and may be updated as procedures and resources change.
+        This resource is intended to support Cobb Virtual Academy teachers. Content is provided for instructional reference by CVA Teachers only and may be updated as procedures and resources change.
       </p>
     </div>
   `;
