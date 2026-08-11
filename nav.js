@@ -3,25 +3,26 @@
    Usage: Add ONE line to every resource page, just before </body>:
      <script src="nav.js"></script>
    ============================================================ */
-  /* ── Google Analytics ───────────────────────────────────── */
 
-  const GA_ID = "G-444E1VXNYV";
+/* ── Google Analytics ───────────────────────────────────── */
 
-  const gaScript = document.createElement("script");
-  gaScript.async = true;
-  gaScript.src =
-    "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+const GA_ID = "G-444E1VXNYV";
 
-  document.head.appendChild(gaScript);
+const gaScript = document.createElement("script");
+gaScript.async = true;
+gaScript.src =
+  "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
 
-  window.dataLayer = window.dataLayer || [];
+document.head.appendChild(gaScript);
 
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
+window.dataLayer = window.dataLayer || [];
 
-  gtag("js", new Date());
-  gtag("config", GA_ID);
+function gtag() {
+  window.dataLayer.push(arguments);
+}
+
+gtag("js", new Date());
+gtag("config", GA_ID);
 
 (function () {
   "use strict";
@@ -463,6 +464,32 @@
       border-top: 2px solid #BB0000;
       margin-top: 8px;
     }
+
+    /* ── Shared site disclaimer ─────────────────────────────── */
+
+    #cva-site-disclaimer {
+      width: 100%;
+      margin-top: 48px;
+      background: #F5F5F5;
+      border-top: 1px solid #C8C7C7;
+      box-sizing: border-box;
+    }
+
+    #cva-site-disclaimer .cva-disclaimer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px 24px;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #666666;
+    }
+
+    #cva-site-disclaimer p {
+      margin: 0;
+    }
   `;
 
   document.head.appendChild(style);
@@ -742,4 +769,20 @@
       toggle.focus();
     }
   });
+
+  /* ── Shared site disclaimer ──────────────────────────────── */
+
+  const disclaimer = document.createElement("footer");
+  disclaimer.id = "cva-site-disclaimer";
+
+  disclaimer.innerHTML = `
+    <div class="cva-disclaimer-inner">
+      <p>
+        This resource is intended to support Cobb Virtual Academy teachers. Content is provided for instructional reference and may be updated as procedures and resources change.
+      </p>
+    </div>
+  `;
+
+  document.body.appendChild(disclaimer);
+
 })();
