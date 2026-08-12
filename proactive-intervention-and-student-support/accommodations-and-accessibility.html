@@ -1,1 +1,919 @@
-<br>>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Student Accommodations in a CVA Class | CVA Teacher Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cva-wrap, .cva-wrap * { box-sizing: border-box; }
+
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+
+  .cva-wrap {
+    font-family: Montserrat, Arial, sans-serif;
+    color: #222222;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Hero ── */
+  .cva-hero {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    border-top: 8px solid #bb0000;
+    padding: 28px 26px;
+  }
+
+  /* ── White card ── */
+  .cva-white {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Gray card ── */
+  .cva-gray {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+
+  /* ── Left-accented card ── */
+  .cva-accent {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  /* ── Callout ── */
+  .cva-callout {
+    background: #f7f8fa;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .cva-callout-mb {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+
+  /* ── Grids ── */
+  .cva-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── Accessibility tool grid ── */
+  .cva-tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .cva-card {
+    background: #ffffff;
+    border: 1px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  /* ── Step stack ── */
+  .cva-step-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .cva-step-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .cva-step-copy {
+    flex: 1 1 420px;
+    min-width: 0;
+  }
+
+  .cva-step-image {
+    flex: 1 1 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .cva-step-image a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .cva-step-image img {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+  }
+
+  .cva-enlarge-note {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #666666;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  /* ── Details / accordion for tools ── */
+  .cva-tool-item {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .cva-tool-item summary {
+    background: #ffffff;
+    border: 2px solid #d9dde3;
+    border-left: 6px solid #bb0000;
+    border-radius: 12px;
+    padding: 14px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100px;
+  }
+
+  .cva-tool-item summary::-webkit-details-marker { display: none; }
+
+  .cva-tool-item[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .cva-tool-body {
+    background: #bb0000;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  /* ── Footer ── */
+  .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
+  .cva-footer {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 22px;
+    color: #63666A;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Shared text ── */
+  .cva-eyebrow {
+    font-size: 12px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  .cva-card-label {
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #bb0000;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .cva-wrap {
+      padding: 12px 12px 36px;
+      gap: 12px;
+    }
+
+    .cva-hero,
+    .cva-white,
+    .cva-gray,
+    .cva-accent {
+      padding: 20px 18px;
+    }
+
+    .cva-grid-2,
+    .cva-grid-3,
+    .cva-grid-4,
+    .cva-tool-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cva-step-card {
+      gap: 16px;
+    }
+
+    .cva-step-image {
+      flex-basis: 100%;
+      min-width: 0;
+    }
+
+    .cva-footer { font-size: 18px; }
+  }
+</style>
+</head>
+<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+
+<div class="cva-wrap">
+
+  <!-- HERO -->
+  <div class="cva-hero">
+    <span class="cva-eyebrow">Student Support</span>
+    <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.05; color: #000000; font-weight: 900; text-transform: uppercase; margin: 0 0 14px 0;">Student Accommodations in a CVA Class</h1>
+    <p style="font-size: 17px; line-height: 1.7; color: #222222; margin: 0;">Some students in your CVA class may have approved accommodations through an IEP or 504 Plan. As a CVA Teacher, your role is to review, understand, and implement the approved accommodations.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Overview</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Know Where to Look and Who to Contact</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Accommodations help ensure students have access to the supports they are approved to receive. In CVA, you may learn about a student&rsquo;s accommodations in more than one way, and CVA Teacher Support will help coordinate information when needed.</p>
+    <div class="cva-callout">
+      <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;"><strong>Important:</strong> Accommodations in CVA may look different from a face-to-face classroom. Review the details provided and reach out to <strong>CVA Teacher Support</strong> with questions or concerns.</p>
+    </div>
+  </div>
+
+  <!-- HOW YOU WILL KNOW -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">How You&rsquo;ll Know</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">How You May Learn a Student Has IEP or 504 Plan Accommodations</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">There are primarily two ways you may become aware that a student has approved accommodations.</p>
+    <div class="cva-grid-3">
+
+      <div class="cva-card">
+        <span class="cva-card-label">Source 1</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">Synergy</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">You can access student information in Synergy to review details connected to the student&rsquo;s plan. If a student self-reports accommodations through Flex Ed or by contacting you directly, always verify that information is accurate by checking Student Accommodations in Synergy.</p>
+      </div>
+
+      <div class="cva-card">
+        <span class="cva-card-label">Source 2</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">CVA Student Support</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">CVA Student Support will provide additional details as needed to support the implementation of accommodations.</p>
+      </div>
+
+    </div>
+  </div>
+
+<!-- TEACHER ROLE -->
+
+<div class="cva-white">
+  <span class="cva-eyebrow">Your Role</span>
+
+  <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">
+    Your Role as a CVA Teacher
+  </h2>
+
+  <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">
+    Once you are aware of a student&rsquo;s approved accommodations, use the guidance provided to support the student appropriately in the CVA learning environment.
+  </p>
+
+  <div class="cva-step-stack">
+
+<div class="cva-card">
+  <span class="cva-card-label">Step 1</span>
+
+  <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">
+    Review and Implement Approved Accommodations
+  </h3>
+
+  <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">
+    Review the accommodation information provided and implement the approved accommodations. Remember that CVA accommodations may be different from accommodations used in a face-to-face classroom.
+  </p>
+</div>
+
+<div class="cva-card">
+  <span class="cva-card-label">Step 2</span>
+
+  <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">
+    Case Managers and Outside Agencies
+  </h3>
+
+  <p style="font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; color: #333333;">
+    If a case manager, counselor, or outside agency contacts you requesting student information, progress updates, or documentation, <strong>DO NOT </strong>provide the information directly. Instead, direct the request to <strong>CVA Student Support</strong> so the appropriate staff can assist, and notify <strong>CVA Teacher Support</strong>.
+  </p>
+
+  <div style="background:#f5f5f5; border-left:4px solid #bb0000; border-radius:8px; padding:14px 16px; box-sizing:border-box;">
+    <p style="font-size:14px; line-height:1.6; margin:0 0 6px 0; color:#000000; font-weight:800;">
+      Suggested Response
+    </p>
+
+    <p style="font-size:15px; line-height:1.6; margin:0; color:#333333;">
+      Thank you for reaching out. Requests for student information from counselors, case managers, or outside agencies should be directed to <strong>CVA Student Support</strong>. You can reach them by emailing cvastudentsupport@cobbk12.org or calling 678.581.6791. Thank you for your understanding.
+    </p>
+  </div>
+</div>
+
+<div class="cva-card">
+  <span class="cva-card-label">Step 3</span>
+
+  <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">
+    Ask Questions Early
+  </h3>
+
+  <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">
+    Send questions or concerns to <strong>CVA Teacher Support</strong> so CVA Teacher Support can help coordinate next steps.
+  </p>
+</div>
+
+  </div>
+</div>
+
+  <!-- VIEWING 504 PLANS -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Access</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Viewing 504 Plans</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">All teachers have access to their respective students’ 504 Plans of Accommodations via Synergy Gradebook.</p>
+
+    <div class="cva-step-stack">
+
+      <div class="cva-card cva-step-card">
+        <div class="cva-step-copy">
+          <span class="cva-card-label">Step 1</span>
+          <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Synergy Seating Chart</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Once signed in to your <strong>Synergy Seating Chart</strong>, reference the email sent to you separately (each term) about which students are currently served through a 504 plan.</p>
+        </div>
+        <div class="cva-step-image">
+          <a href="images/504-step-1.png" target="_blank" rel="noopener noreferrer" aria-label="Open image in a new tab to enlarge"><img src="images/504-step-1.png" alt="Synergy Seating Chart showing student tiles; select a student's picture to view additional student options."></a>
+          <span class="cva-enlarge-note">Click image to enlarge</span>
+        </div>
+      </div>
+
+      <div class="cva-card cva-step-card">
+        <div class="cva-step-copy">
+          <span class="cva-card-label">Step 2</span>
+          <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Finding the 504 Plan</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Once you have identified a specific student with a 504 plan, click on that  <strong>student’s picture</strong> and select <strong>504 Plan</strong> from the the pop-up menu. The student’s most recent, latest finalized 504 Plan of Accommodations will then open up as a PDF.</p>
+        </div>
+        <div class="cva-step-image">
+          <a href="images/504-step-2.png" target="_blank" rel="noopener noreferrer" aria-label="Open image in a new tab to enlarge"><img src="images/504-step-2.png" alt="Synergy Seating Chart with a student menu open and the 504 Plan option circled in red."></a>
+          <span class="cva-enlarge-note">Click image to enlarge</span>
+        </div>
+      </div>
+
+      <div class="cva-card cva-step-card">
+        <div class="cva-step-copy">
+          <span class="cva-card-label">Step 3</span>
+          <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Accommodation Types</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Scroll down to the <strong>Accommodations Types</strong> section to view that student’s specific accommodations.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VIEWING IEPs -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">Access</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Viewing IEP Plans</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Synergy Gradebook gives teachers immediate access to all of the accommodations for any student in their courses who is served through Special Education. </p>
+
+    <div class="cva-step-stack">
+
+      <div class="cva-card cva-step-card">
+        <div class="cva-step-copy">
+          <span class="cva-card-label">Step 1</span>
+          <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Finding the Students</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Once signed in to your Synergy Gradebook, hover your cursor over the <strong>Home</strong> tab at the top.</p>
+        </div>
+        <div class="cva-step-image">
+          <a href="images/iep-step-1.png" target="_blank" rel="noopener noreferrer" aria-label="Open image in a new tab to enlarge"><img src="images/iep-step-1.png" alt="Synergy Gradebook with the Home menu open and the Home tab circled in red."></a>
+          <span class="cva-enlarge-note">Click image to enlarge</span>
+        </div>
+      </div>
+
+      <div class="cva-card cva-step-card">
+        <div class="cva-step-copy">
+          <span class="cva-card-label">Step 2</span>
+          <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Student Accommodations</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">From the menu that drops down, select <strong>Student Accommodations</strong>. All students who are served through Special Education will appear in a list on the left-hand side of the screen.</p>
+        </div>
+        <div class="cva-step-image">
+          <a href="images/iep-step-2.png" target="_blank" rel="noopener noreferrer" aria-label="Open image in a new tab to enlarge"><img src="images/iep-step-2.png" alt="Synergy Gradebook Home menu with Student Accommodations circled in red."></a>
+          <span class="cva-enlarge-note">Click image to enlarge</span>
+        </div>
+      </div>
+
+      <div class="cva-card cva-step-card">
+        <div class="cva-step-copy">
+          <span class="cva-card-label">Step 3</span>
+          <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">Viewing the accommodations</h3>
+          <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">To access each student’s specific accommodations, simply click on a <strong>student’s picture</strong> and the list of accommodations from that student’s last finalized IEP will appear.</p>
+        </div>
+        <div class="cva-step-image">
+          <a href="images/iep-step-3.png" target="_blank" rel="noopener noreferrer" aria-label="Open image in a new tab to enlarge"><img src="images/iep-step-3.png" alt="Synergy Student Accommodations screen showing a selected student and a list of accommodations from the student's IEP."></a>
+          <span class="cva-enlarge-note">Click image to enlarge</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--STANDARD ACCOMMODATIONS  -->
+<!-- ACCESSIBILITY TOOLS -->
+<div class="cva-gray">
+
+  <span class="cva-eyebrow">Accommodations</span>
+
+  <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">
+    Universal Accommodations in Online Learning
+  </h2>
+
+  <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">
+    Students with an IEP or 504 Plan can still receive accommodations and support in CVA courses. Because learning looks a little different in an online environment, not every accommodation may apply in the same way it does face-to-face. Our goal is to provide the supports that can be reasonably implemented in the virtual setting so students can succeed in their online classroom.
+  </p>
+
+  <div class="cva-tool-grid">
+
+    <!-- AGENDA -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/agenda.png"
+          alt="Calendar icon representing an agenda or class schedule."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Agenda
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          The class schedule is located in Course Information and includes all due dates for the term. Encourage students to print or regularly reference the schedule to help them track due dates, completed coursework, and grades.
+      </div>
+    </details>
+
+    <!-- EXTENDED TIME FOR TESTS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/extended-time-tests.png"
+          alt="Hourglass icon representing extended time for tests."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Extended Time: Tests
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+A timer may appear during quizzes and tests, but it does not automatically end the assessment when time expires. The timer allows teachers to monitor how long a student spends on the assessment. Students who receive extended time may simply continue working beyond the displayed time as needed.        </p>
+      </div>
+    </details>
+
+    <!-- EXTENDED TIME FOR ASSIGNMENTS & PROJECTS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/extended-time-projects.png"
+          alt="Clock icon representing extended time for assignments and projects."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Extended Time: Assignments &amp; Projects
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+Students have 24/7 access to course instruction, assignments, and assessments once enrolled in CVA. Because all due dates are provided on the Class Schedule at the beginning of the term, students can plan ahead and begin assignments early when additional time is needed.
+
+Students whose health needs periodically affect their ability to complete coursework may also work ahead when they are able.
+
+After an assignment's due date passes, teachers will mark the item Missing, and a temporary score of 0% will appear in the gradebook. Once the student submits the assignment and it is graded, replace the 0% with the score earned.
+
+<strong>There is no academic penalty for submitting work after an individual assignment due date. However, the midterm and final submission deadlines are firm. These deadlines are listed on the Class Schedule, and all required coursework must be submitted by the applicable deadline.</strong>       </p>
+      </div>
+    </details>
+
+    <!-- COPIES OF NOTES/STUDY GUIDES -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/notes.png"
+          alt="Paper and pencil icon representing notes and study guides."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Copies of Notes &amp; Study Guides
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          Course materials may be printed out and reviewed or highlighted as needed.
+        </p>
+      </div>
+    </details>
+
+    <!-- MONITORING OF STUDENT PROGRESS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/progress.png"
+          alt="Progress path with check marks leading to a target, representing monitoring student progress."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Monitoring of Student Progress
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          Students and families have access to the student's grades in StudentVue and ParentVue and are encouraged to check progress frequently against course schedule due dates.
+        </p>
+      </div>
+    </details>
+
+    <!-- USE OF COMPUTER -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/computer.png"
+          alt="Desktop computer icon representing use of a computer or word processor."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Use of Computer
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+A computer is required to participate in the online course. Students use a computer to access course content, complete assignments and assessments, and submit their work directly through the course.        </p>
+      </div>
+    </details>
+
+
+    <!-- SMALL GROUP TESTING/PREFERENTIAL SEATING -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/small-group.png"
+          alt="Group of three people icon representing small-group testing."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Small Group & Preferential Seating
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          All students work individually on a computer.
+        </p>
+      </div>
+    </details>
+
+    <!-- MARKING ON TESTS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/marking.png"
+          alt="Hand selecting an answer on a computer screen, representing marking answers on tests."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Marking on Tests
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          All assessment answers are entered online.
+        </p>
+      </div>
+    </details>
+
+    <!-- STUDENT SUPPORT -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/support.png"
+          alt="Group of three people icon representing small-group testing."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Student Support
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          The Virtual and Face-to-Face CVA Learning Centers are available for additional student support. Hours are posted on the CVA website.
+        </p>
+      </div>
+    </details>
+
+    <!-- REDUCTION IN NUMBER OF PROBLEMS IN MATHEMATICS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/math.png"
+          alt="Calculator symbols representing mathematics."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Reduction in Math Problems
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          All practice assignments and mastery quizzes have only 10 items; practice assignment items are scaffolded to ensure mastery of concepts.
+        </p>
+      </div>
+    </details>
+
+    <!-- REPHRASING/CLARIFYING/CHUNKING ASSIGNMENTS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/chunking.png"
+          alt="Four separated blocks representing chunking or breaking work into smaller parts."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Chunking
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          Students should contact their teacher(s) with specific questions and can move to the next lesson while waiting for a response. Teachers will reply within 24 hours.
+        </p>
+      </div>
+    </details>
+
+    <!-- READ ALOUD FOR ASSESSMENTS -->
+    <details class="cva-tool-item">
+      <summary>
+        <img
+          src="images/learning-center.png"
+          alt="Teacher assisting a student at a computer, representing the CVA Learning Center."
+          style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;"
+        >
+
+        <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">
+          Proctoring
+        </span>
+
+        <span style="font-size: 11px; color: #999999; font-style: italic;">
+          Click to learn more
+        </span>
+      </summary>
+
+      <div class="cva-tool-body">
+        <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">
+          Any adult can read a test aloud for a student.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+  <!-- ACCESSIBILITY TOOLS -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Accessibility Tools</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 12px 0;">Built-In Supports in CTLS Student</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0 0 20px 0;">Students can locate Accessibility Tools in the top-right corner of CTLS Student. These tools can support reading, viewing, listening, and reviewing course content.</p>
+    <div class="cva-callout-mb">
+      <p style="font-size: 16px; line-height: 1.7; margin: 0; color: #222222;"><strong>Teacher Tip:</strong> These tools may support all students, not only students with formal accommodations. Encourage students to use the tools that help them access and understand course content.</p>
+    </div>
+    <div class="cva-tool-grid">
+
+      <details class="cva-tool-item">
+        <summary>
+          <img src="https://media.cobbk12.org/media/WWWCobb/medialib/line-reader-icon.04aea3129646.png" alt="Line Reader icon" style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;">
+          <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">Line Reader</span>
+          <span style="font-size: 11px; color: #999999; font-style: italic;">Click to learn more</span>
+        </summary>
+        <div class="cva-tool-body">
+          <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">Helps students focus on one line of text at a time by blocking out the rest of the screen. Best for when text feels overwhelming or hard to follow.</p>
+        </div>
+      </details>
+
+      <details class="cva-tool-item">
+        <summary>
+          <img src="https://media.cobbk12.org/media/WWWCobb/medialib/color-contrast-icon.b18dfa129645.png" alt="Color Contrast icon" style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;">
+          <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">Color Contrast</span>
+          <span style="font-size: 11px; color: #999999; font-style: italic;">Click to learn more</span>
+        </summary>
+        <div class="cva-tool-body">
+          <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">Lets students change how text and background colors appear. Best for when text is difficult to see or causes eye fatigue.</p>
+        </div>
+      </details>
+
+      <details class="cva-tool-item">
+        <summary>
+          <img src="https://media.cobbk12.org/media/WWWCobb/medialib/read-aloud-icon.d9e5e7129647.png" alt="Read Aloud icon" style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;">
+          <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">Read Aloud</span>
+          <span style="font-size: 11px; color: #999999; font-style: italic;">Click to learn more</span>
+        </summary>
+        <div class="cva-tool-body">
+          <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">Reads text aloud while students follow along. Best for when students need help understanding complex text or prefer listening.</p>
+        </div>
+      </details>
+
+      <details class="cva-tool-item">
+        <summary>
+          <img src="https://media.cobbk12.org/media/WWWCobb/medialib/closed-caption-icon.63779e129644.png" alt="Captions icon" style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;">
+          <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">Captions</span>
+          <span style="font-size: 11px; color: #999999; font-style: italic;">Click to learn more</span>
+        </summary>
+        <div class="cva-tool-body">
+          <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">Displays spoken words as text during a video. Best for when audio is unclear or students want to read and listen at the same time.</p>
+        </div>
+      </details>
+
+      <details class="cva-tool-item">
+        <summary>
+          <img src="https://media.cobbk12.org/media/WWWCobb/medialib/transcripts-icon.d2804b129648.png" alt="Transcripts icon" style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;">
+          <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">Transcripts</span>
+          <span style="font-size: 11px; color: #999999; font-style: italic;">Click to learn more</span>
+        </summary>
+        <div class="cva-tool-body">
+          <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">Provides a full written version of everything said in a video. Best for studying, reviewing, or looking for specific information.</p>
+        </div>
+      </details>
+
+      <details class="cva-tool-item">
+        <summary>
+          <img src="https://media.cobbk12.org/media/WWWCobb/medialib/audio-description-icon.124dd7129643.png" alt="Audio description icon" style="width: 36px; height: 36px; object-fit: contain; margin-bottom: 8px;">
+          <span style="font-size: 14px; font-weight: 800; color: #222222; display: block; margin-bottom: 3px;">Audio Descriptions</span>
+          <span style="font-size: 11px; color: #999999; font-style: italic;">Click to learn more</span>
+        </summary>
+        <div class="cva-tool-body">
+          <p style="font-size: 13px; line-height: 1.6; color: #ffffff; margin: 0;">Audio descriptions provide spoken explanations of important visual details in a video, including actions, expressions, settings, and on-screen text not covered by dialogue.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- IEP / 504 MEETINGS -->
+  <div class="cva-white">
+    <span class="cva-eyebrow">IEP / 504 Meetings</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">Meeting Attendance and Representation</h2>
+    <div class="cva-grid-2">
+
+      <div class="cva-card">
+        <span class="cva-card-label">Adjunct Teachers</span>
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase;">May Be Invited</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Adjunct teachers may be invited to IEP or 504 meetings, but they are <strong>not required</strong> to attend.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <div class="cva-gray">
+    <span class="cva-eyebrow">Quick Reference</span>
+    <h2 style="font-size: clamp(26px, 4vw, 34px); line-height: 1.15; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 16px 0;">What Should I Do?</h2>
+    <div class="cva-grid-4">
+
+      <div class="cva-card">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">If a student self-reports...</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Review available information in Synergy and contact CVA Teacher Support if you need clarification.</p>
+      </div>
+
+      <div class="cva-card">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">If you need to review...</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">Review the approved accommodations and implement them in your CVA class. You can find the information you need in Synergy.</p>
+      </div>
+
+      <div class="cva-card">
+        <h3 style="font-size: 20px; color: #000000; margin: 0 0 8px 0; font-weight: 900; text-transform: uppercase;">If a CCSD Case Manager requests updates...</h3>
+        <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #333333;">It is appropriate to respond directly to the CCSD Case Manager. Do not, however, provide any student information to any other agency. If you have questions about responding to Case Managers and writing about a student's functioning, reach out to <strong>CVA Teacher Support</strong>.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IMPORTANT REMINDER -->
+  <div class="cva-accent">
+    <span class="cva-eyebrow">Important Reminder</span>
+    <h2 style="font-size: clamp(22px, 3vw, 30px); line-height: 1.2; color: #000000; text-transform: uppercase; font-weight: 900; margin: 0 0 10px 0;">When in Doubt, Contact CVA Teacher Support</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: #333333; margin: 0;">Do not guess about how to interpret or implement accommodations. If you have questions, concerns, or need clarification, contact <strong>cvateachersupport@cobbk12.org</strong>.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <hr class="cva-footer-rule">
+  <p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p>
+
+</div>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>
+
