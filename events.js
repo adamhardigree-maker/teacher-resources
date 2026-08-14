@@ -1,7 +1,7 @@
 window.evTriggerUpload=function(){document.getElementById('ev-fileInput').click();};
 
 (function(){
-  var SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRRMYiPX6uQKZ1tw8Ep2pVMmT86hGzMMHI8JfuQSfKJPUquuXcavHFMgRfIzZUJOg/pub?output=csv';
+  var SHEET_URL = 'https://drive.google.com/file/d/1r_96xyD2yDUBhB0MBV_KOfWXt1JMe0a-/view?usp=sharing';
   var EV_MONTHS=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
   var evEvents=[],evOpenIdx=-1;
 
