@@ -5,12 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Synergy Gradebooks | CVA Teacher Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/images/Website Banner Teacher Resources Hub.png" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+  /* CLS protection: metric-adjusted fallbacks reduce movement while web fonts load. */
+  @font-face {
+    font-family: 'Montserrat Fallback';
+    src: local('Arial');
+    ascent-override: 96.8%;
+    descent-override: 25.1%;
+    line-gap-override: 0%;
+    size-adjust: 101.24%;
+  }
+  @font-face {
+    font-family: 'Oswald Fallback';
+    src: local('Arial');
+    ascent-override: 146.5125%;
+    descent-override: 35.4921%;
+    line-gap-override: 0%;
+    size-adjust: 81.4265%;
+  }
   .cva-wrap, .cva-wrap * { box-sizing: border-box; }
-  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', Arial, sans-serif; }
+  .cva-wrap h1, .cva-wrap h2, .cva-wrap h3 { font-family: 'Oswald', 'Oswald Fallback', Arial, sans-serif; }
   .cva-wrap {
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, 'Montserrat Fallback', Arial, sans-serif;
     color: #222222;
     background: #ffffff;
     max-width: 1100px;
@@ -75,7 +95,7 @@
   .cva-flow-icon {
     width: 48px; height: 48px; background: #bb0000; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 12px; font-family: 'Oswald', Arial, sans-serif;
+    margin: 0 auto 12px; font-family: 'Oswald', 'Oswald Fallback', Arial, sans-serif;
     font-size: 20px; font-weight: 900; color: #ffffff;
   }
 
@@ -93,7 +113,7 @@
   .cva-step-num {
     min-width: 40px; height: 40px; background: #bb0000; color: #ffffff;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-family: 'Oswald', Arial, sans-serif; font-size: 18px; font-weight: 900; flex-shrink: 0;
+    font-family: 'Oswald', 'Oswald Fallback', Arial, sans-serif; font-size: 18px; font-weight: 900; flex-shrink: 0;
   }
   .cva-step-img {
     display: block; width: 100%; max-width: 300px; height: auto;
@@ -104,7 +124,7 @@
   .cva-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .cva-compare-card { background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; overflow: hidden; }
   .cva-compare-header {
-    padding: 12px 16px; font-family: 'Oswald', Arial, sans-serif;
+    padding: 12px 16px; font-family: 'Oswald', 'Oswald Fallback', Arial, sans-serif;
     font-size: 16px; font-weight: 700; text-transform: uppercase;
     color: #ffffff; background: #222222;
   }
@@ -115,7 +135,7 @@
   .cva-section-acc:last-child { margin-bottom: 0; }
   .cva-section-acc > summary {
     background: #222222; color: #ffffff;
-    font-family: 'Oswald', Arial, sans-serif; font-size: 18px; font-weight: 700;
+    font-family: 'Oswald', 'Oswald Fallback', Arial, sans-serif; font-size: 18px; font-weight: 700;
     letter-spacing: .03em; text-transform: uppercase;
     padding: 16px 20px; cursor: pointer; list-style: none;
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
@@ -193,7 +213,7 @@
   /* ── Footer ── */
   .cva-footer-rule { border: none; border-top: 1px solid #d9dde3; margin: 14px 0; }
   .cva-footer {
-    font-family: Oswald, Arial, sans-serif; font-size: 22px; color: #63666A;
+    font-family: Oswald, 'Oswald Fallback', Arial, sans-serif; font-size: 22px; color: #63666A;
     font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 0; text-align: center;
   }
 
@@ -219,7 +239,7 @@
   }
 </style>
 </head>
-<body style="margin: 0; padding-top: 56px; background: #ffffff;">
+<body style="margin: 0; padding-top: 72px; background: #ffffff;">
 
 <div class="cva-wrap">
 
@@ -276,7 +296,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click the <strong>Assignment Types</strong> sub-menu in Synergy. Returning teachers should review existing types to decide if they will be used for the current term.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/assignment-types.png" alt="Synergy Assignment Types screen showing the existing assignment type list for a selected CVA course.">
+            <img class="cva-step-img" src="images/assignment-types.png" alt="Synergy Assignment Types screen showing the existing assignment type list for a selected CVA course." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -290,7 +310,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click the <strong>New</strong> button in the navigation ribbon to begin adding a new Assignment Type.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/click-new.png" alt="Synergy Assignment Types screen with a red circle highlighting the New button in the upper-right corner.">
+            <img class="cva-step-img" src="images/click-new.png" alt="Synergy Assignment Types screen with a red circle highlighting the New button in the upper-right corner." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -305,7 +325,7 @@
                 <div class="cva-warning"><strong>EOC Courses:</strong> EOC classes must have an Assignment Type named <strong>EOC</strong>. Do <em>not</em> apply the CVA prefix to this type. This applies only to EOC courses.</div>
               </div>
             </div>
-            <img class="cva-step-img" src="images/assignment-details.gif" alt="Animated Synergy Assignment Types screen showing assignment details being entered for a new assignment type.">
+            <img class="cva-step-img" src="images/assignment-details.gif" alt="Animated Synergy Assignment Types screen showing assignment details being entered for a new assignment type." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -319,7 +339,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click <strong>Insert</strong> when all options are set. Repeat the process for additional Assignment Types. To correct a mistake, click <strong>Edit</strong>, make your changes, then click <strong>Save</strong>.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/click-insert.png" alt="Synergy Assignment Types screen with a red circle highlighting the Insert button after assignment details are entered.">
+            <img class="cva-step-img" src="images/click-insert.png" alt="Synergy Assignment Types screen with a red circle highlighting the Insert button after assignment details are entered." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -333,7 +353,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Make sure your Assignment Types match the Grading Categories in CTLS. The CVA Course Syllabus is the quickest reference for Assignment Categories and Weights.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/viewassignment-types.png" alt="Synergy Assignment Types screen showing multiple CVA assignment types listed with sequence numbers, due date settings, and color labels.">
+            <img class="cva-step-img" src="images/viewassignment-types.png" alt="Synergy Assignment Types screen showing multiple CVA assignment types listed with sequence numbers, due date settings, and color labels." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -347,7 +367,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">If you notice a mistake in the Assignment Types, click <strong>Edit</strong> to view all editable rows and details. Once you have updated the information, click <strong>Save</strong>.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/adjust-save.gif" alt="Animated Synergy Assignment Types screen showing editable assignment type rows and the Save option after changes are made.">
+            <img class="cva-step-img" src="images/adjust-save.gif" alt="Animated Synergy Assignment Types screen showing editable assignment type rows and the Save option after changes are made." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -378,7 +398,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">After adding Assignment Types, click the <strong>Grade Book Setup</strong> tab in Synergy.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/gradebook-setup.png" alt="Synergy Gradebook Setup screen with a red circle highlighting the Grade Book Setup tab near the top of the page.">
+            <img class="cva-step-img" src="images/gradebook-setup.png" alt="Synergy Gradebook Setup screen with a red circle highlighting the Grade Book Setup tab near the top of the page." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -392,7 +412,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select the <strong>Assignment Weighting</strong> tab to apply category weights.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/weighting-tab.png" alt="Synergy Gradebook Setup screen with a red circle highlighting the Assignment Weighting tab.">
+            <img class="cva-step-img" src="images/weighting-tab.png" alt="Synergy Gradebook Setup screen with a red circle highlighting the Assignment Weighting tab." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -406,7 +426,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Enter the <strong>Weights</strong> for each Assignment Type. Consult the CVA Course Syllabus for correct values. Weights must total <strong>100%</strong> for each class.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/assign weights.png" alt="Synergy Assignment Weighting screen with a red arrow pointing to the Weight percentage field for an assignment type.">
+            <img class="cva-step-img" src="images/assign weights.png" alt="Synergy Assignment Weighting screen with a red arrow pointing to the Weight percentage field for an assignment type." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -420,7 +440,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">From the dropdown, select <strong>Add My Types to District Types</strong>. Then find your CVA courses and check the box to apply settings to those classes.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/dropdown-update.png" alt="Synergy Assignment Weighting screen with a red circle highlighting the dropdown menu and Update button near the top of the page.">
+            <img class="cva-step-img" src="images/dropdown-update.png" alt="Synergy Assignment Weighting screen with a red circle highlighting the dropdown menu and Update button near the top of the page." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -434,7 +454,7 @@
                 <p style="font-size:15px; line-height:1.6; margin:0; color:#333;"><strong>Be sure to click Update.</strong> Without clicking Update, your Assignment Weighting details will not be saved to your Synergy Gradebook.</p>
               </div>
             </div>
-            <img class="cva-step-img" src="images/update.png" alt="Synergy Assignment Weighting screen with a red circle highlighting the Update button used to save assignment weighting settings.">
+            <img class="cva-step-img" src="images/update.png" alt="Synergy Assignment Weighting screen with a red circle highlighting the Update button used to save assignment weighting settings." loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -450,17 +470,17 @@
         <div class="cva-grid">
           <div class="cva-info-card">
             <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Teacher Type Defaults</h3>
-            <img src="images/teacher-type-default.png" alt="Synergy Gradebook Settings screen with a red circle highlighting the Teacher Type Defaults section and the Add My Types to the District Types option." style="display:block; width:100%; height:auto; margin:0 0 10px; border-radius:12px;">
+            <img src="images/teacher-type-default.png" alt="Synergy Gradebook Settings screen with a red circle highlighting the Teacher Type Defaults section and the Add My Types to the District Types option." style="display:block; width:100%; height:auto; margin:0 0 10px; border-radius:12px;" loading="lazy" decoding="async">
             <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In <strong>Teacher Type Defaults</strong>, select <strong>Add My Types to the District Types</strong>.</p>
           </div>
           <div class="cva-info-card">
             <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Grading Period</h3>
-            <img src="images/grading-period-default.png" alt="Synergy Gradebook Settings screen with a red circle highlighting the Grading Period Default For New Assignments section." style="display:block; width:100%; height:auto; margin:0 0 10px; border-radius:12px;">
+            <img src="images/grading-period-default.png" alt="Synergy Gradebook Settings screen with a red circle highlighting the Grading Period Default For New Assignments section." style="display:block; width:100%; height:auto; margin:0 0 10px; border-radius:12px;" loading="lazy" decoding="async">
             <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In <strong>Grading Period Default For New Assignments</strong>, select <strong>Assignment Due Date</strong>. This ensures grades calculate correctly and in the correct grading period.</p>
           </div>
           <div class="cva-info-card">
             <h3 style="font-size:18px; color:#000; font-weight:900; text-transform:uppercase; margin:0 0 8px 0;">Grade Rounding</h3>
-            <img src="images/grade-rounding.png" alt="Synergy Gradebook Settings screen with a red circle highlighting the Default Final Grade Rounding Settings section." style="display:block; width:100%; height:auto; margin:0 0 10px; border-radius:12px;">
+            <img src="images/grade-rounding.png" alt="Synergy Gradebook Settings screen with a red circle highlighting the Default Final Grade Rounding Settings section." style="display:block; width:100%; height:auto; margin:0 0 10px; border-radius:12px;" loading="lazy" decoding="async">
             <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In <strong>Default Final Grade Rounding Settings</strong>, set Class Percentage to <strong>Rounding On</strong> and <strong>2 Decimal Places</strong>. Click Edit, adjust the setting, then Save.</p>
           </div>
         </div>
@@ -469,7 +489,7 @@
           <h3 style="font-size:20px; font-weight:900; color:#000000; margin:0 0 10px 0; text-transform:uppercase;">Class Settings</h3>
           <p style="font-size:16px; line-height:1.7; color:#333333; margin:0 0 18px 0;"><strong>Class Settings in Synergy</strong> are the controls that determine how your gradebook works for a specific class — how grades calculate and how scores are handled. Most settings have already been pre-determined by CCSD, so there is nothing you need to do as a teacher.</p>
           <div class="cva-class-settings-grid">
-            <img src="images/change-rounding.gif" alt="Animated Synergy Class Settings screen showing how to edit Percentage Rounding and select 2 Decimal Places." style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;">
+            <img src="images/change-rounding.gif" alt="Animated Synergy Class Settings screen showing how to edit Percentage Rounding and select 2 Decimal Places." style="display:block; width:100%; max-width:360px; height:auto; margin:0 auto; border-radius:12px;" loading="lazy" decoding="async">
             <p style="font-size:16px; line-height:1.7; color:#333333; margin:0;"><strong>One Class Setting that varies from school to school is Percentage Rounding. CVA rounds using 2 Decimal Places, so you might need to adjust the setting.</strong> Start by clicking <strong>Edit</strong>. Then, you can either toggle <strong>on/off</strong> for Rounding and select <strong>2 Decimal Places</strong>. Finally, click <strong>Save</strong>.</p>
           </div>
         </div>
@@ -496,7 +516,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">In the Assignment Synergy Settings panel, select the <strong>Term</strong> — Fall is S1, Spring is S2.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/select-term.png" alt="CTLS grading screen with a red circle highlighting the Term dropdown in Assignment Synergy Settings.">
+          <img class="cva-step-img" src="images/select-term.png" alt="CTLS grading screen with a red circle highlighting the Term dropdown in Assignment Synergy Settings." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -510,7 +530,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select your <strong>CVA Section</strong>. You can find this number on the Classroom Profile page in CTLS.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/select-section.png" alt="CTLS grading screen with a red circle highlighting the Section dropdown in Assignment Synergy Settings.">
+          <img class="cva-step-img" src="images/select-section.png" alt="CTLS grading screen with a red circle highlighting the Section dropdown in Assignment Synergy Settings." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -524,7 +544,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select the correct <strong>Synergy Category</strong>. It matches the category name shown beneath the assignment title in the CTLS Grading Center.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/select-category.png" alt="CTLS grading screen with a red circle highlighting the Category dropdown in Assignment Synergy Settings.">
+          <img class="cva-step-img" src="images/select-category.png" alt="CTLS grading screen with a red circle highlighting the Category dropdown in Assignment Synergy Settings." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -538,7 +558,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Select either <strong>Percentage</strong> or <strong>Raw Score</strong> for the Score Type. In simple terms: points are the score; percentage is the score converted to a percent.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/score-type.png" alt="CTLS grading screen with a red circle highlighting the Score Type options in Assignment Synergy Settings.">
+          <img class="cva-step-img" src="images/score-type.png" alt="CTLS grading screen with a red circle highlighting the Score Type options in Assignment Synergy Settings." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -552,7 +572,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Check the box next to <strong>Check to Enable</strong> to activate the Synergy sync for this assignment.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/check-to-enable.png" alt="CTLS grading screen with a red circle highlighting the Check to Enable checkbox in Assignment Synergy Settings.">
+          <img class="cva-step-img" src="images/check-to-enable.png" alt="CTLS grading screen with a red circle highlighting the Check to Enable checkbox in Assignment Synergy Settings." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -566,7 +586,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">Click <strong>Apply to All</strong> to apply the Synergy settings to all students in the class.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/apply-to-all.png" alt="CTLS grading screen with a red circle highlighting the Apply to All button in Assignment Synergy Settings.">
+          <img class="cva-step-img" src="images/apply-to-all.png" alt="CTLS grading screen with a red circle highlighting the Apply to All button in Assignment Synergy Settings." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -580,7 +600,7 @@
               <p style="font-size:15px; line-height:1.6; margin:0; color:#333;">After grading and entering feedback, click <strong>Finish Student</strong>. The CTLS Gradebook syncs to Synergy nightly — <strong>wait 24 hours</strong> for grades to appear in Synergy.</p>
             </div>
           </div>
-          <img class="cva-step-img" src="images/click-to-finish.png" alt="CTLS grading screen with a red arrow pointing to the Finish Student button in the lower-right corner.">
+          <img class="cva-step-img" src="images/click-to-finish.png" alt="CTLS grading screen with a red arrow pointing to the Finish Student button in the lower-right corner." loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -654,7 +674,7 @@
               <li><span>5</span><span>Click <strong>Save Grading Periods</strong>.</span></li>
             </ul>
           </div>
-          <img src="images/grading-period-fix-2.gif" alt="Animated Synergy Gradebook screen showing how to open the Gradebook menu, select Assignments, open the Grading Periods tab, check All for the 6th Six Week Grade Period, and save the grading periods.">
+          <img src="images/grading-period-fix-2.gif" alt="Animated Synergy Gradebook screen showing how to open the Gradebook menu, select Assignments, open the Grading Periods tab, check All for the 6th Six Week Grade Period, and save the grading periods." loading="lazy" decoding="async">
         </div>
       </div>
     </details>
@@ -713,7 +733,7 @@
   <!-- CONTACT -->
   <div class="cva-contact-card">
     <span class="cva-eyebrow">Need Help?</span>
-    <h2 style="font-family:Oswald,Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Have Questions?</h2>
+    <h2 style="font-family:Oswald,'Oswald Fallback',Arial,sans-serif; font-size:clamp(24px,4vw,34px); line-height:1.15; color:#000; text-transform:uppercase; font-weight:900; margin:0 0 12px 0;">Have Questions?</h2>
     <p style="font-size:16px; line-height:1.7; color:#333; margin:0;">CVA Teacher Support can help with gradebook setup, syncing issues, category errors, and anything else related to Synergy. When reaching out, include the assignment name and course section for the fastest resolution.</p>
   </div>
 
