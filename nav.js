@@ -1,10 +1,15 @@
 /* ============================================================
    CVA Teacher Resources Hub — Shared Navigation
+   CLS-repaired version
+
    Usage: Add ONE line to every resource page, just before </body>:
+     <script src="../nav.js"></script>
+
+   On pages in the site root, use:
      <script src="nav.js"></script>
    ============================================================ */
 
-/* ── Google Analytics ───────────────────────────────────── */
+/* ── Google Analytics ─────────────────────────────────────── */
 
 const GA_ID = "G-444E1VXNYV";
 
@@ -24,14 +29,42 @@ function gtag() {
 gtag("js", new Date());
 gtag("config", GA_ID);
 
+
+/* ── Shared Navigation ────────────────────────────────────── */
+
 (function () {
   "use strict";
 
-  /* ── Site map ─────────────────────────────────────────────
-     Add new pages here. The menu rebuilds automatically.
-  ──────────────────────────────────────────────────────────── */
-
   const BASE = window.location.origin;
+
+
+  /* ==========================================================
+     CLS FIX
+
+     The previous navigation measured the banner AFTER it loaded
+     and then changed the body's top padding.
+
+     That caused the page content below it to move.
+
+     This version reserves the banner and navigation space from
+     the beginning and NEVER recalculates body padding after the
+     banner loads.
+     ========================================================== */
+
+  const BANNER_HEIGHT = "clamp(56px, 6vw, 92px)";
+  const NAV_HEIGHT = 56;
+  const CONTENT_GAP = 16;
+
+  document.documentElement.style.setProperty(
+    "--cva-banner-height",
+    BANNER_HEIGHT
+  );
+
+  document.body.style.paddingTop =
+    `calc(var(--cva-banner-height) + ${NAV_HEIGHT + CONTENT_GAP}px)`;
+
+
+  /* ── Site Map ───────────────────────────────────────────── */
 
   const NAV = [
     {
@@ -39,26 +72,37 @@ gtag("config", GA_ID);
       pages: [
         {
           title: "Academic Integrity and Paused Grading",
-          href: BASE + "/grading-and-feedback/paused-grading.html"
+          href:
+            BASE +
+            "/grading-and-feedback/paused-grading.html"
         },
         {
           title: "Effective Feedback",
-          href: BASE + "/grading-and-feedback/effective-feedback.html"
+          href:
+            BASE +
+            "/grading-and-feedback/effective-feedback.html"
         },
         {
           title: "Grading Policy at CVA",
-          href: BASE + "/grading-and-feedback/cva-grading-policy.html"
+          href:
+            BASE +
+            "/grading-and-feedback/cva-grading-policy.html"
         },
         {
           title: "Resubmission Opportunities",
-          href: BASE + "/grading-and-feedback/allowing-resubmissions.html"
+          href:
+            BASE +
+            "/grading-and-feedback/allowing-resubmissions.html"
         },
         {
           title: "Submission Expectations",
-          href: BASE + "/grading-and-feedback/submission-expectations.html"
+          href:
+            BASE +
+            "/grading-and-feedback/submission-expectations.html"
         }
       ]
     },
+
     {
       label: "Communication and Responsiveness",
       pages: [
@@ -88,6 +132,7 @@ gtag("config", GA_ID);
         }
       ]
     },
+
     {
       label: "Rapport and Relationships",
       pages: [
@@ -117,6 +162,7 @@ gtag("config", GA_ID);
         }
       ]
     },
+
     {
       label: "Proactive Intervention and Student Support",
       pages: [
@@ -158,6 +204,7 @@ gtag("config", GA_ID);
         }
       ]
     },
+
     {
       label: "Professionalism and Collaboration",
       pages: [
@@ -199,23 +246,28 @@ gtag("config", GA_ID);
         }
       ]
     },
+
     {
       label: "Technology How-To Guides",
       pages: [
         {
           title: "Keyboard Shortcuts",
-          href: BASE + "/keyboard-shortcuts.html"
+          href:
+            BASE +
+            "/keyboard-shortcuts.html"
         },
         {
           title: "Panopto",
-          href: "https://support.panopto.com/s/",
+          href:
+            "https://support.panopto.com/s/",
           external: true
         }
       ]
     }
   ];
 
-  /* ── Normalize URLs for current-page detection ───────────── */
+
+  /* ── Normalize URLs for current-page detection ──────────── */
 
   function normalizeURL(url) {
     return url
@@ -224,282 +276,469 @@ gtag("config", GA_ID);
       .replace(/\/$/, "");
   }
 
-  const currentURL = normalizeURL(window.location.href);
+  const currentURL =
+    normalizeURL(window.location.href);
 
-  /* ── Styles ──────────────────────────────────────────────── */
 
-  const style = document.createElement("style");
+  /* ── Styles ─────────────────────────────────────────────── */
+
+  const style =
+    document.createElement("style");
 
   style.textContent = `
+
+    html {
+      scroll-padding-top:
+        calc(var(--cva-banner-height) + 72px);
+    }
+
+
+    body {
+      padding-top:
+        calc(var(--cva-banner-height) + 72px)
+        !important;
+    }
+
+
+    /* ── Banner ─────────────────────────────── */
+
     #cva-banner {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
+
+      height: var(--cva-banner-height);
+
       z-index: 1001;
+
       line-height: 0;
       background: #ffffff;
+
+      overflow: hidden;
     }
 
+
     #cva-banner img {
-      width: 100%;
-      height: auto;
       display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
     }
+
+
+    /* ── Main Navigation Bar ────────────────── */
 
     #cva-header {
       position: fixed;
-      top: 0;
+
+      top: var(--cva-banner-height);
+
       left: 0;
       right: 0;
+
       height: 56px;
+
       background: #BB0000;
       color: #ffffff;
+
       display: flex;
       align-items: center;
+
       padding: 0 16px;
+
       gap: 12px;
+
       z-index: 1000;
+
       box-sizing: border-box;
-      font-family: 'Montserrat', Arial, sans-serif;
+
+      font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
     }
+
+
+    /* ── Hamburger Button ───────────────────── */
 
     #cva-menu-toggle {
       background: none;
       border: none;
+
       cursor: pointer;
+
       padding: 6px;
+
       display: flex;
       flex-direction: column;
+
       gap: 5px;
+
       flex-shrink: 0;
     }
 
+
     #cva-menu-toggle span {
       display: block;
+
       width: 22px;
       height: 2px;
+
       background: #ffffff;
+
       border-radius: 2px;
-      transition: transform 0.2s, opacity 0.2s;
+
+      transition:
+        transform 0.2s,
+        opacity 0.2s;
     }
 
+
     #cva-menu-toggle.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
+      transform:
+        translateY(7px)
+        rotate(45deg);
     }
+
 
     #cva-menu-toggle.open span:nth-child(2) {
       opacity: 0;
     }
 
+
     #cva-menu-toggle.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      transform:
+        translateY(-7px)
+        rotate(-45deg);
     }
+
+
+    /* ── Header Home Link ───────────────────── */
 
     #cva-header-home {
       color: #ffffff;
+
       text-decoration: none;
+
       font-size: 0.82rem;
       font-weight: 700;
+
       letter-spacing: 0.1em;
+
       text-transform: uppercase;
+
       white-space: nowrap;
+
       overflow: hidden;
+
       text-overflow: ellipsis;
     }
+
 
     #cva-header-home:hover,
     #cva-header-home:focus {
       text-decoration: underline;
     }
 
+
+    /* ── Sidebar ────────────────────────────── */
+
     #cva-sidebar {
       position: fixed;
-      top: 56px;
+
+      top:
+        calc(
+          var(--cva-banner-height) + 56px
+        );
+
       left: -300px;
+
       width: 288px;
+
       bottom: 0;
+
       background: #ffffff;
-      border-right: 1px solid #C8C7C7;
+
+      border-right:
+        1px solid #C8C7C7;
+
       overflow-y: auto;
+
       z-index: 999;
-      transition: left 0.25s ease;
-      font-family: 'Montserrat', Arial, sans-serif;
+
+      transition:
+        left 0.25s ease;
+
+      font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
       padding-bottom: 32px;
+
       box-sizing: border-box;
     }
+
 
     #cva-sidebar.open {
       left: 0;
     }
 
+
+    /* ── Overlay ────────────────────────────── */
+
     #cva-overlay {
       display: none;
+
       position: fixed;
+
+      top:
+        calc(
+          var(--cva-banner-height) + 56px
+        );
+
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.25);
+
+      background:
+        rgba(0, 0, 0, 0.25);
+
       z-index: 998;
     }
+
 
     #cva-overlay.open {
       display: block;
     }
 
+
+    /* ── Home Link in Sidebar ───────────────── */
+
     .cva-nav-home {
       display: block;
-      padding: 16px 20px 14px;
+
+      padding:
+        16px 20px 14px;
+
       font-size: 0.78rem;
       font-weight: 700;
+
       letter-spacing: 0.1em;
+
       text-transform: uppercase;
+
       color: #BB0000;
+
       text-decoration: none;
-      border-bottom: 2px solid #BB0000;
+
+      border-bottom:
+        2px solid #BB0000;
     }
+
 
     .cva-nav-home:hover,
     .cva-nav-home:focus {
       background: #FAFAFA;
     }
 
+
+    /* ── Navigation Groups ──────────────────── */
+
     .cva-nav-group {
-      border-bottom: 1px solid #C8C7C7;
+      border-bottom:
+        1px solid #C8C7C7;
     }
+
 
     .cva-nav-group-btn {
       width: 100%;
+
       background: none;
       border: none;
+
       cursor: pointer;
+
       text-align: left;
-      padding: 13px 20px 13px 16px;
-      font-family: 'Montserrat', Arial, sans-serif;
+
+      padding:
+        13px 20px 13px 16px;
+
+      font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
       font-size: 0.78rem;
       font-weight: 700;
+
       letter-spacing: 0.05em;
+
       text-transform: uppercase;
+
       color: #222222;
+
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       align-items: center;
+
       gap: 8px;
     }
+
 
     .cva-nav-group-btn:hover,
     .cva-nav-group-btn:focus {
       background: #F5F5F5;
     }
 
+
     .cva-nav-group-btn .cva-arrow {
       font-size: 0.65rem;
-      transition: transform 0.2s;
+
+      transition:
+        transform 0.2s;
+
       flex-shrink: 0;
     }
+
 
     .cva-nav-group-btn.open .cva-arrow {
       transform: rotate(180deg);
     }
 
+
+    /* ── Pages Inside Groups ────────────────── */
+
     .cva-nav-pages {
       display: none;
-      padding: 0 0 6px;
+
+      padding:
+        0 0 6px;
+
       background: #F5F5F5;
     }
+
 
     .cva-nav-pages.open {
       display: block;
     }
 
+
     .cva-nav-pages a {
       display: block;
-      padding: 9px 20px 9px 24px;
+
+      padding:
+        9px 20px 9px 24px;
+
       font-size: 0.82rem;
+
       color: #222222;
+
       text-decoration: none;
-      border-left: 3px solid transparent;
+
+      border-left:
+        3px solid transparent;
+
       line-height: 1.4;
     }
+
 
     .cva-nav-pages a:hover,
     .cva-nav-pages a:focus {
       background: #E8E8E8;
-      border-left-color: #C8C7C7;
+
+      border-left-color:
+        #C8C7C7;
     }
+
 
     .cva-nav-pages a.current {
       font-weight: 700;
+
       color: #BB0000;
-      border-left-color: #BB0000;
+
+      border-left-color:
+        #BB0000;
+
       background: #FFFFFF;
     }
 
+
+    /* ── External Links ─────────────────────── */
+
     .cva-nav-external {
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
-      padding: 13px 20px 13px 16px;
-      font-family: 'Montserrat', Arial, sans-serif;
+
+      justify-content:
+        space-between;
+
+      padding:
+        13px 20px 13px 16px;
+
+      font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
       font-size: 0.78rem;
       font-weight: 700;
+
       letter-spacing: 0.05em;
+
       text-transform: uppercase;
+
       color: #BB0000;
+
       text-decoration: none;
-      border-bottom: 1px solid #C8C7C7;
+
+      border-bottom:
+        1px solid #C8C7C7;
     }
+
 
     .cva-nav-external:hover,
     .cva-nav-external:focus {
       background: #FAFAFA;
     }
 
+
     .cva-nav-external .cva-ext-arrow {
       font-size: 0.7rem;
+
       opacity: 0.6;
     }
 
+
     .cva-nav-external-group {
-      border-top: 2px solid #BB0000;
+      border-top:
+        2px solid #BB0000;
+
       margin-top: 8px;
     }
 
-    /* ── Shared site disclaimer ─────────────────────────────── */
-
-    #cva-site-disclaimer {
-      width: 100%;
-      margin-top: 48px;
-      background: #F5F5F5;
-      border-top: 1px solid #C8C7C7;
-      box-sizing: border-box;
-    }
-
-    #cva-site-disclaimer .cva-disclaimer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 22px 24px;
-      box-sizing: border-box;
-      text-align: center;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.6;
-      color: #666666;
-    }
-
-    #cva-site-disclaimer p {
-      margin: 0;
-    }
   `;
 
   document.head.appendChild(style);
 
-  /* ── Build header ────────────────────────────────────────── */
 
-  const header = document.createElement("div");
+  /* ── Build Header ───────────────────────────────────────── */
+
+  const header =
+    document.createElement("div");
+
   header.id = "cva-header";
 
   header.innerHTML = `
+
     <button
       id="cva-menu-toggle"
       type="button"
@@ -518,93 +757,197 @@ gtag("config", GA_ID);
     >
       CVA Teacher Resources Hub
     </a>
+
   `;
 
   document.body.prepend(header);
 
-  /* ── Banner image ────────────────────────────────────────── */
 
-  const banner = document.createElement("div");
+  /* ── Build Banner ───────────────────────────────────────── */
+
+  const banner =
+    document.createElement("div");
+
   banner.id = "cva-banner";
 
-  const bannerImg = document.createElement("img");
+
+  const bannerImg =
+    document.createElement("img");
 
   bannerImg.src =
     "/images/Website Banner Teacher Resources Hub.png";
 
-  bannerImg.alt = "Cobb Virtual Academy Teacher Resources";
+  bannerImg.alt =
+    "Cobb Virtual Academy Teacher Resources";
+
+  /*
+     Load the banner immediately because it appears
+     above the fold on every page.
+  */
+
+  bannerImg.loading = "eager";
+
+  bannerImg.decoding = "async";
+
+  bannerImg.fetchPriority = "high";
+
 
   banner.appendChild(bannerImg);
+
   document.body.prepend(banner);
 
-  /* ── Build sidebar ───────────────────────────────────────── */
 
-  const sidebar = document.createElement("nav");
+  /* ── Build Sidebar ──────────────────────────────────────── */
+
+  const sidebar =
+    document.createElement("nav");
+
   sidebar.id = "cva-sidebar";
-  sidebar.setAttribute("aria-label", "Resource navigation");
+
+  sidebar.setAttribute(
+    "aria-label",
+    "Resource navigation"
+  );
+
 
   let sidebarHTML = `
-    <a class="cva-nav-home" href="${BASE}/">
+
+    <a
+      class="cva-nav-home"
+      href="${BASE}/"
+    >
       &#8592; Resource Hub Home
     </a>
+
   `;
 
-  NAV.forEach(function (group, groupIndex) {
-    const isActiveGroup = group.pages.some(function (page) {
-      return normalizeURL(page.href) === currentURL;
-    });
+
+  NAV.forEach(function (
+    group,
+    groupIndex
+  ) {
+
+    const isActiveGroup =
+      group.pages.some(function (page) {
+
+        return (
+          normalizeURL(page.href) ===
+          currentURL
+        );
+
+      });
+
 
     sidebarHTML += `
+
       <div class="cva-nav-group">
+
         <button
           type="button"
-          class="cva-nav-group-btn${isActiveGroup ? " open" : ""}"
+          class="cva-nav-group-btn${
+            isActiveGroup
+              ? " open"
+              : ""
+          }"
           aria-expanded="${isActiveGroup}"
           aria-controls="cva-group-${groupIndex}"
           data-group="${groupIndex}"
         >
-          <span>${group.label}</span>
-          <span class="cva-arrow" aria-hidden="true">&#9660;</span>
+
+          <span>
+            ${group.label}
+          </span>
+
+          <span
+            class="cva-arrow"
+            aria-hidden="true"
+          >
+            &#9660;
+          </span>
+
         </button>
 
+
         <div
-          class="cva-nav-pages${isActiveGroup ? " open" : ""}"
+          class="cva-nav-pages${
+            isActiveGroup
+              ? " open"
+              : ""
+          }"
           id="cva-group-${groupIndex}"
         >
+
     `;
 
-    group.pages.forEach(function (page) {
-      const isCurrent =
-        normalizeURL(page.href) === currentURL;
 
-      const externalAttributes = page.external
-        ? ' target="_blank" rel="noopener noreferrer"'
-        : "";
+    group.pages.forEach(
+      function (page) {
 
-      const externalIndicator = page.external
-        ? ' <span aria-hidden="true">↗</span>'
-        : "";
+        const isCurrent =
+          normalizeURL(page.href) ===
+          currentURL;
 
-      sidebarHTML += `
-        <a
-          href="${page.href}"
-          class="${isCurrent ? "current" : ""}"
-          ${isCurrent ? 'aria-current="page"' : ""}
-          ${externalAttributes}
-        >
-          ${page.title}${externalIndicator}
-        </a>
-      `;
-    });
+
+        const externalAttributes =
+          page.external
+
+            ? ' target="_blank" rel="noopener noreferrer"'
+
+            : "";
+
+
+        const externalIndicator =
+          page.external
+
+            ? ' <span aria-hidden="true">↗</span>'
+
+            : "";
+
+
+        sidebarHTML += `
+
+          <a
+            href="${page.href}"
+            class="${
+              isCurrent
+                ? "current"
+                : ""
+            }"
+            ${
+              isCurrent
+                ? 'aria-current="page"'
+                : ""
+            }
+            ${externalAttributes}
+          >
+            ${page.title}${externalIndicator}
+          </a>
+
+        `;
+
+      }
+    );
+
 
     sidebarHTML += `
+
         </div>
+
       </div>
+
     `;
+
   });
 
+
+  /* ── External Sidebar Links ─────────────────────────────── */
+
   sidebarHTML += `
-    <div class="cva-nav-external-group">
+
+    <div
+      class="cva-nav-external-group"
+    >
+
       <a
         class="cva-nav-external"
         href="https://www.cobbk12.org/cobbvirtualacademy"
@@ -612,8 +955,15 @@ gtag("config", GA_ID);
         rel="noopener noreferrer"
       >
         CVA Homepage
-        <span class="cva-ext-arrow" aria-hidden="true">↗</span>
+
+        <span
+          class="cva-ext-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
       </a>
+
 
       <a
         class="cva-nav-external"
@@ -622,8 +972,15 @@ gtag("config", GA_ID);
         rel="noopener noreferrer"
       >
         CTLS Support
-        <span class="cva-ext-arrow" aria-hidden="true">↗</span>
+
+        <span
+          class="cva-ext-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
       </a>
+
 
       <a
         class="cva-nav-external"
@@ -632,8 +989,15 @@ gtag("config", GA_ID);
         rel="noopener noreferrer"
       >
         CTLS Teach
-        <span class="cva-ext-arrow" aria-hidden="true">↗</span>
+
+        <span
+          class="cva-ext-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
       </a>
+
 
       <a
         class="cva-nav-external"
@@ -642,167 +1006,261 @@ gtag("config", GA_ID);
         rel="noopener noreferrer"
       >
         Synergy
-        <span class="cva-ext-arrow" aria-hidden="true">↗</span>
+
+        <span
+          class="cva-ext-arrow"
+          aria-hidden="true"
+        >
+          ↗
+        </span>
       </a>
+
     </div>
+
   `;
 
-  sidebar.innerHTML = sidebarHTML;
-  document.body.appendChild(sidebar);
 
-  /* ── Overlay ─────────────────────────────────────────────── */
+  sidebar.innerHTML =
+    sidebarHTML;
 
-  const overlay = document.createElement("div");
-  overlay.id = "cva-overlay";
-  overlay.setAttribute("aria-hidden", "true");
-  document.body.appendChild(overlay);
+  document.body.appendChild(
+    sidebar
+  );
 
-  /* ── Position page elements ──────────────────────────────── */
 
-  function updateLayout() {
-    const bannerHeight = bannerImg.offsetHeight;
-    const navigationTop = bannerHeight + 56;
+  /* ── Build Overlay ──────────────────────────────────────── */
 
-    header.style.top = bannerHeight + "px";
-    sidebar.style.top = navigationTop + "px";
-    overlay.style.top = navigationTop + "px";
+  const overlay =
+    document.createElement("div");
 
-    document.body.style.paddingTop =
-      navigationTop + 16 + "px";
-  }
+  overlay.id =
+    "cva-overlay";
 
-  bannerImg.addEventListener("load", updateLayout);
-  window.addEventListener("resize", updateLayout);
-  window.addEventListener("load", updateLayout);
+  overlay.setAttribute(
+    "aria-hidden",
+    "true"
+  );
 
-  updateLayout();
+  document.body.appendChild(
+    overlay
+  );
 
-  if (
-    bannerImg.complete &&
-    bannerImg.naturalHeight !== 0
-  ) {
-    updateLayout();
-  }
 
-  /* ── Toggle logic ────────────────────────────────────────── */
+  /* ==========================================================
+     IMPORTANT CLS NOTE
+
+     There is intentionally NO updateLayout() function here.
+
+     Do not add bannerImg.offsetHeight measurements back in.
+
+     The CSS variable controls:
+
+       • Banner height
+       • Navigation position
+       • Sidebar position
+       • Overlay position
+       • Body spacing
+
+     All of those values are established before the banner
+     finishes downloading.
+     ========================================================== */
+
+
+  /* ── Menu Toggle Logic ──────────────────────────────────── */
 
   const toggle =
-    document.getElementById("cva-menu-toggle");
+    document.getElementById(
+      "cva-menu-toggle"
+    );
+
 
   function openMenu() {
-    sidebar.classList.add("open");
-    overlay.classList.add("open");
-    toggle.classList.add("open");
 
-    toggle.setAttribute("aria-expanded", "true");
+    sidebar.classList.add(
+      "open"
+    );
+
+    overlay.classList.add(
+      "open"
+    );
+
+    toggle.classList.add(
+      "open"
+    );
+
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
     toggle.setAttribute(
       "aria-label",
       "Close navigation menu"
     );
 
-    overlay.setAttribute("aria-hidden", "false");
+    overlay.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
   }
 
-  function closeMenu() {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("open");
-    toggle.classList.remove("open");
 
-    toggle.setAttribute("aria-expanded", "false");
+  function closeMenu() {
+
+    sidebar.classList.remove(
+      "open"
+    );
+
+    overlay.classList.remove(
+      "open"
+    );
+
+    toggle.classList.remove(
+      "open"
+    );
+
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
     toggle.setAttribute(
       "aria-label",
       "Open navigation menu"
     );
 
-    overlay.setAttribute("aria-hidden", "true");
+    overlay.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
   }
+
 
   function toggleMenu() {
-    if (sidebar.classList.contains("open")) {
+
+    if (
+      sidebar.classList.contains(
+        "open"
+      )
+    ) {
+
       closeMenu();
+
     } else {
+
       openMenu();
+
     }
+
   }
 
-  toggle.addEventListener("click", toggleMenu);
-  overlay.addEventListener("click", closeMenu);
 
-  /* ── Close menu when a page link is clicked ──────────────── */
-
-  sidebar
-    .querySelectorAll(".cva-nav-pages a")
-    .forEach(function (link) {
-      link.addEventListener("click", closeMenu);
-    });
-
-  /* ── Accordion groups inside the sidebar ─────────────────── */
-
-  sidebar
-    .querySelectorAll(".cva-nav-group-btn")
-    .forEach(function (button) {
-      button.addEventListener("click", function () {
-        const groupIndex = button.dataset.group;
-
-        const pages = document.getElementById(
-          "cva-group-" + groupIndex
-        );
-
-        const isOpen =
-          button.classList.contains("open");
-
-        button.classList.toggle("open", !isOpen);
-        pages.classList.toggle("open", !isOpen);
-
-        button.setAttribute(
-          "aria-expanded",
-          String(!isOpen)
-        );
-      });
-    });
-
-  /* ── Close on Escape ─────────────────────────────────────── */
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeMenu();
-      toggle.focus();
-    }
-  });
-
-  /* ── Shared site disclaimer ──────────────────────────────── */
-
-  const disclaimer = document.createElement("footer");
-  disclaimer.id = "cva-site-disclaimer";
-
-  disclaimer.innerHTML = `
-    <div class="cva-disclaimer-inner">
-      <p>
-        This resource is intended to support Cobb Virtual Academy teachers. Content is provided for instructional reference by CVA Teachers only and may be updated as procedures and resources change.
-      </p>
-    </div>
-  `;
-
-  document.body.appendChild(disclaimer);
-
-})();
-// =====================================================
-// CLOUDFLARE WEB ANALYTICS
-// =====================================================
-
-(function () {
-  // Prevent the analytics script from loading twice
-  if (document.querySelector('script[data-cf-beacon]')) return;
-
-  const cfAnalytics = document.createElement('script');
-
-  cfAnalytics.type = 'module';
-  cfAnalytics.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-
-  cfAnalytics.setAttribute(
-    'data-cf-beacon',
-    '{"token":"9afe57cebe82485cb9ddf204536846e9"}'
+  toggle.addEventListener(
+    "click",
+    toggleMenu
   );
 
-  document.body.appendChild(cfAnalytics);
+
+  overlay.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  /* ── Close when page link is clicked ───────────────────── */
+
+  sidebar
+    .querySelectorAll(
+      ".cva-nav-pages a"
+    )
+    .forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          closeMenu
+        );
+
+      }
+    );
+
+
+  /* ── Sidebar Accordion Groups ───────────────────────────── */
+
+  sidebar
+    .querySelectorAll(
+      ".cva-nav-group-btn"
+    )
+    .forEach(
+      function (button) {
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            const groupIndex =
+              button.dataset.group;
+
+
+            const pages =
+              document.getElementById(
+                "cva-group-" +
+                groupIndex
+              );
+
+
+            const isOpen =
+              button.classList.contains(
+                "open"
+              );
+
+
+            button.classList.toggle(
+              "open",
+              !isOpen
+            );
+
+
+            pages.classList.toggle(
+              "open",
+              !isOpen
+            );
+
+
+            button.setAttribute(
+              "aria-expanded",
+              String(!isOpen)
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* ── Close Navigation with Escape ───────────────────────── */
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key ===
+        "Escape"
+      ) {
+
+        closeMenu();
+
+        toggle.focus();
+
+      }
+
+    }
+  );
+
 })();
