@@ -786,3 +786,23 @@ gtag("config", GA_ID);
   document.body.appendChild(disclaimer);
 
 })();
+// =====================================================
+// CLOUDFLARE WEB ANALYTICS
+// =====================================================
+
+(function () {
+  // Prevent the analytics script from loading twice
+  if (document.querySelector('script[data-cf-beacon]')) return;
+
+  const cfAnalytics = document.createElement('script');
+
+  cfAnalytics.type = 'module';
+  cfAnalytics.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+
+  cfAnalytics.setAttribute(
+    'data-cf-beacon',
+    '{"token":"9afe57cebe82485cb9ddf204536846e9"}'
+  );
+
+  document.body.appendChild(cfAnalytics);
+})();
