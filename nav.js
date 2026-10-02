@@ -30,6 +30,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(argu
 const NAV=[
 {label:"Grading and Feedback",pages:[
 {title:"Academic Integrity and Paused Grading",href:BASE+"/grading-and-feedback/paused-grading.html"},
+{title:"Academic Integrity Policy",href:"https://www.cobbk12.org/cobbvirtualacademy/academic-integrity-policy",external:true},
 {title:"Accepting Student Work in CVA Classes",href:BASE+"/grading-and-feedback/accepting-student-work.html"},
 {title:"Effective Feedback",href:BASE+"/grading-and-feedback/effective-feedback.html"},
 {title:"Grading in CTLS",href:BASE+"/grading-and-feedback/grading-basics.html"},
