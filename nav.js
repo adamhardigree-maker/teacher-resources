@@ -4,6 +4,29 @@ const gaScript=document.createElement("script");
 gaScript.async=true;gaScript.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.appendChild(gaScript);
 window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag("js",new Date());gtag("config",GA_ID);
 (function(){"use strict";const BASE=window.location.origin;const BANNER_HEIGHT="clamp(56px, 6vw, 92px)";document.documentElement.style.setProperty("--cva-banner-height",BANNER_HEIGHT);document.body.style.paddingTop="calc(var(--cva-banner-height) + 72px)";
+
+/* Move the homepage Teacher Expectations overview into the accordion area. */
+(function moveTeacherExpectations(){
+  const isHome=window.location.pathname==="/"||window.location.pathname.endsWith("/index.html");
+  if(!isHome)return;
+  const overview=document.querySelector(".overview-card");
+  const accordion=document.querySelector(".accordion-section");
+  if(!overview||!accordion||document.getElementById("teacher-expectations-accordion"))return;
+  const details=document.createElement("details");
+  details.className="quick-ref";
+  details.id="teacher-expectations-accordion";
+  details.style.cssText="display:block!important;visibility:visible!important;";
+  const summary=document.createElement("summary");
+  summary.innerHTML='<span class="quick-plus">+</span>CVA Teacher Expectations';
+  const body=document.createElement("div");
+  body.className="quick-ref-body";
+  overview.style.margin="0";
+  body.appendChild(overview);
+  details.appendChild(summary);
+  details.appendChild(body);
+  accordion.insertBefore(details,accordion.firstElementChild);
+})();
+
 const NAV=[
 {label:"Grading and Feedback",pages:[
 {title:"Academic Integrity and Paused Grading",href:BASE+"/grading-and-feedback/paused-grading.html"},
