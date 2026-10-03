@@ -1,2 +1,3 @@
 Trigger a fresh Cloudflare build from the teacher-support-prototype branch.
 Second trigger after branch control was set correctly.
+Fresh trigger after switching deploy command to npx wrangler deploy.
