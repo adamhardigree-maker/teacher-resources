@@ -6,3 +6,12 @@ compatibility_date = "2026-10-02"
 directory = "./public"
 binding = "ASSETS"
 run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cva-teacher-support"
+database_id = "2eaec23a-1823-4c77-a2a4-83839f9cd04d"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "cva-teacher-support"
