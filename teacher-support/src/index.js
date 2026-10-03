@@ -160,6 +160,21 @@ async function leadership(env) {
   });
 }
 
+async function staticWithApiScript(request, env) {
+  const asset = await env.ASSETS.fetch(request);
+  const type = asset.headers.get("content-type") || "";
+  if (!type.includes("text/html")) return asset;
+
+  const html = await asset.text();
+  const injected = html.includes('/app-api.js')
+    ? html
+    : html.replace(/<\/body>/i, '<script src="/app-api.js"></script></body>');
+
+  const headers = new Headers(asset.headers);
+  headers.delete("content-length");
+  return new Response(injected, { status: asset.status, statusText: asset.statusText, headers });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -177,6 +192,6 @@ export default {
       return leadership(env);
     }
 
-    return env.ASSETS.fetch(request);
+    return staticWithApiScript(request, env);
   }
 };
