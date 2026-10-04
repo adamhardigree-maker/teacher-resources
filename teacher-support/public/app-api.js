@@ -237,20 +237,83 @@
   }
 
   function leadershipPage() {
+    const statusLabel = s => ({not_started:'Not Started', tried:'Tried It', need_help:'Need Help'}[s] || s || 'Not Started');
+
+    function openTeacherDrawer(teacherId, teacherName) {
+      const drawer = document.getElementById('teacherDrawer');
+      const nameNode = document.getElementById('teacherDrawerName');
+      if (nameNode) nameNode.textContent = teacherName || teacherId;
+      drawer?.classList.add('open');
+
+      api('/api/data?teacher_id=' + encodeURIComponent(teacherId)).then(data => {
+        const status = Object.fromEntries((data.priority_status || []).map(x => [x.priority_key, x.status]));
+        const weekPanel = document.getElementById('teachertab-week');
+        if (weekPanel) {
+          const comments = data.comments || [];
+          weekPanel.innerHTML = `<div class="teacher-detail-grid"><div class="teacher-detail-card"><h4>Current Priorities</h4>
+            <div class="priority-mini"><strong>Gradebook Catch Up</strong><div class="mini">${status['gradebook-catch-up']==='complete'?'Complete':'Needs attention'}</div></div>
+            <div class="priority-mini"><strong>Synergy Sync Check</strong><div class="mini">${status['synergy-sync-check']==='complete'?'Complete':'Needs attention'}</div></div>
+            <div class="priority-mini"><strong>Mid-Term Cut Off</strong><div class="mini">Term date</div></div></div>
+            <div class="teacher-detail-card"><h4>Feedback & Follow-Up</h4><div class="mini">${comments.filter(c=>!c.acknowledged_at).length} items awaiting review</div></div></div>`;
+        }
+
+        const coachingPanel = document.getElementById('teachertab-coaching');
+        const active = (data.coaching_cycles || []).find(c => c.status === 'active');
+        if (coachingPanel) {
+          coachingPanel.innerHTML = active ? `<div class="coach-cycle"><div class="coach-cycle-head"><div><div class="coach-cycle-title">${esc(active.title)}</div><div class="coach-cycle-meta">${esc(active.ipr_domains || '')} • Status: ${statusLabel(active.action_status)} • Next check-in ${esc(active.next_checkin || 'Not set')}</div></div><span class="coaching-status">Active</span></div><div class="coach-cycle-body open"><div class="coach-section"><h4>Action Step</h4><p>${esc(active.action_step || '')}</p></div><div class="coach-section"><h4>Teacher Reflection</h4><p>${esc((data.coaching_reflections || [])[0]?.body || 'No reflection submitted yet.')}</p></div><div class="coach-section"><h4>Coach Feedback</h4><textarea class="reply-box" id="liveCoachReply" placeholder="Add coaching feedback or a follow-up question..."></textarea><div class="queue-actions"><button class="primary-btn" id="sendLiveCoachReply">Send Feedback</button></div></div></div></div>` : '<div class="teacher-detail-card"><h4>Coaching</h4><div class="mini">No active coaching cycle.</div></div>';
+          document.getElementById('sendLiveCoachReply')?.addEventListener('click', async () => {
+            const body = document.getElementById('liveCoachReply')?.value.trim();
+            if (!body) return;
+            try { await post({action:'comment_add',teacher_id:teacherId,author_id:'coach-sam',target_type:'coaching_cycle',target_key:active?.cycle_key || null,comment_type:'coaching_note',body}); flash('Coaching feedback saved'); }
+            catch(e){ alert('Could not save feedback: '+e.message); }
+          });
+        }
+
+        const evidencePanel = document.getElementById('teachertab-evidence');
+        if (evidencePanel) {
+          const ev = data.evidence || [];
+          const count = domain => ev.filter(e => (e.ipr_domain || '').includes(domain)).length;
+          evidencePanel.innerHTML = `<div class="teacher-detail-card"><h4>Evidence Journal</h4><span class="evidence-chip">${ev.length} total</span><span class="evidence-chip">${count('grading')} grading</span><span class="evidence-chip">${count('professionalism')} professionalism</span><span class="evidence-chip">${count('intervention')} intervention</span></div>`;
+        }
+
+        const supportList = document.getElementById('teacherSupportList');
+        if (supportList) {
+          const requests = data.support_requests || [];
+          supportList.innerHTML = requests.length ? requests.map(r => `<div class="support-request-card" data-request-id="${r.id}"><div class="queue-title">${esc(r.area)}</div><div class="queue-meta">${esc(r.created_at || '')} • <strong>${esc((r.status || 'open').replace('_',' '))}</strong></div><div class="queue-copy">${esc(r.description)}</div><div class="support-status-row">${r.status!=='resolved'?'<button class="secondary-btn support-progress">Mark In Progress</button><button class="primary-btn support-resolve">Resolve</button>':'<span class="badge green">Resolved</span>'}</div></div>`).join('') : '<div class="mini" style="margin-top:10px">No support requests.</div>';
+          supportList.querySelectorAll('.support-progress').forEach(btn => btn.onclick = async () => {
+            const id = btn.closest('.support-request-card').dataset.requestId;
+            await post({action:'support_update',request_id:Number(id),status:'in_progress',assigned_to:'coach-sam'});
+            flash('Support request marked in progress'); openTeacherDrawer(teacherId, teacherName);
+          });
+          supportList.querySelectorAll('.support-resolve').forEach(btn => btn.onclick = async () => {
+            const id = btn.closest('.support-request-card').dataset.requestId;
+            await post({action:'support_update',request_id:Number(id),status:'resolved',assigned_to:'coach-sam'});
+            flash('Support request resolved'); openTeacherDrawer(teacherId, teacherName);
+          });
+        }
+
+        drawer?.scrollIntoView({behavior:'smooth',block:'start'});
+      }).catch(e => alert('Could not load teacher details: ' + e.message));
+    }
+
     api('/api/leadership').then(data => {
       const kpis = document.querySelectorAll('#overview .kpi');
-      if (kpis.length >= 4) { kpis[0].textContent=data.counts.teachers; kpis[1].textContent=data.counts.open_actions; kpis[2].textContent=data.counts.active_coaching; kpis[3].textContent=data.counts.teacher_replies; }
+      if (kpis.length >= 4) { kpis[0].textContent=data.counts.teachers; kpis[1].textContent=data.counts.needs_follow_up ?? data.counts.open_actions; kpis[2].textContent=data.counts.active_coaching; kpis[3].textContent=data.counts.support_requests ?? 0; }
+
       const table = document.querySelector('#overview .teacher-table tbody, #overview .data-table tbody');
       if (table) {
         table.innerHTML='';
         for (const teacher of data.teachers || []) {
           const row=document.createElement('tr');
-          const attention=Number(teacher.open_support)>0?'Support request':Number(teacher.open_actions)>0?'Open actions':'No signal';
-          row.innerHTML=`<td><button class="text-link teacher-open" data-id="${esc(teacher.id)}">${esc(teacher.display_name)}</button><div class="mini">${esc(teacher.department||'')}</div></td><td>${teacher.completed_priorities} / ${teacher.total_priorities}</td><td>${teacher.unread_feedback} unread</td><td>${Number(teacher.active_coaching)?'Active cycle':'—'}</td><td>${teacher.evidence_count}</td><td><span class="signal ${Number(teacher.open_support)>0?'red':''}">${attention}</span></td>`;
+          const attention=Number(teacher.open_support)>0?'Support request':Number(teacher.open_actions)>0||Number(teacher.unread_feedback)>0?'Needs follow-up':'No signal';
+          row.innerHTML=`<td><button class="text-link teacher-open" data-id="${esc(teacher.id)}" data-name="${esc(teacher.display_name)}">${esc(teacher.display_name)}</button><div class="mini">${esc(teacher.department||'')}</div></td><td>${teacher.completed_priorities} / ${teacher.total_priorities}</td><td>${teacher.unread_feedback} unread</td><td>${Number(teacher.active_coaching)?'<span class="signal dark">Active cycle</span>':'—'}</td><td>${teacher.evidence_count}</td><td><span class="signal ${Number(teacher.open_support)>0?'red':attention==='No signal'?'soft':'amber'}">${attention}</span></td>`;
           table.appendChild(row);
         }
+        table.querySelectorAll('.teacher-open').forEach(btn => btn.onclick = () => openTeacherDrawer(btn.dataset.id, btn.dataset.name));
       }
     }).catch(error => console.error('Leadership data:', error));
+
+    document.getElementById('closeTeacherDrawer')?.addEventListener('click', () => document.getElementById('teacherDrawer')?.classList.remove('open'));
   }
 
   if (/leadership\.html$/i.test(location.pathname)) leadershipPage();
