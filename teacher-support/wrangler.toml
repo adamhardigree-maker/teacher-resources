@@ -18,9 +18,9 @@ bucket_name = "cva-teacher-support"
 
 [[send_email]]
 name = "EMAIL"
-destination_address = "cvateachersupport@cobbk12.org"
+destination_address = "michael.hardigree@cobbk12.org"
 allowed_sender_addresses = [ "noreply@cobbvirtualacademy.org" ]
 
 [vars]
-SUPPORT_EMAIL_TO = "cvateachersupport@cobbk12.org"
+SUPPORT_EMAIL_TO = "michael.hardigree@cobbk12.org"
 SUPPORT_EMAIL_FROM = "noreply@cobbvirtualacademy.org"
