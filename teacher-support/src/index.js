@@ -127,7 +127,7 @@ async function leadership(env) {
   const support = await env.DB.prepare(`SELECT sr.*,u.display_name FROM support_requests sr JOIN users u ON u.id=sr.teacher_id WHERE sr.status='open' ORDER BY CASE WHEN sr.priority='high' THEN 0 ELSE 1 END,sr.created_at DESC`).all();
   const reflections = await env.DB.prepare(`SELECT cr.*,u.display_name FROM coaching_reflections cr JOIN users u ON u.id=cr.teacher_id ORDER BY cr.created_at DESC LIMIT 20`).all();
   const cycles = await env.DB.prepare(`SELECT cc.*,u.display_name,coach.display_name AS coach_name FROM coaching_cycles cc JOIN users u ON u.id=cc.teacher_id LEFT JOIN users coach ON coach.id=cc.coach_id ORDER BY cc.status='active' DESC,cc.opened_at DESC`).all();
-  return json({counts:{teachers:list.length,open_actions:list.reduce((s,t)=>s+Number(t.open_actions||0),0),active_coaching:list.filter(t=>Number(t.active_coaching)===1).length,teacher_replies:Number(replyCount||0),support_requests:(support.results||[]).length},teachers:list,support_requests:support.results||[],teacher_reflections:reflections.results||[],coaching_cycles:cycles.results||[]});
+  return json({counts:{teachers:list.length,open_actions:list.reduce((s,t)=>s+Number(t.open_actions||0),0),active_coaching:list.filter(t=>Number(t.active_coaching)===1).length,teacher_replies:Number(replyCount||0),support_requests:(support.results||[]).length,needs_follow_up:list.filter(t=>Number(t.open_support)>0 || Number(t.open_actions)>0 || Number(t.unread_feedback)>0).length},teachers:list,support_requests:support.results||[],teacher_reflections:reflections.results||[],coaching_cycles:cycles.results||[]});
 }
 
 async function uploadAttachment(env, request) {
