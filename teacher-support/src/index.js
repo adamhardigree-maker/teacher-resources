@@ -44,6 +44,47 @@ async function getTeacherData(env, request) {
   return json({teacher_id:teacherId,priorities:priorities.results,priority_status:status.results,comments:comments.results,coaching_cycles:cycles.results,coaching_reflections:reflections.results,evidence:evidence.results,support_requests:support.results,attachments:attachments.results});
 }
 
+async function sendSupportEmail(env, teacherId, body) {
+  if (!env.EMAIL || !env.SUPPORT_EMAIL_FROM || !env.SUPPORT_EMAIL_TO) {
+    return { sent:false, reason:"EMAIL_NOT_CONFIGURED" };
+  }
+
+  const teacher = await env.DB.prepare(`SELECT display_name,email,department FROM users WHERE id=?`).bind(teacherId).first();
+  const submitted = new Date().toLocaleString("en-US", { timeZone:"America/New_York", dateStyle:"medium", timeStyle:"short" });
+  const teacherName = teacher?.display_name || teacherId;
+  const department = teacher?.department || "";
+  const area = body.area || "General";
+  const priority = body.priority || "normal";
+  const supportType = body.support_type || body.type || "Support Request";
+  const description = body.description || "";
+
+  const subject = `CVA Teacher Support Request — ${teacherName}`;
+  const text = [
+    "A new CVA Teacher Support request was submitted.",
+    "",
+    `Teacher: ${teacherName}`,
+    department ? `Department: ${department}` : null,
+    `Area: ${area}`,
+    `Support Type: ${supportType}`,
+    `Priority: ${priority}`,
+    `Submitted: ${submitted}`,
+    "",
+    "Request:",
+    description,
+    "",
+    "This request has also been recorded in the CVA Teacher Support dashboard."
+  ].filter(Boolean).join("\n");
+
+  await env.EMAIL.send({
+    from: env.SUPPORT_EMAIL_FROM,
+    to: env.SUPPORT_EMAIL_TO,
+    subject,
+    text
+  });
+
+  return { sent:true };
+}
+
 async function postAction(env, request) {
   const noDb = await requireDb(env); if (noDb) return noDb;
   const body = await request.json();
@@ -87,7 +128,16 @@ async function postAction(env, request) {
 
   if (body.action === "support_request") {
     await env.DB.prepare(`INSERT INTO support_requests(teacher_id,area,priority,description) VALUES(?,?,?,?)`).bind(teacherId,body.area,body.priority || "normal",body.description).run();
-    return json({ok:true});
+
+    let email = { sent:false, reason:"EMAIL_NOT_CONFIGURED" };
+    try {
+      email = await sendSupportEmail(env, teacherId, body);
+    } catch (error) {
+      console.error("Support request email failed:", error);
+      email = { sent:false, reason:"EMAIL_SEND_FAILED" };
+    }
+
+    return json({ok:true,email});
   }
 
   if (body.action === "support_update") {
@@ -180,7 +230,7 @@ async function staticWithApiScript(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (url.pathname === "/api/health") return json({ok:true,app:"cva-teacher-support",db_bound:!!env.DB,r2_bound:!!env.R2});
+    if (url.pathname === "/api/health") return json({ok:true,app:"cva-teacher-support",db_bound:!!env.DB,r2_bound:!!env.R2,email_bound:!!env.EMAIL,email_addresses_configured:!!env.SUPPORT_EMAIL_FROM && !!env.SUPPORT_EMAIL_TO});
     if (url.pathname === "/api/data" && request.method === "GET") return getTeacherData(env,request);
     if (url.pathname === "/api/action" && request.method === "POST") return postAction(env,request);
     if (url.pathname === "/api/leadership" && request.method === "GET") return leadership(env);
