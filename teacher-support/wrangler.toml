@@ -16,11 +16,6 @@ database_id = "2eaec23a-1823-4c77-a2a4-83839f9cd04d"
 binding = "R2"
 bucket_name = "cva-teacher-support"
 
-[[send_email]]
 name = "EMAIL"
 destination_address = "michael.hardigree@cobbk12.org"
 allowed_sender_addresses = [ "noreply@cobbvirtualacademy.org" ]
-
-[vars]
-SUPPORT_EMAIL_TO = "michael.hardigree@cobbk12.org"
-SUPPORT_EMAIL_FROM = "noreply@cobbvirtualacademy.org"
