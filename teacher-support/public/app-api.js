@@ -128,17 +128,103 @@
     });
   }
 
-  function teacherPage() {
-    wireTeachingWeekInteractions();
 
-    const priorityKeys = ['gradebook-catch-up', 'synergy-sync-check'];
-    document.querySelectorAll('.priority-check input').forEach((checkbox, index) => {
-      if (!priorityKeys[index]) return;
-      checkbox.dataset.priorityKey = priorityKeys[index];
+  function localISODate() {
+    const d = new Date();
+    const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${day}`;
+  }
+
+  function prettyDate(iso) {
+    if (!iso) return '';
+    const [y,m,d] = iso.split('-').map(Number);
+    return new Date(y,m-1,d).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  }
+
+  function weekRangeLabel(w) {
+    const start = prettyDate(w.start_date), end = prettyDate(w.end_date);
+    const sameMonth = start.split(' ')[0] === end.split(' ')[0];
+    return sameMonth ? `${start}–${end.replace(/^\w+\s/,'')}` : `${start}–${end}`;
+  }
+
+  function chooseCurrentWeek(weeks) {
+    const today = localISODate();
+    const exact = weeks.find(w => today >= w.start_date && today <= w.end_date);
+    if (exact) return exact;
+    return weeks.find(w => today < w.start_date) || weeks[weeks.length-1];
+  }
+
+  function eventsForWeek(events, week) {
+    return (events || []).filter(e => {
+      const end = e.end_date || e.start_date;
+      return e.start_date <= week.end_date && end >= week.start_date;
+    });
+  }
+
+  function renderSchedule(data) {
+    const weeks = data.schedule_weeks || [];
+    if (!weeks.length) return;
+    const current = chooseCurrentWeek(weeks);
+    const currentNo = Number(current.week_number);
+    const priorities = (data.priorities || []).filter(p => Number(p.week_number) === currentNo);
+    const status = Object.fromEntries((data.priority_status || []).map(x => [x.priority_key,x.status]));
+
+    const title = document.getElementById('currentWeekTitle');
+    const sub = document.getElementById('currentWeekSub');
+    const badge = document.getElementById('currentWeekBadge');
+    const count = document.getElementById('currentPriorityCount');
+    if (title) title.textContent = `${current.label}: ${weekRangeLabel(current)}`;
+    if (sub) sub.textContent = 'Current schedule • CVA Teacher Schedule + CCSD calendar context';
+    if (badge) badge.textContent = current.label;
+    if (count) count.textContent = priorities.length;
+
+    const context = document.getElementById('calendarContext');
+    if (context) {
+      const events = eventsForWeek(data.calendar_events,current);
+      context.innerHTML = events.map(e => `<div class="callout" style="margin-bottom:14px"><strong>${esc(e.title)}</strong><div class="mini" style="margin-top:4px">${esc(prettyDate(e.start_date))}${e.end_date ? '–'+esc(prettyDate(e.end_date)) : ''} • ${esc(e.description || '')}</div></div>`).join('');
+    }
+
+    const list = document.getElementById('currentPriorityList');
+    if (list) {
+      if (!priorities.length) list.innerHTML = '<div class="routine"><div class="routine-title">No CVA-specific priority is scheduled for this week.</div><div class="routine-desc">Ongoing weekly expectations still apply.</div></div>';
+      else list.innerHTML = priorities.map(p => {
+        const [y,m,d] = (p.due_date || '').split('-').map(Number);
+        const dt = p.due_date ? new Date(y,m-1,d) : null;
+        const mon = dt ? dt.toLocaleDateString('en-US',{month:'short'}).toUpperCase() : '';
+        const day = dt ? dt.getDate() : '';
+        const isTask = p.item_type === 'teacher_task';
+        const checked = status[p.priority_key] === 'complete';
+        const type = p.item_type === 'term_date' ? 'CVA Term Date' : 'CVA Teacher Task';
+        return `<div class="priority-card" data-priority-key="${esc(p.priority_key)}"><div class="priority-date"><div class="priority-month">${esc(mon)}</div><div class="priority-day">${esc(day)}</div></div><div class="priority-body"><div class="priority-head"><div><div class="priority-name">${esc(p.title)}</div><div class="priority-type">${type}</div></div></div><div class="priority-desc">${esc(p.description || '')}</div><div class="priority-actions">${isTask ? `<label class="priority-check"><input class="check" type="checkbox" data-priority-key="${esc(p.priority_key)}" ${checked?'checked':''}/> Mark complete</label>` : ''}${/synergy/i.test(p.title)?'<button class="pill-btn schedule-resource" data-resource="gradebook">Gradebook Help</button>':''}${/grading/i.test(p.title)?'<button class="pill-btn schedule-resource" data-resource="grading">View Grading Guidance</button>':''}</div></div></div>`;
+      }).join('');
+    }
+
+    const upcoming = document.getElementById('upcomingWeeks');
+    if (upcoming) {
+      const next = weeks.filter(w => Number(w.week_number) > currentNo).slice(0,4);
+      upcoming.innerHTML = next.map(w => {
+        const ps=(data.priorities||[]).filter(p=>Number(p.week_number)===Number(w.week_number));
+        const ev=eventsForWeek(data.calendar_events,w);
+        return `<div class="routine"><div class="routine-title">${esc(w.label)} • ${esc(weekRangeLabel(w))}</div><div class="routine-desc">${ps.length ? ps.map(p=>esc(p.title)).join(' • ') : 'No CVA-specific tasks scheduled.'}${ev.length ? '<br><strong>Calendar:</strong> '+ev.map(e=>esc(e.title)).join(' • ') : ''}</div></div>`;
+      }).join('') || '<div class="mini">No later weeks are scheduled.</div>';
+    }
+
+    const completed = document.getElementById('completedWeeks');
+    if (completed) {
+      const prior = weeks.filter(w => Number(w.week_number) < currentNo).slice(-6).reverse();
+      completed.innerHTML = prior.map(w => {
+        const ps=(data.priorities||[]).filter(p=>Number(p.week_number)===Number(w.week_number));
+        const done=ps.filter(p=>p.item_type==='teacher_task' && status[p.priority_key]==='complete').length;
+        const tasks=ps.filter(p=>p.item_type==='teacher_task').length;
+        return `<div class="routine"><div class="routine-title">✓ ${esc(w.label)} • ${esc(weekRangeLabel(w))}</div><div class="routine-desc">${tasks ? done+' of '+tasks+' teacher tasks marked complete' : 'No completion tasks scheduled'}.</div></div>`;
+      }).join('') || '<div class="mini">No completed weeks yet.</div>';
+    }
+
+    document.querySelectorAll('#week .priority-check input[data-priority-key]').forEach(checkbox => {
       checkbox.onchange = async () => {
         const desired = checkbox.checked;
         try {
-          await post({ action:'priority_status', teacher_id:TEACHER_ID, priority_key:checkbox.dataset.priorityKey, status:desired?'complete':'not_started' });
+          await post({action:'priority_status',teacher_id:TEACHER_ID,priority_key:checkbox.dataset.priorityKey,status:desired?'complete':'not_started'});
           flash(desired ? 'Priority marked complete' : 'Priority reopened');
         } catch (error) {
           checkbox.checked = !desired;
@@ -146,6 +232,15 @@
         }
       };
     });
+    document.querySelectorAll('#week .schedule-resource').forEach(btn => {
+      btn.onclick = () => openUrl(btn.dataset.resource === 'grading'
+        ? 'https://teacherresources.cobbvirtualacademy.org/grading-and-feedback/grading-basics.html'
+        : 'https://teacherresources.cobbvirtualacademy.org/grading-and-feedback/');
+    });
+  }
+
+  function teacherPage() {
+    wireTeachingWeekInteractions();
 
     document.querySelectorAll('.status-choice').forEach(btn => {
       btn.onclick = async () => {
@@ -206,8 +301,7 @@
     }
 
     api('/api/data?teacher_id=' + encodeURIComponent(TEACHER_ID)).then(data => {
-      const status = Object.fromEntries((data.priority_status || []).map(x => [x.priority_key, x.status]));
-      document.querySelectorAll('.priority-check input[data-priority-key]').forEach(cb => { cb.checked = status[cb.dataset.priorityKey] === 'complete'; });
+      renderSchedule(data);
 
       const cycle = (data.coaching_cycles || []).find(c => c.cycle_key === 'proactive-student-outreach');
       if (cycle) {
@@ -249,12 +343,11 @@
         const status = Object.fromEntries((data.priority_status || []).map(x => [x.priority_key, x.status]));
         const weekPanel = document.getElementById('teachertab-week');
         if (weekPanel) {
+          const weeks = data.schedule_weeks || [];
+          const current = chooseCurrentWeek(weeks);
+          const ps = (data.priorities || []).filter(p => Number(p.week_number) === Number(current?.week_number));
           const comments = data.comments || [];
-          weekPanel.innerHTML = `<div class="teacher-detail-grid"><div class="teacher-detail-card"><h4>Current Priorities</h4>
-            <div class="priority-mini"><strong>Gradebook Catch Up</strong><div class="mini">${status['gradebook-catch-up']==='complete'?'Complete':'Needs attention'}</div></div>
-            <div class="priority-mini"><strong>Synergy Sync Check</strong><div class="mini">${status['synergy-sync-check']==='complete'?'Complete':'Needs attention'}</div></div>
-            <div class="priority-mini"><strong>Mid-Term Cut Off</strong><div class="mini">Term date</div></div></div>
-            <div class="teacher-detail-card"><h4>Feedback & Follow-Up</h4><div class="mini">${comments.filter(c=>!c.acknowledged_at).length} items awaiting review</div></div></div>`;
+          weekPanel.innerHTML = `<div class="teacher-detail-grid"><div class="teacher-detail-card"><h4>Current Priorities</h4>${ps.map(p=>`<div class="priority-mini"><strong>${esc(p.title)}</strong><div class="mini">${p.item_type==='term_date'?'Term date':status[p.priority_key]==='complete'?'Complete':'Needs attention'} • ${esc(prettyDate(p.due_date))}</div></div>`).join('') || '<div class="mini">No CVA-specific priorities this week.</div>'}</div><div class="teacher-detail-card"><h4>Feedback & Follow-Up</h4><div class="mini">${comments.filter(c=>!c.acknowledged_at).length} items awaiting review</div></div></div>`;
         }
 
         const coachingPanel = document.getElementById('teachertab-coaching');
