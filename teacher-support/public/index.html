@@ -138,29 +138,122 @@ h1{font-size:42px}h2{font-size:28px}h3{font-size:20px}
 @media print{body{background:#fff!important}.topbar,.sidebar,.evidence-toolbar,.filter-row-evidence,.add-evidence-form,.export-panel,.pill-btn,.text-link{display:none!important}.layout{display:block!important}.main{padding:0!important}.view{display:none!important}#evidence.view{display:block!important}.hero{border-left:0!important;border-bottom:3px solid #bb0000!important;border-radius:0!important;background:#fff!important;padding:0 0 18px!important;margin-bottom:20px!important}.print-only{display:block!important}.evidence-entry{break-inside:avoid;box-shadow:none!important}.evidence-detail{display:block!important}@page{margin:.55in}}
 .coaching-shell{display:grid;gap:16px}.coaching-card{border:1px solid #d9dde3;border-left:6px solid #bb0000;border-radius:16px;background:#fff;padding:20px}.coaching-header{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.coaching-status{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:6px 9px;background:#fff1f1;color:#bb0000}.coaching-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.coaching-pill{font-size:10px;font-weight:800;border:1px solid #d9dde3;border-radius:999px;padding:5px 8px;background:#f8f9fa;color:#4d5661}.coaching-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}.coaching-section{border:1px solid #d9dde3;border-radius:12px;padding:14px;background:#fbfbfc}.coaching-section h4{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:16px;margin:0 0 9px}.coaching-section p{font-size:12px;line-height:1.55;color:#505a65;margin:0}.coaching-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.status-group{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.status-choice{border:1px solid #d9dde3;background:#fff;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer}.status-choice.active{background:#1f2933;color:#fff;border-color:#1f2933}.coaching-textarea{width:100%;min-height:100px;border:1px solid #d9dde3;border-radius:10px;padding:10px;margin-top:10px;resize:vertical}.coach-comment{border:1px solid #d9dde3;border-radius:10px;padding:12px;background:#fff;margin-top:10px}.coach-comment-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px}.resource-stack{display:grid;gap:8px;margin-top:10px}.resource-stack a{display:flex;justify-content:space-between;gap:10px;align-items:center;text-decoration:none;color:#222;border:1px solid #d9dde3;border-radius:10px;padding:10px 11px;background:#fff;font-size:12px;font-weight:700}.resource-stack a:hover{border-color:#bb0000;color:#bb0000}.checkin-box{border-left:4px solid #bb0000;background:#fff6f6;border-radius:10px;padding:12px}.previous-cycle{border:1px solid #d9dde3;border-radius:12px;padding:14px;background:#fff;margin-top:10px}.previous-cycle-title{font-weight:800;font-size:13px}.previous-cycle-meta{font-size:11px;color:#667085;margin-top:4px}.reflection-saved{display:none;border-top:1px solid #eceef1;margin-top:10px;padding-top:10px;font-size:12px;color:#505a65}.reflection-saved.show{display:block}@media(max-width:900px){.coaching-header{flex-direction:column}}
 
-@media(max-width:640px){
-  .main{padding:14px}
-  .topbar{padding:12px 14px}
-  .brand{font-size:19px}
-  .userchip{display:none}
-  h1{font-size:34px}
-  h2{font-size:24px}
-  .hero{padding:20px 18px;border-radius:12px}
-  .tab-row{gap:6px}
-  .tab-btn{flex:1 1 auto;text-align:center}
-  .always-strip{grid-template-columns:1fr}
-  .priority-wrap-card{padding:14px}
-  .priority-card{grid-template-columns:1fr}
-  .priority-date{min-height:auto;flex-direction:row;gap:8px;justify-content:flex-start;padding:10px 14px}
-  .priority-day{font-size:26px}
-  .priority-body{padding:14px}
-  .priority-head{display:block}
-  .priority-name{font-size:19px}
-  .priority-actions{align-items:flex-start}
-  .priority-check{width:100%}
-  .card{padding:16px}
-  .feedback-summary{align-items:flex-start}
+
+
+@media(max-width:1024px){
+  .main{padding:24px}
+  .layout{grid-template-columns:210px 1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .always-strip{grid-template-columns:repeat(2,1fr)}
 }
+
+@media(max-width:768px){
+  .app{width:100%;max-width:none}
+  .topbar{position:relative;padding:12px 16px}
+  .layout{display:block;min-height:auto}
+  .sidebar{
+    display:flex;
+    position:sticky;
+    top:0;
+    z-index:15;
+    gap:6px;
+    overflow-x:auto;
+    padding:9px 12px;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    background:#FBFBFC;
+    scrollbar-width:thin;
+  }
+  .nav-eyebrow{display:none}
+  .nav-btn{
+    width:auto;
+    flex:0 0 auto;
+    margin:0;
+    padding:10px 12px;
+    white-space:nowrap;
+    border-radius:999px;
+    font-size:12px;
+  }
+  .nav-btn.active{
+    border-left:0;
+    padding-left:12px;
+    background:#FFF0F0;
+    box-shadow:inset 0 -3px 0 var(--red);
+  }
+  .main{padding:18px}
+  h1{font-size:36px}
+  h2{font-size:25px}
+  .hero{padding:22px 20px}
+  .grid-2,.grid-3,.grid-4,.practice-grid,.teacher-detail-grid,.evidence-detail-grid,.form-row{grid-template-columns:1fr}
+  .always-strip{grid-template-columns:repeat(2,1fr)}
+  .practice-card.full,.full-row{grid-column:auto}
+  .priority-card{grid-template-columns:72px 1fr}
+  .priority-date{min-height:104px}
+  .priority-day{font-size:34px}
+  .card-head,.practice-top,.coaching-header{gap:10px}
+  .evidence-toolbar{align-items:flex-start}
+  .table-wrap,.teacher-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .data-table,.teacher-table{min-width:720px}
+  .pill-btn,.primary-btn,.secondary-btn,.tab-btn,.status-choice{min-height:40px}
+}
+
+@media(max-width:480px){
+  .topbar{padding:11px 13px}
+  .brand{font-size:18px}
+  .userchip{display:none}
+  .sidebar{padding:8px 10px}
+  .nav-btn{font-size:11px;padding:9px 11px}
+  .main{padding:12px}
+  h1{font-size:31px}
+  h2{font-size:23px}
+  h3{font-size:18px}
+  .lead{font-size:14px;line-height:1.55}
+  .hero{padding:18px 16px;border-left-width:6px;border-radius:12px;margin-bottom:16px}
+  .week-title{font-size:20px}
+  .week-date-banner{margin-bottom:14px!important}
+  .tab-row{display:grid;grid-template-columns:1fr;gap:7px}
+  .tab-btn{width:100%;text-align:center}
+  .always-strip{grid-template-columns:1fr}
+  .priority-wrap-card{padding:12px;border-radius:12px}
+  .priority-card{grid-template-columns:1fr;border-radius:12px}
+  .priority-date{
+    min-height:auto;
+    flex-direction:row;
+    gap:8px;
+    justify-content:flex-start;
+    padding:9px 13px;
+  }
+  .priority-month{font-size:11px}
+  .priority-day{font-size:25px}
+  .priority-body{padding:13px 14px}
+  .priority-name{font-size:19px}
+  .priority-desc{font-size:12px}
+  .priority-actions{display:grid;grid-template-columns:1fr;gap:8px}
+  .priority-check{width:100%;min-height:40px}
+  .priority-actions .pill-btn{width:100%;text-align:center}
+  .card{padding:14px;border-radius:12px}
+  .card-head{flex-direction:column}
+  .badge{align-self:flex-start}
+  .feedback-summary{align-items:flex-start;flex-direction:column}
+  .feedback-summary .pill-btn{width:100%}
+  .routine-actions{gap:8px}
+  .routine-actions .pill-btn{min-height:40px}
+  .practice-summary,.practice-detail{padding:14px}
+  .practice-top{flex-direction:column}
+  .practice-toggle{align-self:flex-end}
+  .coaching-card{padding:14px}
+  .coaching-section{padding:12px}
+  .status-group{display:grid;grid-template-columns:1fr}
+  .status-choice{width:100%}
+  .evidence-actions{width:100%}
+  .evidence-actions .primary-btn,.evidence-actions .secondary-btn{flex:1 1 100%}
+  .filter-row-evidence{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .evidence-filter{flex:0 0 auto;min-height:38px}
+  .evidence-entry{padding:14px}
+  .evidence-entry-head{flex-direction:column}
+  .form-field input,.form-field select,.form-field textarea{font-size:16px}
+}
+
 </style></head><body><div class="app">
 <div class="topbar"><div class="brand">CVA Teacher Support</div><div class="userchip">Teacher View • Fall 2026</div></div>
 <div class="layout"><aside class="sidebar"><div class="nav-eyebrow">My Workspace</div><button class="nav-btn active" data-view="week">My Teaching Week</button><button class="nav-btn" data-view="practice">My Practice</button><button class="nav-btn" data-view="coaching">My Coaching</button><button class="nav-btn" data-view="evidence">My Evidence</button><button class="nav-btn" data-view="support">Request Support</button></aside>
