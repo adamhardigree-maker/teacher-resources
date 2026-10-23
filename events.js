@@ -565,6 +565,32 @@ window.evTriggerUpload = function () {
     });
 
     var ht = null;
+    // Analytics: keep results responsive, but log only after typing pauses.
+    var searchAnalyticsTimer = null;
+    var lastTrackedSearch = "";
+    var SEARCH_ANALYTICS_DELAY_MS = 1200;
+
+    function queueSearchAnalytics(term, resultCount) {
+      clearTimeout(searchAnalyticsTimer);
+      if (!term) return;
+
+      searchAnalyticsTimer = setTimeout(function () {
+        // Don't record a term that the visitor has since changed or cleared.
+        if (getText().trim().toLowerCase() !== term) return;
+        // Avoid tracking single-letter inputs and consecutive duplicate terms.
+        if (term.length < 2 || term === lastTrackedSearch) return;
+        // Do not send obvious personal information to Google Analytics.
+        if (/@/.test(term) || /\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b/.test(term) || /\b\d{6,}\b/.test(term)) return;
+
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "view_search_results", {
+            search_term: term.slice(0, 100),
+            search_result_count: resultCount
+          });
+          lastTrackedSearch = term;
+        }
+      }, SEARCH_ANALYTICS_DELAY_MS);
+    }
 
     function iconFor(s) {
       return (
@@ -721,6 +747,8 @@ window.evTriggerUpload = function () {
         getText().toLowerCase();
 
       if (!t) {
+        clearTimeout(searchAnalyticsTimer);
+        lastTrackedSearch = "";
         clearRes();
 
         clearBtn.classList.add(
@@ -747,6 +775,7 @@ window.evTriggerUpload = function () {
         });
 
       renderRes(m, t);
+      queueSearchAnalytics(t, m.length);
     }
 
     inputEl.addEventListener(
@@ -789,6 +818,8 @@ window.evTriggerUpload = function () {
       "click",
       function () {
 
+        clearTimeout(searchAnalyticsTimer);
+        lastTrackedSearch = "";
         inputEl.textContent = "";
 
         clearRes();
@@ -811,6 +842,8 @@ window.evTriggerUpload = function () {
         ) {
           e.preventDefault();
 
+          clearTimeout(searchAnalyticsTimer);
+          lastTrackedSearch = "";
           inputEl.textContent = "";
 
           clearRes();
