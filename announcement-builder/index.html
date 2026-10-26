@@ -12,6 +12,7 @@
 <div><label for="message">Message or checklist <span class="hint">(one checklist item per line)</span></label><textarea id="message" rows="5"></textarea></div>
 <div class="two"><div><label for="date">Date / time (optional)</label><input id="date" placeholder="e.g., Thursday, November 12 at 11:59 PM"></div><div><label for="url">Resource link (optional)</label><input id="url" type="url" placeholder="https://..."></div></div>
 <div class="two"><div><label for="linkLabel">Link text</label><input id="linkLabel" placeholder="Join the live session"></div><div><label for="style">Design style</label><select id="style"><option value="standard">Standard announcement</option><option value="reminder">Quick reminder</option><option value="checklist">Action checklist</option><option value="deadline">Important deadline</option></select></div></div>
+<div class="two"><div><label for="palette">Announcement color</label><select id="palette"><option value="#bb0000">CVA Red</option><option value="#28527a">Deep Blue</option><option value="#356245">Forest Green</option><option value="#60437a">Purple</option><option value="#a65b20">Burnt Orange</option><option value="#343a40">Charcoal</option><option value="custom">Custom color</option></select></div><div><label for="customColor">Custom color</label><input id="customColor" type="color" value="#bb0000" style="height:46px;padding:4px;cursor:pointer" disabled></div></div><p class="hint">Choose a preset or select Custom color to pick your own. The preview and CTLS HTML will match.</p>
 <div><label><input type="checkbox" id="footer" style="width:auto;margin-right:8px">Add CVA footer</label></div>
 </div></section>
 <section class="panel preview" aria-labelledby="preview-title"><h2 id="preview-title">Live preview</h2><div class="previewStage" id="preview"></div><div class="actions"><button class="primary" id="copy" type="button">Copy HTML for CTLS</button><button class="secondary" id="download" type="button">Download HTML</button><button class="secondary" id="reset" type="button">Reset template</button></div><p class="status" id="status" role="status" aria-live="polite"></p><details><summary>View generated HTML</summary><pre id="code"></pre></details></section>
@@ -21,22 +22,25 @@ const templates=[["quick","Quick Reminder","General","Let's Keep Moving Forward"
 const el=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 let selected=templates[0], current='';
+function accentColor(){return el('palette').value==='custom'?el('customColor').value:el('palette').value}
+function foreground(hex){const parts=hex.slice(1).match(/.{2}/g).map(s=>parseInt(s,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);const l=.2126*parts[0]+.7152*parts[1]+.0722*parts[2];return (l+.05)/.05>=4.5?'#111111':'#ffffff'}
 function generated(){
 const head=esc(el('heading').value.trim()), msg=el('message').value.trim(), date=esc(el('date').value.trim()), style=el('style').value, href=el('url').value.trim(), label=esc(el('linkLabel').value.trim()||'Open resource');
 let validURL='';try{const u=new URL(href);if(['https:','http:'].includes(u.protocol))validURL=u.href}catch(e){}
+const accent=accentColor(), ink=foreground(accent);
 const outer='max-width:1100px;margin:0 auto;font-family:Montserrat,Arial,sans-serif;color:#262626;font-size:18px;line-height:1.6;';
-const border=style==='reminder'?'border-left:6px solid #bb0000;background:#f7f7f7;':style==='deadline'?'border:2px solid #dedede;border-radius:10px;overflow:hidden;':'border:2px solid #dedede;border-top:8px solid #bb0000;border-radius:10px;';
+const border=style==='reminder'?'border-left:6px solid '+accent+';background:#f7f7f7;':style==='deadline'?'border:2px solid #dedede;border-radius:10px;overflow:hidden;':'border:2px solid #dedede;border-top:8px solid '+accent+';border-radius:10px;';
 const items=msg.split(/\n/).map(x=>x.trim()).filter(Boolean);
 const body=style==='checklist'?'<ul style="padding-left:27px;margin:8px 0 0;">'+items.map(x=>'<li style="margin:6px 0;">'+esc(x)+'</li>').join('')+'</ul>':'<p style="margin:0;">'+esc(msg).replace(/\n/g,'<br>')+'</p>';
 const heading='<h2 style="font-family:Oswald,Arial,sans-serif;font-size:30px;line-height:1.3;margin:0 0 12px;">'+head+'</h2>';
 const dateLine=date?'<p style="font-weight:700;margin:0 0 13px;">'+date+'</p>':'';
 const link=validURL?'<p style="margin:16px 0 0;"><a href="'+esc(validURL)+'" target="_blank" rel="noopener noreferrer" style="color:#a00000;font-weight:700;text-decoration:underline;">'+label+'</a></p>':'';
-const content=style==='deadline'?'<div style="background:#bb0000;color:#ffffff;padding:18px 26px;">'+heading.replace('font-size:30px;','font-size:30px;color:#ffffff;')+'</div><div style="padding:24px 26px;">'+dateLine+body+link+'</div>':'<div style="padding:26px;">'+heading+dateLine+body+link+'</div>';
+const content=style==='deadline'?'<div style="background:'+accent+';color:'+ink+';padding:18px 26px;">'+heading.replace('font-size:30px;','font-size:30px;color:'+ink+';')+'</div><div style="padding:24px 26px;">'+dateLine+body+link+'</div>':'<div style="padding:26px;">'+heading+dateLine+body+link+'</div>';
 const footer=el('footer').checked?'<hr style="border:0;border-top:1px solid #dedede;margin:25px 0;"><div style="text-align:center;"><strong style="font-family:Montserrat,Arial,sans-serif;font-size:22px;color:#888888;">CLASS. VIRTUALLY. ANYWHERE.</strong></div>':'';
 return '<div style="'+outer+'"><div style="'+border+'">'+content+'</div>'+footer+'</div>';
 }
 function render(){current=generated();el('preview').innerHTML=current;el('code').textContent=current;el('status').textContent='';}
-function choose(t){selected=t;el('heading').value=t[3];el('message').value=t[4];el('style').value=t[5];el('date').value='';el('url').value='';el('linkLabel').value=t[0]==='live'?'Join the live session':'Open resource';el('footer').checked=false;
+function choose(t){selected=t;el('heading').value=t[3];el('message').value=t[4];el('style').value=t[5];el('date').value='';el('url').value='';el('linkLabel').value=t[0]==='live'?'Join the live session':'Open resource';el('footer').checked=false;el('palette').value='#bb0000';el('customColor').value='#bb0000';el('customColor').disabled=true;
 document.querySelectorAll('.template').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===t[0])));render();}
 const sections=[
 {title:'Getting Started & Weekly Routines',icon:'calendar',ids:['welcome','week','monday','friday','quick']},
@@ -59,6 +63,7 @@ group.ids.forEach(id=>{const t=templates.find(item=>item[0]===id);if(!t)return;c
 el('templates').appendChild(section);
 });
 document.querySelectorAll('input,textarea,select').forEach(x=>x.addEventListener('input',render));
+el('palette').addEventListener('change',()=>{el('customColor').disabled=el('palette').value!=='custom';if(el('palette').value!=='custom')el('customColor').value=el('palette').value;render()});
 el('copy').onclick=async()=>{try{await navigator.clipboard.writeText(current);el('status').textContent='HTML copied. Paste it into the classroom HTML editor.'}catch(e){el('status').textContent='Clipboard unavailable. Select and copy the code under “View generated HTML”.';el('code').parentElement.open=true}};
 el('download').onclick=()=>{const blob=new Blob([current],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='cva-announcement.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 el('reset').onclick=()=>choose(selected);
