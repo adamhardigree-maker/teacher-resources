@@ -38,7 +38,7 @@ const heading='<h2 style="font-family:Oswald,Arial,sans-serif;font-size:30px;lin
 const dateLine=date?'<p style="font-weight:700;margin:0 0 13px;">'+date+'</p>':'';
 const link=validURL?'<p style="margin:16px 0 0;"><a href="'+esc(validURL)+'" target="_blank" rel="noopener noreferrer" style="color:#a00000;font-weight:700;text-decoration:underline;">'+label+'</a></p>':'';
 const closingLine=closing?'<p style="margin:18px 0 0;">'+esc(closing).replace(/\n/g,'<br>')+'</p>':'';
-const content=style==='deadline'?'<div style="background:'+accent+';color:'+ink+';padding:18px 26px;">'+heading.replace('font-size:30px;','font-size:30px;color:'+ink+';')+'</div><div style="padding:24px 26px;">'+dateLine+body+link+closingLine+'</div>':'<div style="padding:26px;">'+heading+dateLine+body+link+'</div>';
+const content=style==='deadline'?'<div style="background:'+accent+';color:'+ink+';padding:18px 26px;">'+heading.replace('font-size:30px;','font-size:30px;color:'+ink+';')+'</div><div style="padding:24px 26px;">'+dateLine+body+link+closingLine+'</div>':'<div style="padding:26px;">'+heading+dateLine+body+link+closingLine+'</div>';
 const footer=el('footer').checked?'<hr style="border:0;border-top:1px solid #dedede;margin:25px 0;"><div style="text-align:center;"><strong style="font-family:Montserrat,Arial,sans-serif;font-size:22px;color:#888888;">CLASS. VIRTUALLY. ANYWHERE.</strong></div>':'';
 return '<div style="'+outer+'"><div style="'+border+'">'+content+'</div>'+footer+'</div>';
 }
