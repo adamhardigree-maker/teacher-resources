@@ -1,0 +1,649 @@
+<meta name="robots" content="noindex, nofollow">
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CVA New Teacher Information Page Course Quest | CVA Teacher Resources</title><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&amp;family=Montserrat:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/><style>
+.cva-wrap,
+.cva-wrap * {
+  box-sizing: border-box;
+}
+
+.cva-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  color: #222222;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.cva-wrap h1,
+.cva-wrap h2,
+.cva-wrap h3 {
+  font-family: 'Oswald', Arial, sans-serif;
+}
+
+.cva-wrap p,
+.cva-wrap li,
+.cva-wrap a {
+  overflow-wrap: anywhere;
+}
+
+.cva-hero {
+  padding: 28px 26px;
+  background: #f7f8fa;
+  border: 1px solid #d9dde3;
+  border-top: 8px solid #bb0000;
+  border-radius: 16px;
+}
+
+.cva-hero h1 {
+  margin: 0 0 14px;
+  color: #000000;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.cva-hero > p {
+  margin: 0;
+  color: #222222;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.cva-white {
+  padding: 26px 28px;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-radius: 16px;
+}
+
+.cva-white h2 {
+  margin: 0 0 14px;
+  color: #000000;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.cva-white > p {
+  margin: 0 0 18px;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cva-eyebrow {
+  display: block;
+  margin: 0 0 8px;
+  color: #bb0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.cva-callout {
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-left: 6px solid #bb0000;
+  border-radius: 12px;
+}
+
+.cva-callout-label {
+  display: block;
+  margin: 0 0 6px;
+  color: #bb0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.cva-callout p {
+  margin: 0;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.cva-accordion {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #1e1e1e;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+}
+
+.cva-accordion summary {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 16px 18px;
+  background: #1e1e1e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.4;
+  list-style: none;
+  user-select: none;
+}
+
+.cva-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.cva-accordion summary::before {
+  content: "+";
+  flex: 0 0 auto;
+  width: 24px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.cva-accordion[open] summary::before {
+  content: "−";
+}
+
+.cva-accordion summary:hover,
+.cva-accordion summary:focus-visible {
+  background: #2a2a2a;
+}
+
+.cva-accordion summary:focus-visible {
+  outline: 3px solid #bb0000;
+  outline-offset: -3px;
+}
+
+.cva-accordion-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 18px;
+  background: #ffffff;
+  border-top: 1px solid #d9dde3;
+}
+
+.cva-goal {
+  padding: 14px 16px;
+  background: #f7f8fa;
+  border: 1px solid #d9dde3;
+  border-left: 6px solid #bb0000;
+  border-radius: 12px;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cva-goal strong {
+  color: #bb0000;
+  font-weight: 800;
+}
+
+.cva-intro {
+  margin: 0 0 2px;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cva-step-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-top: 6px solid #bb0000;
+  border-radius: 16px;
+}
+
+.cva-step-content {
+  min-width: 0;
+  padding: 22px;
+  align-self: center;
+}
+
+.cva-card-label {
+  display: block;
+  margin: 0 0 8px;
+  color: #bb0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.cva-step-content h3 {
+  margin: 0 0 10px;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cva-step-content p {
+  margin: 0 0 12px;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cva-step-content p:last-child {
+  margin-bottom: 0;
+}
+
+.cva-media {
+  min-width: 0;
+  padding: 14px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  border-left: 1px solid #d9dde3;
+  text-align: center;
+}
+
+.cva-image-link {
+  display: block;
+  text-decoration: none;
+}
+
+.cva-media img {
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 10px;
+}
+
+.cva-image-note {
+  margin: 7px 0 0;
+  color: #777777;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.cva-button {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 10px 16px;
+  background: #bb0000;
+  border-radius: 999px;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cva-button:hover,
+.cva-button:focus-visible {
+  background: #8f0000;
+  text-decoration: underline;
+}
+
+.cva-checklist {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+}
+
+.cva-checklist-item {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 10px;
+  padding: 17px 16px;
+  border-bottom: 1px solid #d9dde3;
+}
+
+.cva-checklist-item:last-child {
+  border-bottom: 0;
+}
+
+.cva-checklist-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #bb0000;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.cva-checklist-copy {
+  min-width: 0;
+}
+
+.cva-checklist-copy h3 {
+  margin: 0 0 4px;
+  color: #000000;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.cva-checklist-copy p {
+  margin: 0;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cva-reminder {
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-left: 6px solid #bb0000;
+  border-radius: 16px;
+}
+
+.cva-reminder h3 {
+  margin: 0 0 8px;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cva-reminder p {
+  margin: 0;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.cva-section-divider {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.cva-section-divider span {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background: #bb0000;
+  border-radius: 999px;
+}
+
+.cva-footer-rule {
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px solid #d9dde3;
+}
+
+.cva-footer {
+  margin: 0;
+  color: #63666a;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .cva-step-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cva-media {
+    border-top: 1px solid #d9dde3;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .cva-wrap {
+    padding: 12px 12px 36px;
+    gap: 12px;
+  }
+
+  .cva-hero,
+  .cva-white {
+    padding: 20px 18px;
+  }
+
+  .cva-hero h1 {
+    font-size: clamp(30px, 10vw, 40px);
+  }
+
+  .cva-accordion summary {
+    padding: 15px 14px;
+  }
+
+  .cva-accordion-body {
+    padding: 16px 12px;
+  }
+
+  .cva-step-content {
+    padding: 19px 17px;
+  }
+
+  .cva-step-content h3 {
+    font-size: 20px;
+  }
+
+  .cva-footer {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cva-wrap *,
+  .cva-wrap *::before,
+  .cva-wrap *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+.cva-overview-heading{margin:4px 0 0;font:900 22px/1.25 'Oswald',Arial,sans-serif;text-transform:uppercase}.cva-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.cva-overview-card{min-width:0;padding:18px;background:#f7f8fa;border:1px solid #d9dde3;border-top:5px solid #bb0000;border-radius:12px}.cva-overview-card h3{margin:0 0 9px;font:900 20px/1.25 'Oswald',Arial,sans-serif;text-transform:uppercase}.cva-overview-card p{margin:0;font-size:15px;line-height:1.6}@media(max-width:820px){.cva-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.cva-overview-grid{grid-template-columns:1fr}}</style></head><body style="margin: 0; padding-top: 56px; background: #ffffff;"><div class="cva-wrap"><section class="cva-callout" aria-label="Teacher Information Page Builder" style="display:none;background:#f7f8fa;margin-bottom:8px"><span class="cva-callout-label">Create your page</span><p style="margin:0 0 12px">Use the Teacher Information Page Builder to enter your biography, contact details, office hours, and Panopto welcome video. Preview your page and copy the finished HTML into your classroom.</p><a href="../teacher-information-page-builder/" style="display:inline-block;padding:12px 18px;background:#bb0000;color:#fff;border-radius:8px;font-weight:800;text-decoration:none">Open Teacher Information Page Builder</a></section><header class="cva-hero"><span class="cva-eyebrow">Rapport &amp; Relationships</span><h1>CVA New Teacher Information Page Course Quest</h1><p>
+The Teacher Information Page helps students get to know you, understand how to contact you, and feel more connected to the course. Completing it gives students a clear, welcoming place to find your introduction, office hours, contact information, and welcome video. <strong>Click each of the steps below for step-by-step instructions.</strong>
+</p></header><section class="cva-white"><span class="cva-eyebrow">First Things First</span><h2>Adding the Teacher Information Page</h2><p>To maintain a consistent experience for all CVA students, use the current Teacher Information Page template. The page is available in CTLS and can be copied directly into your Digital Classroom.</p><div class="cva-callout"><span class="cva-callout-label">Important</span><p>Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></section><details aria-label="Step 1: Add the Teacher Information Page" class="cva-accordion"><summary>Step 1: Add the Teacher Information Page</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Copy the CVA Teacher Information Page into your CTLS Digital Classroom and move it into the correct course folder.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Open Your Digital Classroom</h3><p>
+								Open your <strong>Digital Classroom</strong> in CTLS.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.1.png" rel="noopener" target="_blank">
+<img alt="CTLS Digital Classroom home screen showing the course dashboard and navigation menu." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.1.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Open Student Coursework</h3><p>
+								Select <strong>Student Coursework</strong>.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.2.png" rel="noopener" target="_blank">
+<img alt="CTLS Digital Classroom home screen with an arrow pointing to Student Coursework in the course navigation menu." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.2.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Open the Catalog</h3><p>
+								Select the <strong>Catalog</strong> button.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/revisions/step1.03-locate-folder.png" rel="noopener" target="_blank">
+<img alt="CTLS Student Coursework showing the Class Schedule and Teacher Information folder expanded, with Class Schedule and Class Syllabus listed beneath it and the folder location marked in red." decoding="async" loading="lazy" src="../images/teacher-information-page/revisions/step1.03-locate-folder.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Search District Coursework</h3><p>
+								In <strong>District Coursework</strong>, search for <strong>CVA Teacher Templates</strong>.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/revisions/step1.04-add-page.png" rel="noopener" target="_blank">
+<img alt="CTLS Student Coursework with the add-content menu open beside the Class Schedule and Teacher Information folder, showing Page as an available option." decoding="async" loading="lazy" src="../images/teacher-information-page/revisions/step1.04-add-page.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 5</span><h3>Open the CVA Teacher Templates Tile</h3><p>
+								Select the <strong>CVA Teacher Templates</strong> class tile.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/revisions/step1.05-create-page.png" rel="noopener" target="_blank">
+<img alt="CTLS new-page editor with the title Teacher Information Page entered and the green Create button highlighted." decoding="async" loading="lazy" src="../images/teacher-information-page/revisions/step1.05-create-page.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Find the Teacher Information Page</h3><p>
+								Locate the <strong>Teacher Information Page</strong> folder.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/revisions/step1.06-move-page.png" rel="noopener" target="_blank">
+<img alt="CTLS Student Coursework showing the Teacher Information Page beneath Class Schedule and Teacher Information, with a curved red arrow indicating it should be moved above the other pages." decoding="async" loading="lazy" src="../images/teacher-information-page/revisions/step1.06-move-page.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 8</span><h3>Copy the Page</h3><p>
+								Select the <strong>Copy</strong> icon to add the page to your course. Then, click <strong>Add Selected </strong>to finish the step.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.8.png" rel="noopener" target="_blank">
+<img alt="CVA Teacher Templates coursework list with a magnifying glass highlighting the Copy icon." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.8.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 9</span><h3>Find the Copied Page</h3><p>
+								Return to your Digital Classroom. Locate the copied Teacher Information Page at the bottom of the Student Coursework folders.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.9.png" rel="noopener" target="_blank">
+<img alt="Student Coursework page with the copied Teacher Information Page circled near the bottom of the course folders." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.9.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 10</span><h3>Move the Page into the Correct Folder</h3><p>
+								Drag the Teacher Information Page into the <strong>Class Schedule and Teacher Information</strong> folder.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step1.10.png" rel="noopener" target="_blank">
+<img alt="Student Coursework editor showing the copied Teacher Information Page moved into the Class Schedule and Teacher Information folder." decoding="async" loading="lazy" src="../images/teacher-information-page/step1.10.png"/>
+<p class="cva-image-note">Select image to enlarge.</p>
+</a></div></div><div class="cva-reminder"><h3>
+					Reminder
+				</h3><p>
+					The copied page will usually appear at the bottom of Student Coursework before you move it into the correct folder. <strong>DELETE the empty folder after you move the Teacher Information Page.</strong>
+				</p></div></div></details><div aria-hidden="true" class="cva-section-divider"><span></span><span></span><span></span></div><section class="cva-white"><span class="cva-eyebrow">Building Teacher Presence</span><h2>Recording the Welcome Video</h2><p>A short welcome video helps students connect a face and voice with the name they see in the course. Aim for about one to two minutes. Introduce yourself, share something students may find interesting, and remind them that you are available to help.</p><div class="cva-callout"><span class="cva-callout-label">Accessibility Requirement</span><p>All teacher-recorded videos must include accurate captions. Automatically generated captions must be reviewed and corrected before the video is published. Other digital materials must also follow accessible design practices.</p></div></section><details aria-label="Step 2: Open Panopto" class="cva-accordion"><summary>Step 2: Open Panopto</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Access Panopto, open Panopto Capture, and confirm that your camera and microphone are working.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Sign In to Panopto</h3><p>
+								Open the Panopto platform and sign in with your CCSD credentials.
+							</p><p>
+<a class="cva-button" href="https://cobbk12.hosted.panopto.com/Panopto/Pages/Home.aspx" rel="noopener" target="_blank">
+                  Open CCSD Panopto ↗
+                </a>
+</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.1.png" rel="noopener" target="_blank">
+<img alt="Laptop displaying the Cobb County School District Microsoft sign-in page with fields for entering a district username." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Getting Started</h3><p>
+								Select <strong>Create</strong>. Then, choose <strong>Panopto Capture</strong>.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.2.gif" rel="noopener" target="_blank">
+<img alt="Animated Panopto homepage showing the red Create button circled in the upper-left corner." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.2.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Allow Camera and Microphone Access</h3><p>
+								If prompted, allow your browser to use your camera and microphone.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.3.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder with the browser camera and microphone permission menu open and “Allow while visiting the site” circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Check the Camera Preview</h3><p>
+								Position yourself near the center of the frame and confirm that you can see yourself in the preview.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.4.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder displaying available camera and microphone options, including a live webcam preview." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.4.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 5</span><h3>Check the Audio Indicator</h3><p>
+								Speak normally and watch the audio indicator. A moving indicator means the microphone is receiving sound. If the audio indicator does not move, select a different microphone.
+							</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step2.5.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder with the microphone input level circled to show that audio is being detected." decoding="async" loading="lazy" src="../images/teacher-information-page/step2.5.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>
+					Keep It Simple
+				</h3><p>
+					For a simple welcome message, you do not need to record your screen or add presentation slides.
+				</p></div></div></details><details aria-label="Step 3: Prepare What You Will Say" class="cva-accordion"><summary>Step 3: Prepare What You Will Say</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong>
+			Prepare a few notes for a natural one- to two-minute welcome message.
+		</div><p class="cva-intro">
+			You do not need to write a formal script. Use the prompts below to organize what you would like to share.
+		</p><div class="cva-checklist"><div class="cva-checklist-item"><div class="cva-checklist-number">1</div><div class="cva-checklist-copy"><h3>
+								Introduce Yourself
+							</h3><p>
+								Share your name and the course you teach.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">2</div><div class="cva-checklist-copy"><h3>
+								Share Your Background
+							</h3><p>
+								Include a little about your teaching experience or background.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">3</div><div class="cva-checklist-copy"><h3>
+								Share Something Personal
+							</h3><p>
+								Mention an interest, hobby, family detail, or favorite place.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">4</div><div class="cva-checklist-copy"><h3>
+								Explain How to Contact You
+							</h3><p>
+								Let students know how they should contact you when they need help.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">5</div><div class="cva-checklist-copy"><h3>
+								End with Support
+							</h3><p>
+								Remind students that you are available to answer questions and support their success.
+							</p></div></div></div><div class="cva-callout"><span class="cva-callout-label">Teacher Tip</span><p>
+				Aim for about one to two minutes. Your recording should feel welcoming and natural rather than highly produced.
+			</p></div></div></details><details aria-label="Step 4: Record the Video" class="cva-accordion"><summary>Step 4: Record the Video</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Record your welcome message using Panopto Capture.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Select Record</h3><p>Select the <strong>Record</strong> button at the bottom of the screen.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.1.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder showing the subject centered in the video preview, with the red Record button circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Wait for the Countdown</h3><p>Wait for the five-second countdown.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.2.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder displaying a five-second countdown over the subject before recording begins." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.2.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Deliver Your Message</h3><p>Deliver your welcome message at a natural pace.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.3.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder actively recording the subject in the video preview." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Stop the Recording</h3><p>Select the <strong>Stop</strong> button when you are finished. Once you stop, you’ll have the chance to redo or record a new video on the next screen. Otherwise, continue to the next step to name and save the recording.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step4.4.png" rel="noopener" target="_blank">
+<img alt="Panopto recorder showing the subject in the video preview, with the red Stop button circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step4.4.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>
+					It Does Not Have to Be Perfect
+				</h3><p>
+					Look toward the camera rather than at your own image. A small pause or natural correction is fine. The goal is to help students see the person behind the course.
+				</p></div></div></details><details aria-label="Step 5: Name and Save the Recording" class="cva-accordion"><summary>Step 5: Name and Save the Recording</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Give your recording a clear title and allow Panopto to upload and process it.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Enter a Title</h3><p>Enter a clear title for the recording.</p><p>Example: Welcome from First Name Last Name</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.1.png" rel="noopener" target="_blank">
+<img alt="Panopto finishing screen showing the recorded subject, with an arrow pointing to the video title field labeled “Welcome from First Name Last Name.”" decoding="async" loading="lazy" src="../images/teacher-information-page/step5.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Confirm the Folder</h3><p><strong> All CVA Teachers have access to the Cobb Virtual Academy and Teacher Information Page folder.</strong> From the dropdown menu, select District Office. Then, navigate to Accountability & Research and Cobb Virtual Academy. You can use the search bar to find videos by creator or title. <strong></p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.2.png" rel="noopener" target="_blank">
+<img alt="Panopto finishing screen with the folder menu open and an arrow pointing to the Cobb Virtual Academy folder." decoding="async" loading="lazy" src="../images/teacher-information-page/step5.2.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Wait for the Upload</h3><p>Wait while Panopto uploads and processes the video. Do not close the browser until Panopto indicates that it is safe to do so.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.3.png" rel="noopener" target="_blank">
+<img alt="Panopto finishing screen showing the recorded subject, with the “Upload complete” confirmation circled." decoding="async" loading="lazy" src="../images/teacher-information-page/step5.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>View Everything</h3><p>Once Panopto gives you the all clear, go ahead and close the window. Don't worry. Your video is saved automatically, and you'll be redirected to the Panopto home screen. Click <strong>Everything</strong> in the left-navigation menu to see your video. You may need to scroll, so keep an eye out for your video.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step5.4.gif" rel="noopener" target="_blank">
+<img alt="Panopto upload window showing a completed upload, highlighted upload confirmation, and video details ready to save." decoding="async" loading="lazy" src="../images/teacher-information-page/step5.4.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>Processing Time</h3><p>Processing may take a few minutes.</p></div></div></details><details aria-label="Step 6: Review the Video" class="cva-accordion"><summary>Step 6: Review the Video</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong>
+			Confirm that the recording is clear, complete, and ready for students to view.
+		</div><p class="cva-intro">
+			Watch your recording once before adding it to the Teacher Information Page. Use the checklist below as you review.
+		</p><div class="cva-checklist"><div class="cva-checklist-item"><div class="cva-checklist-number">1</div><div class="cva-checklist-copy"><h3>
+								Check the Beginning and End
+							</h3><p>
+								Make sure the video begins and ends where you intended, without unnecessary silence or preparation time.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">2</div><div class="cva-checklist-copy"><h3>
+								Check the Audio
+							</h3><p>
+								Confirm that your voice is clear, easy to hear, and not covered by background noise.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">3</div><div class="cva-checklist-copy"><h3>
+								Check the Lighting
+							</h3><p>
+								Make sure your face is visible and that the image is not too dark or overly bright.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">4</div><div class="cva-checklist-copy"><h3>
+								Check for Private Information
+							</h3><p>
+								Confirm that no student information, passwords, email messages, or other private content appears.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">5</div><div class="cva-checklist-copy"><h3>
+								Check for Notifications
+							</h3><p>
+								Make sure no unexpected messages, alerts, or pop-up notifications appear in the recording.
+							</p></div></div><div class="cva-checklist-item"><div class="cva-checklist-number">6</div><div class="cva-checklist-copy"><h3>
+								Review the Captions
+							</h3><p>
+								Read the automatic captions and correct names, course titles, and any words Panopto transcribed incorrectly.
+							</p></div></div></div><div class="cva-callout"><span class="cva-callout-label">Accessibility Reminder</span><p>
+				Automatic captions must be reviewed for accuracy before the video is shared with students.
+			</p></div></div></details><details aria-label="Step 7: Add the Video to the Teacher Information Page" class="cva-accordion"><summary>Step 7: Add the Video to the Teacher Information Page</summary><div class="cva-accordion-body"><div class="cva-goal">
+<strong>Goal:</strong> Replace the sample Panopto video with your own recording.
+			</div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Open the Video</h3><p>Open your welcome video in Panopto and click the <strong>Share icon</strong>.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.1.png" rel="noopener" target="_blank">
+<img alt="Panopto video library with a magnifying glass highlighting the Share symbol." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.1.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Confirm Viewing Permissions</h3><p>Confirm that students in the course have permission to view the recording. The settings should be "Anyone who has the link." If not, click Change and select the correct permissions.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.2.png" rel="noopener" target="_blank">
+<img alt="Panopto Share settings showing the video access level, “Anyone who has the link.”" decoding="async" loading="lazy" src="../images/teacher-information-page/step7.2.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Open the Embed Option</h3><p>Locate the video’s <strong>Embed</strong> option.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.3.png" rel="noopener" target="_blank">
+<img alt="Panopto Share settings with the Link and Embed options highlighted." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.3.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Embed Code Settings</h3><p>Mark the following settings: <strong>Enable Watch in Panopto</strong> and <strong>Show Captions</strong>. Uncheck <strong>Responsive embed</strong>. <strong>IMPORTANT: Change the Aspect Ratio to Custom and set the Width to 640 and Height to 330.</strong> Then click <strong> Copy Embed Code</strong>. It is ok to close the window.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.4.gif" rel="noopener" target="_blank">
+<img alt="Animated Panopto Share settings showing how to select Embed and view the available embed options." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.4.gif"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Return to CTLS</h3><p>Return to the Teacher Information Page in your CTLS Digital Classroom. Unlock the page by clicking the <strong>Lock icon</strong>.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.5.png" rel="noopener" target="_blank">
+<img alt="Teacher Information Page editor with the green folder icon highlighted above the page." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.5.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 6</span><h3>Replace the Video</h3><p>Replace the sample Panopto video with your own recording. Carefully click near the edge of the video to replace it. Be sure that you are replacing the video, not the image behind it. Click the <strong>Replace Video</strong> icon. Click the <strong> < > </strong> icon and paste the embed code. The new video should appear right away.</p></div><div class="cva-media"><a aria-label="Open a larger version of the CTLS Digital Classroom screenshot" class="cva-image-link" href="../images/teacher-information-page/step7.6.png" rel="noopener" target="_blank">
+<img alt="Teacher Information Page editor with the replace and delete controls highlighted for the selected video placeholder." decoding="async" loading="lazy" src="../images/teacher-information-page/step7.6.png"/>
+</a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-reminder"><h3>
+					Check Viewing Permissions
+				</h3><p>
+					A video may appear correctly for you while still being unavailable to students. Always test it in Student View.
+				</p></div></div></details><div aria-hidden="true" class="cva-section-divider"><span></span><span></span><span></span></div><section class="cva-white"><span class="cva-eyebrow">Adding Teacher Details</span><h2>Editing the Teacher Information Page</h2><p>Edit the other details on the page, including your name, office hours, and contact information.</p><div class="cva-callout"><span class="cva-callout-label">Important</span><p>Do not reuse a Teacher Information Page from a previous course or term. Use the current CVA version and follow each step in these directions to ensure your page, video, captions, images, and other content meet required federal accessibility standards.</p></div></section><details class="cva-accordion" aria-label="Step 8: Complete the Teacher Information Page"><summary>Step 8: Complete the Teacher Information Page</summary><div class="cva-accordion-body"><div class="cva-goal"><strong>Goal:</strong> Build your page using the CVA Teacher Information Page Builder, paste the generated HTML into your existing CTLS page, and save it.</div><h3 class="cva-overview-heading">Overview: What Goes on Your Page</h3><p class="cva-intro">Review the sections included in the Teacher Information Page Builder. Each card explains what students and families will find on your page.</p><div class="cva-overview-grid" aria-label="Teacher Information Page Builder content overview"><div class="cva-overview-card"><h3>Teacher Name</h3><p>Your name is how students and families identify you. Include your preferred name and honorific, if applicable.</p></div><div class="cva-overview-card"><h3>About Me</h3><p>A short introduction to your teaching background and interests. Aim for 30–40 words to help students get to know you.</p></div><div class="cva-overview-card"><h3>Office Hours</h3><p>The times you set aside to answer questions, provide feedback, and support CVA students outside your regular school-day responsibilities.</p></div><div class="cva-overview-card"><h3>Things to Know</h3><p>The established CVA expectations for grading, communication, and student support. These are already included in the Builder and should not be changed.</p></div><div class="cva-overview-card"><h3>Voice Number</h3><p>Your CTLS Parent Virtual Phone number provides a way for students and families to call you. It is for voice calls, not texting.</p></div><div class="cva-overview-card"><h3>Email</h3><p>Your CCSD email address gives students and families a direct way to contact you.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 1</span><h3>Teacher Information Page Builder</h3><p>Open the CVA Teacher Information Page Builder. Enter your information and Panopto welcome video link, review the preview, and copy the finished HTML.</p><a class="cva-button" href="https://teacherresources.cobbvirtualacademy.org/teacher-information-page-builder/" target="_blank" rel="noopener noreferrer">Open Teacher Information Page Builder</a></div><div class="cva-media"><div class="cva-callout" style="text-align:left"><span class="cva-callout-label">Before You Continue</span><p>Keep the copied HTML ready. You will paste it into the CTLS page you created earlier in the Course Quest.</p></div></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 2</span><h3>Open Your Existing Teacher Information Page</h3><p>Return to the <strong>Teacher Information Page</strong> you created in CTLS at the beginning of the Course Quest. Open it in your Digital Classroom and select the <strong>Lock icon</strong> to unlock the page for editing.</p></div><div class="cva-media"><a class="cva-image-link" href="../images/teacher-information-page/step8.1.png" rel="noopener" target="_blank" aria-label="Enlarge CTLS screenshot"><img src="../images/teacher-information-page/step8.1.png" alt="CTLS page editor with the green lock button circled near the upper-left corner." loading="lazy" decoding="async"/></a><p class="cva-image-note">Select image to enlarge.</p></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 3</span><h3>Paste the Generated HTML</h3><p>Open the editor’s <strong>HTML/source view</strong> and replace the existing page HTML with the complete code copied from the Builder. Return to the normal editor view to check the page.</p></div><div class="cva-media"><div class="cva-callout" style="text-align:left"><span class="cva-callout-label">Important</span><p>Paste into the HTML source editor, not the regular text editor. Confirm that the teacher name, biography, office hours, contact information, and welcome video appear correctly.</p></div></div></div><div class="cva-step-card"><div class="cva-step-content"><span class="cva-card-label">Step 4</span><h3>Save the Page</h3><p>Select <strong>Save</strong>. Open the saved page in <strong>Student View</strong> to make sure the information and welcome video display and work correctly.</p></div><div class="cva-media"><a class="cva-image-link" href="../images/teacher-information-page/step8.8.png" rel="noopener" target="_blank" aria-label="Enlarge CTLS screenshot"><img src="../images/teacher-information-page/step8.8.png" alt="CTLS Teacher Information Page editor with the green Save button circled." loading="lazy" decoding="async"/></a><p class="cva-image-note">Select image to enlarge.</p></div></div></div></details><hr class="cva-footer-rule"/><p class="cva-footer"><strong>Class. Virtually. Anywhere.</strong></p></div><script src="../nav.js"></script></body></html>
