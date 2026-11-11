@@ -56,6 +56,7 @@ const NAV=[
 {title:"Progress Tracker",href:BASE+"/proactive-intervention-and-student-support/progress-tracker.html"},
 {title:"Student Accommodations and Accessibility",href:BASE+"/proactive-intervention-and-student-support/accommodations-and-accessibility.html"}]},
 {label:"Professionalism and Collaboration",pages:[
+{title:"Report a Course Issue",href:BASE+"/course-maintenance/"},
 {title:"Accessibility by Design",href:BASE+"/professionalism-and-collaboration/accessibility-by-design.html"},
 {title:"Instructional Practice Review",href:BASE+"/professionalism-and-collaboration/instructional-practice-review.html"},
 {title:"Professional Learning Course",href:BASE+"/professionalism-and-collaboration/professional-learning-course.html"},
