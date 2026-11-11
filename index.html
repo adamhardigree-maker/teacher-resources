@@ -84,6 +84,37 @@
       line-height: 1;
     }
     #exp-modal-close:hover { color: #BB0000; }
+
+    /* Featured professional learning card — scoped to avoid existing hub styles */
+    .cva-pl-feature { box-sizing:border-box; border:1px solid #d3d9e1; border-left:5px solid #bb0000; border-radius:11px; background:#fff; padding:28px 28px 24px; box-shadow:0 2px 6px #00000008; margin:24px 0; font-family:Montserrat,Arial,sans-serif; color:#252220; line-height:1.65; }
+    .cva-pl-feature *, .cva-pl-feature *::before, .cva-pl-feature *::after { box-sizing:border-box; }
+    .cva-pl-feature .cva-pl-kicker { font-size:13px; letter-spacing:1px; font-weight:800; color:#bb0000; text-transform:uppercase; margin:0 0 6px; }
+    .cva-pl-feature h3 { font-family:Oswald,Arial,sans-serif; font-size:30px; line-height:1.22; margin:0 0 12px; color:#252220; }
+    .cva-pl-feature .cva-pl-intro { margin:0 0 21px; max-width:780px; font-size:16px; }
+    .cva-pl-step-list { display:grid; gap:15px; }
+    .cva-pl-step { display:flex; align-items:flex-start; gap:14px; }
+    .cva-pl-circle { flex:0 0 32px; width:32px; height:32px; display:grid; place-items:center; color:#fff; background:#bb0000; border-radius:50%; font-weight:800; font-size:15px; line-height:1; margin-top:1px; }
+    .cva-pl-step p { margin:1px 0 0; font-size:16px; }
+    .cva-pl-step strong { font-weight:800; }
+    .cva-pl-detail { margin-top:20px; background:#fafafa; border:1px solid #dedede; border-radius:6px; padding:0 18px; }
+    .cva-pl-detail summary { cursor:pointer; padding:14px 0; font-size:15px; font-weight:800; color:#a50000; }
+    .cva-pl-detail summary:focus-visible { outline:3px solid #bb0000; outline-offset:3px; }
+    .cva-pl-detail[open] summary { border-bottom:1px solid #ddd; }
+    .cva-pl-detail-body { padding:8px 0 14px; font-size:15px; }
+    .cva-pl-detail-body ul { padding-left:24px; }
+    .cva-pl-detail-body li { margin-bottom:6px; }
+    .cva-pl-detail-body p { margin:12px 0; }
+    .cva-pl-completion { background:#fff; border-left:4px solid #bb0000; padding:12px 15px; margin-top:16px; }
+    .cva-pl-resource-strip { margin-top:23px; padding-top:20px; border-top:1px solid #e1e1e1; }
+    .cva-pl-resource-heading { display:block; font-size:13px; letter-spacing:.6px; text-transform:uppercase; font-weight:800; color:#444; margin-bottom:12px; }
+    .cva-pl-resource-buttons { display:flex; flex-wrap:wrap; gap:10px; }
+    .cva-pl-feature a.cva-pl-resource-button { display:inline-flex; align-items:center; justify-content:space-between; gap:14px; min-height:48px; padding:11px 15px; background:#fff; border:1px solid #c8c7c7; border-left:4px solid #bb0000; border-radius:6px; color:#222; text-decoration:none; font-size:14px; font-weight:800; box-shadow:0 2px 3px #0000000a; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s; }
+    .cva-pl-feature a.cva-pl-resource-button:hover { background:#f8f3f3; border-color:#bb0000; transform:translateY(-1px); box-shadow:0 4px 9px #00000014; }
+    .cva-pl-feature a.cva-pl-resource-button:focus-visible { outline:3px solid #bb0000; outline-offset:3px; }
+    .cva-pl-resource-button .cva-pl-arrow { color:#bb0000; font-size:20px; line-height:1; font-weight:700; }
+    .cva-pl-resource-icon { display:inline-flex; width:24px; height:24px; align-items:center; justify-content:center; color:#bb0000; }
+    .cva-pl-resource-icon svg { width:21px; height:21px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    @media(max-width:700px) { .cva-pl-feature { padding:22px 17px; } .cva-pl-feature h3 { font-size:26px; } .cva-pl-step { gap:11px; } }
   </style>
 </head>
 <body>
@@ -96,6 +127,13 @@
   </div>
 
 
+
+  <!-- FEATURED PROFESSIONAL LEARNING: GRADING AND FEEDBACK -->
+  <article aria-labelledby="feature-title" class="cva-pl-feature"><p class="cva-pl-kicker">Featured Professional Learning · Course Launch</p><h3 id="cva-pl-feature-title">Grading and Feedback Practice Lab</h3><p class="cva-pl-intro">Practice submitting, grading, and reviewing feedback in CTLS from both the student and teacher perspectives.</p><div class="cva-pl-step-list"><div class="cva-pl-step"><span aria-hidden="true" class="cva-pl-circle">1</span><p><strong>Submit in Student View.</strong> Complete the Welcome Call document using the practice scenario. Save it as a Word document and submit it to the assignment.</p></div><div class="cva-pl-step"><span aria-hidden="true" class="cva-pl-circle">2</span><p><strong>Grade in Teacher View.</strong> Review the submission, record video feedback identifying one strength, record audio feedback explaining one next step, add the required written comment, enter a grade, and allow resubmission.</p></div><div class="cva-pl-step"><span aria-hidden="true" class="cva-pl-circle">3</span><p><strong>Check in Student View.</strong> Confirm you can see the grade and written comment and play both recordings.</p></div></div><details class="cva-pl-detail"><summary>View full practice instructions</summary><div class="cva-pl-detail-body"><p><strong>1. Submit in Student View</strong></p><p>Complete the Welcome Call document using the practice scenario. Save it as a Word document and submit it to this assignment.</p><p><strong>2. Grade in Teacher View</strong></p><p>Open your submission in the CTLS gradebook and review it against the assignment expectations.</p><ul><li>Record <strong>brief video feedback</strong> identifying one strength.</li><li>Record <strong>brief audio feedback</strong> explaining one specific next step.</li><li>Add the written comment: <strong>“Please review your video and audio feedback.”</strong></li><li>Enter a grade and save your feedback.</li><li><strong>Allow a resubmission.</strong> You do not need to submit again.</li></ul><p><strong>3. Check in Student View</strong></p><p>Confirm that you can see your grade and written comment and play both recordings.</p><div class="cva-pl-completion"><strong>Completion expectations:</strong> Your instructor will verify your completed document, grade, specific video and audio feedback, and enabled resubmission.</div></div></details><div aria-label="Supporting professional learning resources" class="cva-pl-resource-strip"><span class="cva-pl-resource-heading">Explore these resources</span><nav aria-label="Grading and feedback resources" class="cva-pl-resource-buttons">
+<a class="cva-pl-resource-button" href="https://teacherresources.cobbvirtualacademy.org/grading-and-feedback/grading-basics" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="cva-pl-resource-icon"><svg viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 9h10M7 13h7M7 17h4"></path></svg></span><span>Grading Basics</span><span aria-hidden="true" class="cva-pl-arrow">↗</span></a>
+<a class="cva-pl-resource-button" href="https://teacherresources.cobbvirtualacademy.org/grading-and-feedback/effective-feedback.html" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="cva-pl-resource-icon"><svg viewbox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"></path><path d="M8 9h8M8 12h5"></path></svg></span><span>Effective Feedback</span><span aria-hidden="true" class="cva-pl-arrow">↗</span></a>
+<a class="cva-pl-resource-button" href="https://teacherresources.cobbvirtualacademy.org/grading-and-feedback/allowing-resubmissions.html" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="cva-pl-resource-icon"><svg viewbox="0 0 24 24"><path d="M20 7v5h-5"></path><path d="M19 12a7 7 0 1 0-2 5"></path><path d="M20 12l-4-4"></path></svg></span><span>Allowing Resubmissions</span><span aria-hidden="true" class="cva-pl-arrow">↗</span></a>
+</nav></div></article>
 
   <!-- UPCOMING EVENTS -->
   <div class="events-card" role="region" aria-label="Upcoming Events">
